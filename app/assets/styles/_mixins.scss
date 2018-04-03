@@ -1,0 +1,29 @@
+@function rem-calc($size) {
+
+  $remSize: $size / 16;
+  @return #{$remSize}rem;
+
+}
+
+@mixin my_caret() {
+  position: absolute;
+  border: none;
+  width: 8px;
+  top: 50%;
+  height: 16px;
+  margin-top: -8px;
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url(../images/arrow-right.svg);
+  -webkit-transform: rotate(90deg) translate(0px, 0);
+  transform: rotate(90deg) translate(0px, 0);
+  right: 0;
+}
+
+@mixin aspect($w, $h) {
+
+  position: relative;
+  padding-bottom: #{($h/$w)*100 + '%'};
+
+}

@@ -1,0 +1,37 @@
+.pagination {
+  li {
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: middle;
+    & + li {
+      margin-left: 20px;
+    }
+    a {
+      display: block;
+      width: 34px;
+      height: 34px;
+      position: relative;
+      border: 2px solid;
+      border-radius: 50%;
+      border-color: transparent;
+      b {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &:last-child {
+      a {
+       border-color: inherit;
+      }
+    }
+
+  }
+}

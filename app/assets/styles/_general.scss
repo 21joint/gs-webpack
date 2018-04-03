@@ -1,0 +1,194 @@
+html {
+  min-height: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  &.menu_open {
+    overflow: hidden;
+    position: fixed;
+  }
+}
+
+.ui-slider .ui-slider-handle {
+  cursor: pointer;
+}
+
+svg {
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+hr {
+  &.with-text {
+    position: relative;
+    &:before {
+      content: attr(data-value);
+      position: absolute;
+      color: $asphalt;
+      left: 50%;
+      padding: 0 15px;
+      font-size: 13px;
+      font-weight: 700;
+      background-color: #fff;
+      z-index: 1;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.badge {
+  line-height: 20px;
+  min-width: 20px;
+  font-size: 12px;
+  border-radius: 10px;
+  font-weight: 900;
+  padding: 0 6px;
+}
+
+.bg-lightblue {
+  background-color: rgba($blue, .1);
+}
+
+.r-icon--small {
+  width: 17px;
+  height: 17px;
+}
+
+.r-icon--big {
+  width: 26px;
+  height: 26px;
+}
+
+.r-icon--medium {
+  width: 22px;
+  height: 22px;
+}
+
+.r-icon--social {
+  width: 25px;
+  height: 25px;
+}
+
+.r-34 {
+  width: 34px;
+  height: 34px;
+}
+
+.r-37 {
+  width: 37px;
+  height: 37px;
+}
+
+.mw-md {
+  max-width: map-get($grid-breakpoints, md);
+}
+
+.border {
+  border-color: $border-color !important;
+}
+
+.border-right {
+  border-right: 1px solid $border-color;
+}
+
+.or-vertical {
+  .line-vertical {
+    height: 30px;
+    width: 1px;
+    background-color: $border-color;
+  }
+}
+
+ul.user-langs li {
+  display: inline-block;
+  vertical-align: middle;
+  & + li {
+    margin-left: 3px;
+  }
+}
+
+.user-box {
+  line-height: 1;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.rounded_60 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.congratulations_box {
+  min-height: 100px;
+}
+
+.label_box {
+  height: 100%;
+  position: relative;
+  padding: 15px 0;
+  .dot-outer {
+
+  }
+  .label_box__icon {
+    i {
+      font-size: 46px;
+    }
+  }
+  .label_title {
+    font-size: 14px;
+  }
+  .label_content {
+    font-size: 12px;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 14px;
+    @include media-breakpoint-up(md) {
+      max-width: none;
+      margin: 0;
+    }
+  }
+  span {
+    display: block;
+    font-weight: 500;
+  }
+}
+
+.owl-carousel {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s visibility, 0.2s opacity;
+  &.owl-loaded {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.owl-item {
+  z-index: 1;
+}

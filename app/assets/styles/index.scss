@@ -1,0 +1,53 @@
+@import "vars";
+@import "~bootstrap/scss/bootstrap";
+@import "~owl.carousel/dist/assets/owl.carousel.css";
+@import "~nouislider/distribute/nouislider.css";
+
+@import 'mixins';
+// fonts
+@import 'fonts';
+// typo
+@import 'type';
+//select2
+@import 'components/select2';
+//ui-slider
+@import 'ui-slider';
+//forms
+@import 'bs-components/forms';
+//dropdowns
+@import 'bs-components/dropdowns';
+//modals
+@import 'bs-components/modal';
+//tooltips
+@import "bs-components/tooltips";
+//file upload
+@import 'components/file-upload';
+//file pagination
+@import 'components/pagination';
+// icons
+@import 'icons';
+// network icons
+@import 'network-icons';
+// tabs
+@import 'tabs';
+// buttons
+@import 'buttons';
+// videos
+@import 'videos';
+//ui-kit
+@import 'ui-kit';
+//banner
+@import 'registration/management';
+//layout
+@import 'layout';
+//general
+@import 'general';
+//header
+@import 'header';
+// ** Registration **
+@import 'registration/progress';
+@import 'registration/pick-role';
+//influencer
+@import 'brand/brand-influencer';
+@import 'brand/brand-campaign';
+@import 'brand/modal-single--influencer';

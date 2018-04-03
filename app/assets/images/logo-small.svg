@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="28px" viewBox="0 0 45 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>menu ipad</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="768" height="60"></rect>
+        <filter x="-2.3%" y="-32.5%" width="104.6%" height="158.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.334437274 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-3" x="0" y="0" width="60" height="43"></rect>
+        <polygon id="path-5" points="0 14.2477 0 28 44.584 28 44.584 0.4954 0 0.4954"></polygon>
+        <polygon id="path-7" points="0 28.5046 132.758 28.5046 132.758 0.9996 0 0.9996"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="menu-ipad" transform="translate(-20.000000, -17.000000)">
+            <g id="Rectangle">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Page-1" transform="translate(8.000000, 7.000000)">
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <g id="Mask"></g>
+                <g mask="url(#mask-4)">
+                    <g transform="translate(12.000000, 9.000000)">
+                        <g id="Group-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, 0.504600)">
+                            <mask id="mask-6" fill="white">
+                                <use xlink:href="#path-5"></use>
+                            </mask>
+                            <g id="Clip-2"></g>
+                            <path d="M30.832,25.8624 C28.344,25.8624 25.949,25.0664 23.965,23.6084 C23.965,23.6074 23.966,23.6064 23.967,23.6064 L23.962,23.6094 C23.962,23.6094 22.221,22.1704 22.2,22.1504 C19.946,20.0464 13.957,14.4544 16,11.8414 C16.564,11.1204 17.547,10.7064 18.541,10.7064 C18.915,10.7064 19.29,10.7644 19.646,10.8874 C20.353,11.1314 21.193,11.7034 21.228,13.0444 C21.228,13.0734 21.228,13.1024 21.228,13.1314 L21.229,14.1994 L23.367,14.1994 L23.367,13.1314 C23.367,13.1024 23.367,13.0734 23.366,13.0444 C23.401,11.7034 24.241,11.1314 24.949,10.8874 C26.249,10.4384 27.818,10.8484 28.595,11.8414 C30.294,14.0144 26.441,18.2424 23.797,20.8174 L25.398,22.2454 C28.687,19.0464 33.057,14.0784 30.279,10.5254 C28.945,8.8204 26.41,8.1224 24.252,8.8664 C23.457,9.1404 22.796,9.5804 22.297,10.1484 C21.798,9.5804 21.138,9.1404 20.342,8.8664 C18.183,8.1214 15.649,8.8204 14.316,10.5254 C11.105,14.6314 17.445,20.6334 20.625,23.6044 C18.64,25.0644 16.243,25.8624 13.752,25.8624 C7.348,25.8624 2.138,20.6524 2.138,14.2474 C2.138,7.8434 7.348,2.6334 13.752,2.6334 C16.653,2.6334 19.43,3.7084 21.572,5.6604 L22.292,6.3164 L23.012,5.6604 C25.154,3.7084 27.932,2.6334 30.832,2.6334 C37.236,2.6334 42.447,7.8434 42.447,14.2474 C42.447,20.6524 37.236,25.8624 30.832,25.8624 M30.832,0.4954 C27.714,0.4954 24.716,1.5444 22.292,3.4674 C19.868,1.5454 16.87,0.4954 13.752,0.4954 C6.169,0.4954 0,6.6644 0,14.2474 C0,21.8304 6.169,28.0004 13.752,28.0004 C16.87,28.0004 19.868,26.9504 22.292,25.0274 C24.717,26.9504 27.714,28.0004 30.832,28.0004 C38.415,28.0004 44.584,21.8304 44.584,14.2474 C44.584,6.6644 38.415,0.4954 30.832,0.4954" id="Fill-1" fill="#56A4D6" mask="url(#mask-6)"></path>
+                        </g>
+                        <mask id="mask-8" fill="white">
+                            <use xlink:href="#path-7"></use>
+                        </mask>
+                        <g id="Clip-19" stroke="none" fill="none"></g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

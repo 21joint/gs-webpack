@@ -1,0 +1,51 @@
+{
+  "name": "webpack-boilerplate",
+  "version": "4.0.0",
+  "description": "Plain webpack 4 Boilerplate with Babel, SASS and lodash on board",
+  "author": "Christoph von Gellhorn",
+  "license": "MIT",
+  "homepage": "https://github.com/cvgellhorn/webpack-boilerplate",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --mode development --config webpack.config.dev.js",
+    "build": "webpack -p --progress --mode production --config webpack.config.build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://cvgellhorn@github.com/cvgellhorn/webpack-boilerplate.git"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-touch-punch": "^0.2.3",
+    "lodash": "^4.17.5",
+    "nouislider": "^11.1.0",
+    "owl.carousel": "^2.3.2",
+    "perfect-scrollbar": "^1.3.0",
+    "popper.js": "^1.14.1",
+    "select2": "^4.0.6-rc.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
+    "cross-env": "^5.1.4",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "glob": "^7.1.2",
+    "html-webpack-plugin": "^3.1.0",
+    "imports-loader": "^0.8.0",
+    "node-sass": "^4.8.3",
+    "postcss-loader": "^2.1.3",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
+  }
+}
