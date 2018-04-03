@@ -622,8 +622,8 @@
     transition-duration: 0.2s;
     transition-property: all;
     transition-timing-function: ease-in-out;
-    flex: 0 0 25px;
-    max-width: 25px;
+    flex: 0 0 60px;
+    max-width: 60px;
     i {
       flex: 0 0 25px;
       max-width: 25px;
@@ -637,10 +637,10 @@
     + li {
       margin-left: 10px;
     }
-    &.is-showing {
-      flex: 0 0 60px;
-      max-width: 60px;
-    }
+    //&.is-showing {
+    //  flex: 0 0 60px;
+    //  max-width: 60px;
+    //}
   }
 }
 
@@ -844,5 +844,13 @@
     position: absolute;
     top: 0;
     right: 0;
+  }
+}
+
+.seo__info{
+  line-height: 1;
+  display: block;
+  img{
+    width:20px;
   }
 }

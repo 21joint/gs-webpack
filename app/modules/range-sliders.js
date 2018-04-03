@@ -18,6 +18,8 @@ export default function() {
             _start,
             _min,
             _max;
+
+
         _start = el.dataset.start.split(',');
         _min = parseInt(el.dataset.min);
         _max = parseInt(el.dataset.max);
