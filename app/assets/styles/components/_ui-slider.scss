@@ -18,6 +18,10 @@
   }
 }
 
+.noUi-values {
+  color: $asphalt;
+}
+
 .noUi-base {
   &:before {
     content: '';
@@ -55,5 +59,13 @@
   color: #454545;
   &:before,&:after {
     background-color: transparent;
+  }
+}
+
+.gs-sliderrange-wrapper{
+  input{
+    text-align: center;
+    max-width: 50px;
+    padding: 0 10px ;
   }
 }

@@ -9,3 +9,6 @@ import './vendor.js';
 import '../modules/header.js';
 import '../modules/loader.js';
 import '../modules/terms.js';
+import rangeSlider from '../modules/range-sliders';
+
+rangeSlider();

@@ -16,13 +16,11 @@
   "dependencies": {
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
-    "jquery-ui": "^1.12.1",
-    "jquery-ui-touch-punch": "^0.2.3",
     "lodash": "^4.17.5",
     "nouislider": "^11.1.0",
     "owl.carousel": "^2.3.2",
     "perfect-scrollbar": "^1.3.0",
-    "popper.js": "^1.14.1",
+    "popper.js": "^1.14.3",
     "select2": "^4.0.6-rc.1"
   },
   "devDependencies": {

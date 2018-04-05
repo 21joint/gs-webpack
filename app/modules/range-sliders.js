@@ -1,56 +1,42 @@
 import noUiSlider from 'nouislider';
-import _ from 'lodash';
 
 export default function () {
-    let App;
+    $('.gs-range--slider').each(function (i, el) {
+        let _options, _instance, _parent;
 
-    App = function () {
-        let _self = this;
-
-        _self._instances = [];
-
-        _self.init = function (selector, options) {
-            let sliders = document.querySelectorAll(selector);
-
-            _.each(sliders, function (el, i) {
-                let _options,
-                    _slider,
-                    _start,
-                    _min,
-                    _max,
-                    _snap;
-
-
-                _start = el.dataset.start.split(',');
-                _min = parseInt(el.dataset.min);
-                _max = parseInt(el.dataset.max);
-                _snap = el.dataset.snap;
-                console.log(snap);
-
-                _.each(_start, function (s, i) {
-                    _start[i] = Number(_start[i]) ?
-                        _start[i] :
-                        eval('_' + _start[i].slice(1, _start[i].length - 1));
-                });
-
-                _options = _.extend({}, options, {
-                    connect: true,
-                    start: _start,
-                    range: {
-                        'min': _min,
-                        'max': _max,
-                    },
-                    snap: _snap
-                });
-
-                _slider = noUiSlider.create(el, _options);
-                console.log(el, _slider);
-                _self._instances.push(_slider);
-            });
-            console.log(_self._instances);
-            return _self;
+        _parent = el.closest('.form-group');
+        _options = {
+            start: el.dataset.start.split(','),
+            step: parseInt(el.dataset.step),
+            connect: !!el.dataset.connect,
+            range: {
+                'min': parseInt(el.dataset.min),
+                'max': parseInt(el.dataset.max),
+            },
+            format: {
+                to: function (value) {
+                    return value;
+                },
+                from: function (value) {
+                    return value;
+                }
+            }
         };
-    };
 
-    return new App();
-}
+        noUiSlider
+            .create(el, _options)
+            .on('update', function (values, handle) {
+                _parent.querySelector('input[data-handle="' + handle + '"]').value = values[handle];
+            });
+
+        _parent.querySelector('input[data-handle]').addEventListener('change', function(e) {
+            let _handle = e.currentTarget.dataset.handle,
+                _values = [null,null];
+                _values[_handle] = e.target.value;
+
+            el.noUiSlider.set(_values);
+        })
+
+
+    });
+};

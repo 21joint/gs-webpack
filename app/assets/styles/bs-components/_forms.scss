@@ -3,6 +3,9 @@
   border-radius: 5px;
   border-color: $border-color;
   color: $body-color;
+  &:focus{
+    box-shadow: none;
+  }
   @include media-breakpoint-up(sm) {
     padding: 0 12px;
   }
