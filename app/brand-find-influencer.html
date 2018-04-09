@@ -416,6 +416,8 @@
                                   <li>
                                     <button class="btn btn-sm btn-outline-primary"
                                             data-toggle="dropdown"
+                                            data-flip="false"
+                                            data-boundary="'viewport'"
                                             aria-haspopup="true"
                                             aria-expanded="false">Up to $250
                                     </button>
@@ -926,6 +928,7 @@
                                     <button type="button"
                                             class="btn btn-sm btn-outline-primary"
                                             data-toggle="dropdown"
+                                            data-flip="false"
                                             aria-haspopup="true"
                                             aria-expanded="false">Seo
                                     </button>
@@ -933,9 +936,13 @@
                                       <div class="container-fluid">
                                         <div class="row pt-3">
                                           <div class="col-12">
-                                            <span class="seo__info text-right" role="button">
+                                            <div class="row align-items-center justify-content-between">
+                                              <div class="col-auto"><h6 class="text-dark d-inline"><strong>Seo</strong>
+                                              </h6></div>
+                                              <div class="col-auto"><span class="seo__info text-right" role="button">
                                               <img src="images/info.svg" alt="Awarenes">
-                                            </span>
+                                            </span></div>
+                                            </div>
                                           </div>
                                         </div>
                                         <div class="row py-3 justify-content-center flex-sm-column">
@@ -983,7 +990,8 @@
                                             <div class="gs-sliderrange-wrapper">
                                               <div class="form-group">
                                                 <div class="mb-4">
-                                                  <h6 class="text-dark mb-4"><strong>Domain SEO Strength (DA)</strong></h6>
+                                                  <h6 class="text-dark mb-4"><strong>Domain SEO Strength (DA)</strong>
+                                                  </h6>
                                                   <input title="gs-handle--input" type="text"
                                                          class="form-control d-inline"
                                                          data-handle="0"/>
