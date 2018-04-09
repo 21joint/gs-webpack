@@ -12,3 +12,9 @@ import '../modules/terms.js';
 import rangeSlider from '../modules/range-sliders';
 
 rangeSlider();
+
+$(document).ready(function () {
+    $('select').select2({
+        minimumResultsForSearch: -1
+    });
+});

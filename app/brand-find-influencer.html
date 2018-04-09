@@ -421,27 +421,30 @@
                                     </button>
                                     <div class="dropdown-menu p-0">
                                       <div class="container-fluid">
-                                        <div class="row pt-3 pb-4">
+                                        <div class="row py-3">
                                           <div class="col-12">
-                                            <p>
-                                              <label class="label-basic text-dark mb-4"
-                                                     for="price">Price per
-                                                post range</label>
-                                              <input type="text"
-                                                     id="price"
-                                                     readonly=""
-                                                     style="border:0; color:#898989; font-weight:normal;">
-                                            </p>
-                                            <div class="ui-slider-price ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content ui-draggable ui-draggable-handle"
-                                                 id="slider-price">
-                                              <div class="ui-slider-range ui-corner-all ui-widget-header"
-                                                   style="left: 2.5%; width: 22.5%;"></div>
-                                              <span tabindex="0"
-                                                    class="ui-slider-handle ui-corner-all ui-state-default"
-                                                    style="left: 2.5%;"></span>
-                                              <span tabindex="0"
-                                                    class="ui-slider-handle ui-corner-all ui-state-default"
-                                                    style="left: 25%;"></span>
+                                            <div class="gs-sliderrange-wrapper">
+                                              <div class="form-group">
+                                                <div class="mb-4">
+                                                  <h6 class="text-dark mb-4"><strong>Price per post range</strong></h6>
+                                                  <input title="gs-handle--input" type="text"
+                                                         class="form-control d-inline"
+                                                         data-handle="0"/>
+                                                  <span class="text-asphalt mx-1">-</span>
+                                                  <input title="gs-handle--input" type="text"
+                                                         class="form-control d-inline"
+                                                         data-handle="1"/>
+                                                </div>
+                                                <div id="sliderPrice"
+                                                     class="gs-range--slider"
+                                                     data-start="50, 500"
+                                                     data-min="50"
+                                                     data-max="1000"
+                                                     data-step="1"
+                                                     data-currency="$"
+                                                     data-connect="true">
+                                                </div>
+                                              </div>
                                             </div>
                                           </div>
                                         </div>
@@ -975,6 +978,32 @@
                                             </div>
                                           </div>
                                         </div>
+                                        <div class="row py-3">
+                                          <div class="col-12">
+                                            <div class="gs-sliderrange-wrapper">
+                                              <div class="form-group">
+                                                <div class="mb-4">
+                                                  <h6 class="text-dark mb-4"><strong>Domain SEO Strength (DA)</strong></h6>
+                                                  <input title="gs-handle--input" type="text"
+                                                         class="form-control d-inline"
+                                                         data-handle="0"/>
+                                                  <span class="text-asphalt mx-1">-</span>
+                                                  <input title="gs-handle--input" type="text"
+                                                         class="form-control d-inline"
+                                                         data-handle="1"/>
+                                                </div>
+                                                <div id="sliderSeo"
+                                                     class="gs-range--slider"
+                                                     data-start="0, 100"
+                                                     data-min="0"
+                                                     data-max="100"
+                                                     data-step="1"
+                                                     data-connect="true">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
                                         <div class="row py-3 justify-content-between">
                                           <div class="col-auto">
                                             <button class="btn btn-block btn-sm btn-cancel"
@@ -1047,7 +1076,7 @@
                                   </li>
                                 </ul>
                               </div>
-                              <div class="col-auto">
+                              <div class="col-auto pl-0">
                                 <a role="button" class="btn btn-clear">Clear all
                                   filters</a>
                               </div>
