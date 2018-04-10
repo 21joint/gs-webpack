@@ -7,8 +7,11 @@
     <img src="https://img.shields.io/github/issues/21joint/gs-webpack.svg">
     <img src="https://img.shields.io/github/license/21joint/gs-webpack.svg">
 </p>
+<p align="center">
+
 # Static Frontend Webpack Boilerplate (1.0.1)
 
+</p>
 
 ## Whats Included
 
