@@ -7,15 +7,9 @@
   <title>Growsocial</title>
 
 </head>
-<body class="has-fixed-bottom bg-light">
-
+<body>
 <header class="header">
   <div class="container-fluid">
-    <button type="button" class="navbar_toggler d-md-none">
-      <span class="line top"></span>
-      <span class="line mid"></span>
-      <span class="line bot"></span>
-    </button>
     <div class="row header_main__row align-items-center">
       <div class="col-auto">
         <div class="logo">
@@ -53,17 +47,18 @@
                     <path class="txt"
                           d="M124.4443,18.2562 C125.0443,18.2562 125.5853,18.1022 126.0683,17.7952 C126.5493,17.4872 126.8633,17.1352 127.0093,16.7372 L127.0093,15.2612 L125.1513,15.2612 C124.4833,15.2612 123.9483,15.4292 123.5483,15.7642 C123.1473,16.1002 122.9463,16.4942 122.9463,16.9472 C122.9463,17.3502 123.0723,17.6692 123.3253,17.9042 C123.5773,18.1392 123.9503,18.2562 124.4443,18.2562 L124.4443,18.2562 Z M127.1943,19.4762 C127.1383,19.2012 127.0953,18.9592 127.0643,18.7482 C127.0333,18.5382 127.0153,18.3262 127.0093,18.1132 C126.7013,18.5502 126.2993,18.9172 125.8023,19.2112 C125.3063,19.5062 124.7723,19.6522 124.2003,19.6522 C123.2523,19.6522 122.5303,19.4102 122.0333,18.9252 C121.5373,18.4402 121.2893,17.7712 121.2893,16.9192 C121.2893,16.0492 121.6413,15.3692 122.3453,14.8792 C123.0483,14.3882 124.0033,14.1422 125.2093,14.1422 L127.0093,14.1422 L127.0093,13.2422 C127.0093,12.7102 126.8473,12.2872 126.5223,11.9762 C126.1963,11.6652 125.7363,11.5092 125.1423,11.5092 C124.6093,11.5092 124.1763,11.6452 123.8423,11.9172 C123.5083,12.1902 123.3423,12.5162 123.3423,12.8972 L121.7603,12.8972 L121.7433,12.8472 C121.7103,12.1852 122.0223,11.5792 122.6813,11.0292 C123.3403,10.4802 124.1923,10.2052 125.2353,10.2052 C126.2663,10.2052 127.0963,10.4672 127.7253,10.9922 C128.3533,11.5162 128.6673,12.2722 128.6673,13.2592 L128.6673,17.6422 C128.6673,17.9672 128.6843,18.2812 128.7173,18.5842 C128.7513,18.8872 128.8133,19.1852 128.9023,19.4762 L127.1943,19.4762 Z"
                           id="Fill-20"></path>
-                    <polygon class="txt" points="131.1 19.4756 132.758 19.4756 132.758 6.3516 131.1 6.3516"></polygon>
+                    <polygon class="txt"
+                             points="131.1 19.4756 132.758 19.4756 132.758 6.3516 131.1 6.3516"></polygon>
                   </g>
                 </g>
               </svg>
-              <img class="img-fluid d-none d-md-block d-lg-none" src="images/logo-small.svg"/>
+              <img class="img-fluid d-none d-md-block d-lg-none" src="/images/logo-small.svg"/>
             </a>
           </h1>
         </div>
       </div>
-      <div class="col">
-        <nav class="d-none d-md-block">
+      <div class="col d-none d-md-block">
+        <nav>
           <ul>
             <li><a href="#">Overview</a></li>
             <li><a href="#">Active deals</a></li>
@@ -86,25 +81,28 @@
                 <span class="dropdown-carret"></span>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#all" role="tab" aria-controls="all"
-                       aria-expanded="true">All
+                    <a class="nav-link active" data-toggle="tab" href="#all" role="tab"
+                       aria-controls="all" aria-expanded="true">All
                       Types</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#new" role="tab" aria-controls="new">New
+                    <a class="nav-link" data-toggle="tab" href="#new" role="tab"
+                       aria-controls="new">New
                       Deals</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#published" role="tab" aria-controls="published">
+                    <a class="nav-link" data-toggle="tab" href="#published" role="tab"
+                       aria-controls="published">
                       Published Deals
                     </a>
                   </li>
                 </ul>
                 <div class="tab-content" id="notificationsTabContent">
-                  <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all">
+                  <div class="tab-pane fade show active" id="all" role="tabpanel"
+                       aria-labelledby="all">
                     <ul class="media-feed">
                       <li class="media align-items-center">
-                        <img class="m-2" src="images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for
                             approval</p>
@@ -113,7 +111,7 @@
                         </div>
                       </li>
                       <li class="media align-items-center">
-                        <img class="m-2" src="images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for
                             approval</p>
@@ -122,7 +120,7 @@
                         </div>
                       </li>
                       <li class="media align-items-center">
-                        <img class="m-2" src="images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for
                             approval</p>
@@ -135,7 +133,7 @@
                   <div class="tab-pane fade" id="new" role="tabpanel" aria-labelledby="new">
                     <ul class="media-feed">
                       <li class="media align-items-center">
-                        <img class="m-2" src="images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for
                             approval</p>
@@ -144,7 +142,7 @@
                         </div>
                       </li>
                       <li class="media align-items-center">
-                        <img class="m-2" src="images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for
                             approval</p>
@@ -153,7 +151,7 @@
                         </div>
                       </li>
                       <li class="media align-items-center">
-                        <img class="m-2" src="images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for
                             approval</p>
@@ -163,10 +161,11 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="tab-pane fade" id="published" role="tabpanel" aria-labelledby="published">
+                  <div class="tab-pane fade" id="published" role="tabpanel"
+                       aria-labelledby="published">
                     <ul class="media-feed">
                       <li class="media align-items-center">
-                        <img class="m-2" src="images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for
                             approval</p>
@@ -175,7 +174,7 @@
                         </div>
                       </li>
                       <li class="media align-items-center">
-                        <img class="m-2" src="images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for
                             approval</p>
@@ -184,7 +183,7 @@
                         </div>
                       </li>
                       <li class="media align-items-center">
-                        <img class="m-2" src="images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for
                             approval</p>
@@ -201,13 +200,20 @@
           <li><a class="btn" href="#"><i class="icon-help"></i></a></li>
           <li class="dropdown profile">
             <a class="btn" data-toggle="dropdown">
-              <img class="img-fluid rounded-circle" src="images/user.jpg" alt="User Nameson"/>
+              <img class="img-fluid rounded-circle" src="/images/user.jpg" alt="User Nameson"/>
             </a>
             <ul class="dropdown-menu">
               <li>asdasd</li>
             </ul>
           </li>
         </ul>
+      </div>
+      <div class="col-auto ml-auto d-md-none">
+        <button type="button" class="navbar_toggler d-md-none">
+          <span class="line top"></span>
+          <span class="line mid"></span>
+          <span class="line bot"></span>
+        </button>
       </div>
     </div>
   </div>
@@ -237,7 +243,7 @@
     <li class="profile">
       <a href="#">
                     <span class="d-flex i-block align-items-center justify-content-center">
-                        <img class="img-fluid rounded-circle" src="images/user.jpg" alt="">
+                        <img class="img-fluid rounded-circle" src="/images/user.jpg" alt="">
                     </span>
         <span>
                         Settings
@@ -246,134 +252,24 @@
     </li>
   </ul>
 </nav>
-<main class="main-content reg-account_type">
-  <div class="container-fluid py-4 pt-lg-5">
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-9">
-        <div class="content-box rounded bg-white py-4">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-12">
-                <section class="brand-congratulation">
-                  <div class="agreement-terms__header text-center">
-                    <h2 class="content-box__title mb-0 mt-sm-3">Congratulations! Now you can begin</h2>
-                    <hr class="mt-sm-4 mb-0"/>
-                  </div>
-                  <div class="content-box__body">
-                    <div class="row mb-sm-4 pb-3">
-                      <div class="col">
-                        <h4 class="text-center pt-3 pt-sm-4 text-asphalt">You can get discounts
-                          and get a
-                          faster approval time
-                        </h4>
-                        <h4 class="text-center text-asphalt">if you invite and tell your friends
-                          about our
-                          service</h4>
-                      </div>
-                    </div>
-                    <div class="row mb-sm-4 py-3">
-                      <div class="col-12">
-                        <b><p class="text-center">What do you want to do next?</p></b>
-                      </div>
-                    </div>
-                    <div class="row justify-content-between">
-                      <div class="col-sm-4 my-2 my-sm-0">
-                        <a href="#"
-                           class="d-flex flex-column flex-md-row bg-success text-white text-center text-md-left label_box">
-                                                    <span
-                                                        class="col-auto col-md-auto mb-2 mb-md-0 pr-md-0 align-self-md-center">
-                                                        <span class="label_box__icon">
-                                                            <i class="icon-Page"></i>
-                                                        </span>
-                                                    </span>
-                          <span class="col-12 col-md">
-                                                        <span class="label_title mb-2">Create campaign</span>
-                                                        <span class="label_content">Recommend option for you. Guaranteed best results.</span>
-                                                    </span>
-                        </a>
-                      </div>
-                      <div class="col-sm-4 my-2 my-sm-0">
-                        <a href="#"
-                           class="d-flex flex-column flex-md-row bg-primary text-white text-center text-md-left label_box">
-                                                    <span
-                                                        class="col-auto col-md-auto mb-2 mb-md-0 pr-md-0 align-self-md-center">
-                                                        <span class="label_box__icon"><i
-                                                            class="icon-calendar"></i></span>
-                                                    </span>
-                          <span class="col-12 col-md">
-                                                        <span class="label_title mb-2">Book a demo</span>
-                                                        <span class="label_content">One time campaign, decent option if you want a minor boost.</span>
-                                                    </span>
-                        </a>
-                      </div>
-                      <div class="col-sm-4 my-2 my-sm-0">
-                        <a href="#"
-                           class="d-flex flex-column flex-md-row bg-dark text-white text-center text-md-left label_box">
-                                                    <span
-                                                        class="col-auto col-md-auto mb-2 mb-md-0 pr-md-0 align-self-md-center">
-                                                        <span class="label_box__icon"><i
-                                                            class="icon-calendar"></i></span>
-                                                    </span>
-                          <span class="col-12 col-md">
-                                                        <span class="label_title mb-2">Find influencers</span>
-                                                        <span class="label_content">One time campaign, decent option if you want a minor boost.</span>
-                                                    </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-lg-3"></div>
-    </div>
-  </div>
-</main>
-<!--REGISTRATION PROGRESS-->
-<div class="reg-progress fixed-bottom border-bottom-0">
-  <div class="container-fluid">
-    <div class="row flex-nowrap justify-content-center align-items-center">
-      <div class="col-12">
-        <div class="reg-progress-content">
-          <div class="row align-items-center">
-            <div class="col-auto d-none d-md-block">
-              <span class="font-weight-black">Your progress</span>
-            </div>
-            <div class="col-7 col-sm">
-              <ul class="row flex-nowrap justify-content-between reg-progress_ul mx-0">
-                <li class="col text-center complete">
-                  <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
-                </li>
-                <li class="col text-center">
-                  <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
-                </li>
-                <li class="col text-center">
-                  <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
-                </li>
-                <li class="col text-center">
-                  <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
-                </li>
-                <li class="col text-center">
-                  <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
-                </li>
-                <li class="col text-center">
-                  <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
-                </li>
-              </ul>
-            </div>
-            <div class="col-5 col-sm-auto">
-              <button class="btn btn-block btn-primary ml-auto">
-                Continue
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div>
+  <ol style="padding: 30px 50px;">
+    <li><a href="ui-kit.html">Ui-kit</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="welcome.html">Welcome</a></li>
+    <li><a href="brand-welcome.html">Brand-welcome</a></li>
+    <li><a href="brand-register-step1.html">Brand-register-step1</a></li>
+    <li><a href="brand-register-step2.html">Brand-register-step2</a></li>
+    <li><a href="brand-register-step3.html">Brand-register-step3</a></li>
+    <li><a href="brand-register-success.html">Brand-register- success</a></li>
+    <li><a href="brand-influencer.html">Brand Influencer</a></li>
+    <li><a href="brand-find-influencer.html">Brand-find-influencer</a></li>
+    <li><a href="brand-set-profile.html">Set Profile</a></li>
+    <li><a href="brand-edit-profile.html">Edit Profile</a></li>
+    <li><a href="terms.html">Agreement &amp; terms</a></li>
+    <li><a href="brand-congratulation.html">brand-congratulation</a></li>
+    <li><a href="brand-campaign.html">brand-campaign</a></li>
+  </ol>
 </div>
 
 </body>

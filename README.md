@@ -1,39 +1,21 @@
-Webpack 4 Boilerplate
-===========
+<div align="center">
+ <p>made by</p>
+        <a href="http://www.21joint.com"><img width="150" height="auto" src="https://rawgit.com/21joint/dnv-header/header_raw/21logo2.svg"></a>
+</div>
 
-[![Dependency Status](https://david-dm.org/cvgellhorn/webpack-boilerplate.svg)](https://david-dm.org/cvgellhorn/webpack-boilerplate) 
-[![devDependency Status](https://david-dm.org/cvgellhorn/webpack-boilerplate/dev-status.svg)](https://david-dm.org/cvgellhorn/webpack-boilerplate)
+# Static Frontend Webpack Boilerplate (1.0.1)
 
-> Plain webpack 4 boilerplate with Babel, SASS and lodash on board
 
-## Requirements
-You only need <b>node.js</b> pre-installed and you’re good to go. 
+## Whats Included
 
-If you don’t want to work with lodash, just remove it from the node packages and the webpack config.
+- Bootstrap v4.1
+- SCSS
 
-## Download
-Download in current directory
-```sh
-$ curl -L -o master.zip https://github.com/cvgellhorn/webpack-boilerplate/archive/master.zip && unzip master.zip && rm master.zip && mv ./webpack-boilerplate-master/{.,}* ./ && rm -r ./webpack-boilerplate-master
-```
+## Quick start
 
-## Setup
-Install dependencies
-```sh
-$ npm install
-```
+Several quick start options are available:
 
-## Development
-Run the local webpack-dev-server with livereload and autocompile on [http://localhost:8080/](http://localhost:8080/)
-```sh
-$ npm run dev
-```
-## Deployment
-Build the current application
-```sh
-$ npm run build
-```
-
-## [webpack](https://webpack.js.org/)
-If you're not familiar with webpack, the [webpack-dev-server](https://webpack.js.org/configuration/dev-server/) will serve the static files in your build folder and watch your source files for changes.
-When changes are made the bundle will be recompiled. This modified bundle is served from memory at the relative path specified in publicPath.
+1. Make sure you have Node.js stable version which can be found on their [Official website](https://nodejs.org).
+2. `npm install`
+3. `npm run dev` Is running development server on `2121` port
+4. `npm run build` Is building HTML/CSS for the structure
