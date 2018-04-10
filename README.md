@@ -13,7 +13,12 @@
 
 ## Quick start
 
-Several quick start options are available:
+<p align="center">Several quick start options are available:</p>
+
+<p align="center">
+    <img src="https://img.shields.io/github/issues/21joint/gs-webpack.svg">
+    <img src="https://img.shields.io/github/license/21joint/gs-webpack.svg">
+</p>
 
 1. Make sure you have Node.js stable version which can be found on their [Official website](https://nodejs.org).
 2. `npm install`
