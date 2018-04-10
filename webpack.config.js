@@ -8,7 +8,7 @@ const autoprefixer = require('autoprefixer');
 // Is the current build a development build
 const IS_DEV = (process.env.NODE_ENV === 'dev');
 const dirNode = 'node_modules';
-const dirApp = path.join(__dirname, 'app');
+const dirApp = path.join(__dirname, 'src');
 const dirAssets = path.join(__dirname, 'assets');
 const dirScripts = path.join(__dirname, 'scripts');
 const dirScss = path.join(dirAssets, 'scss');
