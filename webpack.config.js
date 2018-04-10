@@ -99,7 +99,7 @@ module.exports = {
 
       // IMAGES
       {
-        test: /\.(gif|png|jpe?g|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+        test: /\.(gif|png|jpe?g)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
         use: [
           {
             loader: 'url-loader',
