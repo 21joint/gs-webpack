@@ -1,11 +1,13 @@
-(function() {
+export default (function() {
 
-  $.fn.dndhover = function(options) {
+  let dndHover;
+
+  dndHover = function(options) {
 
     return this.each(function() {
 
-      var self = $(this);
-      var collection = $();
+      let self = $(this);
+      let collection = $();
       self.on('dragenter', function(event) {
         if (collection.length === 0) {
           self.trigger('dndHoverStart');
@@ -27,6 +29,8 @@
       });
     });
   };
+
+  $.fn.dndhover = dndHover;
 
   $('.dnd-drop--area').dndhover().on({
     'dndHoverStart': function(event) {
@@ -50,5 +54,7 @@
       return false;
     },
   });
+
+  return dndHover;
 
 })();

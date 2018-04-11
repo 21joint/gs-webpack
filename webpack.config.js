@@ -4,14 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const glob = require('glob');
-const autoprefixer = require('autoprefixer');
 // Is the current build a development build
 const IS_DEV = (process.env.NODE_ENV === 'dev');
-const dirNode = 'node_modules';
-const dirApp = path.join(__dirname, 'app');
-const dirAssets = path.join(__dirname, 'assets');
-const dirScripts = path.join(__dirname, 'scripts');
-const dirScss = path.join(dirAssets, 'scss');
+const dirNode = path.join(__dirname, 'node_modules');
+const dirSrc = path.join(__dirname, 'src');
+const dirAssets = path.join(__dirname, 'src/assets');
+const dirScripts = path.join(__dirname, 'src/scripts');
+const dirSCSS = path.join(__dirname, 'src/scss');
 const appHtmlTitle = 'GS Layouts';
 
 const getNameFromDir = (dir) => {
@@ -33,27 +32,27 @@ const generateHTMLPlugins = () =>
  */
 
 module.exports = {
+  node: {
+    fs: 'empty',
+  },
+  target: 'web',
   entry: {
-    vendor: path.join(dirApp, 'scripts/vendor.js'),
-    common: path.join(dirApp, 'scripts/common.js'),
-    brandFindInfluencer: path.join(dirApp, 'scripts/brand-find-influencer.js'),
+    vendor: './src/vendor.js',
+    common: './src/common.js',
+    brand: './src/brand.js',
   },
   resolve: {
     modules: [
       dirNode,
-      dirApp,
+      dirSrc,
       dirAssets,
     ],
+    alias: {
+      '~': path.join(__dirname, 'node_modules'),
+    },
   },
   module: {
     rules: [
-      {
-        test: /\.html$/,
-        loader: 'html-loader',
-        options: {
-          includePaths: [dirApp],
-        },
-      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -63,12 +62,14 @@ module.exports = {
       // SCSS
       {
         test: /\.scss$/,
-        exclude: /(node_modules)/,
         use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
               options: {
+                url: false,
+                minimize: !IS_DEV,
                 sourceMap: IS_DEV,
               },
             },
@@ -77,7 +78,9 @@ module.exports = {
               options: {
                 sourceMap: IS_DEV,
                 plugins: [
-                  autoprefixer({browsers: ['last 3 versions', 'iOS 9']}),
+                  require('autoprefixer')({
+                    browsers: ['last 3 versions', 'iOS 9'],
+                  }),
                 ],
               },
             },
@@ -85,15 +88,9 @@ module.exports = {
               loader: 'sass-loader',
               options: {
                 sourceMap: IS_DEV,
-                includePaths: [
-                  dirApp,
-                ],
               },
-            }],
-          // use style-loader in development
-          fallback: {
-            loader: 'style-loader',
-          },
+            },
+          ],
         }),
       },
 
@@ -146,12 +143,16 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
     }),
+    new CopyWebpackPlugin([
+      {
+        from: dirAssets,
+        to: './',
+      }]),
     ...generateHTMLPlugins(),
-    new ExtractTextPlugin({
-      filename: 'styles/[name].css',
-    }),
+    new ExtractTextPlugin('styles/[name].css'),
   ],
   stats: {
     colors: true,
   },
+  devtool: 'cheap-module-eval-source-map',
 };
