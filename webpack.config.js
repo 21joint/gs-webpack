@@ -61,14 +61,14 @@ module.exports = {
       },
       // SCSS
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
+
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
               options: {
-                url: false,
                 minimize: !IS_DEV,
                 sourceMap: IS_DEV,
               },
@@ -79,7 +79,7 @@ module.exports = {
                 sourceMap: IS_DEV,
                 plugins: [
                   require('autoprefixer')({
-                    browsers: ['last 3 versions', 'iOS 9'],
+                    browsers: ['last 2 versions'],
                   }),
                 ],
               },
@@ -88,49 +88,31 @@ module.exports = {
               loader: 'sass-loader',
               options: {
                 sourceMap: IS_DEV,
+
               },
             },
           ],
         }),
       },
-
       // IMAGES
       {
-        test: /\.(gif|png|jpe?g|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+        test: /\.(gif|png|jpeg|jpg|svg)?$/i,
+        include: /(images)/,
         use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 100000,
-            },
-          },
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: './images/',
-              filename: '[name].[ext]',
-            },
-          },
+          'file-loader?name=[name].[ext]&outputPath=./images/',
         ],
       },
       // FONTS
       {
-        test: /\.(woff|ttf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+        test: /\.(ttf|woff|woff2|eot|svg)?$/i,
+        include: /(fonts|icomoon)/,
         use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 100000,
-            },
-          },
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: './fonts/',
-              filename: '[name].[ext]',
-            },
-          },
+          'file-loader?name=[name].[ext]&outputPath=./fonts/',
         ],
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
       },
     ],
   },
@@ -143,16 +125,11 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
     }),
-    new CopyWebpackPlugin([
-      {
-        from: dirAssets,
-        to: './',
-      }]),
     ...generateHTMLPlugins(),
     new ExtractTextPlugin('styles/[name].css'),
   ],
   stats: {
     colors: true,
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'eval',
 };

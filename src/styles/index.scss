@@ -1,10 +1,8 @@
-@import "vars";
+@import 'colors';
+@import "variables";
 @import 'mixins';
-@import "~bootstrap/scss/bootstrap";
-@import "~select2/dist/css/select2.css";
-@import "~owl.carousel/dist/assets/owl.carousel.css";
-@import "~nouislider/distribute/nouislider.css";
-
+@import "vendor";
+@import "url-loader!~icomoon/style";
 // fonts
 @import 'fonts';
 // typo
@@ -25,8 +23,6 @@
 @import 'components/file-upload';
 //file pagination
 @import 'components/pagination';
-// icons
-@import 'icons';
 // network icons
 @import 'network-icons';
 // tabs

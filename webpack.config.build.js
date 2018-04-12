@@ -5,15 +5,15 @@ const webpackConfig = require('./webpack.config');
 
 module.exports = merge(webpackConfig, {
 
-    devtool: 'source-map',
+  devtool: 'source-map',
 
-    output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'scripts/[name].[chunkhash].js'
-    },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'scripts/[name].[chunkhash].js',
+  },
 
-    plugins: [
-        new CleanWebpackPlugin(['dist'])
-    ]
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+  ],
 
 });

@@ -1,5 +1,3 @@
-import './vendor';
-
 export default (function() {
   $(document).ready(function() {
 
@@ -119,7 +117,10 @@ export default (function() {
         },
         refreshScrollSpy = function(element) {
           let cacheScrolltop = $(element).scrollTop();
-          $(element).scrollTop(0).scrollspy('refresh').scrollTop(cacheScrolltop);
+          $(element).
+              scrollTop(0).
+              scrollspy('refresh').
+              scrollTop(cacheScrolltop);
         };
 
     $.extend($.easing, {
