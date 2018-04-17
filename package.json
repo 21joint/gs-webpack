@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --mode development --config webpack.config.dev.js",
     "build": "webpack -p --progress --mode production --config webpack.config.build.js",
-    "start": "webpack -p webpack-dev-server --progress --mode production --config webpack.config.build.js"
+    "start": "webpack -p webpack-dev-server --progress --mode production --config webpack.config.build.js",
+    "git-push": "git pull && git add -u && git commit -m'updates' && git push"
   },
   "repository": {
     "type": "git",
