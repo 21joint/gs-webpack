@@ -1,4 +1,4 @@
-import '../scripts/vendor';
+import '../vendor';
 
 
 $(document).ready(function () {

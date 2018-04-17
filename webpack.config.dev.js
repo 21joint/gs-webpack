@@ -1,17 +1,16 @@
 const merge = require('webpack-merge');
-const webpackConfig = require('./webpack.config');
+const config = require('./webpack.config');
 const path = require('path');
 
-module.exports = merge(webpackConfig, {
-
-  devtool: 'eval',
+module.exports = merge(config, {
   output: {
     publicPath: 'http://localhost:2121/'
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    publicPath: 'http://localhost:2121/',
+    contentBase: path.resolve(__dirname, 'dist'),
     watchContentBase: true,
     port: 2121,
     open: true
-  },
+  }
 });

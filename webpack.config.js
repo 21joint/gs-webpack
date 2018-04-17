@@ -1,32 +1,36 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const glob = require('glob');
 const autoprefixer = require('autoprefixer');
+const glob = require('glob');
+const pkg = require('./package');
 // Is the current build a development build
 const IS_DEV = (process.env.NODE_ENV === 'dev');
-const dirNode = 'node_modules';
-const dirApp = path.join(__dirname, 'src');
-const dirAssets = path.join(__dirname, 'assets');
-const dirScripts = path.join(__dirname, 'scripts');
-const dirScss = path.join(dirAssets, 'scss');
-const appHtmlTitle = 'GS Layouts';
-
-const getNameFromDir = (dir) => {
-  const lastSlash = dir.lastIndexOf('/');
-  return dir.slice(lastSlash + 1);
+const project = {
+  BASE_URL: 'https://eatdrinkslc.com/',
+  title: pkg.description.split('|')[0],
+  description: pkg.description,
+  nodePath: 'node_modules',
+  src: path.join(__dirname, 'src'),
+  assets: path.join(__dirname, 'src/assets'),
+  fonts: path.join(__dirname, 'src/assets/fonts'),
+  images: path.join(__dirname, 'src/assets/images'),
+  icons: path.join(__dirname, 'src/assets/icomoon/fonts'),
+  port: process.env.PORT || 2121,
+  publicPath: '/'
 };
 
 const generateHTMLPlugins = () =>
-    glob.sync('./src/*.html').map(function(dir) {
-
-      return new HtmlWebpackPlugin({
-        filename: getNameFromDir(dir), // Output
-        template: dir, // Input
-      });
-    });
+  glob.sync('./src/**/*.html')
+    .map(dir => new HtmlWebpackPlugin({
+      // Output
+      filename: path.basename(dir),
+      // Input,
+      template: dir,
+      title: pkg.description
+    }));
 
 /**
  * Webpack Configuration
@@ -34,124 +38,105 @@ const generateHTMLPlugins = () =>
 
 module.exports = {
   entry: {
-    vendor: path.join(dirApp, 'scripts/vendor.js'),
-    common: path.join(dirApp, 'scripts/common.js'),
-    brandFindInfluencer: path.join(dirApp, 'scripts/brand-find-influencer.js'),
+    vendor: './src/vendor.js',
+    common: './src/common.js'
   },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[chunkhash].js'
+  },
+  externals: [
+    /^babel-runtime/
+  ],
   resolve: {
     modules: [
-      dirNode,
-      dirApp,
-      dirAssets,
-    ],
+      'node_modules',
+      project.src
+    ]
   },
   module: {
     rules: [
       {
-        test: /\.html$/,
-        loader: 'html-loader',
-        options: {
-          includePaths: [dirApp],
-        },
-      },
-      {
         test: /\.js$/,
         exclude: /node_modules/,
-        include: /(app\/scripts\/)/,
-        loader: 'babel-loader',
+        use: [
+          'babel-loader',
+          'eslint-loader'
+        ]
       },
       // SCSS
       {
         test: /\.scss$/,
-        exclude: /(node_modules)/,
         use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
               options: {
-                sourceMap: IS_DEV,
-              },
+                minimize: !IS_DEV,
+                sourceMap: IS_DEV
+              }
             },
             {
               loader: 'postcss-loader',
               options: {
                 sourceMap: IS_DEV,
                 plugins: [
-                  autoprefixer({browsers: ['last 3 versions', 'iOS 9']}),
-                ],
-              },
+                  autoprefixer({
+                    browsers: ['last 3 versions']
+                  })
+                ]
+              }
             },
             {
               loader: 'sass-loader',
               options: {
-                sourceMap: IS_DEV,
-                includePaths: [
-                  dirApp,
-                ],
-              },
-            }],
-          // use style-loader in development
-          fallback: {
-            loader: 'style-loader',
-          },
-        }),
+                sourceMap: IS_DEV
+              }
+            }
+          ]
+        })
       },
 
-      // IMAGES
-      {
-        test: /\.(gif|png|jpe?g)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 100000,
-            },
-          },
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: './images/',
-              filename: '[name].[ext]',
-            },
-          },
-        ],
-      },
       // FONTS
       {
-        test: /\.(woff|ttf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+        test: /\.(woff|woff2|ttf|eot|svg|gif|png|jpe?g)$/i,
         use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 100000,
-            },
-          },
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: './fonts/',
-              filename: '[name].[ext]',
-            },
-          },
-        ],
-      },
-    ],
+          'url-loader?limit=1024&name=[folder]/[name].[ext]&fallback=file-loader'
+        ]
+      }
+    ]
   },
   plugins: [
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        context: path.resolve(__dirname, 'src')
+      }
+    }),
     new webpack.DefinePlugin({
-      IS_DEV: IS_DEV,
+      IS_DEV
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'window.jQuery': 'jquery',
+      'window.jQuery': 'jquery'
     }),
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: 'src/assets/**/*',
+    //     to: '[folder]/[name].[ext]',
+    //     test: /\.(woff|woff2|ttf|eot|svg|gif|png|jpe?g)$/
+    //   }]),
     ...generateHTMLPlugins(),
     new ExtractTextPlugin({
-      filename: 'styles/[name].css',
+      filename: 'styles/[name].css'
     }),
+    new ExtractTextPlugin({
+      filename: '[name].html'
+    })
   ],
   stats: {
-    colors: true,
+    colors: true
   },
+  devtool: 'cheap-eval-source-map'
 };

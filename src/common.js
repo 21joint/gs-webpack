@@ -2,7 +2,7 @@
  * Application entry point
  */
 // Load application styles
-import '../assets/styles/index.scss';
+import './assets/styles/index.scss';
 
 // Load application vendor code
 import './vendor.js';
