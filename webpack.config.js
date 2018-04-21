@@ -1,35 +1,25 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const glob = require('glob');
-const pkg = require('./package');
-// Is the current build a development build
-const IS_DEV = (process.env.NODE_ENV === 'dev');
-const project = {
-  BASE_URL: 'https://eatdrinkslc.com/',
-  title: pkg.description.split('|')[0],
-  description: pkg.description,
-  nodePath: 'node_modules',
-  src: path.join(__dirname, 'src'),
-  assets: path.join(__dirname, 'src/assets'),
-  fonts: path.join(__dirname, 'src/assets/fonts'),
-  images: path.join(__dirname, 'src/assets/images'),
-  icons: path.join(__dirname, 'src/assets/icomoon/fonts'),
-  port: process.env.PORT || 2121,
-  publicPath: '/'
-};
+const Conf = require("./conf");
+const path = require("path");
+const Visualizer = require("webpack-visualizer-plugin");
+const Pkg = require("./package");
+const _ = require("lodash");
+const glob = require("glob");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const generateHTMLPlugins = () =>
-  glob.sync('./src/**/*.html')
+const IS_DEV = (process.env.NODE_ENV === "dev");
+const renderHtmlTemplates = () =>
+  glob.sync("src/**/*.html")
     .map(dir => new HtmlWebpackPlugin({
       // Output
       filename: path.basename(dir),
-      // Input,
+      meta: {
+        viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
+      },
       template: dir,
-      title: pkg.description
+      title: Pkg.description
     }));
 
 /**
@@ -38,105 +28,123 @@ const generateHTMLPlugins = () =>
 
 module.exports = {
   entry: {
-    vendor: './src/vendor.js',
-    common: './src/common.js'
+    app: "./src/app.js"
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
-  },
-  externals: [
-    /^babel-runtime/
-  ],
-  resolve: {
-    modules: [
-      'node_modules',
-      project.src
-    ]
+    path: path.resolve(__dirname, "dist"),
+    filename: "scripts/[name].[hash].js",
+    publicPath: "/"
   },
   module: {
     rules: [
+      // JS
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        include: [
+          path.resolve(__dirname, "src")
+        ],
         use: [
-          'babel-loader',
-          'eslint-loader'
+          "babel-loader"
         ]
       },
       // SCSS
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
+          fallback: "style-loader",
           use: [
             {
-              loader: 'css-loader',
+              loader: "css-loader",
               options: {
                 minimize: !IS_DEV,
-                sourceMap: IS_DEV
+                sourceMap: IS_DEV,
+                publicPath: '../'
               }
             },
             {
-              loader: 'postcss-loader',
+              loader: "postcss-loader",
               options: {
                 sourceMap: IS_DEV,
                 plugins: [
-                  autoprefixer({
-                    browsers: ['last 3 versions']
+                  require("postcss-flexbugs-fixes"),
+                  require("autoprefixer")({
+                    browsers: ["last 3 versions"]
                   })
                 ]
               }
             },
             {
-              loader: 'sass-loader',
+              loader: "sass-loader",
               options: {
                 sourceMap: IS_DEV
               }
             }
-          ]
+          ],
         })
       },
 
-      // FONTS
+      // FONTS/IMAGES
       {
-        test: /\.(woff|woff2|ttf|eot|svg|gif|png|jpe?g)$/i,
+        test: /\.(woff|woff2|ttf|eot|otf|svg|gif|png|jpe?g)$/i,
         use: [
-          'url-loader?limit=1024&name=[folder]/[name].[ext]&fallback=file-loader'
-        ]
+          {
+            loader: "url-loader",
+            options: {
+              limit: 1024,
+              name(file) {
+                if (file.indexOf("fonts") > -1) {
+                  return "./fonts/[name].[ext]"
+                }
+                else {
+                  return "./images/[name].[ext]";
+                }
+              },
+              fallback: "file-loader",
+              outputPath: './',
+              useRelative: !IS_DEV
+            }
+          },
+        ],
       }
     ]
   },
+  resolve: {
+    modules: [
+      "node_modules",
+      path.resolve(__dirname, "src")
+    ]
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          chunks: "all",
+          name: "vendors",
+          priority: -10
+        },
+        manifest: {
+          name: "manifest",
+          chunks: "all",
+          minChunks: Infinity
+        }
+      },
+    },
+  },
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        context: path.resolve(__dirname, 'src')
-      }
-    }),
+    new webpack.LoaderOptionsPlugin({}),
     new webpack.DefinePlugin({
       IS_DEV
     }),
     new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
     }),
-    // new CopyWebpackPlugin([
-    //   {
-    //     from: 'src/assets/**/*',
-    //     to: '[folder]/[name].[ext]',
-    //     test: /\.(woff|woff2|ttf|eot|svg|gif|png|jpe?g)$/
-    //   }]),
-    ...generateHTMLPlugins(),
+    ...renderHtmlTemplates(),
     new ExtractTextPlugin({
-      filename: 'styles/[name].css'
-    }),
-    new ExtractTextPlugin({
-      filename: '[name].html'
+      filename: "styles/[name].css"
     })
   ],
-  stats: {
-    colors: true
-  },
-  devtool: 'cheap-eval-source-map'
+  devtool: "eval"
 };

@@ -57,8 +57,12 @@
   border: 1px solid #c5c5c5;
   font-weight: 400;
   color: #454545;
+  cursor: grab;
   &:before,&:after {
     background-color: transparent;
+  }
+  &.noUi-active {
+    cursor: grabbing;
   }
 }
 

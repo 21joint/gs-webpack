@@ -67,7 +67,7 @@
   //}
 }
 
-.single-card {
+.single-profile--card {
   max-width: 420px;
   margin: 5px;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.28);
@@ -97,7 +97,7 @@
 .single-card--header {
   position: relative;
   padding-bottom: 50%;
-  background-image: url("/images/infl-card-bg.png");
+  background-image: url("/src/assets/images/infl-card-bg.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -332,26 +332,26 @@
         left: -15px;
 
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
-        background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-        background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome4-9,Safari4-5 */
-        background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: -o-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10-11.50 */
-        background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* IE10 preview */
-        background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+        background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); /* FF3.6-15 */
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 0))); /* Chrome4-9,Safari4-5 */
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); /* Opera 11.10-11.50 */
+        background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); /* IE10 preview */
+        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1); /* IE6-9 */
         color: #bdc0c9;
         font-size: 18px;
       }
       &.owl-next {
         right: -15px;
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
-        background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
-        background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome4-9,Safari4-5 */
-        background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10-11.50 */
-        background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10 preview */
-        background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+        background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* FF3.6-15 */
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 1))); /* Chrome4-9,Safari4-5 */
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* Opera 11.10-11.50 */
+        background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* IE10 preview */
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=1); /* IE6-9 */
         color: #bdc0c9;
         font-size: 18px;
       }
@@ -395,16 +395,19 @@
 
 }
 
-.single-profile--right {
+.single-card--right {
   @include media-breakpoint-up(lg) {
     padding-top: 60px;
   }
 }
 
-.single-profile--box {
+.single-profile--card {
   position: relative;
   padding: 0;
   margin: 15px 0;
+  box-shadow: none;
+  max-width: none;
+  display: block;
   .owl-carousel {
     .owl-item {
       z-index: 30;
@@ -490,14 +493,14 @@
   }
 }
 
-.single-profile--owlwrapper {
+.single-card--owlwrapper {
   position: relative;
   overflow: hidden;
   padding-bottom: 100%;
   background-color: #eeeeee;
 }
 
-.single-profile--carousel {
+.single-card--carousel {
   position: absolute;
   left: 0;
   right: 0;
@@ -522,7 +525,7 @@
   }
 }
 
-.single-profile--slide {
+.single-card--slide {
   position: relative;
   height: 100%;
   .single-slide--image {
@@ -540,7 +543,7 @@
   }
 }
 
-.single-profile--image {
+.single-card--image {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -552,7 +555,7 @@
   }
 }
 
-.single-profile--badges {
+.single-card--badges {
   li {
     margin-bottom: 6px;
   }
@@ -574,7 +577,7 @@
   }
 }
 
-.single-profile--likebtn {
+.single-card--likebtn {
   position: absolute;
   z-index: 40;
   top: 57px;
@@ -589,7 +592,7 @@
       fill-opacity: 1;
     }
   }
-  .single-profile--box:hover & {
+  .single-card:hover & {
     transform: scale(1);
     visibility: visible;
   }
@@ -603,7 +606,7 @@
   }
 }
 
-.single-profile--networks {
+.single-card--networks {
   padding: 15px 0;
   font-size: 1rem;
   > ul {
@@ -631,7 +634,7 @@
     span {
       padding-left: 7px;
     }
-    .single-profile--box:hover & {
+    .single-card:hover & {
       opacity: 1;
     }
     + li {
@@ -644,7 +647,7 @@
   }
 }
 
-.single-profile--followers {
+.single-card--followers {
   a {
     color: inherit;
     padding: 0;
@@ -711,7 +714,7 @@
 
 }
 
-.single-influencer-title {
+.single-card--title {
   padding: 0 0 10px;
   h5 {
     overflow: hidden;
@@ -803,7 +806,7 @@
   }
 }
 
-.single-profile--sections {
+.single-card--sections {
 
 }
 
@@ -817,7 +820,7 @@
   margin-bottom: 15px;
 }
 
-.single-profile--nav {
+.single-card--nav {
   img {
     @include media-breakpoint-down(sm) {
       width: 28px;
@@ -827,13 +830,13 @@
 
 }
 
-.single-profile--info {
+.single-card--info {
   @include media-breakpoint-up(lg) {
     padding-top: 60px;
   }
 }
 
-.single-profile--actions {
+.single-card--actions {
   .btn {
     min-width: 120px;
     @include media-breakpoint-up(lg) {
@@ -847,10 +850,10 @@
   }
 }
 
-.seo__info{
+.seo__info {
   line-height: 1;
   display: block;
-  img{
-    width:20px;
+  img {
+    width: 20px;
   }
 }
