@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Growsocial on (webpack)",
   "authors": [
-    "levon@21joint.com",
-    "samvel@21joint.com"
+    "levon@21joint.com"
   ],
   "license": "MIT",
   "homepage": "https://growsocial.com/",
@@ -14,17 +13,13 @@
     "start": "webpack -p webpack-dev-server --progress --mode production --config webpack.config.build.js",
     "git-push": "git pull && git add -u && git commit -m'updates' && git push"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/21joint/gs-webpack"
-  },
   "dependencies": {
     "babel-polyfill": "*",
-    "jquery": "^3.3.1",
-    "popper.js": "^1.14.3",
     "bootstrap": "^4.1.0",
+    "jquery": "^3.3.1",
     "nouislider": "^11.1.0",
-    "owl.carousel": "^2.3.2",
+    "owl.carousel": "^2.3.4",
+    "popper.js": "^1.14.3",
     "select2": "^4.0.6-rc.1"
   },
   "devDependencies": {
@@ -61,6 +56,7 @@
     "fs-extra": "^5.0.0",
     "glob": "^7.1.2",
     "html-loader": "^0.5.5",
+    "html-webpack-inline-svg-plugin": "^1.2.4",
     "html-webpack-plugin": "^3.2.0",
     "imports-loader": "^0.8.0",
     "lodash": "^4.17.5",
@@ -69,6 +65,7 @@
     "postcss-loader": "^2.1.3",
     "purify-css": "^1.2.6",
     "purifycss-webpack": "^0.7.0",
+    "raw-loader": "^0.5.1",
     "resolve-url-loader": "^2.3.0",
     "sass-loader": "^6.0.7",
     "script-ext-html-webpack-plugin": "^2.0.1",

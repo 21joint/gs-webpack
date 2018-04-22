@@ -6,7 +6,7 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-  <%= require('html-loader!./partials/header.html') %>
+  <%= require('html-loader?interpolate=true&minimize=false!./partials/header.html') %>
   <div id="homepage">
     <ol id="pageMap" style="padding: 40px;">
       <li><a href="./ui.html" style="padding: 5px 10px;">UI Page</a></li>

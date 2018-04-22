@@ -15,37 +15,64 @@ const influencers = [
       require('./assets/images/influencer-1.png'),
       require('./assets/images/influencer-2.png'),
       require('./assets/images/influencer-3.png')
-    ]
-  }, {
-    name: 'Betty Boo',
-    age: 27,
+    ],
+    social: {
+      tumblr: 4222,
+      pinterest: 32122,
+      blog: 12100
+    }
+  },
+  {
+    name: 'Lindsey Joe',
+    age: 23,
     photos: [
       require('./assets/images/influencer-1.png'),
       require('./assets/images/influencer-4.png'),
       require('./assets/images/influencer-5.png')
-    ]
-  }, {
-    name: 'Betty Boo',
+    ],
+    social: {
+      facebook: 9156,
+      tumblr: 3200,
+      pinterest: 12098,
+      blog: 1200
+    }
+  },
+  {
+    name: 'Monica Belucci',
     age: 27,
     photos: [
       require('./assets/images/influencer-3.png'),
       require('./assets/images/influencer-1.png'),
       require('./assets/images/influencer-4.png')
-    ]
-  }, {
-    name: 'Betty Boo',
-    age: 27,
+    ],
+    social: {
+      snapchat: 9156,
+      twitter: 3200,
+      instagram: 12098,
+      podcast: 1200
+    }
+  },
+  {
+    name: 'Lina Van',
+    age: 22,
     photos: [
       require('./assets/images/influencer-5.png'),
       require('./assets/images/influencer-4.png'),
       require('./assets/images/influencer-3.png')
-    ]
+    ],
+    social: {
+      facebook: 9156,
+      tumblr: 3200,
+      pinterest: 12098,
+      blog: 55000
+    }
   }
 ];
 %>
 <body class="bg-light">
   <%= require('html-loader!./partials/header.html') %>
   <main class="main-content">
+    <!--FIND INFLUENCERS-->
     <div class="find-influencer">
       <div class="container-fluid py-3 pt-lg-4">
         <div class="row justify-content-center">
@@ -58,22 +85,34 @@ const influencers = [
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-12">
+                      <!--TABS NAVIGATION-->
                       <nav>
                         <ul class="nav nav-tabs find-influencer--navtabs border-0 py-3" role="tablist">
                           <li class="nav-item">
-                            <a class="nav-link active m-0 px-0" data-toggle="tab" href="#findInfluencer" role="tab" aria-expanded="true">Find new influencers</a>
+                            <a class="nav-link active m-0 px-0"
+                               data-toggle="tab"
+                               href="#findInfluencer"
+                               role="tab"
+                               aria-expanded="true">Find new influencers</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link m-0 px-0" data-toggle="tab" href="#likedInfluencer" role="tab">Liked/Saved Influencers</a>
+                            <a class="nav-link m-0 px-0"
+                               data-toggle="tab"
+                               href="#likedInfluencer"
+                               role="tab">Liked/Saved Influencers</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link m-0 px-0" data-toggle="tab" href="#myInfluencer" role="tab">My influencers</a>
+                            <a class="nav-link m-0 px-0"
+                               data-toggle="tab"
+                               href="#myInfluencer"
+                               role="tab">My influencers</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link m-0 px-0" data-toggle="tab" href="#wishlist" role="tab">Wishlist</a>
                           </li>
                         </ul>
                       </nav>
+                      <!--TABS CONTENT-->
                       <div class="tab-content">
                         <!--done-->
                         <div class="tab-pane fade show active" id="findInfluencer" role="tabpanel">
@@ -83,7 +122,10 @@ const influencers = [
                                 <div class="row align-items-center">
                                   <div class="col pr-0">
                                     <div class="form-group mb-0">
-                                      <input type="search" class="form-control" id="inputSearch" placeholder="Search for influencer">
+                                      <input type="search"
+                                             class="form-control"
+                                             id="inputSearch"
+                                             placeholder="Search for influencer">
                                     </div>
                                   </div>
                                   <div class="col-auto">
@@ -103,7 +145,12 @@ const influencers = [
                                 <div class="col px-0">
                                   <ul id="searchFilter" class="search-filter--ul btn-group">
                                     <li class="dropdown">
-                                      <button id="jSds" type="button" class="btn btn-sm btn-outline-primary dropbottom" data-toggle="dropdown" data-flip="false" data-boundary="'viewport'" aria-haspopup="true" aria-expanded="false">Sex
+                                      <button id="jSds"
+                                              type="button"
+                                              class="btn btn-sm btn-outline-primary"
+                                              data-toggle="dropdown"
+                                              aria-haspopup="true"
+                                              aria-expanded="false">Sex
                                       </button>
                                       <div aria-labelledby="jSds" class="dropdown-menu p-0">
                                         <div class="container-fluid">
@@ -119,8 +166,8 @@ const influencers = [
                                           <div class="row py-3 justify-content-center flex-sm-column">
                                             <div class="col-auto">
                                               <div class="form-group mb-3">
-                                                <input type="checkbox" name="men" id="men"> <label for="men">
-                                                  <span class="box"></span> Men</label>
+                                                <input type="checkbox" name="men" id="men"> <label for="men"> <span
+                                                    class="box"></span> Men</label>
                                               </div>
                                             </div>
                                             <div class="col-auto">
@@ -141,13 +188,23 @@ const influencers = [
                                               <div class="gs-sliderrange-wrapper">
                                                 <div class="form-group">
                                                   <div class="mb-4">
-                                                    <label class="label-basic text-dark d-block">Age</label>
-                                                    <input title="gs-handle--input" type="text" class="form-control d-inline" data-handle="0"/>
-                                                    <span class="text-asphalt mx-1">-</span>
-                                                    <input title="gs-handle--input" type="text" class="form-control d-inline" data-handle="1"/>
-                                                    <span class="text-asphalt ml-1">years</span>
+                                                    <label class="label-basic text-dark d-block">Age</label> <input
+                                                      title="gs-handle--input"
+                                                      type="text"
+                                                      class="form-control d-inline"
+                                                      data-handle="0"/> <span class="text-asphalt mx-1">-</span> <input
+                                                      title="gs-handle--input"
+                                                      type="text"
+                                                      class="form-control d-inline"
+                                                      data-handle="1"/> <span class="text-asphalt ml-1">years</span>
                                                   </div>
-                                                  <div id="sliderAge" class="gs-range--slider" data-start="13, 25" data-min="13" data-max="65" data-step="1" data-connect="true"></div>
+                                                  <div id="sliderAge"
+                                                       class="gs-range--slider"
+                                                       data-start="13, 25"
+                                                       data-min="13"
+                                                       data-max="65"
+                                                       data-step="1"
+                                                       data-connect="true"></div>
                                                 </div>
                                               </div>
                                             </div>
@@ -167,8 +224,11 @@ const influencers = [
                                         </div>
                                       </div>
                                     </li>
-                                    <li>
-                                      <button class="btn btn-sm btn-outline-primary" data-toggle="dropdown" data-flip="false" data-boundary="'viewport'" aria-haspopup="true" aria-expanded="false">Up to $250
+                                    <li class="dropdown">
+                                      <button class="btn btn-sm btn-outline-primary"
+                                              data-toggle="dropdown"
+                                              aria-haspopup="true"
+                                              aria-expanded="false">Up to $250
                                       </button>
                                       <div class="dropdown-menu p-0">
                                         <div class="container-fluid">
@@ -179,11 +239,23 @@ const influencers = [
                                                   <div class="mb-4">
                                                     <h6 class="text-dark mb-4"><strong>Price per post range</strong>
                                                     </h6>
-                                                    <input title="gs-handle--input" type="text" class="form-control d-inline" data-handle="0"/>
-                                                    <span class="text-asphalt mx-1">-</span>
-                                                    <input title="gs-handle--input" type="text" class="form-control d-inline" data-handle="1"/>
+                                                    <input title="gs-handle--input"
+                                                           type="text"
+                                                           class="form-control d-inline"
+                                                           data-handle="0"/> <span class="text-asphalt mx-1">-</span>
+                                                    <input title="gs-handle--input"
+                                                           type="text"
+                                                           class="form-control d-inline"
+                                                           data-handle="1"/>
                                                   </div>
-                                                  <div id="sliderPrice" class="gs-range--slider" data-start="50, 500" data-min="50" data-max="1000" data-step="1" data-currency="$" data-connect="true"></div>
+                                                  <div id="sliderPrice"
+                                                       class="gs-range--slider"
+                                                       data-start="50, 500"
+                                                       data-min="50"
+                                                       data-max="1000"
+                                                       data-step="1"
+                                                       data-currency="$"
+                                                       data-connect="true"></div>
                                                 </div>
                                               </div>
                                             </div>
@@ -203,17 +275,19 @@ const influencers = [
                                         </div>
                                       </div>
                                     </li>
-                                    <li>
-                                      <button class="btn btn-sm btn-outline-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories
+                                    <li class="dropdown">
+                                      <button class="btn btn-sm btn-outline-primary"
+                                              data-toggle="dropdown"
+                                              aria-haspopup="true"
+                                              aria-expanded="false">Categories
                                       </button>
                                       <div class="dropdown-menu p-0">
                                         <div class="container-fluid">
                                           <div class="row py-3">
                                             <div class="col-4 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" class="checked-all" id="categories_all">
-                                                <label for="categories_all">
-                                                  <span class="box"></span> All categories</label>
+                                                <input type="checkbox" class="checked-all" id="categories_all"> <label
+                                                  for="categories_all"> <span class="box"></span> All categories</label>
                                               </div>
                                             </div>
                                             <div class="col-4 col-sm-4">
@@ -238,28 +312,33 @@ const influencers = [
                                             </div>
                                             <div class="col-4 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" name="categories_electronic" id="categories_electronic">
-                                                <label for="categories_electronic"> <span class="box"></span> Electronic</label>
-                                              </div>
-                                            </div>
-                                            <div class="col-4 col-sm-4">
-                                              <div class="form-group">
-                                                <input type="checkbox" name="categories_electronic1" id="categories_electronic1">
-                                                <label for="categories_electronic1">
+                                                <input type="checkbox"
+                                                       name="categories_electronic"
+                                                       id="categories_electronic"> <label for="categories_electronic">
                                                   <span class="box"></span> Electronic</label>
                                               </div>
                                             </div>
                                             <div class="col-4 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" name="categories_electronic2" id="categories_electronic2">
-                                                <label for="categories_electronic2">
+                                                <input type="checkbox"
+                                                       name="categories_electronic1"
+                                                       id="categories_electronic1"> <label for="categories_electronic1">
                                                   <span class="box"></span> Electronic</label>
                                               </div>
                                             </div>
                                             <div class="col-4 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" name="categories_electronic3" id="categories_electronic3">
-                                                <label for="categories_electronic3">
+                                                <input type="checkbox"
+                                                       name="categories_electronic2"
+                                                       id="categories_electronic2"> <label for="categories_electronic2">
+                                                  <span class="box"></span> Electronic</label>
+                                              </div>
+                                            </div>
+                                            <div class="col-4 col-sm-4">
+                                              <div class="form-group">
+                                                <input type="checkbox"
+                                                       name="categories_electronic3"
+                                                       id="categories_electronic3"> <label for="categories_electronic3">
                                                   <span class="box"></span> Electronic</label>
                                               </div>
                                             </div>
@@ -277,29 +356,33 @@ const influencers = [
                                             </div>
                                             <div class="col-4 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" name="categories_electronic4" id="categories_electronic4">
-                                                <label for="categories_electronic4">
+                                                <input type="checkbox"
+                                                       name="categories_electronic4"
+                                                       id="categories_electronic4"> <label for="categories_electronic4">
                                                   <span class="box"></span> Electronic</label>
                                               </div>
                                             </div>
                                             <div class="col-4 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" name="categories_electronic5" id="categories_electronic5">
-                                                <label for="categories_electronic5">
+                                                <input type="checkbox"
+                                                       name="categories_electronic5"
+                                                       id="categories_electronic5"> <label for="categories_electronic5">
                                                   <span class="box"></span> Electronic</label>
                                               </div>
                                             </div>
                                             <div class="col-4 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" name="categories_electronic6" id="categories_electronic6">
-                                                <label for="categories_electronic6">
+                                                <input type="checkbox"
+                                                       name="categories_electronic6"
+                                                       id="categories_electronic6"> <label for="categories_electronic6">
                                                   <span class="box"></span> Electronic</label>
                                               </div>
                                             </div>
                                             <div class="col-4 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" name="categories_electronic7" id="categories_electronic7">
-                                                <label for="categories_electronic7">
+                                                <input type="checkbox"
+                                                       name="categories_electronic7"
+                                                       id="categories_electronic7"> <label for="categories_electronic7">
                                                   <span class="box"></span> Electronic</label>
                                               </div>
                                             </div>
@@ -331,16 +414,21 @@ const influencers = [
                                         </div>
                                       </div>
                                     </li>
-                                    <li>
-                                      <button class="btn btn-sm btn-outline-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Networks
+                                    <li class="dropdown">
+                                      <button class="btn btn-sm btn-outline-primary"
+                                              data-toggle="dropdown"
+                                              aria-haspopup="true"
+                                              aria-expanded="false">Networks
                                       </button>
                                       <div class="dropdown-menu p-0">
                                         <div class="container-fluid">
                                           <div class="row py-3">
                                             <div class="col-6 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" class="checked-all" name="networks_all" id="networks_all">
-                                                <label for="networks_all">
+                                                <input type="checkbox"
+                                                       class="checked-all"
+                                                       name="networks_all"
+                                                       id="networks_all"> <label for="networks_all">
                                                   <span class="box"></span> All networks</label>
                                               </div>
                                             </div>
@@ -353,8 +441,10 @@ const influencers = [
                                             </div>
                                             <div class="col-6 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" name="networks_instagram" id="networks_instagram">
-                                                <label for="networks_instagram"> <span class="box"></span>
+                                                <input type="checkbox"
+                                                       name="networks_instagram"
+                                                       id="networks_instagram"> <label for="networks_instagram"> <span
+                                                    class="box"></span>
                                                   <span class="network-icon with-title instagram"></span> Instagram</label>
                                               </div>
                                             </div>
@@ -367,15 +457,17 @@ const influencers = [
                                             </div>
                                             <div class="col-6 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" name="networks_pinterest" id="networks_pinterest">
-                                                <label for="networks_pinterest"> <span class="box"></span>
+                                                <input type="checkbox"
+                                                       name="networks_pinterest"
+                                                       id="networks_pinterest"> <label for="networks_pinterest"> <span
+                                                    class="box"></span>
                                                   <span class="network-icon with-title pinterest"></span> Pinterest</label>
                                               </div>
                                             </div>
                                             <div class="col-6 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" name="networks_blog" id="networks_blog">
-                                                <label for="networks_blog"> <span class="box"></span>
+                                                <input type="checkbox" name="networks_blog" id="networks_blog"> <label
+                                                  for="networks_blog"> <span class="box"></span>
                                                   <span class="network-icon with-title blog"></span> Blog</label>
                                               </div>
                                             </div>
@@ -423,16 +515,21 @@ const influencers = [
                                         </div>
                                       </div>
                                     </li>
-                                    <li>
-                                      <button class="btn btn-sm btn-outline-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Agencies
+                                    <li class="dropdown">
+                                      <button class="btn btn-sm btn-outline-primary"
+                                              data-toggle="dropdown"
+                                              aria-haspopup="true"
+                                              aria-expanded="false">Agencies
                                       </button>
                                       <div class="dropdown-menu p-0">
                                         <div class="container-fluid">
                                           <div class="row py-3">
                                             <div class="col-6 col-sm-4">
                                               <div class="form-group">
-                                                <input type="checkbox" class="checked-all" name="agencies_all" id="agencies_all">
-                                                <label for="agencies_all">
+                                                <input type="checkbox"
+                                                       class="checked-all"
+                                                       name="agencies_all"
+                                                       id="agencies_all"> <label for="agencies_all">
                                                   <span class="box"></span> All agencies</label>
                                               </div>
                                             </div>
@@ -515,8 +612,12 @@ const influencers = [
                                         </div>
                                       </div>
                                     </li>
-                                    <li>
-                                      <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">Seo
+                                    <li class="dropdown">
+                                      <button type="button"
+                                              class="btn btn-sm btn-outline-primary"
+                                              data-toggle="dropdown"
+                                              aria-haspopup="true"
+                                              aria-expanded="false">Seo
                                       </button>
                                       <div class="dropdown-menu p-0">
                                         <div class="container-fluid">
@@ -527,7 +628,7 @@ const influencers = [
                                                     <strong>Seo</strong>
                                                   </h6></div>
                                                 <div class="col-auto"><span class="seo__info text-right" role="button">
-                                              <img src="./assets/images/info.svg" alt="Awarenes">
+                                              <img src="/images/info.svg" alt="Awareness">
                                             </span></div>
                                               </div>
                                             </div>
@@ -538,8 +639,8 @@ const influencers = [
                                             </div>
                                             <div class="col-auto">
                                               <div class="form-group">
-                                                <input type="checkbox" name="unique_domain" id="unique_domain">
-                                                <label for="unique_domain">
+                                                <input type="checkbox" name="unique_domain" id="unique_domain"> <label
+                                                  for="unique_domain">
                                                   <span class="box"></span> Unique Domain ex annasblog.com</label>
                                               </div>
                                             </div>
@@ -565,11 +666,22 @@ const influencers = [
                                                   <div class="mb-4">
                                                     <h6 class="text-dark mb-4"><strong>Domain SEO Strength (DA)</strong>
                                                     </h6>
-                                                    <input title="gs-handle--input" type="text" class="form-control d-inline" data-handle="0"/>
-                                                    <span class="text-asphalt mx-1">-</span>
-                                                    <input title="gs-handle--input" type="text" class="form-control d-inline" data-handle="1"/>
+                                                    <input title="gs-handle--input"
+                                                           type="text"
+                                                           class="form-control d-inline"
+                                                           data-handle="0"/> <span class="text-asphalt mx-1">-</span>
+                                                    <input title="gs-handle--input"
+                                                           type="text"
+                                                           class="form-control d-inline"
+                                                           data-handle="1"/>
                                                   </div>
-                                                  <div id="sliderSeo" class="gs-range--slider" data-start="0, 100" data-min="0" data-max="100" data-step="1" data-connect="true"></div>
+                                                  <div id="sliderSeo"
+                                                       class="gs-range--slider"
+                                                       data-start="0, 100"
+                                                       data-min="0"
+                                                       data-max="100"
+                                                       data-step="1"
+                                                       data-connect="true"></div>
                                                 </div>
                                               </div>
                                             </div>
@@ -589,28 +701,32 @@ const influencers = [
                                         </div>
                                       </div>
                                     </li>
-                                    <li>
-                                      <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Other
+                                    <li class="dropdown">
+                                      <button type="button"
+                                              class="btn btn-sm btn-outline-primary"
+                                              data-toggle="dropdown"
+                                              aria-haspopup="true"
+                                              aria-expanded="false">Other
                                       </button>
                                       <div class="dropdown-menu p-0">
                                         <div class="container-fluid">
-                                          <div class="row py-3">
+                                          <div class="row pt-3">
                                             <div class="col-12">
-                                              <h4 class="text-asphalt">
+                                              <h4 class="text-asphalt mb-3">
                                                 Only influencers with e-mail </h4>
                                             </div>
                                             <div class="col-12">
                                               <div class="form-group m-0">
                                                 <input type="radio" name="email_only" id="no" value="no">
-                                                <label for="no"> <span class="dot"></span> No,show everyone</label>
+                                                <label class="mb-0 p-2"
+                                                       for="no"><span class="dot"></span>No, show everyone</label>
                                               </div>
                                             </div>
                                             <div class="col-12">
                                               <div class="form-group m-0">
                                                 <input type="radio" name="email_only" id="yes" value="yes">
-                                                <label for="yes">
-                                                  <span class="dot"></span> Yes,only show them with e-mail</label>
+                                                <label class="mb-0 p-2"
+                                                       for="yes"><span class="dot"></span>Yes, only show them with e-mail</label>
                                               </div>
                                             </div>
                                           </div>
@@ -637,7 +753,10 @@ const influencers = [
                               </div>
                             </div>
                             <div class="col d-md-none pt-2">
-                              <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target=".modal-filters">Filters
+                              <button type="button"
+                                      class="btn btn-sm btn-outline-primary"
+                                      data-toggle="modal"
+                                      data-target=".modal-filters">Filters
                               </button>
                             </div>
                             <div class="col-12 px-0">
@@ -649,7 +768,11 @@ const influencers = [
                               <h4 class="text-asphalt mb-0">We found 31 influencers within your search criteria</h4>
                             </div>
                             <div class="col-12 col-md-4">
-                              <select title="sortBy" style="width: 100%;" name="sortBy" id="sortBy" class="form-control">
+                              <select title="sortBy"
+                                      style="width: 100%;"
+                                      name="sortBy"
+                                      id="sortBy"
+                                      class="form-control">
                                 <option>Followers</option>
                                 <option>Rating</option>
                                 <option>Feedback</option>
@@ -659,11 +782,10 @@ const influencers = [
                           </div>
                           <div class="row p-3">
                             <% for(let i = 0; i < influencers.length;i++) {
-                              const _inf = new Influencer(influencers[i]);
-                              const _html = _inf.createCard();
+                              let _infl = new Influencer(influencers[i])
                             %>
                             <div class="col-12 col-sm-6 col-lg-4">
-                              <%= _html %>
+                              <%= _infl.init() %>
                             </div>
                             <% } %>
                           </div>

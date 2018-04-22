@@ -50,16 +50,12 @@ input[type="checkbox"] {
       height: 20px;
       width: 20px;
       border-radius: 5px;
-      border: 1px solid $border-color;
+      box-shadow: 0 0 0 1px $border-color;
       left: 0;
       top: 50%;
-      -webkit-transform: translate(0, -50%);
-      -moz-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-      -o-transform: translate(0, -50%);
       transform: translate(0, -50%);
       overflow: hidden;
-      @include transition(0.2s border-color);
+      @include transition(0.2s box-shadow);
       @include media-breakpoint-up(sm) {
         height: 22px;
         width: 22px;
@@ -71,16 +67,12 @@ input[type="checkbox"] {
         background-position: center;
         background-repeat: no-repeat;
         background-size: 65%;
-        background-image: url('/images/checked.svg');
+        background-image: url('../images/checked.svg');
         width: 100%;
         height: 100%;
         position: absolute;
         left: 0;
         top: 0;
-        -webkit-transform: scale(0);
-        -moz-transform: scale(0);
-        -ms-transform: scale(0);
-        -o-transform: scale(0);
         transform: scale(0);
         opacity: 0;
         visibility: hidden;
@@ -95,12 +87,8 @@ input[type="checkbox"] {
   &:checked {
     + label {
       .box {
-        border-color: $blue;
+        box-shadow: 0 0 0 1px $blue;
         &:after {
-          -webkit-transform: scale(1);
-          -moz-transform: scale(1);
-          -ms-transform: scale(1);
-          -o-transform: scale(1);
           transform: scale(1);
           opacity: 1;
           visibility: visible;

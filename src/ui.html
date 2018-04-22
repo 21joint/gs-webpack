@@ -7,6 +7,73 @@
   <title>${ htmlWebpackPlugin.options.title }</title>
 </head>
 <body>
-  ${ require('html-loader!./partials/header.html') }
+  ${ require('html-loader?interpolate=true&minimize=false!./partials/header.html') }
+  <div class="ui ui-kit">
+    <div class="ui_kit_section">
+      <div class="container">
+        <div class="ui-group">
+          <h1>Grow Social logo</h1>
+          <p><img src="/src/assets/images/logo.svg"></p>
+        </div>
+        <div class="ui-group">
+          <h1>Buttons</h1>
+          <p>
+            <button class="btn btn-primary">Submit feedback</button>
+            <button class="btn btn-outline-primary">Show more deals</button>
+          </p>
+        </div>
+        <div class="ui-group">
+          <p>
+            <button type="button" class="btn btn-sm btn-primary">Starbucks</button>
+            <button type="button" class="btn btn-sm btn-outline-primary">Starbucks</button>
+          </p>
+        </div>
+        <div class="ui-group">
+          <h1>Icons</h1>
+          <p>
+            <i class="icon-help"></i> <i class="icon-pause"></i> <i class="icon-money"></i>
+            <i class="icon-download"></i> <i class="icon-upload"></i> <i class="icon-send"></i>
+            <i class="icon-socialbox"></i> <i class="icon-marker"></i> <i class="icon-search"></i>
+            <i class="icon-delete"></i> <i class="icon-wrote"></i> <i class="icon-back"></i>
+          </p>
+          <p>
+            <i class="icon-settings"></i> <i class="icon-arrow-left"></i> <i class="icon-arrow-right"></i>
+            <i class="icon-load"></i> <i class="icon-time"></i> <i class="icon-star"></i> <i class="icon-play"></i>
+            <i class="icon-like"></i> <i class="icon-phone"></i> <i class="icon-photo"></i> <i class="icon-logout1"></i>
+            <i class="icon-save"></i>
+          </p>
+        </div>
+        <div class="ui-group">
+          <h1>Socila media icons</h1>
+          <ul class="row no-gutters">
+            <li>
+              <img inline src="images/twitter.svg" alt="">
+            </li>
+            <li>
+              <img inline src="images/instagram.svg" alt="">
+            </li>
+            <li>
+              <img inline src="images/tumblr.svg" alt="">
+            </li>
+            <li>
+              <img inline src="images/fb.svg" alt="">
+            </li>
+            <li>
+              <img inline src="images/pinterest.svg" alt="">
+            </li>
+            <li>
+              <img inline src="images/blog.svg" alt="">
+            </li>
+            <li>
+              <img inline src="images/snapchat.svg" alt="">
+            </li>
+            <li>
+              <img inline src="images/podcast.svg" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

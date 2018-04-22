@@ -14,26 +14,32 @@ import TabsCarousel from 'components/tabs-carousel';
 import 'components/loader';
 import './scripts/brand-find-influencer';
 
+// Adding a cool transition
+$.extend($.easing, {
+  easeNav: function (t) {
+    return t < .5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t;
+  }
+});
+
 
 $(document).ready(
   function () {
-    $('select')
-      .select2({
-        minimumResultsForSearch: -1,
-        templateResult: $(this)
-          .hasClass('with-flags') ? SelectCountry : undefined,
-        templateSelection: $(this)
-          .hasClass('with-flags') ? SelectCountry : undefined
-      });
-
-    $(document)
+    $('select').select2({
+      minimumResultsForSearch: -1,
+      templateResult: $(this)
+        .hasClass('with-flags') ? SelectCountry : undefined,
+      templateSelection: $(this)
+        .hasClass('with-flags') ? SelectCountry : undefined
+    });
+    $('body')
       .on('click', '.navbar_toggler', function () {
         $('body')
           .toggleClass('menu_open');
       })
-      .on('click', '.right_nav .dropdown-menu', function (e) {
+      .on('click', '.dropdown-menu a[data-toggle="tab"]', function (e) {
         e.stopPropagation();
-      });
+        $(this).tab('show');
+      })
 
   },
   function () {

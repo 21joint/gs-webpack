@@ -1,11 +1,5 @@
 (!!document.querySelector('.find-influencer')) && (function () {
 
-  $.extend($.easing, {
-    easeNav: function (t) {
-      return t < .5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t;
-    }
-  });
-
   let $fixedNavHeight,
     $sectionsWrapperOffset;
 
@@ -132,7 +126,6 @@
 
     likeProfileToggle(_profile);
   });
-
   $singleInflModal
     .on('shown.bs.modal', function () {
       updateOffsets();
@@ -187,40 +180,31 @@
 
   $('.search-filter--ul .dropdown')
     .on('shown.bs.dropdown', function (e) {
-      $('body')
-        .addClass('filter-open');
+      $('body').addClass('filter-open');
     })
     .on('hidden.bs.dropdown', function (e) {
-      $('body')
-        .removeClass('filter-open');
-    });
-  $('.badge-outline-dark').tooltip({});
-
-  $('.single-card--carousel')
-    .owlCarousel({
-      loop: true,
-      nav: true,
-      items: 1,
-      navText: [
-        '<i class="icon-arrow-left-bold"></i>',
-        '<i class="icon-arrow-right-bold"></i>']
-    });
-  tabsCarousel();
-
-  $('.single-card--networks li')
-    .on('mouseenter', function () {
-
-      const _self = $(this);
-      if (_self.hasClass('is-showing')) {
-        return false;
+      $('body').removeClass('filter-open');
+    })
+    .on('hide.bs.dropdown', function (e) {
+      // prevent dropdown closing while range-slider slides
+      if ($('body').hasClass('noUiSliding')) {
+        e.preventDefault();
       }
-      _self.addClass('is-showing');
-
-      setTimeout(function () {
-        _self.removeClass('is-showing');
-      }, 1000);
-
     });
+  $('.search-filter--ul [data-toggle="dropdown"]').dropdown({
+    boundary: $('.content-box').get(0)
+  })
+  $('.badge-outline--dark').tooltip();
+
+  $('.single-card--carousel').owlCarousel({
+    loop: true,
+    nav: true,
+    items: 1,
+    navText: [
+      '<i class="icon-arrow-left-bold"></i>',
+      '<i class="icon-arrow-right-bold"></i>']
+  });
+  tabsCarousel();
 
   $(window)
     .on('resize orientationchange', function () {

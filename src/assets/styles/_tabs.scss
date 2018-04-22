@@ -20,13 +20,15 @@
       bottom: 0.4375rem;
       height: 3px;
       background-color: $blue;
-      transition: 0.15s width;
+      transition: 0.27s width ease-in-out;
       will-change: left,right;
     }
-    &.active {
-      background-color: transparent;
-      &:after {
-       width: 100%;
+    .content-box:not(.content-loading) & {
+      &.active {
+        background-color: transparent;
+        &:after {
+          width: 100%;
+        }
       }
     }
   }

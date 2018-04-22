@@ -5,28 +5,19 @@
   border-radius: 8px;
   padding: 18px;
 }
-.tooltip.bs-tooltip-top .arrow::before, .tooltip.bs-tooltip-auto[x-placement^="top"] .arrow::before {
-  border-width: 0 1px 1px 0;
-  width: 25px;
-  height: 25px;
-  border-color: #69acda;
-  border-style: solid;
-  transform: translate(0, -13px) rotate(45deg);
-  z-index: 1;
-  background-color: #fff;
-}
-.tooltip.bs-tooltip-bottom .arrow::before, .tooltip.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+
+.tooltip .arrow {
   border-width: 1px 0 0 1px;
   width: 25px;
   height: 25px;
   border-color: #69acda;
   border-style: solid;
+  transform: rotate(45deg) translate3d(0,0,0);
   z-index: 1;
   background-color: #fff;
-  transform: translate(0, -7px) rotate(45deg);
-}
-.tooltip .arrow {
-  left: 91px !important;
+  &:before {
+    display: none;
+  }
 }
 .tooltip.show {
   opacity: 1;

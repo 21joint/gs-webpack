@@ -100,8 +100,7 @@ module.exports = {
                 }
               },
               fallback: "file-loader",
-              outputPath: './',
-              useRelative: !IS_DEV
+              outputPath: './'
             }
           },
         ],

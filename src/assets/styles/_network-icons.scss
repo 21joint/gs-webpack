@@ -5,7 +5,7 @@
   vertical-align: middle;
   border-radius: 50%;
   background-position: center;
-  background-color: #CCCCCC;
+  background-color: #ffffff;
   background-size: 100%;
   background-repeat: no-repeat;
   &.with-title {
@@ -13,10 +13,6 @@
     @include media-breakpoint-up(sm) {
       margin-right: rem-calc(5);
     }
-  }
-  @include media-breakpoint-up(sm) {
-    width: 22px;
-    height: 22px;
   }
   &.tw {
     background-image: url('../images/networks/twitter.svg');
@@ -29,18 +25,18 @@
   }
   &.pinterest {
     background-image: url('../images/networks/pinterest.svg');
-  }
-  &.pinterest-inactive {
-    background-image: url('../images/networks/pinterest-inactive.svg');
+    &.inactive {
+
+    }
   }
   &.blog {
     background-image: url('../images/networks/blog.svg');
   }
   &.tumblr {
     background-image: url('../images/networks/tumblr.svg');
-  }
-  &.tumblr-inactive {
-    background-image: url('../images/networks/tumblr-inactive.svg');
+    &.inactive {
+
+    }
   }
   &.podcast {
     background-image: url('../images/networks/podcast.svg');
@@ -50,12 +46,16 @@
   }
   &.fb {
     background-image: url('../images/networks/fb.svg');
-  }
-  &.fb-inactive {
-    background-image: url('../images/networks/fb-inactive.svg');
+    &.inactive {
+
+    }
   }
   &.gs {
     background-image: url("../images/agency/growsocial.svg");
+  }
+  @include media-breakpoint-up(sm) {
+    width: 22px;
+    height: 22px;
   }
 }
 
