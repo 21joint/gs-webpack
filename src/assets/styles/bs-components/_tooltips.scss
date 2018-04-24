@@ -22,3 +22,7 @@
 .tooltip.show {
   opacity: 1;
 }
+
+.bs-tooltip-bottom .arrow, .bs-tooltip-auto[x-placement^="bottom"] .arrow{
+  top: -6px;
+}

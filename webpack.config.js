@@ -140,5 +140,5 @@ module.exports = {
       filename: 'styles/[name].css'
     })
   ],
-  devtool: 'cheap-eval-source-map'
+  devtool: 'inline-source-map'
 };

@@ -157,6 +157,10 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
     refreshScrollSpy('.modal-single--influencer');
     $('.owl-carousel').trigger('refresh.owl.carousel');
   }).resize();
+  $('body').on('click','.checked-all', function (e) {
+    let $checked = $(e.currentTarget).closest('.row').find('input:checkbox');
+    $checked.not(this).prop('checked', this.checked);
+  })
 
 
 })();
