@@ -37,7 +37,10 @@ $(document).ready(
       .on('click', '.find-influencer--navtabs a[data-toggle="tab"]', function (e) {
         e.stopPropagation();
         $(this).tab('show');
-      });
+      })
+      .on('click', '.search-filter--ul .btn-cancel', () => {
+        $(this).closest();
+      })
   },
   () => {
     let $contentBox = $('.content-box'),

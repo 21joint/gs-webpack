@@ -1,0 +1,42 @@
+<button type="button"
+        class="btn btn-sm btn-outline-primary"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">Other
+</button>
+<div class="dropdown-menu p-0">
+  <div class="container-fluid">
+    <div class="row pt-3">
+      <div class="col-12">
+        <h4 class="text-asphalt mb-3">
+          Only influencers with e-mail </h4>
+      </div>
+      <div class="col-12">
+        <div class="form-group m-0">
+          <input type="radio" name="email_only" id="no" value="no">
+          <label class="mb-0 p-2"
+                 for="no"><span class="dot"></span>No, show everyone</label>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-group m-0">
+          <input type="radio" name="email_only" id="yes" value="yes">
+          <label class="mb-0 p-2"
+                 for="yes"><span class="dot"></span>Yes, only show them with e-mail</label>
+        </div>
+      </div>
+    </div>
+    <div class="row py-3 justify-content-between">
+      <div class="col-auto">
+        <button class="btn btn-block btn-sm btn-cancel" type="button" data-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-block btn-primary btn-sm btn-apply">
+          Apply
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

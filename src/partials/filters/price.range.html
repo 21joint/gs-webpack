@@ -1,0 +1,49 @@
+<button class="btn btn-sm btn-outline-primary"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">Up to $250
+</button>
+<div class="dropdown-menu p-0">
+  <div class="container-fluid">
+    <div class="row py-3">
+      <div class="col-12">
+        <div class="gs-sliderrange-wrapper">
+          <div class="form-group">
+            <div class="mb-4">
+              <h6 class="text-dark mb-4"><strong>Price per post range</strong>
+              </h6>
+              <input title="gs-handle--input"
+                     type="text"
+                     class="form-control d-inline"
+                     data-handle="0"/> <span class="text-asphalt mx-1">-</span>
+              <input title="gs-handle--input"
+                     type="text"
+                     class="form-control d-inline"
+                     data-handle="1"/>
+            </div>
+            <div id="sliderPrice"
+                 class="gs-range--slider"
+                 data-start="50, 500"
+                 data-min="50"
+                 data-max="1000"
+                 data-step="1"
+                 data-currency="$"
+                 data-connect="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-between dropdown-menu--actions py-3">
+      <div class="col-auto">
+        <button class="btn btn-block btn-sm btn-cancel" type="button" data-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-block btn-primary btn-sm btn-apply">
+          Apply
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import '../components/loader';
 import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
-import '../components/filters/filters';
+
 
 
 (!!document.querySelector('.find-influencer')) && (function () {
@@ -74,8 +74,7 @@ import '../components/filters/filters';
         $fixedNav.removeClass('down');
       }
     });
-
-  $('.search-filter--ul').bsSearchFilters();
+  
 
   $(document)
     .on('click', 'nav a[href^="#"]', function (e) {
