@@ -1,7 +1,6 @@
 /**
  * Application entry point
  */
-import * as $ from 'jquery';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'owl.carousel/dist/owl.carousel.min';
 import 'select2/dist/js/select2.min';
@@ -9,7 +8,6 @@ import 'select2/dist/js/select2.min';
 import './assets/styles/index.scss';
 import SelectCountry from './components/select2.country';
 import RangeSliders from '././components/range-sliders';
-import './components/loader';
 import './scripts/brand-find-influencer';
 
 // Adding a cool transition

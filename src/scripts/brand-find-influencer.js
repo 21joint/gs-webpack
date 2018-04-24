@@ -2,7 +2,6 @@ import '../components/loader';
 import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
 
 
-
 (!!document.querySelector('.find-influencer')) && (function () {
 
   let $fixedNavHeight,
@@ -74,7 +73,7 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
         $fixedNav.removeClass('down');
       }
     });
-  
+
 
   $(document)
     .on('click', 'nav a[href^="#"]', function (e) {
@@ -86,16 +85,19 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
         'scrollTop': $target.position().top
       }, 700, 'easeNav');
     })
-    .on('click', '.search-filter--ul .dropdown-menu.show', function (ev) {
-      $(this).parent().one('hide.bs.dropdown', function (e) {
-        e.preventDefault();
-      });
-    })
-    .on('click', '.dropdown-menu [data-dismiss="dropdown"]', function () {
-      $(this).closest('dropdown').trigger('hide.bs.dropdown');
-    })
+    // .on('click', '.dropdown-menu [data-dismiss="dropdown"]', function () {
+    //   console.log('asdad')
+    //   $(this).closest('.dropdown').trigger('hide.bs.dropdown');
+    // })
     .on('hide.bs.dropdown', '.noUiSliding .dropdown.show', function (e) {
       e.preventDefault();
+    })
+    .on('click', '.filter-open .dropdown-menu.show', function (e) {
+      if ($(this).has($(e.target)) && $(e.target).is(':not([data-dismiss="dropdown"])')) {
+        $(this).closest('.dropdown').one('hide.bs.dropdown', function (e) {
+          e.preventDefault();
+        })
+      }
     })
     .on('click', '.search-filter--ul [data-toggle="filter"]', function (e) {
       console.log(e.target);

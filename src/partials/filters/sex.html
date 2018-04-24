@@ -6,73 +6,75 @@
         aria-expanded="false">Sex
 </button>
 <div aria-labelledby="jSds" class="dropdown-menu p-0">
-  <div class="container-fluid">
-    <div class="row py-3 flex-sm-column">
-      <div class="col-12">
-        <h6 class="text-dark mb-3"><strong>Gender</strong></h6>
-      </div>
-      <div class="col-12">
-        <p class="mb-0">The demographics data is not 100% correct</p>
-        <a href="#">(read more)</a>
-      </div>
-    </div>
-    <div class="row py-3 justify-content-center flex-sm-column">
-      <div class="col-auto">
-        <div class="form-group mb-3">
-          <input type="checkbox" name="men" id="men"> <label for="men"> <span
-          class="box"></span> Men</label>
-        </div>
-      </div>
-      <div class="col-auto">
-        <div class="form-group mb-3">
-          <input type="checkbox" name="women" id="women"> <label for="women">
-          <span class="box"></span> Women</label>
-        </div>
-      </div>
-      <div class="col-auto">
-        <div class="form-group mb-0">
-          <input type="checkbox" name="unknown" id="unknown">
-          <label for="unknown"> <span class="box"></span> Unknown</label>
-        </div>
-      </div>
-    </div>
-    <div class="row pt-3 pb-4">
-      <div class="col-sm-5 col-md pb-5 py-md-0">
-        <div class="gs-sliderrange-wrapper">
-          <div class="form-group">
-            <div class="mb-4">
-              <label class="label-basic text-dark d-block">Age</label> <input
-              title="gs-handle--input"
-              type="text"
-              class="form-control d-inline"
-              data-handle="0"/> <span class="text-asphalt mx-1">-</span> <input
-              title="gs-handle--input"
-              type="text"
-              class="form-control d-inline"
-              data-handle="1"/> <span class="text-asphalt ml-1">years</span>
-            </div>
-            <div id="sliderAge"
-                 class="gs-range--slider"
-                 data-start="13, 25"
-                 data-min="13"
-                 data-max="65"
-                 data-step="1"
-                 data-connect="true"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row py-3 justify-content-between dropdown-menu--actions">
-      <div class="col-auto">
-        <button class="btn btn-block btn-sm btn-cancel" type="button" data-dismiss="modal">
-          Cancel
-        </button>
-      </div>
-      <div class="col-auto">
-        <button class="btn btn-block btn-primary btn-sm btn-apply">
-          Apply
-        </button>
-      </div>
-    </div>
-  </div>
+ <div style="z-index: 99999;" class="position-relative">
+   <div class="container-fluid">
+     <div class="row py-3 flex-sm-column">
+       <div class="col-12">
+         <h6 class="text-dark mb-3"><strong>Gender</strong></h6>
+       </div>
+       <div class="col-12">
+         <p class="mb-0">The demographics data is not 100% correct</p>
+         <a href="#">(read more)</a>
+       </div>
+     </div>
+     <div class="row py-3 justify-content-center flex-sm-column">
+       <div class="col-auto">
+         <div class="form-group mb-3">
+           <input type="checkbox" name="men" id="men"> <label for="men"> <span
+               class="box"></span> Men</label>
+         </div>
+       </div>
+       <div class="col-auto">
+         <div class="form-group mb-3">
+           <input type="checkbox" name="women" id="women"> <label for="women">
+             <span class="box"></span> Women</label>
+         </div>
+       </div>
+       <div class="col-auto">
+         <div class="form-group mb-0">
+           <input type="checkbox" name="unknown" id="unknown">
+           <label for="unknown"> <span class="box"></span> Unknown</label>
+         </div>
+       </div>
+     </div>
+     <div class="row pt-3 pb-4">
+       <div class="col-sm-5 col-md pb-5 py-md-0">
+         <div class="gs-sliderrange-wrapper">
+           <div class="form-group">
+             <div class="mb-4">
+               <label class="label-basic text-dark d-block">Age</label> <input
+                 title="gs-handle--input"
+                 type="text"
+                 class="form-control d-inline"
+                 data-handle="0"/> <span class="text-asphalt mx-1">-</span> <input
+                 title="gs-handle--input"
+                 type="text"
+                 class="form-control d-inline"
+                 data-handle="1"/> <span class="text-asphalt ml-1">years</span>
+             </div>
+             <div id="sliderAge"
+                  class="gs-range--slider"
+                  data-start="13, 25"
+                  data-min="13"
+                  data-max="65"
+                  data-step="1"
+                  data-connect="true"></div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="row py-3 justify-content-between dropdown-menu--actions">
+       <div class="col-auto">
+         <button class="btn btn-block btn-sm btn-cancel" type="button" data-dismiss="dropdown">
+           Cancel
+         </button>
+       </div>
+       <div class="col-auto">
+         <button class="btn btn-block btn-primary btn-sm btn-apply">
+           Apply
+         </button>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
