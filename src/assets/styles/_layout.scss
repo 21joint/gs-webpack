@@ -66,6 +66,7 @@
   opacity: 0;
   visibility: hidden;
   border-radius: inherit;
+
   .filter-open & {
     opacity: 1;
     visibility: visible;
@@ -73,6 +74,7 @@
   .content-loading & {
     opacity: 1;
     visibility: visible;
+    z-index: 300;
     &:after {
       content: '';
       display: block;

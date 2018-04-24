@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Sex",
+    "description": "The demographics data is not 100% correct",
+    "options": [
+      {
+        "label": "Gender",
+        "type": "checkbox",
+        "values": [
+          "Men",
+          "Woman",
+          "Unknown"
+        ],
+        "inputs": false
+      },
+      {
+        "label": "Age",
+        "type": "range",
+        "inputs": true,
+        "values": [
+          "13",
+          "65+"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Price Per Post Range",
+    "description": "",
+    "options": [
+      {
+        "label": "",
+        "type": "range",
+        "values": {
+          "from": "13",
+          "to": "65+"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Networks",
+    "description": "",
+    "options": [
+      {
+        "label": "",
+        "type": "checkbox",
+        "values": false
+      }
+    ]
+  },
+  {
+    "name": "Agencies",
+    "description": "Use this filter to find blogs suitable for link building",
+    "options": [
+      {
+        "label": "",
+        "type": "checkbox",
+        "values": false
+      }
+    ]
+  },
+  {
+    "name": "Seo",
+    "description": "Use this filter to find blogs suitable for link building",
+    "options": [
+      {
+        "label": "",
+        "type": "checkbox",
+        "values": [
+          "Unique Domain ex annasblog.com",
+          "Subdomain Domain annasblog.blogspot.dom",
+          "Directory Domain metromode.com/annas"
+        ]
+      }
+    ]
+  }
+]

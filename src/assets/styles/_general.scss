@@ -178,17 +178,3 @@ ul.user-langs li {
     font-weight: 500;
   }
 }
-
-.owl-carousel {
-  display: block;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.2s visibility, 0.2s opacity;
-  &.owl-loaded {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-.owl-item {
-  z-index: 1;
-}
