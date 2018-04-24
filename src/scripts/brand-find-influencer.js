@@ -163,10 +163,10 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
     let $checked = $(e.currentTarget).closest('.row').find('input:checkbox');
     $checked.not(this).prop('checked', this.checked);
   });
-
-  $('.search-filter--ul .form-group input').on('change', function (e) {
-    console.log(e)
-
-  })
+  //
+  // $('.search-filter--ul .form-group input').on('change', function (e) {
+  //   console.log(e)
+  //
+  // })
 
 })();

@@ -1,6 +1,6 @@
 import noUiSlider from 'nouislider';
 
-export default () => {
+export default (() => {
   $('.gs-range--slider').each(function (i, el) {
     let _options,
       _instance,
@@ -16,10 +16,10 @@ export default () => {
         'max': parseInt(el.dataset.max, 10)
       },
       format: {
-        to: function ( value ) {
+        to: function (value) {
           return Math.round(value)
         },
-        from: function ( value ) {
+        from: function (value) {
           return Math.round(value)
         }
       }
@@ -27,7 +27,7 @@ export default () => {
     _instance = noUiSlider.create(el, _options);
 
     _instance.on('update', function (values, handle) {
-      _parent.querySelector('input[data-handle="' + handle +'"]').value = values[handle];
+      _parent.querySelector('input[data-handle="' + handle + '"]').value = values[handle];
     });
     _instance.on('start', function () {
       document.body.classList.add('noUiSliding');
@@ -38,15 +38,19 @@ export default () => {
       }, 200);
     });
 
-    _parent.querySelector('input[data-handle]')
-      .addEventListener('change', function (e) {
-        let _handle, _values;
+    el.parentNode.querySelectorAll('input[data-handle]')
+      .forEach(function (_el) {
+        console.log(_el);
+        _el.addEventListener('input', function (e) {
+          let _handle, _values;
 
 
-        _handle = e.target.dataset.handle;
-        _values = [null, null];
-        _values[_handle] = Math.round(parseInt(e.target.value, 10));
-        el.noUiSlider.set(_values);
-      });
+          _handle = e.target.dataset.handle;
+          _values = [null, null];
+          _values[_handle] = Math.round(parseInt(e.target.value, 10));
+          el.noUiSlider.set(_values);
+        });
+      })
+
   });
-};
+})();

@@ -7,7 +7,7 @@ import 'select2/dist/js/select2.min';
 // Load application styles
 import './assets/styles/index.scss';
 import SelectCountry from './components/select2.country';
-import RangeSliders from '././components/range-sliders';
+import '././components/range-sliders';
 import './scripts/brand-find-influencer';
 
 // Adding a cool transition
@@ -68,6 +68,5 @@ $(document).ready(
             .removeClass('content-loading');
         }, 1000);
       });
-  },
-  RangeSliders()
+  }
 );
