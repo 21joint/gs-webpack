@@ -144,6 +144,8 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
     ],
   });
 
+
+
   function owlFix(owl) {
     // console.log(owl);
     let $parentEl = owl.relatedTarget.$element.closest('.single-card--owlwrapper');
@@ -160,9 +162,11 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
   $('body').on('click','.checked-all', function (e) {
     let $checked = $(e.currentTarget).closest('.row').find('input:checkbox');
     $checked.not(this).prop('checked', this.checked);
+  });
+
+  $('.search-filter--ul .form-group input').on('change', function (e) {
+    console.log(e)
+
   })
-
-
-
 
 })();
