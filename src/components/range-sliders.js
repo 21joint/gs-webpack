@@ -27,8 +27,12 @@ export default (() => {
     _instance = noUiSlider.create(el, _options);
 
     _instance.on('update', function (values, handle) {
+      let _rangeChanged = new Event('rangeChanged');
       _parent.querySelector('input[data-handle="' + handle + '"]').value = values[handle];
+      _parent.querySelector('input[data-handle="' + handle + '"]').dispatchEvent(_rangeChanged, {bubbles: true});
+
     });
+
     _instance.on('start', function () {
       document.body.classList.add('noUiSliding');
     });
@@ -40,11 +44,8 @@ export default (() => {
 
     el.parentNode.querySelectorAll('input[data-handle]')
       .forEach(function (_el) {
-        console.log(_el);
-        _el.addEventListener('input', function (e) {
+        _el.addEventListener('change', function (e) {
           let _handle, _values;
-
-
           _handle = e.target.dataset.handle;
           _values = [null, null];
           _values[_handle] = Math.round(parseInt(e.target.value, 10));

@@ -1,5 +1,6 @@
 import '../components/loader';
 import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
+import {Helpers} from '../helpers/helpers';
 
 
 (!!document.querySelector('.find-influencer')) && (function () {
@@ -7,10 +8,12 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
   let $fixedNavHeight,
     $sectionsWrapperOffset;
 
-  const $profileLikeButton = $('.single-card--likebtn');
-  const $fixedNav = $('.single-card--fixednav');
-  const $sectionsWrapper = $('.single-card--sections');
-  const $singleInflModal = $('.modal-single--influencer');
+  let _query = [];
+
+  const $profileLikeButton = jQuery('.single-card--likebtn');
+  const $fixedNav = jQuery('.single-card--fixednav');
+  const $sectionsWrapper = jQuery('.single-card--sections');
+  const $singleInflModal = jQuery('.modal-single--influencer');
   const updateOffsets = function () {
     $fixedNavHeight = $fixedNav.outerHeight();
     $sectionsWrapperOffset = $sectionsWrapper.position().top;
@@ -37,16 +40,16 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
     }
   };
   const refreshScrollSpy = function (element) {
-    let cacheScrolltop = $(element)
+    let cacheScrolltop = jQuery(element)
       .scrollTop();
-    $(element)
+    jQuery(element)
       .scrollTop(0)
       .scrollspy('refresh')
       .scrollTop(cacheScrolltop);
   };
 
   $profileLikeButton.on('click', function () {
-    let _self = $(this),
+    let _self = jQuery(this),
       _profile = _self.parents('.single-profile--card');
 
     likeProfileToggle(_profile);
@@ -54,7 +57,7 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
   $singleInflModal
     .on('shown.bs.modal', function () {
       updateOffsets();
-      $(this)
+      jQuery(this)
         .scrollspy({
           target: '#singleInfluencerNav',
           offset: getFixedNavHeight()
@@ -62,7 +65,7 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
     })
     .on('scroll', function (e) {
 
-      const $target = $(this);
+      const $target = jQuery(this);
 
       // console.log($target.scrollTop());
 
@@ -75,11 +78,11 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
     });
 
 
-  $(document)
+  jQuery(document)
     .on('click', 'nav a[href^="#"]', function (e) {
 
       e.preventDefault();
-      const $target = $($(this).attr('href'));
+      const $target = jQuery(jQuery(this).attr('href'));
 
       $singleInflModal.animate({
         'scrollTop': $target.position().top
@@ -87,14 +90,14 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
     })
     // .on('click', '.dropdown-menu [data-dismiss="dropdown"]', function () {
     //   console.log('asdad')
-    //   $(this).closest('.dropdown').trigger('hide.bs.dropdown');
+    //   jQuery(this).closest('.dropdown').trigger('hide.bs.dropdown');
     // })
     .on('hide.bs.dropdown', '.noUiSliding .dropdown.show', function (e) {
       e.preventDefault();
     })
     .on('click', '.filter-open .dropdown-menu.show', function (e) {
-      if ($(this).has($(e.target)) && $(e.target).is(':not([data-dismiss="dropdown"])')) {
-        $(this).closest('.dropdown').one('hide.bs.dropdown', function (e) {
+      if (jQuery(this).has(jQuery(e.target)) && jQuery(e.target).is(':not([data-dismiss="dropdown"])')) {
+        jQuery(this).closest('.dropdown').one('hide.bs.dropdown', function (e) {
           e.preventDefault();
         })
       }
@@ -103,35 +106,35 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
       console.log(e.target);
     })
     .on('click', '.single-card--infobtn', function (e) {
-      let _profile = $(e.currentTarget)
+      let _profile = jQuery(e.currentTarget)
           .parents('.single-profile--card'),
         _slider = _profile.find('.owl-carousel');
 
       _slider.trigger('to.owl.carousel', _slider.data('owl.carousel')._items.length - 1);
     });
 
-  $('.search-filter--ul .dropdown')
+  jQuery('.search-filter--ul .dropdown')
     .on('shown.bs.dropdown', function () {
-      $('body').addClass('filter-open');
+      jQuery('body').addClass('filter-open');
     })
     .on('hidden.bs.dropdown', function () {
-      $('body').removeClass('filter-open');
+      jQuery('body').removeClass('filter-open');
     });
 
-  $('.search-filter--ul [data-toggle="dropdown"]').dropdown({
-    boundary: $('.content-box').get(0),
+  jQuery('.search-filter--ul [data-toggle="dropdown"]').dropdown({
+    boundary: jQuery('.content-box').get(0),
     flip: false
   });
-  $('.badge-outline--dark').tooltip();
+  jQuery('.badge-outline--dark').tooltip();
 
-  $('.find-influencer--navtabs').owlTabs({
+  jQuery('.find-influencer--navtabs').owlTabs({
     navText: [
       '<i class="icon-arrow-left-bold"></i>',
       '<i class="icon-arrow-right-bold"></i>'
     ]
   });
 
-  $('.single-card--carousel').owlCarousel({
+  jQuery('.single-card--carousel').owlCarousel({
     nav: true,
     loop: true,
     items: 1,
@@ -145,7 +148,6 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
   });
 
 
-
   function owlFix(owl) {
     // console.log(owl);
     let $parentEl = owl.relatedTarget.$element.closest('.single-card--owlwrapper');
@@ -154,19 +156,47 @@ import '../components/owl-bootstrap-tabs/owl.bootstrap.tabs';
     $parentEl.width(targetW);
   }
 
-  $(window).on('resize orientationchange', function () {
+  jQuery(window).on('resize orientationchange', function () {
     updateOffsets();
     refreshScrollSpy('.modal-single--influencer');
-    $('.owl-carousel').trigger('refresh.owl.carousel');
+    jQuery('.owl-carousel').trigger('refresh.owl.carousel');
   }).resize();
-  $('body').on('click','.checked-all', function (e) {
-    let $checked = $(e.currentTarget).closest('.row').find('input:checkbox');
+  jQuery('body').on('click', '.checked-all', function (e) {
+    let $checked = jQuery(e.currentTarget).closest('.row').find('input:checkbox');
     $checked.not(this).prop('checked', this.checked);
   });
-  //
-  // $('.search-filter--ul .form-group input').on('change', function (e) {
-  //   console.log(e)
-  //
-  // })
+
+  jQuery('.search-filter--ul .btn-apply')
+    .on('click', function (e) {
+      e.preventDefault();
+      let _query = '',
+        _applyButton = jQuery(this),
+        _dropdown = _applyButton.closest('.dropdown'),
+        _valueButton = _dropdown.find('[data-toggle="dropdown"]'),
+        _valueEl = _dropdown.find('.value__el');
+
+      jQuery(this)
+        .closest('.dropdown-menu')
+        .find('input')
+        .each(function (i, el) {
+          let _obj = {};
+          _obj[el.id] = (function () {
+            if (el.type == 'checkbox' || el.type == 'radio') {
+              _query += !!el.checked ? Helpers.capitalizeFirstChar(el.id) + ',' : '';
+            }
+            else {
+              _query += Helpers.capitalizeFirstChar(el.value) + ',';
+            }
+          })();
+        });
+
+      _valueEl.text(_query).end().closest('.dropdown')
+        .find('[data-toggle="dropdown"]').addClass('active');
+    })
+    .closest('.dropdown')
+    .find('[data-toggle="dropdown"]')
+    .prepend(jQuery('<span class="value__el align-middle"></span>'));
+  jQuery(window).resize()
+
 
 })();

@@ -623,7 +623,9 @@
 
 .search-filter--ul {
   position: relative;
+  flex-wrap: wrap;
   li {
+    margin-top: 6px;
     + li {
       margin-left: 6px;
     }
@@ -636,6 +638,26 @@
     line-height: 1;
     position: relative;
     z-index: 200;
+    i {
+      position: absolute;
+      font-size: 18px;
+      margin-top: -8px;
+      top: 50%;
+    }
+    &:not(.active) {
+      i{
+        display: none;
+      }
+    }
+    &:before {
+      content: attr(title)
+    }
+    &.active{
+      padding-right: 30px;
+    }
+    &.active:before {
+      display: none;
+    }
     &[aria-expanded="true"] {
       color: #fff;
       background-color: #3793cf;
