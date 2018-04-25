@@ -194,17 +194,15 @@ import { Helpers } from '../helpers/helpers';
 
       jQuery(this)
         .closest('.dropdown-menu')
-        .find('input')
+        .find('[data-use]')
         .each(function (i, el) {
-          let _obj = {};
-          _obj[el.id] = (function () {
-            if (el.type == 'checkbox' || el.type == 'radio') {
-              _query += !!el.checked ? Helpers.capitalizeFirstChar(el.id) : '';
-            }
-            else {
-              _query += Helpers.capitalizeFirstChar(el.value) + ' , ';
-            }
-          })();
+          if (el.dataset.use.match(/#/)) {
+            _query += el.dataset.use.replace(/#/, el.value);
+          }
+          else if (el.dataset.use.match(/</)) {
+            _query += el.dataset.use.replace(/</, (el.id.replace(el.id.slice(0), el.id.charAt(0).toUpperCase())));
+          }
+
         });
 
       _valueEl.text(_query)

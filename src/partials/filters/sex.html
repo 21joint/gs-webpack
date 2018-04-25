@@ -1,12 +1,10 @@
 <button id="jSds"
-  type="button"
-  class="btn btn-sm btn-outline-primary"
-  data-toggle="dropdown"
-  aria-haspopup="true"
-  title="Sex"
-  aria-expanded="false">
-  <i class="icon-close ml-2 align-middle"></i>
-</button>
+        type="button"
+        class="btn btn-sm btn-outline-primary"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        title="Sex"
+        aria-expanded="false"><i class="icon-close ml-2 align-middle"></i></button>
 <div aria-labelledby="jSds" class="dropdown-menu p-0">
   <div style="z-index: 99999;" class="position-relative">
     <div class="container-fluid">
@@ -21,13 +19,16 @@
       </div>
       <div class="form-row py-3 justify-content-center flex-sm-column">
         <div class="col-auto">
-          <input type="checkbox" name="men" id="men"> <label for="men"> <span class="box"></span> Men</label>
+          <input type="checkbox" name="gender" id="men" data-use=" <, "/>
+          <label for="men"> <span class="box"></span> Men</label>
         </div>
         <div class="col-auto">
-          <input type="checkbox" name="women" id="women"> <label for="women"> <span class="box"></span> Women</label>
+          <input type="checkbox" name="gender" id="women" data-use=" <, "/>
+          <label for="women"> <span class="box"></span> Women</label>
         </div>
         <div class="col-auto">
-          <input type="checkbox" name="unknown" id="unknown"> <label for="unknown">
+          <input type="checkbox" name="gender" id="unknown" data-use=" <, "/>
+          <label for="unknown">
             <span class="box"></span> Unknown</label>
         </div>
       </div>
@@ -37,22 +38,26 @@
             <div class="form-group">
               <div class="mb-4">
                 <label class="label-basic text-dark d-block">Age</label> <input id="from"
-                  title="gs-handle--input"
-                  type="text"
-                  class="form-control d-inline"
-                  data-handle="0"/> <span class="text-asphalt mx-1">-</span> <input title="gs-handle--input"
-                  type="text"
-                  class="form-control d-inline"
-                  id="to"
-                  data-handle="1"/> <span class="text-asphalt ml-1">years</span>
+                                                                                title="gs-handle--input"
+                                                                                type="text"
+                                                                                class="form-control d-inline"
+                                                                                data-handle="0"
+                                                                                data-use="(# -"/>
+                <span class="text-asphalt mx-1">-</span> <input title="gs-handle--input"
+                                                                type="text"
+                                                                class="form-control d-inline"
+                                                                id="to"
+                                                                data-handle="1"
+                                                                data-use=" #)"/>
+                <span class="text-asphalt ml-1">years</span>
               </div>
               <div id="sliderAge"
-                class="gs-range--slider"
-                data-start="13, 25"
-                data-min="13"
-                data-max="65+"
-                data-step="1"
-                data-connect="true"></div>
+                   class="gs-range--slider"
+                   data-start="13, 25"
+                   data-min="13"
+                   data-max="65+"
+                   data-step="1"
+                   data-connect="true"></div>
             </div>
           </div>
         </div>

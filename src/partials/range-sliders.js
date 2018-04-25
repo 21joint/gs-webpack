@@ -37,8 +37,13 @@ export default (() => {
         let edge = handle == 0 ? 'min' : 'max';
         let _rangeChanged = new Event('rangeChanged');
         _parent.querySelector('input[data-handle="' + handle + '"]').value = (function () {
+
+          if (!(el.dataset[edge]).match(/(\+|-)$/)) {
+            return values[handle];
+          }
           return el.dataset.max.indexOf(values[handle]) > -1 ? el.dataset.max : (el.dataset.min.indexOf(values[handle]) >
           -1 ? el.dataset.min : values[handle]);
+
         })();
         _parent.querySelector('input[data-handle="' + handle + '"]')
           .dispatchEvent(_rangeChanged, { bubbles: true });
