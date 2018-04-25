@@ -195,8 +195,7 @@ import {Helpers} from '../helpers/helpers';
     })
     .closest('.dropdown')
     .find('[data-toggle="dropdown"]')
-    .prepend(jQuery('<span class="value__el align-middle"></span>'));
-  jQuery(window).resize()
+    .prepend(jQuery('<span class="value__el align-middle"></span>'))
 
 
 })();
