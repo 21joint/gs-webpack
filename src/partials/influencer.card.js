@@ -1,4 +1,4 @@
-import {Icons} from './icons';
+import { Icons } from './icons';
 
 const _Icons = new Icons();
 
@@ -20,14 +20,17 @@ export class Influencer {
         return quantity;
       }
       else {
-        let _qStr = quantity.toString(10).split('').join('');
+        let _qStr = quantity.toString(10)
+          .split('')
+          .join('');
         return _qStr.slice(0, _qStr.length - 3);
       }
     };
 
     for (let key in _instance.social) {
       if (_instance.social.hasOwnProperty(key)) {
-        _social += '<li>' + _Icons.insertIcon({title: key}) + '<span class="text-asphalt">' + _quantityHandler(_instance.social[key]) + 'k</span></li>';
+        _social += '<li>' + _Icons.insertIcon({ title: key }) + '<span class="text-asphalt">' + _quantityHandler(_instance.social[key]) +
+          'k</span></li>';
       }
     }
     return _social;

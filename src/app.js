@@ -6,8 +6,8 @@ import 'owl.carousel/dist/owl.carousel.min';
 import 'select2/dist/js/select2.min';
 // Load application styles
 import './assets/styles/index.scss';
-import SelectCountry from './components/select2.country';
-import '././components/range-sliders';
+import SelectCountry from './partials/select2.country';
+import './partials/range-sliders';
 import './scripts/brand-find-influencer';
 
 // Adding a cool transition

@@ -1,79 +1,65 @@
 <button type="button"
-        class="btn btn-sm btn-outline-primary"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        title="Seo"
-        aria-expanded="false">
+  class="btn btn-sm btn-outline-primary"
+  data-toggle="dropdown"
+  aria-haspopup="true"
+  title="Seo"
+  aria-expanded="false">
   <i class="icon-close ml-2 align-middle"></i>
 </button>
 <div class="dropdown-menu p-0">
   <div class="container-fluid">
-    <div class="row pt-3">
+    <div class="form-row align-items-center pt-3">
       <div class="col-12">
         <div class="row align-items-center justify-content-between">
           <div class="col-auto"><h5 class="text-asphalt d-inline mb-4">
-            <strong>Seo</strong>
-          </h5></div>
+              <strong>Seo</strong>
+            </h5></div>
           <div class="col-auto"><span class="seo__info text-right" role="button">
                                               <img src="/images/info.svg" alt="Awareness">
                                             </span></div>
         </div>
       </div>
     </div>
-    <div class="row py-3 justify-content-center flex-sm-column">
+    <div class="form-row align-items-center py-3 justify-content-sm-center align-items-sm-start flex-sm-column">
       <div class="col-auto">
         <p>Use this filter to find blogs suitable for link building</p>
       </div>
       <div class="col-auto">
-        <div class="form-group">
-          <input type="checkbox" name="unique_domain" id="unique_domain"> <label
-          for="unique_domain">
+        <input type="checkbox" name="unique_domain" id="unique_domain"> <label for="unique_domain">
           <span class="box"></span> Unique Domain ex annasblog.com</label>
-        </div>
       </div>
       <div class="col-auto">
-        <div class="form-group">
-          <input type="checkbox" name="subdomain_domain" id="subdomain_domain">
-          <label for="subdomain_domain">
-            <span class="box"></span> Subdomain Domain annasblog.blogspot.dom</label>
-        </div>
+        <input type="checkbox" name="subdomain_domain" id="subdomain_domain"> <label for="subdomain_domain">
+          <span class="box"></span> Subdomain Domain annasblog.blogspot.dom</label>
       </div>
       <div class="col-auto">
-        <div class="form-group">
-          <input type="checkbox" name="directory_domain" id="directory_domain">
-          <label for="directory_domain">
-            <span class="box"></span> Directory Domain metromode.com/annas</label>
-        </div>
+        <input type="checkbox" name="directory_domain" id="directory_domain"> <label for="directory_domain">
+          <span class="box"></span> Directory Domain metromode.com/annas</label>
       </div>
     </div>
-    <div class="row py-3">
+    <div class="form-row align-items-center py-3">
       <div class="col-12">
-        <div class="gs-sliderrange-wrapper">
-          <div class="form-group">
-            <div class="mb-4">
-              <h6 class="text-dark mb-4"><strong>Domain SEO Strength (DA)</strong>
-              </h6>
-              <input title="gs-handle--input"
-                     type="text"
-                     class="form-control d-inline"
-                     data-handle="0"/> <span class="text-asphalt mx-1">-</span>
-              <input title="gs-handle--input"
-                     type="text"
-                     class="form-control d-inline"
-                     data-handle="1"/>
-            </div>
-            <div id="sliderSeo"
-                 class="gs-range--slider"
-                 data-start="0, 100"
-                 data-min="0"
-                 data-max="100"
-                 data-step="1"
-                 data-connect="true"></div>
+        <div class="form-range-group">
+          <div class="mb-4">
+            <h6 class="text-dark mb-4"><strong>Domain SEO Strength (DA)</strong>
+            </h6>
+            <input title="gs-handle--input" type="text" class="form-control d-inline" data-handle="0"/>
+            <span class="text-asphalt mx-1">-</span> <input title="gs-handle--input"
+              type="text"
+              class="form-control d-inline"
+              data-handle="1"/>
           </div>
+          <div id="sliderSeo"
+            class="gs-range--slider"
+            data-start="0, 100"
+            data-min="0"
+            data-max="100"
+            data-step="1"
+            data-connect="true"></div>
         </div>
       </div>
     </div>
-    <div class="row py-3 justify-content-between">
+    <div class="form-row align-items-center pb-3 pt-4 justify-content-between">
       <div class="col-auto">
         <button class="btn btn-block btn-sm btn-cancel" type="button" data-dismiss="dropdown">
           Cancel

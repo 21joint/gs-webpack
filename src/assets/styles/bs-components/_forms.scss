@@ -32,6 +32,8 @@ input[type="checkbox"] {
   & + label {
     position: relative;
     padding-left: 26px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-bottom: 0;
     vertical-align: middle;
     user-select: none;
@@ -39,7 +41,6 @@ input[type="checkbox"] {
     cursor: pointer;
     font-weight: 400;
     font-size: rem-calc(13);
-    line-height: 1;
     @include media-breakpoint-up(sm) {
       padding-left: 32px;
       font-size: 1rem;
@@ -104,90 +105,40 @@ input[type="radio"] {
     font-weight: normal;
     font-size: 1rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    box-sizing: content-box;
     .dot {
-      width: 22px;
-      height: 22px;
-      border: 1px solid $border-color;
+      width: 21px;
+      height: 21px;
+      box-shadow: 0 0 0 1px $border-color;
       border-radius: 50%;
-      display: inline-block;
-      vertical-align: middle;
       margin-right: 10px;
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       @include transition(0.2s border-color);
       &:after {
         content: '';
-        position: absolute;
         width: 7px;
         height: 7px;
         border-radius: 50%;
         display: block;
-        left: 50%;
-        top: 50%;
-        -webkit-transform: translate(-50%, -50%) scale(0);
-        -moz-transform: translate(-50%, -50%) scale(0);
-        -ms-transform: translate(-50%, -50%) scale(0);
-        -o-transform: translate(-50%, -50%) scale(0);
-        transform: translate(-50%, -50%) scale(0);
+        transform: scale(0);
         @include transition(0.2s all);
       }
-    }
-    .dot-outer {
-      width: 22px;
-      height: 22px;
-      background-color: #fff;
-      border: none;
-      border-radius: 50%;
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 10px;
-      position: relative;
-      &:after {
-        content: '';
-        position: absolute;
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        display: block;
-        left: 50%;
-        top: 50%;
-        -webkit-transform: translate(-50%, -50%) scale(0);
-        -moz-transform: translate(-50%, -50%) scale(0);
-        -ms-transform: translate(-50%, -50%) scale(0);
-        -o-transform: translate(-50%, -50%) scale(0);
-        transform: translate(-50%, -50%) scale(0);
-        @include transition(0.2s all);
-      }
-
     }
   }
   &:checked {
     & + label {
       .dot {
-        border-color: $blue;
+        box-shadow: 0 0 0 1px $blue;
         &:after {
           background-color: $blue;
-          -webkit-transform: translate(-50%, -50%) scale(1);
-          -moz-transform: translate(-50%, -50%) scale(1);
-          -ms-transform: translate(-50%, -50%) scale(1);
-          -o-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
+          transform: scale(1);
         }
-      }
-    }
-  }
-  &:checked {
-    & + label {
-      .dot-outer {
-        border-color: $blue;
-        &:after {
-          background-color: $blue;
-          -webkit-transform: translate(-50%, -50%) scale(1);
-          -moz-transform: translate(-50%, -50%) scale(1);
-          -ms-transform: translate(-50%, -50%) scale(1);
-          -o-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
-        }
-
       }
     }
   }
