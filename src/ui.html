@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>${ htmlWebpackPlugin.options.title }</title>
+  <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-  ${ require('html-loader?interpolate=true&minimize=false!./partials/header.html') }
+  <%= require('html-loader?interpolate=true&minimize=false!./partials/header/header.html') %>
   <div class="ui ui-kit">
     <div class="ui_kit_section">
       <div class="container">
         <div class="ui-group">
           <h1>Grow Social logo</h1>
-          <p><img src="/src/assets/images/logo.svg"></p>
+          <p><img src="/images/images/logo.svg"></p>
         </div>
         <div class="ui-group">
           <h1>Buttons</h1>

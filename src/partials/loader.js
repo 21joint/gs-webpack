@@ -1,6 +1,5 @@
 export default (() => {
-  $(document)
-    .ready(function () {
+  $(document).ready(function () {
       let $contentBox = $('.content-box'),
         $contentLoader = $('<div></div>')
           .addClass('white-overlay');
@@ -14,7 +13,8 @@ export default (() => {
             .removeClass('filter-open');
         });
 
-      $('[data-toggle="tab"]:not(.active)')
+      $('[data-toggle="tab"]:not(.active.show)')
+        .closest('.dropdown')
         .on('hide.bs.tab', function (e) {
           $(e.target)
             .closest('.content-box')
@@ -22,12 +22,11 @@ export default (() => {
         });
 
       $('[data-toggle="tab"]')
+        .closest('.dropdown')
         .on('shown.bs.tab', function (e) {
-          setTimeout(function () {
-            $(e.target)
-              .closest('.content-box')
-              .removeClass('content-loading');
-          }, 1000);
+          $(e.target)
+            .closest('.content-box')
+            .removeClass('content-loading');
         });
 
     });

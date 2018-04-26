@@ -72,6 +72,17 @@ import { Helpers } from '../helpers/helpers';
       }
     });
   jQuery(document)
+    .on('hide.bs.dropdown', '.keepDropdownOpen .dropdown.show', function (e) {
+      e.preventDefault();
+    })
+    .on('shown.bs.dropdown', '.dropdown:has([role="tablist"])', function (e) {
+      $('[data-toggle="tab"]')
+        .tab();
+    })
+    .on('click', '.dropdown-menu.show [data-toggle="tab"]', function (e) {
+      $('body')
+        .addClass('keepDropdownOpen');
+    })
     .on('click', 'a.nav-link[href^="#"]', function (e) {
       e.preventDefault();
       const $target = jQuery(jQuery(this)
@@ -80,6 +91,13 @@ import { Helpers } from '../helpers/helpers';
       $singleInflModal.animate({
         'scrollTop': $target.position().top
       }, 600, 'easeNav');
+    })
+    .on('click', '.single-card--infobtn', function (e) {
+      let _profile = jQuery(e.currentTarget)
+          .parents('.single-profile--card'),
+        _slider = _profile.find('.owl-carousel');
+
+      _slider.trigger('to.owl.carousel', _slider.data('owl.carousel')._items.length - 1);
     })
     .on('mouseup', '.search-filter--ul [data-toggle=dropdown]', function (e) {
       if ($(e.target)
@@ -102,18 +120,7 @@ import { Helpers } from '../helpers/helpers';
         .one('hide.bs.dropdown', function (ev) {
           ev.preventDefault();
         });
-    })
-    .on('hide.bs.dropdown', '.keepDropdownOpen .dropdown.show', function (e) {
-      e.preventDefault();
-    })
-    .on('click', '.single-card--infobtn', function (e) {
-      let _profile = jQuery(e.currentTarget)
-          .parents('.single-profile--card'),
-        _slider = _profile.find('.owl-carousel');
-
-      _slider.trigger('to.owl.carousel', _slider.data('owl.carousel')._items.length - 1);
     });
-
   jQuery('.search-filter--ul .dropdown')
     .on('shown.bs.dropdown', function () {
       jQuery('body')
@@ -156,7 +163,6 @@ import { Helpers } from '../helpers/helpers';
 
 
   function owlFix(owl) {
-    // console.log(owl);
     let $parentEl = owl.relatedTarget.$element.closest('.single-card--owlwrapper');
     let targetW = Math.trunc(owl.relatedTarget.$element.closest('.single-profile--card')
       .width());
@@ -167,7 +173,7 @@ import { Helpers } from '../helpers/helpers';
   jQuery(window)
     .on('resize orientationchange', function () {
       updateOffsets();
-      refreshScrollSpy('.modal-single--influencer');
+      refreshScrollSpy('.modal-open .modal-single--influencer');
       jQuery('.owl-carousel')
         .trigger('refresh.owl.carousel');
     })
@@ -175,7 +181,7 @@ import { Helpers } from '../helpers/helpers';
   jQuery('body')
     .on('click', '.checked-all', function (e) {
       let $checked = jQuery(e.currentTarget)
-        .closest('.form-row')
+        .closest('.form-row' || 'form-group')
         .find('input:checkbox');
       $checked.not(this)
         .prop('checked', this.checked);
@@ -196,13 +202,12 @@ import { Helpers } from '../helpers/helpers';
         .closest('.dropdown-menu')
         .find('[data-use]')
         .each(function (i, el) {
-          if (el.dataset.use.match(/#/)) {
-            _query += el.dataset.use.replace(/#/, el.value);
+          if (el.dataset.use.match(/value/)) {
+            _query += el.dataset.use.replace(/value/, el.value);
           }
-          else if (el.dataset.use.match(/</)) {
-            _query += el.dataset.use.replace(/</, (el.id.replace(el.id.slice(0), el.id.charAt(0).toUpperCase())));
+          if (el.checked && el.dataset.use.match(/label/)) {
+            _query += el.dataset.use.replace(/label/, el.parentNode.querySelector('label').innerText || el.parentNode.parentNode.querySelector('label').innerText);
           }
-
         });
 
       _valueEl.text(_query)

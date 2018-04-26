@@ -1,3 +1,4 @@
+
 <header class="header">
   <div class="container-fluid">
     <div class="row header_main__row align-items-center">
@@ -72,39 +73,47 @@
         </nav>
       </div>
       <div class="col-auto d-none d-md-block">
-        <ul class="right_nav">
-          <li class="dropdown notifications-dropdown">
+        <div class="right_nav">
+          <div class="dropdown notifications-dropdown">
             <button class="btn" data-toggle="dropdown" id="notificationDropdownBtn"><i class="icon-notification-i"></i>
               <span class="badge badge-warning text-white">3</span></button>
-            <ul class="dropdown-menu dropdown-menu-right p-0 dropdown-menu-notifications"
-                aria-labelledby="notificationDropdownBtn">
-              <li class="bg-white">
+            <div class="dropdown-menu dropdown-menu-right p-0 dropdown-menu-notifications"
+                 aria-labelledby="notificationDropdownBtn">
+              <div class="bg-white">
                 <span class="dropdown-carret"></span>
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link px-0 active"
-                       data-toggle="tab"
-                       href="#all"
-                       role="tab"
-                       aria-controls="all"
-                       aria-expanded="true">All Types</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link px-0" data-toggle="tab" href="#new" role="tab" aria-controls="new">New Deals</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link px-0"
-                       data-toggle="tab"
-                       href="#published"
-                       role="tab"
-                       aria-controls="published"> Published Deals </a>
-                  </li>
-                </ul>
+                 <ul class="nav nav-tabs" id="notificationsTabs" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active show px-0"
+                         data-toggle="tab"
+                         href="#all"
+                         role="button"
+                         aria-expanded="true"
+                         aria-selected="true">All Types</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link px-0"
+                         data-toggle="tab"
+                         href="#new"
+                         role="button"
+                         aria-controls="new"
+                         aria-expanded="false"
+                         aria-selected="false">New Deals</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link px-0"
+                         data-toggle="tab"
+                         href="#published"
+                         role="button"
+                         aria-controls="published"
+                         aria-expanded="false"
+                         aria-selected="false"> Published Deals </a>
+                    </li>
+                  </ul>
                 <div class="tab-content" id="notificationsTabContent">
                   <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all">
                     <ul class="media-feed">
                       <li class="media align-items-center">
-                        <img class="m-2" src="../assets/images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
                           <p class="media-info text-asphalt mb-0">
@@ -112,7 +121,7 @@
                         </div>
                       </li>
                       <li class="media align-items-center">
-                        <img class="m-2" src="../assets/images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
                           <p class="media-info text-asphalt mb-0">
@@ -120,7 +129,7 @@
                         </div>
                       </li>
                       <li class="media align-items-center">
-                        <img class="m-2" src="../assets/images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
                           <p class="media-info text-asphalt mb-0">
@@ -132,7 +141,7 @@
                   <div class="tab-pane fade" id="new" role="tabpanel" aria-labelledby="new">
                     <ul class="media-feed">
                       <li class="media align-items-center">
-                        <img class="m-2" src="../assets/images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
                           <p class="media-info text-asphalt mb-0">
@@ -140,7 +149,7 @@
                         </div>
                       </li>
                       <li class="media align-items-center">
-                        <img class="m-2" src="../assets/images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
                           <p class="media-info text-asphalt mb-0">
@@ -148,7 +157,7 @@
                         </div>
                       </li>
                       <li class="media align-items-center">
-                        <img class="m-2" src="../assets/images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
                           <p class="media-info text-asphalt mb-0">
@@ -160,7 +169,7 @@
                   <div class="tab-pane fade" id="published" role="tabpanel" aria-labelledby="published">
                     <ul class="media-feed">
                       <li class="media align-items-center">
-                        <img class="m-2" src="../assets/images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
                           <p class="media-info text-asphalt mb-0">
@@ -168,7 +177,7 @@
                         </div>
                       </li>
                       <li class="media align-items-center">
-                        <img class="m-2" src="../assets/images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
                           <p class="media-info text-asphalt mb-0">
@@ -176,7 +185,7 @@
                         </div>
                       </li>
                       <li class="media align-items-center">
-                        <img class="m-2" src="../assets/images/liza.png" alt="Generic placeholder image">
+                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
                         <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
                           <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
                           <p class="media-info text-asphalt mb-0">
@@ -186,19 +195,19 @@
                     </ul>
                   </div>
                 </div>
-              </li>
-            </ul>
-          </li>
-          <li><a class="btn" href="#"><i class="icon-help"></i></a></li>
-          <li class="dropdown profile">
+              </div>
+            </div>
+          </div>
+          <div><a class="btn" href="#"><i class="icon-help"></i></a></div>
+          <div class="dropdown profile">
             <a class="btn" data-toggle="dropdown" aria-expanded="false"><img class="img-fluid rounded-circle"
-                                                                             src="../assets/images/user.jpg"
+                                                                             src="../../assets/images/user.jpg"
                                                                              alt="User Nameson"></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div>asdasd</div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
       <div class="col-auto ml-auto d-md-none">
         <button type="button" class="navbar_toggler d-md-none"><span class="line top"></span>
@@ -229,7 +238,7 @@
     <li class="profile">
       <a href="#">
         <span class="d-flex i-block align-items-center justify-content-center">
-          <img class="img-fluid rounded-circle" src="../assets/images/user.jpg" alt=" ">
+          <img class="img-fluid rounded-circle" src="../../assets/images/user.jpg" alt=" ">
         </span><span>
           Settings
         </span></a>

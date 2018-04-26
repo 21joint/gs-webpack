@@ -598,15 +598,17 @@
     z-index: 200;
     padding-left: 8px;
     padding-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     i {
-      transform-origin: center;
       animation-name: closeRollIn;
       animation-fill-mode: forwards;
       animation-timing-function: ease;
       animation-duration: 0.5s;
       display: none;
       font-size: 1.25em;
-      line-height: 0.000000001;
+      line-height: 0;
       &:before {
         font-weight: 700;
       }

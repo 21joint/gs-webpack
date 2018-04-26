@@ -84,7 +84,7 @@ const OwlTabs = (($) => {
           const _targetId = _clonedTabs.find('.active.center .nav-link').attr('href');
           const $targetTab = _element.find('[data-toggle="tab"][href="' +
             _targetId + '"]');
-          $targetTab.tab('show');
+          $targetTab.tab('show').addClass('show');
         })
         .on('click', '.nav-link', function (e) {
           e.preventDefault();

@@ -21,15 +21,31 @@
       height: 3px;
       background-color: $blue;
       transition: 0.27s width ease-in-out;
-      will-change: left,right;
+      will-change: left, right;
     }
-    .content-box:not(.content-loading) & {
-      &.active {
+    div:not(.content-loading) & {
+      &.show.active {
         background-color: transparent;
         &:after {
           width: 100%;
         }
       }
+    }
+  }
+}
+
+.tab-pane.fade {
+  transition: opacity 0.27s 0.27s ease-in-out;
+  &.in {
+    &:before {
+      content: '';
+      background-color: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
     }
   }
 }

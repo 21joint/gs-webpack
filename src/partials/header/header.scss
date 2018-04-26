@@ -151,7 +151,7 @@ nav {
     .icon-close {
       width: 24px;
       height: 24px;
-      background-image: url('../images/close-btn.svg');
+      background-image: url('../../assets/images/close-btn.svg');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: 100%;
@@ -236,7 +236,7 @@ nav {
 
 .right_nav {
   display: flex;
-  > li {
+  > div {
     position: relative;
     > .btn {
       background-color: transparent;
@@ -271,7 +271,7 @@ nav {
         box-shadow: none;
       }
     }
-    & + li:not(:last-child):before {
+    & + div:not(:last-child):before {
       content: "";
       position: absolute;
       top: 50%;
@@ -284,16 +284,15 @@ nav {
         display: none;
       }
     }
-
     &.profile {
-      > a {
+      a {
         padding: 0;
         @include media-breakpoint-up(md) {
           line-height: 60px;
         }
-        img {
-          max-height: 47px;
-        }
+      }
+      img {
+        max-height: 47px;
       }
     }
   }
@@ -394,5 +393,26 @@ nav {
   font-size: 15px;
   @include media-breakpoint-up(md) {
     width: 160px;
+  }
+}
+
+.main-loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 200px;
+  }
+  #mask rect {
+    transition: 0.3s all linear;
+    fill: #56a4d6;
   }
 }

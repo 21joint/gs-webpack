@@ -1,7 +1,7 @@
 <button class="btn btn-sm btn-outline-primary"
         data-toggle="dropdown"
         aria-haspopup="true"
-        title="Up to $250"
+        title="Followers who comment(%)"
         aria-expanded="false">
   <i class="icon-close ml-2 align-middle"></i>
 </button>
@@ -12,33 +12,36 @@
         <div class="form-range-group">
           <div class="form-group">
             <div class="mb-4">
-              <h5 class="text-asphalt mb-4"><strong>Price per post range</strong>
+              <h5 class="text-asphalt mb-4"><strong>Average % of followers who comments</strong>
               </h5>
-              <input title="gs-handle--input"
+              <input style="max-width: 100px;"
+                     title="gs-handle--input"
                      type="text"
                      class="form-control d-inline"
                      data-handle="0"
-                     data-use="value - "/> <span class="text-asphalt mx-1">-</span>
-              <input title="gs-handle--input"
+                     data-use="value - "/>
+              <span class="text-asphalt mx-1">-</span>
+              <input style="max-width: 100px;"
+                     title="gs-handle--input"
                      type="text"
                      class="form-control d-inline"
                      data-handle="1"
                      data-use="value"/>
             </div>
-            <div id="sliderPrice"
+            <div id="sliderEngagement"
                  class="gs-range--slider"
-                 data-start="50, 500"
-                 data-min="50"
-                 data-max="1000"
-                 data-thousand=","
-                 data-step="1"
-                 data-prefix="$"
+                 data-start="0,10%"
+                 data-min="0"
+                 data-max="+10%"
+                 data-step="0.1"
+                 data-decimals="1"
+                 data-suffix="%"
                  data-connect="true"></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="form-row dropdown-menu--actions py-3 align-items-center">
+    <div class="form-row dropdown-menu--actions py-3 align-items-center justify-content-between">
       <div class="col-auto">
         <button class="btn btn-block btn-sm btn-cancel" type="button" data-dismiss="dropdown">
           Cancel

@@ -50,7 +50,7 @@ module.exports = {
       // SCSS
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
+        use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             {
@@ -80,7 +80,7 @@ module.exports = {
               }
             }
           ],
-        })
+        }))
       },
 
       // FONTS/IMAGES
@@ -122,6 +122,11 @@ module.exports = {
           name: 'vendors',
           priority: -10
         },
+        commons: {
+          test: /[\\/]src[\\/]/,
+          chunks: 'all',
+          name: 'commons'
+        },
       },
     },
   },
@@ -140,5 +145,5 @@ module.exports = {
       filename: 'styles/[name].css'
     })
   ],
-  devtool: 'inline-source-map'
+  devtool: 'source-map'
 };

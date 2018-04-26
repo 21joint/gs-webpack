@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport"
-    content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+        content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
   <title>Growsocial</title>
 </head>
 <body class="bg-light has-fixed-bottom">
-  <%= require('html-loader?interpolate=true&minimize=false!./partials/header.html') %>
+  <%= require('html-loader?interpolate=true&minimize=false!./partials/header/header.html') %>
   <main class="main-content reg-account_type">
     <div class="container-fluid py-4 pt-lg-5">
       <div class="row justify-content-center">
@@ -35,9 +35,9 @@
                         <div class="col-12 col-sm-6">
                           <div class="form-group">
                             <label for="base_country">Base Country</label><select style="width: 100%;"
-                              name="base_country"
-                              id="base_country"
-                              class="form-control with-flags">
+                                                                                  name="base_country"
+                                                                                  id="base_country"
+                                                                                  class="form-control with-flags">
                               <option data-image="/images/flags/uk.svg">United Kingdom
                               </option>
                               <option data-image="/images/flags/finland.svg">Finland
@@ -58,9 +58,9 @@
                         <div class="col-12 col-sm-6">
                           <div class="form-group">
                             <label for="language">Language</label><select style="width: 100%;"
-                              name="language"
-                              id="language"
-                              class="form-control with-flags">
+                                                                          name="language"
+                                                                          id="language"
+                                                                          class="form-control with-flags">
                               <option data-image="/images/flags/uk.svg">English</option>
                               <option data-image="/images/flags/denmark.svg">Danish
                               </option>
@@ -146,17 +146,17 @@
                         <div class="col-12 col-sm-6 mb-3 mb-sm-0">
                           <div class="form-group">
                             <label for="job_title">Your job title in the company</label><input type="text"
-                              class="form-control"
-                              name="job_title"
-                              id="job_title"/>
+                                                                                               class="form-control"
+                                                                                               name="job_title"
+                                                                                               id="job_title"/>
                           </div>
                         </div>
                         <div class="col-12 col-sm-6">
                           <div class="form-group">
                             <label for="way_found_us">How did you find out about GrowSocial?</label><input type="text"
-                              class="form-control"
-                              name="way_found_us"
-                              id="way_found_us"/>
+                                                                                                           class="form-control"
+                                                                                                           name="way_found_us"
+                                                                                                           id="way_found_us"/>
                           </div>
                         </div>
                       </div>
@@ -280,11 +280,11 @@
                         <div class="form-group row">
                           <div class="col-12">
                             <input type="radio" name="management_type" id="self" value="self"/><label for="self"
-                              class="label-box mb-0 d-block border">
+                                                                                                      class="label-box mb-0 d-block border py-0">
 															<span class="row no-gutters">
 			                        <span class="col-12 col-sm col-image">
 			                            <span class="img_holder"
-                                    style="background-image: url('/images/management-img1.png')"></span>
+                                        style="background-image: url('/src/assets/images/management-img1.png')"></span>
                                 <!--<img class="img-fluid" src="/images/management-img1.png" alt="">-->
 			                        </span>
 			                        <span class="col-12 col-sm col-content d-block">
@@ -317,11 +317,11 @@
                           </div>
                           <div class="col-12 mt-4">
                             <input type="radio" name="management_type" id="help" value="help"/><label for="help"
-                              class="label-box mb-0 align-items-center d-block border">
+                                                                                                      class="label-box mb-0 align-items-center d-block border py-0">
 													<span class="row no-gutters">
 		                        <span class="col-12 col-sm col-image d-block">
 		                            <span class="img_holder"
-                                  style="background-image: url('/images/management-img2.png')"></span>
+                                      style="background-image: url('/src/assets/images/management-img2.png')"></span>
                               <!--<img class="img-fluid" src="/images/management-img1.png" alt="">-->
 		                        </span>
 														<span class="col-12 col-sm col-content d-block">
@@ -354,11 +354,11 @@
                           </div>
                           <div class="col-12 mt-4">
                             <input type="radio" name="management_type" id="for_me" value="for_me"/><label for="for_me"
-                              class="label-box mb-0 d-block border">
+                                                                                                          class="label-box mb-0 d-block border py-0">
 															<span class="row no-gutters">
                                 <span class="col-12 col-sm col-image">
                                     <span class="img_holder"
-                                      style="background-image: url('/images/management-img3.png')"></span>
+                                          style="background-image: url('/src/assets/images/management-img3.png')"></span>
                                   <!--<img class="img-fluid" src="/images/management-img1.png" alt="">-->
                                 </span>
                                <span class="col-12 col-sm col-content d-block">
