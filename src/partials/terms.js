@@ -1,6 +1,4 @@
-'use strict';
-
-(function () {
+export default (function () {
   let countCheck = function () {
     return $('.agree_checkbox:checked').length;
   };
