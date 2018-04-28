@@ -2,6 +2,7 @@
   transition: 0.33s opacity;
   overflow: hidden;
   margin-top: 13px;
+  max-width: 570px;
   &:not(.show) {
     opacity: 0;
   }
