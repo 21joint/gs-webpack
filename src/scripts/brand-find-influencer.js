@@ -13,6 +13,7 @@ import '../partials/range-sliders';
   const $singleInflModal = jQuery('.modal-single--influencer');
   const updateOffsets = function () {
     $fixedNavHeight = $fixedNav.outerHeight();
+
     $sectionsWrapperOffset = $sectionsWrapper.position().top;
     refreshScrollSpy('.modal-single--influencer');
   };
@@ -39,7 +40,10 @@ import '../partials/range-sliders';
       .scrollTop();
     jQuery(element)
       .scrollTop(0)
-      .scrollspy('refresh')
+      .scrollspy('dispose')
+      .scrollspy({
+        offset: $fixedNavHeight + 2
+      })
       .scrollTop(cacheScrolltop);
   };
 
@@ -77,11 +81,10 @@ import '../partials/range-sliders';
     // })
     .on('click', 'a.nav-link[href^="#"]', function (e) {
       e.preventDefault();
-      const $target = jQuery(jQuery(this)
-        .attr('href'));
+      const $target = jQuery(jQuery(this).attr('href'));
 
       $singleInflModal.animate({
-        'scrollTop': $target.position().top
+        'scrollTop': $target.position().top - $fixedNavHeight + 2
       }, 600, 'easeNav');
     })
     .on('click', '.single-card--infobtn', function (e) {

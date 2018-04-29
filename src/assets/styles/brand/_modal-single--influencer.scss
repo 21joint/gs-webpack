@@ -121,7 +121,6 @@
     max-width: none;
     margin: auto;
     @include media-breakpoint-up(lg) {
-      padding: 50px 0;
       max-width: 1200px;
     }
   }
