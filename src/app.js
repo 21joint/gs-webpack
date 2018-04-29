@@ -1,19 +1,14 @@
 /**
  * Application entry point
  */
+import './assets/styles/index.scss';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'owl.carousel/dist/owl.carousel.min';
 import 'select2/dist/js/select2.min';
-
-import './assets/styles/index.scss';
-import SelectCountry from './partials/select2.country';
-import './partials/range-sliders';
-import './scripts/brand-find-influencer';
 import './partials/loader';
 
-
-// STYLES
-import './assets/styles/index.scss';
+import SelectCountry from './partials/select2.country';
+import './scripts/brand-find-influencer';
 
 
 // Adding a cool transition

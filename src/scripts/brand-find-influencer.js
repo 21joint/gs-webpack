@@ -1,6 +1,6 @@
 import '../partials/loader';
 import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
-import { Helpers } from '../helpers/helpers';
+import '../partials/range-sliders';
 
 
 (!!document.querySelector('.find-influencer')) && (function () {
@@ -8,7 +8,6 @@ import { Helpers } from '../helpers/helpers';
   let $fixedNavHeight,
     $sectionsWrapperOffset;
 
-  const $profileLikeButton = jQuery('.single-card--likebtn');
   const $fixedNav = jQuery('.single-card--fixednav');
   const $sectionsWrapper = jQuery('.single-card--sections');
   const $singleInflModal = jQuery('.modal-single--influencer');
@@ -21,8 +20,7 @@ import { Helpers } from '../helpers/helpers';
     return $fixedNav.outerHeight();
   };
   const likeProfileToggle = function (profile, callback) {
-    //dummy function to make ajax call to like profile
-    console.warn('TODO: make ajax call to like profile', console);
+    //TODO dummy function to make ajax call to like profile
 
     if (profile.hasClass('in-likes')) {
 
@@ -45,12 +43,6 @@ import { Helpers } from '../helpers/helpers';
       .scrollTop(cacheScrolltop);
   };
 
-  $profileLikeButton.on('click', function () {
-    let _self = jQuery(this),
-      _profile = _self.parents('.single-profile--card');
-
-    likeProfileToggle(_profile);
-  });
   $singleInflModal
     .on('shown.bs.modal', function () {
       updateOffsets();
@@ -62,9 +54,7 @@ import { Helpers } from '../helpers/helpers';
     })
     .on('scroll', function (e) {
 
-      const $target = jQuery(this);
-
-      if ($target.scrollTop() > $fixedNavHeight) {
+      if (jQuery(this).scrollTop() > $fixedNavHeight) {
         $fixedNav.addClass('down');
       }
       else {
@@ -75,14 +65,16 @@ import { Helpers } from '../helpers/helpers';
     .on('hide.bs.dropdown', '.keepDropdownOpen .dropdown.show', function (e) {
       e.preventDefault();
     })
-    .on('shown.bs.dropdown', '.dropdown:has([role="tablist"])', function (e) {
+    .on('shown.bs.dropdown', '.dropdown:has([role="tablist"])', function () {
       $('[data-toggle="tab"]')
         .tab();
     })
-    .on('click', '.dropdown-menu.show [data-toggle="tab"]', function (e) {
-      $('body')
-        .addClass('keepDropdownOpen');
-    })
+    // .on('click', '.dropdown-menu.show [data-toggle="tab"]', function () {
+    //   $('body').addClass('keepDropdownOpen');
+    //   $(this).closest('.dropdown').on('hide.bs.dropdown', function () {
+    //     $('body').removeClass('keepDropdownOpen');
+    //   })
+    // })
     .on('click', 'a.nav-link[href^="#"]', function (e) {
       e.preventDefault();
       const $target = jQuery(jQuery(this)
@@ -98,6 +90,12 @@ import { Helpers } from '../helpers/helpers';
         _slider = _profile.find('.owl-carousel');
 
       _slider.trigger('to.owl.carousel', _slider.data('owl.carousel')._items.length - 1);
+    })
+    .on('click', '.single-card--likebtn', function () {
+      let _self = jQuery(this),
+        _profile = _self.parents('.single-profile--card');
+
+      likeProfileToggle(_profile);
     })
     .on('mouseup', '.search-filter--ul [data-toggle=dropdown]', function (e) {
       if ($(e.target)
@@ -161,23 +159,12 @@ import { Helpers } from '../helpers/helpers';
       ]
     });
 
-
-  function owlFix(owl) {
-    let $parentEl = owl.relatedTarget.$element.closest('.single-card--owlwrapper');
-    let targetW = Math.trunc(owl.relatedTarget.$element.closest('.single-profile--card')
-      .width());
-
-    $parentEl.width(targetW);
-  }
-
   jQuery(window)
     .on('resize orientationchange', function () {
       updateOffsets();
       refreshScrollSpy('.modal-open .modal-single--influencer');
-      jQuery('.owl-carousel')
-        .trigger('refresh.owl.carousel');
-    })
-    .resize();
+      jQuery('.owl-carousel').trigger('refresh.owl.carousel');
+    });
   jQuery('body')
     .on('click', '.checked-all', function (e) {
       let $checked = jQuery(e.currentTarget)
@@ -206,7 +193,8 @@ import { Helpers } from '../helpers/helpers';
             _query += el.dataset.use.replace(/value/, el.value);
           }
           if (el.checked && el.dataset.use.match(/label/)) {
-            _query += el.dataset.use.replace(/label/, el.parentNode.querySelector('label').innerText || el.parentNode.parentNode.querySelector('label').innerText);
+            _query += el.dataset.use.replace(/label/, el.parentNode.querySelector('label').innerText ||
+              el.parentNode.parentNode.querySelector('label').innerText);
           }
         });
 
@@ -219,6 +207,14 @@ import { Helpers } from '../helpers/helpers';
     .closest('.dropdown')
     .find('[data-toggle="dropdown"]')
     .prepend(jQuery('<span class="value__el align-middle"></span>'));
+
+  function owlFix(owl) {
+    let $parentEl = owl.relatedTarget.$element.closest('.single-card--owlwrapper');
+    let targetW = Math.trunc(owl.relatedTarget.$element.closest('.single-profile--card')
+      .width());
+
+    $parentEl.width(targetW);
+  }
 
 
 })();
