@@ -13,7 +13,6 @@ import '../partials/range-sliders';
   const $singleInflModal = jQuery('.modal-single--influencer');
   const updateOffsets = function () {
     $fixedNavHeight = $fixedNav.outerHeight();
-
     $sectionsWrapperOffset = $sectionsWrapper.position().top;
     refreshScrollSpy('.modal-single--influencer');
   };
@@ -73,12 +72,10 @@ import '../partials/range-sliders';
       $('[data-toggle="tab"]')
         .tab();
     })
-    // .on('click', '.dropdown-menu.show [data-toggle="tab"]', function () {
-    //   $('body').addClass('keepDropdownOpen');
-    //   $(this).closest('.dropdown').on('hide.bs.dropdown', function () {
-    //     $('body').removeClass('keepDropdownOpen');
-    //   })
-    // })
+    .on('click', '.dropdown-menu.show [data-toggle="tab"]', function (e) {
+      e.stopPropagation()
+
+    })
     .on('click', 'a.nav-link[href^="#"]', function (e) {
       e.preventDefault();
       const $target = jQuery(jQuery(this).attr('href'));
@@ -211,6 +208,8 @@ import '../partials/range-sliders';
     .find('[data-toggle="dropdown"]')
     .prepend(jQuery('<span class="value__el align-middle"></span>'));
 
+  $(window).resize();
+
   function owlFix(owl) {
     let $parentEl = owl.relatedTarget.$element.closest('.single-card--owlwrapper');
     let targetW = Math.trunc(owl.relatedTarget.$element.closest('.single-profile--card')
@@ -218,6 +217,7 @@ import '../partials/range-sliders';
 
     $parentEl.width(targetW);
   }
+
 
 
 })();
