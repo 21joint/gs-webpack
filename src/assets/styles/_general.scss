@@ -8,6 +8,30 @@ body {
   }
 }
 
+.main-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  svg {
+    width: 120px;
+  }
+  path {
+    stroke-width: 2px;
+    transform-origin: 50% 50%;
+    transform: scale(.8) translate(-2%, -8%);
+    transition: 0.1s stroke-dashoffset;
+  }
+}
+
 .ui-slider .ui-slider-handle {
   cursor: pointer;
 }

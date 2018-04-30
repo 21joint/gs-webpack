@@ -20,6 +20,8 @@
 @import 'bs-components/modal';
 //tooltips
 @import "bs-components/tooltips";
+
+@import "bs-components/transitions";
 //file upload
 @import 'components/file-upload';
 //file pagination
@@ -29,7 +31,7 @@
 // network icons
 @import 'network-icons';
 // tabs
-@import 'tabs';
+@import 'bs-components/tabs';
 // buttons
 @import 'buttons';
 // videos

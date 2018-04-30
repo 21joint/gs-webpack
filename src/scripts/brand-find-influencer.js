@@ -11,7 +11,8 @@ import '../partials/range-sliders';
   const $sectionsWrapper = jQuery('.single-card--sections');
   const $singleInflModal = jQuery('.modal-single--influencer');
   const updateOffsets = function (element) {
-    let cacheScrolltop = jQuery(element).scrollTop();
+    let cacheScrolltop = jQuery(element)
+      .scrollTop();
     $fixedNavHeight = $fixedNav.outerHeight();
     $sectionsWrapperOffset = $sectionsWrapper.position().top;
 
@@ -22,9 +23,6 @@ import '../partials/range-sliders';
         offset: $fixedNavHeight + 2
       })
       .scrollTop(cacheScrolltop);
-  };
-  const getFixedNavHeight = function () {
-    return $fixedNav.outerHeight();
   };
   const likeProfileToggle = function (profile, callback) {
     //TODO dummy function to make ajax call to like profile
@@ -48,7 +46,9 @@ import '../partials/range-sliders';
   $singleInflModal
     .on('scroll', function (e) {
 
-      if (jQuery(this).scrollTop() > jQuery('.single-card--fixednav').outerHeight()) {
+      if (jQuery(this)
+        .scrollTop() > jQuery('.single-card--fixednav')
+        .outerHeight()) {
         $fixedNav.addClass('down');
       }
       else {
@@ -58,19 +58,21 @@ import '../partials/range-sliders';
 
   jQuery(document)
     .on('shown.bs.modal', '.modal-single--influencer', function () {
-      updateOffsets(jQuery(this))
+      updateOffsets(jQuery(this));
     })
     .on('hide.bs.dropdown', '.keepDropdownOpen .dropdown.show', function (e) {
       e.preventDefault();
     })
-    .on('shown.bs.dropdown', '.dropdown', function (e) {
-      console.log(e);
-      jQuery(e.target)
-        .find('.nav-item:first-child .nav-link')
-        .addClass('active');
-    })
-    .on('shown.bs.tab', function () {
-
+    // .on('shown.bs.dropdown', '.dropdown', function (e) {
+    //   console.log(e);
+    //   jQuery(e.target)
+    //     .find('.nav-item:first-child .nav-link')
+    //     .addClass('active');
+    // })
+    .on('shown.bs.tab', function (e) {
+      jQuery(jQuery(e.target)
+        .attr('href') + ' .owl-carousel')
+        .resize();
     })
     .on('click', '.dropdown-menu.show [data-toggle="tab"]', function (e) {
       e.stopPropagation();
@@ -132,7 +134,7 @@ import '../partials/range-sliders';
 
   jQuery('.search-filter--ul [data-toggle="dropdown"]')
     .dropdown({
-      boundary: 'window',
+      boundary: 'viewport',
       flip: false
     });
   jQuery('.badge-outline--dark')
@@ -214,8 +216,8 @@ import '../partials/range-sliders';
     .resize();
 
   function owlFix(owl) {
-    let $parentEl = owl.relatedTarget.$element.closest('.single-card--owlwrapper');
-    let targetW = Math.trunc(owl.relatedTarget.$element.closest('.single-profile--card')
+    const $parentEl = owl.relatedTarget.$element.closest('.single-card--owlwrapper');
+    const targetW = Math.trunc(owl.relatedTarget.$element.closest('.single-profile--card')
       .width());
 
     $parentEl.width(targetW);

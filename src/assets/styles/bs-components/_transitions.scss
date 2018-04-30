@@ -1,0 +1,7 @@
+.fade:not(.show) {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+.tab-pane.fade {
+  transition: opacity 0.2s 0.33s ease-in-out, transform 0.2s 0.33s ease-in-out !important;
+}

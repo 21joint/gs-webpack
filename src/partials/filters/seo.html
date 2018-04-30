@@ -1,9 +1,9 @@
 <button type="button"
-  class="btn btn-sm btn-outline-primary"
-  data-toggle="dropdown"
-  aria-haspopup="true"
-  title="Seo"
-  aria-expanded="false">
+        class="btn btn-sm btn-outline-primary"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        title="Seo"
+        aria-expanded="false">
   <i class="icon-close ml-2 align-middle"></i>
 </button>
 <div class="dropdown-menu p-0">
@@ -14,9 +14,10 @@
           <div class="col-auto"><h5 class="text-asphalt d-inline mb-4">
               <strong>Seo</strong>
             </h5></div>
-          <div class="col-auto"><span class="seo__info text-right" role="button">
-                                              <img src="/images/info.svg" alt="Awareness">
-                                            </span></div>
+          <div class="col-auto">
+            <button class="filter-info bg-transparent border-0 p-0" type="button">
+                                              <img src="../../assets/images/info.svg" alt="Awareness">
+                                            </button></div>
         </div>
       </div>
     </div>
@@ -25,15 +26,21 @@
         <p>Use this filter to find blogs suitable for link building</p>
       </div>
       <div class="col-auto">
-        <input type="checkbox" name="unique_domain" id="unique_domain"> <label for="unique_domain">
+        <input data-use="label" type="checkbox" name="unique_domain" id="unique_domain"> <label for="unique_domain">
           <span class="box"></span> Unique Domain ex annasblog.com</label>
       </div>
       <div class="col-auto">
-        <input type="checkbox" name="subdomain_domain" id="subdomain_domain"> <label for="subdomain_domain">
+        <input data-use="label"
+               type="checkbox"
+               name="subdomain_domain"
+               id="subdomain_domain"> <label for="subdomain_domain">
           <span class="box"></span> Subdomain Domain annasblog.blogspot.dom</label>
       </div>
       <div class="col-auto">
-        <input type="checkbox" name="directory_domain" id="directory_domain"> <label for="directory_domain">
+        <input data-use="label"
+               type="checkbox"
+               name="directory_domain"
+               id="directory_domain"> <label for="directory_domain">
           <span class="box"></span> Directory Domain metromode.com/annas</label>
       </div>
     </div>
@@ -45,17 +52,17 @@
             </h6>
             <input title="gs-handle--input" type="text" class="form-control d-inline" data-handle="0"/>
             <span class="text-asphalt mx-1">-</span> <input title="gs-handle--input"
-              type="text"
-              class="form-control d-inline"
-              data-handle="1"/>
+                                                            type="text"
+                                                            class="form-control d-inline"
+                                                            data-handle="1"/>
           </div>
           <div id="sliderSeo"
-            class="gs-range--slider"
-            data-start="0, 100"
-            data-min="0"
-            data-max="100"
-            data-step="1"
-            data-connect="true"></div>
+               class="gs-range--slider"
+               data-start="0, 100"
+               data-min="0"
+               data-max="100"
+               data-step="1"
+               data-connect="true"></div>
         </div>
       </div>
     </div>
