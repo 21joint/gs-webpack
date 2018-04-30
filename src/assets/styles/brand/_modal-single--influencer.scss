@@ -1,113 +1,111 @@
-.modal-single--influencer {
-  -webkit-backface-visibility: hidden;
-  -webkit-overflow-scrolling: touch;
-  .single-card--fixednav {
-    position: fixed;
-    z-index: 10;
-    top: -100px;
-    transform: translate3d(0,0,0);
-    transition: 0.3s top ease-in-out;
-    padding: 15px 0;
-    left: 0;
-    border-bottom: none;
-    background-color: #fff;
-    width: 100%;
-    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.05);
-    margin: auto;
-    .container-fluid {
-      max-width: none;
+.single-card--fixednav {
+  position: fixed;
+  z-index: 9999;
+  top: -100px;
+  transition: 0.3s top ease-in-out;
+  padding: 15px 0;
+  left: 0;
+  border-bottom: none;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.05);
+  margin: auto;
+  .container-fluid {
+    max-width: none;
+  }
+  .btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    i:before {
+      font-size: 18px;
     }
-    .btn {
-      width: 36px;
-      height: 36px;
-      padding: 0;
-      i:before {
-        font-size: 18px;
-      }
-      @include media-breakpoint-down(sm) {
-        background-color: transparent;
-        border: none;
-        color: $blue;
-        width: 28px;
-        height: 28px;
-        &.btn-close {
-          color: #c5c5c5;
-          margin-left: 10px !important;
-          &:before {
-            font-size: 20px;
-            border: 1px solid;
-            border-radius: 50%;
-            padding: 5px;
-          }
-        }
-        i {
-          line-height: inherit;
-        }
-        &:before, i:before {
+    @include media-breakpoint-down(sm) {
+      background-color: transparent;
+      border: none;
+      color: $blue;
+      width: 33px;
+      height: 33px;
+      &.btn-close {
+        color: #c5c5c5;
+        margin-left: 10px !important;
+        &:before {
           font-size: 20px;
+          border: 1px solid;
+          border-radius: 50%;
+          padding: 5px;
         }
       }
       i {
-        vertical-align: middle;
+        line-height: inherit;
       }
-      &.btn-close {
-        position: static;
-      }
-      & + .btn {
-        margin-left: 6px;
-      }
-    }
-    h2 {
-      @include media-breakpoint-down(md) {
+      &:before, i:before {
         font-size: 20px;
       }
     }
-    &:after {
-      position: absolute;
-      content: '';
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: auto;
-      height: 1px;
-      background-color: #eeeeee;
+    i {
+      vertical-align: middle;
     }
-    &.down {
-      top: 0;
+    &.btn-close {
+      position: static;
     }
-    .nav-link {
-      padding: 1px 0;
-      opacity: 0.2;
-      transition: 0.4s;
-      &.active {
-        opacity: 1;
-      }
+    & + .btn {
+      margin-left: 6px;
     }
-    .nav {
-      li {
-        & + li {
-          margin-left: 8px;
-          @include media-breakpoint-up(sm) {
-            margin-left: 10px;
-          }
-          @include media-breakpoint-up(md) {
-            margin-left: 15px;
-          }
+  }
+  h2 {
+    @include media-breakpoint-down(md) {
+      font-size: 20px;
+    }
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 1px;
+    background-color: #eeeeee;
+  }
+  &.down {
+    top: 0;
+  }
+  .nav-link {
+    padding: 1px 0;
+    opacity: 0.2;
+    transition: 0.4s;
+    &.active {
+      opacity: 1;
+    }
+  }
+  .nav {
+    li {
+      & + li {
+        margin-left: 8px;
+        @include media-breakpoint-up(sm) {
+          margin-left: 10px;
+        }
+        @include media-breakpoint-up(md) {
+          margin-left: 15px;
         }
       }
     }
-    .nav-pills .nav-link.active, .show > .nav-pills .nav-link {
-      background-color: transparent;
+  }
+  .nav-pills .nav-link.active, .show > .nav-pills .nav-link {
+    background-color: transparent;
+  }
+  @include media-breakpoint-up(md) {
+    .btn-save {
+      width: 120px;
     }
-    @include media-breakpoint-up(md) {
-      .btn-save {
-        width: 120px;
-      }
-      .btn-contact {
-        width: 120px;
-      }
+    .btn-contact {
+      width: 120px;
     }
   }
+}
+.modal-single--influencer {
+  -webkit-overflow-scrolling: touch;
   .modal-header {
     padding: 0;
   }

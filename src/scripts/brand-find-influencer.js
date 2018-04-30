@@ -1,4 +1,3 @@
-import '../partials/loader';
 import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
 import '../partials/range-sliders';
 
@@ -11,10 +10,18 @@ import '../partials/range-sliders';
   const $fixedNav = jQuery('.single-card--fixednav');
   const $sectionsWrapper = jQuery('.single-card--sections');
   const $singleInflModal = jQuery('.modal-single--influencer');
-  const updateOffsets = function () {
+  const updateOffsets = function (element) {
+    let cacheScrolltop = jQuery(element).scrollTop();
     $fixedNavHeight = $fixedNav.outerHeight();
     $sectionsWrapperOffset = $sectionsWrapper.position().top;
-    refreshScrollSpy('.modal-single--influencer');
+
+    jQuery(element)
+      .scrollTop(0)
+      .scrollspy('dispose')
+      .scrollspy({
+        offset: $fixedNavHeight + 2
+      })
+      .scrollTop(cacheScrolltop);
   };
   const getFixedNavHeight = function () {
     return $fixedNav.outerHeight();
@@ -35,47 +42,35 @@ import '../partials/range-sliders';
     }
   };
   const refreshScrollSpy = function (element) {
-    let cacheScrolltop = jQuery(element)
-      .scrollTop();
-    jQuery(element)
-      .scrollTop(0)
-      .scrollspy('dispose')
-      .scrollspy({
-        offset: $fixedNavHeight + 2
-      })
-      .scrollTop(cacheScrolltop);
+
   };
 
-  jQuery(document)
-    .on('shown.bs.modal', '.modal-single--influencer', function () {
-      updateOffsets();
-      jQuery(this)
-        .scrollspy({
-          target: '#singleInfluencerNav',
-          offset: getFixedNavHeight()
-        });
-    })
-    .on('scroll', '.modal-single--influencer', function (e) {
+  $singleInflModal
+    .on('scroll', function (e) {
 
-      if (jQuery(this)
-        .scrollTop() > $fixedNavHeight) {
+      if (jQuery(this).scrollTop() > jQuery('.single-card--fixednav').outerHeight()) {
         $fixedNav.addClass('down');
       }
       else {
         $fixedNav.removeClass('down');
       }
+    });
+
+  jQuery(document)
+    .on('shown.bs.modal', '.modal-single--influencer', function () {
+      updateOffsets(jQuery(this))
     })
     .on('hide.bs.dropdown', '.keepDropdownOpen .dropdown.show', function (e) {
       e.preventDefault();
     })
     .on('shown.bs.dropdown', '.dropdown', function (e) {
       console.log(e);
-      $(this)
+      jQuery(e.target)
         .find('.nav-item:first-child .nav-link')
-        .tab('show');
+        .addClass('active');
     })
     .on('shown.bs.tab', function () {
-      jQuery(window).resize();
+
     })
     .on('click', '.dropdown-menu.show [data-toggle="tab"]', function (e) {
       e.stopPropagation();
@@ -104,14 +99,14 @@ import '../partials/range-sliders';
       likeProfileToggle(_profile);
     })
     .on('mouseup', '.search-filter--ul [data-toggle=dropdown]', function (e) {
-      if ($(e.target)
+      if (jQuery(e.target)
         .is('i')) {
-        $(e.target)
+        jQuery(e.target)
           .closest('button')
           .removeClass('active')
           .find('span')
           .text('');
-        $(e.target)
+        jQuery(e.target)
           .closest('button')
           .dropdown('toggle');
       }
@@ -215,7 +210,7 @@ import '../partials/range-sliders';
     .find('[data-toggle="dropdown"]')
     .prepend(jQuery('<span class="value__el align-middle"></span>'));
 
-  $(window)
+  jQuery(window)
     .resize();
 
   function owlFix(owl) {

@@ -4,6 +4,4 @@ export default (() => {
       $('body')
         .toggleClass('menu_open');
     });
-  jQuery('#notificationsTabs')
-    .dropdown();
 })();
