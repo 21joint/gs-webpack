@@ -1,9 +1,11 @@
 .modal-single--influencer {
   -webkit-backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
   .single-card--fixednav {
     position: fixed;
     z-index: 10;
     top: -100px;
+    transform: translate3d(0,0,0);
     transition: 0.3s top ease-in-out;
     padding: 15px 0;
     left: 0;

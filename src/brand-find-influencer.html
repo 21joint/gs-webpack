@@ -6,86 +6,85 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <%
-const { Influencer } = require('./partials/influencer.card');
-const influencers = [
-  {
-    name: 'Betty Boo',
-    age: 27,
-    photos: [
-      require('./assets/images/influencer-1.png'),
-      require('./assets/images/influencer-2.png'),
-      require('./assets/images/influencer-3.png')
-    ],
-    social: {
-      tumblr: 4222,
-      pinterest: 32122,
-      blog: 12100
+  const { Influencer } = require('./partials/influencer.card');
+  const influencers = [
+    {
+      name: 'Betty Boo',
+      age: 27,
+      photos: [
+        require('./assets/images/influencer-1.png'),
+        require('./assets/images/influencer-2.png'),
+        require('./assets/images/influencer-3.png')
+      ],
+      social: {
+        tumblr: 4222,
+        pinterest: 32122,
+        blog: 12100
+      }
+    },
+    {
+      name: 'Lindsey Joe',
+      age: 23,
+      photos: [
+        require('./assets/images/influencer-1.png'),
+        require('./assets/images/influencer-4.png'),
+        require('./assets/images/influencer-5.png')
+      ],
+      social: {
+        facebook: 9156,
+        tumblr: 3200,
+        pinterest: 12098,
+        blog: 1200
+      }
+    },
+    {
+      name: 'Monica Belucci',
+      age: 27,
+      photos: [
+        require('./assets/images/influencer-3.png'),
+        require('./assets/images/influencer-1.png'),
+        require('./assets/images/influencer-4.png')
+      ],
+      social: {
+        snapchat: 9156,
+        twitter: 3200,
+        instagram: 12098,
+        podcast: 1200
+      }
+    },
+    {
+      name: 'Lina Van',
+      age: 22,
+      photos: [
+        require('./assets/images/influencer-5.png'),
+        require('./assets/images/influencer-4.png'),
+        require('./assets/images/influencer-3.png')
+      ],
+      social: {
+        facebook: 9156,
+        tumblr: 3200,
+        pinterest: 12098,
+        blog: 55000
+      }
     }
-  },
-  {
-    name: 'Lindsey Joe',
-    age: 23,
-    photos: [
-      require('./assets/images/influencer-1.png'),
-      require('./assets/images/influencer-4.png'),
-      require('./assets/images/influencer-5.png')
-    ],
-    social: {
-      facebook: 9156,
-      tumblr: 3200,
-      pinterest: 12098,
-      blog: 1200
-    }
-  },
-  {
-    name: 'Monica Belucci',
-    age: 27,
-    photos: [
-      require('./assets/images/influencer-3.png'),
-      require('./assets/images/influencer-1.png'),
-      require('./assets/images/influencer-4.png')
-    ],
-    social: {
-      snapchat: 9156,
-      twitter: 3200,
-      instagram: 12098,
-      podcast: 1200
-    }
-  },
-  {
-    name: 'Lina Van',
-    age: 22,
-    photos: [
-      require('./assets/images/influencer-5.png'),
-      require('./assets/images/influencer-4.png'),
-      require('./assets/images/influencer-3.png')
-    ],
-    social: {
-      facebook: 9156,
-      tumblr: 3200,
-      pinterest: 12098,
-      blog: 55000
-    }
-  }
-];
-const filters = [
-  require('html-loader!./partials/filters/sex.html'),
-  require('html-loader!./partials/filters/price.range.html'),
-  // require('html-loader!./partials/filters/categories.html'),
-  require('html-loader!./partials/filters/networks.html'),
-  require('html-loader!./partials/filters/agencies.html'),
-  require('html-loader!./partials/filters/seo.html'),
-  require('html-loader!./partials/filters/followers.html'),
-  require('html-loader!./partials/filters/engagement.html'),
-  require('html-loader!./partials/filters/sponsored.html'),
-  require('html-loader!./partials/filters/comments.html'),
-  require('html-loader!./partials/filters/comment.avg.html'),
-];
+  ];
+  const filters = [
+    require('html-loader!./partials/filters/sex.html'),
+    require('html-loader!./partials/filters/price.range.html'),
+    // require('html-loader!./partials/filters/categories.html'),
+    require('html-loader!./partials/filters/networks.html'),
+    require('html-loader!./partials/filters/agencies.html'),
+    require('html-loader!./partials/filters/seo.html'),
+    require('html-loader!./partials/filters/followers.html'),
+    require('html-loader!./partials/filters/engagement.html'),
+    require('html-loader!./partials/filters/sponsored.html'),
+    require('html-loader!./partials/filters/comments.html'),
+    require('html-loader!./partials/filters/comment.avg.html'),
+  ];
 %>
 <body class="bg-light">
-  <div>
     <%= require('html-loader!./partials/header/header.html') %>
-    <main class="main-content">
+  <main class="main-content">
       <!--FIND INFLUENCERS-->
       <div class="find-influencer">
         <div class="container-fluid py-3 pt-lg-4">
@@ -101,7 +100,9 @@ const filters = [
                       <div class="col-12">
                         <!--TABS NAVIGATION-->
                         <nav class="d-none d-md-flex">
-                          <ul class="nav nav-tabs find-influencer--navtabs border-0 py-3" id="searchTabsNav" role="tablist">
+                          <ul class="nav nav-tabs find-influencer--navtabs border-0 py-3"
+                              id="searchTabsNav"
+                              role="tablist">
                             <li class="nav-item">
                               <a class="nav-link active m-0 px-0"
                                  data-toggle="tab"
@@ -109,7 +110,7 @@ const filters = [
                                  role="tab"
                                  aria-expanded="true"
                                  aria-controls="searchTab"
-                              aria-selected="true">Find new influencers</a>
+                                 aria-selected="true">Find new influencers</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link m-0 px-0"
@@ -117,7 +118,7 @@ const filters = [
                                  href="#likedTab"
                                  role="tab"
                                  aria-controls="likedTab"
-                              aria-selected="false">Liked/Saved Influencers</a>
+                                 aria-selected="false">Liked/Saved Influencers</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link m-0 px-0"
@@ -125,7 +126,7 @@ const filters = [
                                  href="#myTab"
                                  role="tab"
                                  aria-controls="myTab"
-                              aria-selected="false">My influencers</a>
+                                 aria-selected="false">My influencers</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link m-0 px-0"
@@ -133,7 +134,7 @@ const filters = [
                                  href="#wishlistTab"
                                  role="tab"
                                  aria-controls="wishlistTab"
-                              aria-selected="false">Wishlist</a>
+                                 aria-selected="false">Wishlist</a>
                             </li>
                           </ul>
                         </nav>
@@ -298,9 +299,8 @@ const filters = [
         </div>
       </div>
     </main>
-    <%= require('html-loader!./partials/filters.mobile.html') %>
-    <%= require('html-loader!./partials/single-influencer.html') %>
-  </div>
+  <%= require('html-loader!./partials/filters.mobile.html') %>
+  <%= require('html-loader!./partials/single-influencer.html') %>
 </body>
 </html>
 

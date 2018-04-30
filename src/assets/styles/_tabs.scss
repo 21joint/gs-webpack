@@ -24,7 +24,7 @@
       will-change: left, right;
     }
     div:not(.content-loading) & {
-      &.show.active {
+      &.active {
         background-color: transparent;
         &:after {
           width: 100%;

@@ -607,8 +607,8 @@
       animation-timing-function: ease;
       animation-duration: 0.5s;
       display: none;
-      font-size: 1.25em;
-      line-height: 0;
+      font-size: 1em;
+      line-height: 1;
       &:before {
         font-weight: 700;
       }
@@ -732,7 +732,7 @@
 }
 
 .single-content--section {
-  padding: 20px 0 0;
+  padding: 15px 0;
   border-top: 1px solid #eeeeee;
 }
 

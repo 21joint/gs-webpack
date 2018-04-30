@@ -7,6 +7,7 @@ module.exports = merge(config, {
     // contentBase: path.join(__dirname, 'dist'),
     watchContentBase: true,
     compress: true,
+    host: '0',
     port: 2121,
     open: true,
     historyApiFallback: true, // true for index.html upon 404, object for multiple paths,

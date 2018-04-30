@@ -1,33 +1,20 @@
-export default (() => {
-  $(document).ready(function () {
-      let $contentBox = $('.content-box'),
-        $contentLoader = $('<div></div>')
-          .addClass('white-overlay');
+export default (function () {
 
-      $contentLoader.appendTo($contentBox);
+  const $contentLoader = jQuery('<div></div>')
+    .addClass('white-overlay');
 
-      $(window)
-        .on('resize orientationchange', function () {
-          $contentBox.removeClass('content-loading');
-          $('body')
-            .removeClass('filter-open');
-        });
+  $contentLoader.appendTo('body');
 
-      $('[data-toggle="tab"]:not(.active.show)')
-        .closest('.dropdown')
-        .on('hide.bs.tab', function (e) {
-          $(e.target)
-            .closest('.content-box')
-            .addClass('content-loading');
-        });
-
-      $('[data-toggle="tab"]')
-        .closest('.dropdown')
-        .on('shown.bs.tab', function (e) {
-          $(e.target)
-            .closest('.content-box')
-            .removeClass('content-loading');
-        });
-
+  jQuery(document)
+    .on('shown.bs.tab', function (e) {
+      setTimeout(function () {
+        jQuery('body')
+          .removeClass('content-loading');
+      }, 2000);
+    })
+    .on('hidden.bs.tab', function (e) {
+      jQuery('body')
+        .addClass('content-loading');
     });
+
 })();

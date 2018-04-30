@@ -46,8 +46,8 @@ import '../partials/range-sliders';
       .scrollTop(cacheScrolltop);
   };
 
-  $singleInflModal
-    .on('shown.bs.modal', function () {
+  jQuery(document)
+    .on('shown.bs.modal', '.modal-single--influencer', function () {
       updateOffsets();
       jQuery(this)
         .scrollspy({
@@ -55,30 +55,36 @@ import '../partials/range-sliders';
           offset: getFixedNavHeight()
         });
     })
-    .on('scroll', function (e) {
+    .on('scroll', '.modal-single--influencer', function (e) {
 
-      if (jQuery(this).scrollTop() > $fixedNavHeight) {
+      if (jQuery(this)
+        .scrollTop() > $fixedNavHeight) {
         $fixedNav.addClass('down');
       }
       else {
         $fixedNav.removeClass('down');
       }
-    });
-  jQuery(document)
+    })
     .on('hide.bs.dropdown', '.keepDropdownOpen .dropdown.show', function (e) {
       e.preventDefault();
     })
-    .on('shown.bs.dropdown', '.dropdown:has([role="tablist"])', function () {
-      $('[data-toggle="tab"]')
-        .tab();
+    .on('shown.bs.dropdown', '.dropdown', function (e) {
+      console.log(e);
+      $(this)
+        .find('.nav-item:first-child .nav-link')
+        .tab('show');
+    })
+    .on('shown.bs.tab', function () {
+      jQuery(window).resize();
     })
     .on('click', '.dropdown-menu.show [data-toggle="tab"]', function (e) {
-      e.stopPropagation()
+      e.stopPropagation();
 
     })
     .on('click', 'a.nav-link[href^="#"]', function (e) {
       e.preventDefault();
-      const $target = jQuery(jQuery(this).attr('href'));
+      const $target = jQuery(jQuery(this)
+        .attr('href'));
 
       $singleInflModal.animate({
         'scrollTop': $target.position().top - $fixedNavHeight + 2
@@ -163,7 +169,8 @@ import '../partials/range-sliders';
     .on('resize orientationchange', function () {
       updateOffsets();
       refreshScrollSpy('.modal-open .modal-single--influencer');
-      jQuery('.owl-carousel').trigger('refresh.owl.carousel');
+      jQuery('.owl-carousel')
+        .trigger('refresh.owl.carousel');
     });
   jQuery('body')
     .on('click', '.checked-all', function (e) {
@@ -208,7 +215,8 @@ import '../partials/range-sliders';
     .find('[data-toggle="dropdown"]')
     .prepend(jQuery('<span class="value__el align-middle"></span>'));
 
-  $(window).resize();
+  $(window)
+    .resize();
 
   function owlFix(owl) {
     let $parentEl = owl.relatedTarget.$element.closest('.single-card--owlwrapper');
@@ -217,7 +225,4 @@ import '../partials/range-sliders';
 
     $parentEl.width(targetW);
   }
-
-
-
 })();
