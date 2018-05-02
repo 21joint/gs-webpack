@@ -11,19 +11,31 @@ import './partials/loader';
 import SelectCountry from './partials/select2.country';
 
 
-
 // Adding a cool transition
-$.extend($.easing, {
+jQuery.extend(jQuery.easing, {
   easeNav(t) {
     return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t;
   }
 });
 
-$('select')
+jQuery('select')
   .select2({
     minimumResultsForSearch: -1,
-    templateResult: $(this)
+    templateResult: jQuery(this)
       .hasClass('with-flags') ? SelectCountry : undefined,
-    templateSelection: $(this)
+    templateSelection: jQuery(this)
       .hasClass('with-flags') ? SelectCountry : undefined
+  });
+
+jQuery(document)
+  .on('click', '.checked-all', function (e) {
+    let $checked = jQuery(e.currentTarget)
+      .closest('.form-row' || 'form-group')
+      .find('input:checkbox');
+    $checked.not(this)
+      .prop('checked', this.checked);
+  })
+  .on('click', '.dropdown-menu.show [data-toggle="tab"]', function (e) {
+    e.stopPropagation();
+
   });

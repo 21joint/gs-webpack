@@ -6,15 +6,16 @@
   &:not(.show) {
     opacity: 0;
   }
+  &:after {
+    display: none;
+  }
 }
 
-.right_nav{
+.right_nav {
   .dropdown {
     &:before, &:after {
       top: 100%;
-      left: 50%;
       visibility: hidden;
-      transform: translate(-50%, 0);
     }
     &:before {
       content: '';
@@ -46,11 +47,10 @@
   }
 }
 
-
 .flags-dropdown {
   .dropdown-toggle:after {
     @include my_caret();
-    margin-left: 15px;
+    margin-left: 10px;
   }
   .badge {
     line-height: 18px;

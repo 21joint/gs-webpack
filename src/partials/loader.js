@@ -18,9 +18,7 @@ export default (function () {
     currOffset = parseInt(jQuery('.main-loader svg path')
       .attr('stroke-dashoffset'));
 
-    if (window.loaded && currOffset >= initOffset / 3) {
-      jQuery('.main-loader').fadeOut(1000);
-    }
+    hideLoader();
 
     if (currOffset >= 0) {
       clearInterval(mainLoader);
@@ -49,5 +47,15 @@ export default (function () {
         .addClass('content-loading');
       $contentLoader.remove();
     });
+
+  function hideLoader() {
+    if (window.loaded && currOffset >= initOffset / 8) {
+      jQuery('.main-loader')
+        .fadeOut(500);
+    }
+    else {
+      setTimeout(hideLoader, 500);
+    }
+  }
 
 })();

@@ -74,10 +74,6 @@ import '../partials/range-sliders';
         .attr('href') + ' .owl-carousel')
         .resize();
     })
-    .on('click', '.dropdown-menu.show [data-toggle="tab"]', function (e) {
-      e.stopPropagation();
-
-    })
     .on('click', 'a.nav-link[href^="#"]', function (e) {
       e.preventDefault();
       const $target = jQuery(jQuery(this)
@@ -134,7 +130,7 @@ import '../partials/range-sliders';
 
   jQuery('.search-filter--ul [data-toggle="dropdown"]')
     .dropdown({
-      boundary: 'viewport',
+      boundary: 'window',
       flip: false
     });
   jQuery('.badge-outline--dark')
@@ -168,14 +164,6 @@ import '../partials/range-sliders';
       refreshScrollSpy('.modal-open .modal-single--influencer');
       jQuery('.owl-carousel')
         .trigger('refresh.owl.carousel');
-    });
-  jQuery('body')
-    .on('click', '.checked-all', function (e) {
-      let $checked = jQuery(e.currentTarget)
-        .closest('.form-row' || 'form-group')
-        .find('input:checkbox');
-      $checked.not(this)
-        .prop('checked', this.checked);
     });
 
   jQuery('.search-filter--ul .btn-apply')
