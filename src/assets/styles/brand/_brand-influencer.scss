@@ -1,17 +1,3 @@
-@keyframes closeRollIn {
-  0% {
-    opacity: 0;
-    transform: translate(0, -50%) rotate(-360deg) scale(.95);
-  }
-  70% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, -50%) rotate(0) scale(1);
-  }
-}
-
 .content-box--group {
   position: relative;
 }
@@ -580,22 +566,16 @@
 .search-filter--ul {
   position: relative;
   flex-wrap: wrap;
-  input[type='number'] {
-    -moz-appearance: textfield;
-  }
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
   li {
     margin-right: 8px;
     margin-bottom: 8px;
   }
-  .btn-outline-primary {
+  [data-toggle="dropdown"] {
     border-color: #BDC0C9;
     color: #4D4D4D;
     font-weight: 300;
     max-width: 100%;
+    width: auto;
     line-height: 1;
     position: relative;
     z-index: 200;
@@ -637,9 +617,48 @@
     @include hover-focus-active() {
       @include button-variant($blue, $blue, $blue)
     }
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .input-tag--remove {
+    width: 24px;
+    height: 24px;
+    line-height: 1;
+    color: $border-color;
+    padding: 0;
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 14px;
+    border-color: inherit;
+    display: block;
+    border: none;
+    box-shadow: 0 0 0 1px $border-color;
+    i {
+      transform: rotate(45deg);
+      display: block;
 
+    }
   }
   .dropdown-menu {
+    .btn-plus {
+      width: 40px;
+      line-height: 1;
+      height: 40px;
+      @include button-outline-variant($border-color, $border-color, #ffffff, $border-color);
+      border: none;
+      box-shadow: 0 0 0 1px $border-color;
+      @include hover-focus-active() {
+        background-color: #fff;
+        @include button-outline-variant(darken($border-color, 10%), darken($border-color, 10%), #ffffff, darken($border-color, 10%));
+      }
+    }
+  }
+  .dropdown-menu--actions {
     .btn {
       width: 100px;
     }
@@ -837,5 +856,19 @@
     bottom: 0;
     background-position: center;
     background-repeat: no-repeat;
+  }
+}
+
+@keyframes closeRollIn {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50%) rotate(-360deg) scale(.95);
+  }
+  70% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, -50%) rotate(0) scale(1);
   }
 }

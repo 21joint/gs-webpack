@@ -1,22 +1,22 @@
-<button id="jSds"
-        type="button"
+<button type="button"
         class="btn btn-sm btn-outline-primary"
         data-toggle="dropdown"
         aria-haspopup="true"
-        title="Sex"
+        title="Gender"
         aria-expanded="false"><i class="icon-close ml-2 align-middle"></i></button>
-<div aria-labelledby="jSds" class="dropdown-menu p-0">
-  <div style="z-index: 99999;" class="position-relative">
-    <div class="container-fluid">
-      <div class="form-row py-3 flex-sm-column">
+<div class="dropdown-menu p-0">
+  <div class="container-fluid">
+      <div class="form-row py-3">
         <div class="col-12">
-          <h5 class="text-asphalt mb-4"><strong>Gender</strong></h5>
+          <h6 class="text-dark mb-0"><strong>Gender</strong></h6>
         </div>
-        <div class="col-12">
+      </div>
+    <div class="form-row py-3">
+      <div class="col-12">
           <p class="mb-0">The demographics data is not 100% correct</p>
           <a href="#">(read more)</a>
         </div>
-      </div>
+    </div>
       <div class="form-row py-3 justify-content-center flex-sm-column">
         <div class="col-auto">
           <input type="checkbox" name="gender" id="men" data-use=" label, "/>
@@ -32,7 +32,7 @@
             <span class="box"></span>Unknown</label>
         </div>
       </div>
-      <div class="form-row pt-3 pb-4">
+      <div class="form-row py-3 pb-4">
         <div class="col-sm-5 col-md pb-5 py-md-0">
           <div class="form-range-group">
             <div class="form-group">
@@ -44,11 +44,11 @@
                                                                                 data-handle="0"
                                                                                 data-use="(value -"/>
                 <span class="text-asphalt mx-1">-</span><input title="gs-handle--input"
-                                                                type="text"
-                                                                class="form-control d-inline"
-                                                                id="to"
-                                                                data-handle="1"
-                                                                data-use=" value)"/>
+                                                               type="text"
+                                                               class="form-control d-inline"
+                                                               id="to"
+                                                               data-handle="1"
+                                                               data-use=" value)"/>
                 <span class="text-asphalt ml-1">years</span>
               </div>
               <div id="sliderAge"
@@ -69,11 +69,10 @@
           </button>
         </div>
         <div class="col-auto">
-          <button class="btn btn-block btn-primary btn-sm btn-apply">
+          <button class="btn btn-block btn-primary btn-sm btn-apply" type="button">
             Apply
           </button>
         </div>
       </div>
     </div>
-  </div>
 </div>

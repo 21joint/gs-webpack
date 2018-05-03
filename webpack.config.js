@@ -131,7 +131,6 @@ module.exports = {
     },
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({}),
     new webpack.DefinePlugin({
       IS_DEV
     }),

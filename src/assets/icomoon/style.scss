@@ -2,16 +2,16 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('#{$icomoon-font-path}/icomoon.eot?4idrwg');
-  src:  url('#{$icomoon-font-path}/icomoon.eot?4idrwg#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/icomoon.ttf?4idrwg') format('truetype'),
-    url('#{$icomoon-font-path}/icomoon.woff?4idrwg') format('woff'),
-    url('#{$icomoon-font-path}/icomoon.svg?4idrwg#icomoon') format('svg');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?st4efn');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?st4efn#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/icomoon.ttf?st4efn') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff?st4efn') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg?st4efn#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="bwicon-"], [class*=" bwicon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -30,194 +30,199 @@
   @return unquote("\"") + $str + unquote("\"");
 }
 
-.bwicon-fb {
+.icon-fb {
   &:before {
-    content: unicode($bwicon-fb); 
+    content: unicode($icon-fb); 
   }
 }
-.bwicon-in {
+.icon-in {
   &:before {
-    content: unicode($bwicon-in); 
+    content: unicode($icon-in); 
   }
 }
-.bwicon-logout1 {
+.icon-logout1 {
   &:before {
-    content: unicode($bwicon-logout1); 
+    content: unicode($icon-logout1); 
   }
 }
-.bwicon-arrow-left {
+.icon-arrow-left {
   &:before {
-    content: unicode($bwicon-arrow-left); 
+    content: unicode($icon-arrow-left); 
   }
 }
-.bwicon-arrow-right {
+.icon-arrow-right {
   &:before {
-    content: unicode($bwicon-arrow-right); 
+    content: unicode($icon-arrow-right); 
   }
 }
-.bwicon-back {
+.icon-back {
   &:before {
-    content: unicode($bwicon-back); 
+    content: unicode($icon-back); 
   }
 }
-.bwicon-delete {
+.icon-delete {
   &:before {
-    content: unicode($bwicon-delete); 
+    content: unicode($icon-delete); 
   }
 }
-.bwicon-download {
+.icon-download {
   &:before {
-    content: unicode($bwicon-download); 
+    content: unicode($icon-download); 
   }
 }
-.bwicon-help {
+.icon-help {
   &:before {
-    content: unicode($bwicon-help); 
+    content: unicode($icon-help); 
   }
 }
-.bwicon-like {
+.icon-like {
   &:before {
-    content: unicode($bwicon-like); 
+    content: unicode($icon-like); 
   }
 }
-.bwicon-load {
+.icon-load {
   &:before {
-    content: unicode($bwicon-load); 
+    content: unicode($icon-load); 
   }
 }
-.bwicon-marker {
+.icon-marker {
   &:before {
-    content: unicode($bwicon-marker); 
+    content: unicode($icon-marker); 
   }
 }
-.bwicon-pause {
+.icon-pause {
   &:before {
-    content: unicode($bwicon-pause); 
+    content: unicode($icon-pause); 
   }
 }
-.bwicon-phone {
+.icon-phone {
   &:before {
-    content: unicode($bwicon-phone); 
+    content: unicode($icon-phone); 
   }
 }
-.bwicon-photo {
+.icon-photo {
   &:before {
-    content: unicode($bwicon-photo); 
+    content: unicode($icon-photo); 
   }
 }
-.bwicon-play {
+.icon-play {
   &:before {
-    content: unicode($bwicon-play); 
+    content: unicode($icon-play); 
   }
 }
-.bwicon-save {
+.icon-save {
   &:before {
-    content: unicode($bwicon-save); 
+    content: unicode($icon-save); 
   }
 }
-.bwicon-search {
+.icon-search {
   &:before {
-    content: unicode($bwicon-search); 
+    content: unicode($icon-search); 
   }
 }
-.bwicon-send {
+.icon-send {
   &:before {
-    content: unicode($bwicon-send); 
+    content: unicode($icon-send); 
   }
 }
-.bwicon-settings {
+.icon-settings {
   &:before {
-    content: unicode($bwicon-settings); 
+    content: unicode($icon-settings); 
   }
 }
-.bwicon-socialbox {
+.icon-socialbox {
   &:before {
-    content: unicode($bwicon-socialbox); 
+    content: unicode($icon-socialbox); 
   }
 }
-.bwicon-star {
+.icon-star {
   &:before {
-    content: unicode($bwicon-star); 
+    content: unicode($icon-star); 
   }
 }
-.bwicon-time {
+.icon-time {
   &:before {
-    content: unicode($bwicon-time); 
+    content: unicode($icon-time); 
   }
 }
-.bwicon-upload {
+.icon-upload {
   &:before {
-    content: unicode($bwicon-upload); 
+    content: unicode($icon-upload); 
   }
 }
-.bwicon-wrote {
+.icon-wrote {
   &:before {
-    content: unicode($bwicon-wrote); 
+    content: unicode($icon-wrote); 
   }
 }
-.bwicon-notification-i {
+.icon-notification-i {
   &:before {
-    content: unicode($bwicon-notification-i); 
+    content: unicode($icon-notification-i); 
   }
 }
-.bwicon-money {
+.icon-money {
   &:before {
-    content: unicode($bwicon-money); 
+    content: unicode($icon-money); 
   }
 }
-.bwicon-i {
+.icon-i {
   &:before {
-    content: unicode($bwicon-i); 
+    content: unicode($icon-i); 
   }
 }
-.bwicon-close {
+.icon-close {
   &:before {
-    content: unicode($bwicon-close); 
+    content: unicode($icon-close); 
   }
 }
-.bwicon-arrow-up {
+.icon-arrow-up {
   &:before {
-    content: unicode($bwicon-arrow-up); 
+    content: unicode($icon-arrow-up); 
   }
 }
-.bwicon-arrow-down {
+.icon-arrow-down {
   &:before {
-    content: unicode($bwicon-arrow-down); 
+    content: unicode($icon-arrow-down); 
   }
 }
-.bwicon-arrow-up-bold {
+.icon-arrow-up-bold {
   &:before {
-    content: unicode($bwicon-arrow-up-bold); 
+    content: unicode($icon-arrow-up-bold); 
   }
 }
-.bwicon-arrow-down-bold {
+.icon-arrow-down-bold {
   &:before {
-    content: unicode($bwicon-arrow-down-bold); 
+    content: unicode($icon-arrow-down-bold); 
   }
 }
-.bwicon-arrow-left-bold {
+.icon-arrow-left-bold {
   &:before {
-    content: unicode($bwicon-arrow-left-bold); 
+    content: unicode($icon-arrow-left-bold); 
   }
 }
-.bwicon-arrow-right-bold {
+.icon-arrow-right-bold {
   &:before {
-    content: unicode($bwicon-arrow-right-bold); 
+    content: unicode($icon-arrow-right-bold); 
   }
 }
-.bwicon-Page {
+.icon-Page {
   &:before {
-    content: unicode($bwicon-Page); 
+    content: unicode($icon-Page); 
   }
 }
-.bwicon-calendar {
+.icon-calendar {
   &:before {
-    content: unicode($bwicon-calendar); 
+    content: unicode($icon-calendar); 
   }
 }
-.bwicon-mail {
+.icon-mail {
   &:before {
-    content: unicode($bwicon-mail); 
+    content: unicode($icon-mail); 
+  }
+}
+.icon-plus {
+  &:before {
+    content: unicode($icon-plus); 
   }
 }
 

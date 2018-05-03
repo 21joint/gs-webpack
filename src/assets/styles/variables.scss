@@ -8,8 +8,7 @@ $main-padding: (
         md: 40
 );
 $delayed-transition: cubic-bezier(0.93, 0.03, 0.23, 1.01);
-$icon-font-path: "../../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
-$fa-font-path: "../../../bower_components/font-awesome/fonts";
+$icomoon-font-path: '../icomoon/fonts';
 
 // Variables
 //
@@ -113,14 +112,14 @@ $fa-font-path: "../../../bower_components/font-awesome/fonts";
 //
 //$theme-colors: (
 //        primary: $blue,
-//        secondary: $gray-600,
+//        secondary: $gray-400,
 //        success: $green,
 //        info: $cyan,
 //        warning: $yellow,
 //        danger: $red,
 //        light: $gray-100,
 //        dark: $gray-800
-//) !default;
+//);
 //
 //// Set a specific jump point for requesting color jumps
 //$theme-color-interval: 8% !default;
@@ -352,7 +351,7 @@ $input-btn-padding-x-sm:    .75rem;
 //
 $btn-font-weight: 700;
 //$btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba($black,.075) !default;
-//$btn-focus-box-shadow:           0 0 0 3px rgba(theme-color("primary"), .25) !default;
+//$btn-focus-box-shadow:           0 0 1px 2px rgba(theme-color("primary"), .25) !default;
 //$btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125) !default;
 //
 //$btn-link-disabled-color:        $gray-600 !default;
@@ -360,7 +359,7 @@ $btn-font-weight: 700;
 //$btn-block-spacing-y:            .5rem !default;
 //
 //// Allows for customizing button radius independently from global border radius
-$btn-border-radius: 6px;
+$btn-border-radius: 4px;
 //$btn-border-radius-lg:           $border-radius-lg !default;
 //$btn-border-radius-sm:           $border-radius-sm !default;
 //

@@ -1,5 +1,7 @@
 import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
 import '../partials/range-sliders';
+import '../partials/filters/filters';
+import '../partials/input.tags';
 
 
 (!!document.querySelector('.find-influencer')) && (function () {
@@ -63,12 +65,6 @@ import '../partials/range-sliders';
     .on('hide.bs.dropdown', '.keepDropdownOpen .dropdown.show', function (e) {
       e.preventDefault();
     })
-    // .on('shown.bs.dropdown', '.dropdown', function (e) {
-    //   console.log(e);
-    //   jQuery(e.target)
-    //     .find('.nav-item:first-child .nav-link')
-    //     .addClass('active');
-    // })
     .on('shown.bs.tab', function (e) {
       jQuery(jQuery(e.target)
         .attr('href') + ' .owl-carousel')
@@ -96,43 +92,10 @@ import '../partials/range-sliders';
 
       likeProfileToggle(_profile);
     })
-    .on('mouseup', '.search-filter--ul [data-toggle=dropdown]', function (e) {
-      if (jQuery(e.target)
-        .is('i')) {
-        jQuery(e.target)
-          .closest('button')
-          .removeClass('active')
-          .find('span')
-          .text('');
-        jQuery(e.target)
-          .closest('button')
-          .dropdown('toggle');
-      }
-    })
-    .on('mouseup', '.filter-open .dropdown-menu.show', function (e) {
-
-      jQuery(e.target)
-        .not('button')
-        .closest('.dropdown.show')
-        .one('hide.bs.dropdown', function (ev) {
-          ev.preventDefault();
-        });
-    });
-  jQuery('.search-filter--ul .dropdown')
-    .on('shown.bs.dropdown', function () {
-      jQuery('body')
-        .addClass('filter-open');
-    })
-    .on('hidden.bs.dropdown', function () {
-      jQuery('body')
-        .removeClass('filter-open');
+    .on('click', '.dropdown-menu.show', function (e) {
+      !e.target.dataset.dismiss && e.stopPropagation();
     });
 
-  jQuery('.search-filter--ul [data-toggle="dropdown"]')
-    .dropdown({
-      boundary: 'window',
-      flip: false
-    });
   jQuery('.badge-outline--dark')
     .tooltip();
 
@@ -164,43 +127,7 @@ import '../partials/range-sliders';
       refreshScrollSpy('.modal-open .modal-single--influencer');
       jQuery('.owl-carousel')
         .trigger('refresh.owl.carousel');
-    });
-
-  jQuery('.search-filter--ul .btn-apply')
-    .on('click', function (e) {
-
-      e.preventDefault();
-
-      let _query = '',
-        _applyButton = jQuery(this),
-        _dropdown = _applyButton.closest('.dropdown'),
-        _valueButton = _dropdown.find('[data-toggle="dropdown"]'),
-        _valueEl = _dropdown.find('.value__el');
-
-      jQuery(this)
-        .closest('.dropdown-menu')
-        .find('[data-use]')
-        .each(function (i, el) {
-          if (el.dataset.use.match(/value/)) {
-            _query += el.dataset.use.replace(/value/, el.value);
-          }
-          if (el.checked && el.dataset.use.match(/label/)) {
-            _query += el.dataset.use.replace(/label/, el.parentNode.querySelector('label').innerText ||
-              el.parentNode.parentNode.querySelector('label').innerText);
-          }
-        });
-
-      _valueEl.text(_query)
-        .end()
-        .closest('.dropdown')
-        .find('[data-toggle="dropdown"]')
-        .addClass('active');
     })
-    .closest('.dropdown')
-    .find('[data-toggle="dropdown"]')
-    .prepend(jQuery('<span class="value__el align-middle"></span>'));
-
-  jQuery(window)
     .resize();
 
   function owlFix(owl) {

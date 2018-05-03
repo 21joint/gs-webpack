@@ -8,10 +8,10 @@ export default (function () {
     .addClass('white-overlay');
 
   let mainLoader,
+    currOffset,
     count = 0,
     initOffset = parseInt(jQuery('.main-loader svg path')
-      .attr('stroke-dashoffset')),
-    currOffset;
+      .attr('stroke-dashoffset'));
 
   mainLoader = setInterval(function () {
     count++;
@@ -27,7 +27,7 @@ export default (function () {
     jQuery('.main-loader svg path')
       .attr('stroke-dashoffset', currOffset + 5);
     jQuery('.main-loader svg')
-      .attr('transform', 'scale(' + 1 / count * 400 + ')');
+      .attr('transform', 'scale(' + count / 400 + ')');
   }, 5);
 
 
@@ -36,7 +36,6 @@ export default (function () {
       const wrEl = jQuery(jQuery(e.target)
         .attr('href'))
         .parent();
-      $contentLoader.appendTo(wrEl);
       setTimeout(function () {
         jQuery('body')
           .removeClass('content-loading');
@@ -45,7 +44,6 @@ export default (function () {
     .on('hidden.bs.tab', function () {
       jQuery('body')
         .addClass('content-loading');
-      $contentLoader.remove();
     });
 
   function hideLoader() {
@@ -56,6 +54,11 @@ export default (function () {
     else {
       setTimeout(hideLoader, 500);
     }
+  }
+
+  function showLoader() {
+    jQuery('.main-loader')
+      .fadeIn(200);
   }
 
 })();

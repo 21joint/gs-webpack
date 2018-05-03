@@ -8,7 +8,7 @@
   "license": "MIT",
   "homepage": "https://growsocial.com/",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --color --display-error-details --progress --mode development --config webpack.config.dev.js",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server  --color --display-error-details --progress --mode development --config webpack.config.dev.js",
     "build": "webpack -p --progress --mode production --config webpack.config.build.js",
     "start": "webpack -p webpack-dev-server --progress --mode production --config webpack.config.build.js",
     "git-push": "git add -u && git pull && git commit -m'updates' && git push"

@@ -13,7 +13,7 @@ export default (evt => {
 
       const hasSuffix = () => el.dataset.suffix ? el.dataset.suffix : '';
 
-      _parent = el.closest('.form-group') || el.closest('.form-row');
+      _parent = el.closest('.form-row');
       _options = {
         start: el.dataset.start.split(','),
         step: parseInt(el.dataset.step, 10),
@@ -40,7 +40,7 @@ export default (evt => {
         edge = handle === 1 ? 'max' : 'min';
 
         const zeroParser = function (value) {
-          console.log(parseFloat(value));
+          // console.log(parseFloat(value));
           return parseInt(value) !== 0 ? value : parseFloat(value);
         };
 

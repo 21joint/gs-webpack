@@ -84,136 +84,48 @@
       </div>
       <div class="col-auto d-none d-md-block">
         <div class="right_nav">
-          <div class="dropdown notifications-dropdown">
-            <button class="btn" data-toggle="dropdown" id="notificationDropdownBtn"><i class="icon-notification-i"></i>
-              <span class="badge badge-warning text-white">3</span></button>
-            <div class="dropdown-menu dropdown-menu-right p-0 dropdown-menu-notifications"
-                 aria-labelledby="notificationDropdownBtn">
+          <div class="dropdown flags-dropdown">
+            <button class="btn dropdown-toggle p-0" data-toggle="dropdown" data-boundary="window" id="flagsDropdownBtn">
+              <img class="rounded-circle r-icon--big" src="../../assets/images/flags/uk.svg">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right p-0 mr-0 dropdown-menu-flags"
+                 aria-labelledby="flagsDropdownBtn">
               <div class="bg-white">
-                <ul class="nav nav-tabs" id="notificationsTabs" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active px-0"
-                         data-toggle="tab"
-                         href="#all"
-                         id="all-tab"
-                         role="button"
-                         aria-selected="true">All Types</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link px-0"
-                         data-toggle="tab"
-                         href="#new"
-                         id="new-tab"
-                         role="button"
-                         aria-controls="new"
-                         aria-selected="false">New Deals</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link px-0"
-                         data-toggle="tab"
-                         href="#published"
-                         id="published-tab"
-                         role="button"
-                         aria-controls="published"
-                         aria-selected="false"> Published Deals </a>
-                    </li>
-                  </ul>
-                <div class="tab-content" id="notificationsTabContent">
-                  <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
-                    <ul class="media-feed">
-                      <li class="media align-items-center">
-                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
-                        <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
-                          <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
-                          <p class="media-info text-asphalt mb-0">
-                            <i class="icon-send align-middle mr-1"></i>for 2 hours ago</p>
-                        </div>
-                      </li>
-                      <li class="media align-items-center">
-                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
-                        <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
-                          <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
-                          <p class="media-info text-asphalt mb-0">
-                            <i class="icon-like align-middle mr-1"></i>for 2 hours ago</p>
-                        </div>
-                      </li>
-                      <li class="media align-items-center">
-                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
-                        <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
-                          <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
-                          <p class="media-info text-asphalt mb-0">
-                            <i class="icon-photo align-middle mr-1"></i>for 2 hours ago</p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="tab-pane fade" id="new" role="tabpanel" aria-labelledby="new-tab">
-                    <ul class="media-feed">
-                      <li class="media align-items-center">
-                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
-                        <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
-                          <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
-                          <p class="media-info text-asphalt mb-0">
-                            <i class="icon-send align-middle mr-1"></i>for 2 hours ago</p>
-                        </div>
-                      </li>
-                      <li class="media align-items-center">
-                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
-                        <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
-                          <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
-                          <p class="media-info text-asphalt mb-0">
-                            <i class="icon-like align-middle mr-1"></i>for 2 hours ago</p>
-                        </div>
-                      </li>
-                      <li class="media align-items-center">
-                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
-                        <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
-                          <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
-                          <p class="media-info text-asphalt mb-0">
-                            <i class="icon-photo align-middle mr-1"></i>for 2 hours ago</p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="tab-pane fade" id="published" role="tabpanel" aria-labelledby="published-tab">
-                    <ul class="media-feed">
-                      <li class="media align-items-center">
-                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
-                        <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
-                          <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
-                          <p class="media-info text-asphalt mb-0">
-                            <i class="icon-send align-middle mr-1"></i>for 2 hours ago</p>
-                        </div>
-                      </li>
-                      <li class="media align-items-center">
-                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
-                        <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
-                          <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
-                          <p class="media-info text-asphalt mb-0">
-                            <i class="icon-like align-middle mr-1"></i>for 2 hours ago</p>
-                        </div>
-                      </li>
-                      <li class="media align-items-center">
-                        <img class="m-2" src="../../assets/images/liza.png" alt="Generic placeholder image">
-                        <div class="media-body d-flex flex-column align-self-stretch justify-content-center">
-                          <p class="media-title mb-0">Lisa Lopez sent you a blog post for approval</p>
-                          <p class="media-info text-asphalt mb-0">
-                            <i class="icon-photo align-middle mr-1"></i>for 2 hours ago</p>
-                        </div>
-                      </li>
-                    </ul>
+                <div class="container-fluid">
+                  <div class="row align-items-center">
+                    <div class="col-12">
+                      <h5 class="dropdown-menu-flags__title mb-0">Select country
+                        <span class="badge badge-pill badge-primary p-0 ml-2 align-middle">
+                          <i class="icon-i align-middle"></i></span>
+                      </h5>
+                    </div>
+                    <div class="col-12 pt-0">
+                      <div class="row">
+                        <a class="col d-block text-nowrap" href="#"><img class="rounded-circle r-icon--medium mr-2"
+                                                                         src="../../assets/images/flags/uk.svg">United Kingdom</a>
+                        <a class="col d-block text-nowrap" href="#"><img class="rounded-circle r-icon--medium mr-2"
+                                                                         src="../../assets/images/flags/finland.svg">Finland</a>
+                        <a class="col d-block text-nowrap" href="#"><img class="rounded-circle r-icon--medium mr-2"
+                                                                         src="../../assets/images/flags/denmark.svg">Denmark</a>
+                      </div>
+                      <div class="row">
+                        <a class="col d-block text-nowrap" href="#"><img class="rounded-circle r-icon--medium mr-2"
+                                                                         src="../../assets/images/flags/norway.svg">Norway</a>
+                        <a class="col d-block text-nowrap" href="#"><img class="rounded-circle r-icon--medium mr-2"
+                                                                         src="../../assets/images/flags/france.svg">France</a>
+                        <a class="col d-block text-nowrap" href="#"><img class="rounded-circle r-icon--medium mr-2"
+                                                                         src="../../assets/images/flags/sweden.svg">Sweden</a>
+                      </div>
+                      <div class="row">
+                         <a class="col d-block text-nowrap" href="#"><img class="rounded-circle r-icon--medium mr-2"
+                                                                          src="../../assets/images/flags/germany.svg">Germany</a>
+                        <a class="col d-block text-nowrap" href="#"><img class="rounded-circle r-icon--medium mr-2"
+                                                                         src="../../assets/images/flags/netherlands.svg">Netherlands</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div><a class="btn" href="#"><i class="icon-help"></i></a></div>
-          <div class="dropdown profile">
-            <a class="btn" data-toggle="dropdown" aria-expanded="false"><img class="img-fluid rounded-circle"
-                                                                             src="../../assets/images/user.jpg"
-                                                                             alt="User Nameson"></a>
-            <div class="dropdown-menu dropdown-menu-right">
-              <div>asdasd</div>
             </div>
           </div>
         </div>
