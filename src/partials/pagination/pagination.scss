@@ -8,12 +8,17 @@
     }
     a {
       display: block;
-      width: 34px;
-      height: 34px;
+      width: 24px;
+      height: 24px;
+      box-sizing: content-box;
       position: relative;
       border: 2px solid;
       border-radius: 50%;
       border-color: transparent;
+      @include media-breakpoint-up(md) {
+        width: 32px;
+        height: 32px;
+      }
       b {
         position: absolute;
         top: 50%;

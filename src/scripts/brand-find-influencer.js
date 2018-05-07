@@ -1,4 +1,4 @@
-import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
+import * as owlTabs from  '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
 import '../partials/range-sliders';
 import '../partials/filters/filters';
 import '../partials/input.tags';

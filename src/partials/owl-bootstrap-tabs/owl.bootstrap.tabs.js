@@ -56,11 +56,13 @@ const OwlTabs = (($) => {
 
     // Static
     static __extendJquery(config) {
-      let data = $(this).data(DATA_KEY);
+      let data = $(this)
+        .data(DATA_KEY);
 
       if (!data) {
         data = new OwlTabs(this);
-        $(this).data(DATA_KEY, data);
+        $(this)
+          .data(DATA_KEY, data);
       }
       if (config) {
         data.init(config);
@@ -72,7 +74,8 @@ const OwlTabs = (($) => {
       const _element = this._element;
       let _clonedTabs = this._element.clone();
       _clonedTabs
-        .appendTo(_element.closest('nav').siblings('nav'))
+        .appendTo(_element.closest('nav')
+          .siblings('nav'))
         .addClass('owl-carousel')
         .find(Selector.TAB_BUTTON)
         .each(function (i, el) {
@@ -81,10 +84,12 @@ const OwlTabs = (($) => {
 
       _clonedTabs
         .on('translated.owl.carousel', function () {
-          const _targetId = _clonedTabs.find('.active.center .nav-link').attr('href');
+          const _targetId = _clonedTabs.find('.active.center .nav-link')
+            .attr('href');
           const $targetTab = _element.find('[data-toggle="tab"][href="' +
             _targetId + '"]');
-          $targetTab.tab('show').addClass('show');
+          $targetTab.tab('show')
+            .addClass('show');
         })
         .on('click', '.nav-link', function (e) {
           e.preventDefault();
@@ -94,7 +99,10 @@ const OwlTabs = (($) => {
           const $clickedSlide = $(e.target)
             .closest('.owl-item');
           const $currentSlide = $owl.find('.owl-item.active.center');
-          if (($clickedSlide.index() - $currentSlide.index()) < 0) {
+          if (($clickedSlide.index() - $currentSlide.index()) == 0) {
+            return;
+          }
+          else if (($clickedSlide.index() - $currentSlide.index()) < 0) {
             direction = 'prev.owl.carousel';
           }
           else {
@@ -104,15 +112,17 @@ const OwlTabs = (($) => {
           $owl.trigger(direction);
         });
 
-      _clonedTabs.owlCarousel(_options);
+      _clonedTabs.owlCarousel(_options)
+        .resize();
 
     }
   }
 
 
-  $(document).on(EVENTS.READY_STATE, function () {
-    OwlTabs.__extendJquery.call(this._element);
-  });
+  $(document)
+    .on(EVENTS.READY_STATE, function () {
+      OwlTabs.__extendJquery.call(this._element);
+    });
 
   $.fn[NAME] = OwlTabs.__extendJquery;
   $.fn[NAME].Constructor = OwlTabs;

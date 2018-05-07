@@ -79,7 +79,7 @@ module.exports = {
                 sourceMap: IS_DEV
               }
             }
-          ],
+          ]
         }))
       },
 
@@ -102,8 +102,8 @@ module.exports = {
               fallback: 'file-loader',
               outputPath: './'
             }
-          },
-        ],
+          }
+        ]
       }
     ]
   },
@@ -126,9 +126,9 @@ module.exports = {
           test: /[\\/]src[\\/]/,
           chunks: 'all',
           name: 'commons'
-        },
-      },
-    },
+        }
+      }
+    }
   },
   plugins: [
     new webpack.DefinePlugin({
