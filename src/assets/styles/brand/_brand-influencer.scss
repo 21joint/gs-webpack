@@ -581,6 +581,9 @@
     z-index: 200;
     padding: 8px;
     transition: 0.5s padding ease;
+    .value__el{
+      text-transform: capitalize;
+    }
     i {
       animation-name: closeRollIn;
       animation-fill-mode: forwards;

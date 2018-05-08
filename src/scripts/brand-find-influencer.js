@@ -1,4 +1,3 @@
-import * as owlTabs from  '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
 import '../partials/range-sliders';
 import '../partials/filters/filters';
 import '../partials/input.tags';
@@ -137,4 +136,11 @@ import '../partials/input.tags';
 
     $parentEl.width(targetW);
   }
+
+  jQuery('.single-card--fixednav .btn-close')
+    .on('click', function () {
+      const target = jQuery(this).data('target');
+      console.log(target);
+      jQuery(target).modal('hide')
+    })
 })();

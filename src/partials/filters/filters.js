@@ -15,19 +15,6 @@ const Filters = (() => {
       jQuery('body')
         .removeClass('filter-open');
     })
-    .on('mouseup', '[data-toggle=dropdown]', function (e) {
-      if (jQuery(e.target)
-        .is('i')) {
-        jQuery(e.target)
-          .closest('button')
-          .removeClass('active')
-          .find('span')
-          .text('');
-        jQuery(e.target)
-          .closest('button')
-          .dropdown('toggle');
-      }
-    })
     // Save filters for each filter
     .each(function (i, el) {
       let _filter = {};
@@ -60,6 +47,9 @@ const Filters = (() => {
                 _query += el.dataset.use.replace(/label/, el.parentNode.querySelector('label').innerText ||
                   el.parentNode.parentNode.querySelector('label').innerText);
               }
+              if(el.checked && el.dataset.use.match(/name/)) {
+                _query += el.dataset.use.replace(/name/, el.getAttribute('name'))
+              }
             });
 
           _valueEl.text(_query)
@@ -73,11 +63,30 @@ const Filters = (() => {
       console.log(filters);
     });
 
+
   jQuery('.search-filter--ul [data-toggle="dropdown"]')
+    .on('click', 'i', (e)=> {
+      jQuery(e.target)
+        .closest('button')
+        .removeClass('active')
+        .find('span')
+        .text('');
+      jQuery(e.target)
+        .closest('button')
+        .dropdown('toggle');
+    })
     .dropdown({
       boundary: document.querySelector('.content-box'),
       flip: false
     });
+  jQuery('.btn-clear')
+    .on('click', (e)=> {
+    jQuery('.search-filter--ul [data-toggle="dropdown"]')
+      .removeClass('active')
+      .find('span')
+      .text('');
+
+  })
 })();
 
 
