@@ -2,7 +2,7 @@
   position: relative;
   box-shadow: 0 -2px 11px 0 rgba(0, 0, 0, 0.33);
   background-color: #fff;
-  z-index: $zindex-modal;
+  z-index: 999;
   &:before {
     content: '';
     position: fixed;

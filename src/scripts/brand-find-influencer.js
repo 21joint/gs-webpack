@@ -123,8 +123,7 @@ import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
 
   jQuery(window)
     .on('resize orientationchange', function () {
-      updateOffsets();
-      refreshScrollSpy('.modal-open .modal-single--influencer');
+      updateOffsets('.modal-single--influencer');
       jQuery('.owl-carousel')
         .trigger('refresh.owl.carousel');
     })
