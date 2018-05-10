@@ -136,11 +136,4 @@ import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
 
     $parentEl.width(targetW);
   }
-
-  jQuery('.single-card--fixednav .btn-close')
-    .on('click', function () {
-      const target = jQuery(this).data('target');
-      console.log(target);
-      jQuery(target).modal('hide')
-    })
 })();

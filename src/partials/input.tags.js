@@ -2,7 +2,7 @@ const InputTags = (() => {
 
   jQuery('input[data-tags]')
     .each(function (i, el) {
-
+      console.log(el);
       const _uToken = Math.random()
         .toString(36)
         .substr(2, 9);
@@ -25,6 +25,15 @@ const InputTags = (() => {
             e.currentTarget.parentNode.remove();
             e.stopPropagation();
           });
+
+        jQuery('.input-tags--container li')
+          .each(function (i, tag) {
+            console.log(jQuery(this)
+              .find('.input-tag--value')
+              .text());
+          });
+
+
         _$input.val('');
         jQuery('[data-toggle="dropdown"][aria-expanded="true"]')
           .dropdown('update');
