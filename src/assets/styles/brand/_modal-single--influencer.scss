@@ -27,8 +27,11 @@
       width: 33px;
       height: 33px;
       &.btn-close {
-        color: #c5c5c5;
+        color: #c5c5c5 !important;
         margin-left: 10px !important;
+        background-color: white !important;
+        width: auto !important;
+        height: auto !important;
         &:before {
           font-size: 20px;
           border: 1px solid;
@@ -48,6 +51,19 @@
     }
     &.btn-close {
       position: static;
+      width: 36px;
+      height: 36px;
+      margin-left: auto;
+      font-size: 16px;
+      border: none;
+      right: 15px;
+      top: 15px;
+      border-radius: 6px;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #ffffff;
+      line-height: 1;
+      padding: 0;
+      z-index: 10;
     }
     & + .btn {
       margin-left: 6px;

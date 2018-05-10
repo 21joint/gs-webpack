@@ -1,7 +1,7 @@
-import $ from 'jquery';
+import jQuery from 'jquery';
 import 'owl.carousel';
 
-const OwlTabs = (($) => {
+const OwlTabs = (() => {
 
   /**
    * ------------------------------------------------------------------------
@@ -41,7 +41,7 @@ const OwlTabs = (($) => {
   };
 
 
-  const JQUERY_NO_CONFLICT = $.fn[NAME];
+  const JQUERY_NO_CONFLICT = jQuery.fn[NAME];
 
   class OwlTabs {
 
@@ -56,12 +56,12 @@ const OwlTabs = (($) => {
 
     // Static
     static __extendJquery(config) {
-      let data = $(this)
+      let data = jQuery(this)
         .data(DATA_KEY);
 
       if (!data) {
         data = new OwlTabs(this);
-        $(this)
+        jQuery(this)
           .data(DATA_KEY, data);
       }
       if (config) {
@@ -70,7 +70,7 @@ const OwlTabs = (($) => {
     }
 
     init(options) {
-      const _options = $.extend({}, DEFAULTS, options);
+      const _options = jQuery.extend({}, DEFAULTS, options);
       const _element = this._element;
       let _clonedTabs = this._element.clone();
       _clonedTabs
@@ -94,9 +94,9 @@ const OwlTabs = (($) => {
         .on('click', '.nav-link', function (e) {
           e.preventDefault();
           let direction;
-          const $owl = $(e.target)
+          const $owl = jQuery(e.target)
             .closest('.owl-carousel');
-          const $clickedSlide = $(e.target)
+          const $clickedSlide = jQuery(e.target)
             .closest('.owl-item');
           const $currentSlide = $owl.find('.owl-item.active.center');
           if (($clickedSlide.index() - $currentSlide.index()) == 0) {
@@ -119,20 +119,20 @@ const OwlTabs = (($) => {
   }
 
 
-  $(document)
+  jQuery(document)
     .on(EVENTS.READY_STATE, function () {
       OwlTabs.__extendJquery.call(this._element);
     });
 
-  $.fn[NAME] = OwlTabs.__extendJquery;
-  $.fn[NAME].Constructor = OwlTabs;
-  $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
+  jQuery.fn[NAME] = OwlTabs.__extendJquery;
+  jQuery.fn[NAME].Constructor = OwlTabs;
+  jQuery.fn[NAME].noConflict = function () {
+    jQuery.fn[NAME] = JQUERY_NO_CONFLICT;
     return OwlTabs.__extendJquery;
   };
 
   return OwlTabs;
 
-})($);
+})();
 
 export default OwlTabs;
