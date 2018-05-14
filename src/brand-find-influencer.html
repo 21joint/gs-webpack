@@ -81,8 +81,9 @@ const filters = [
   require('html-loader!./partials/filters/targeting.html'),
   require('html-loader!./partials/filters/sponsored.html'),
   require('html-loader!./partials/filters/comments.html'),
-  require('html-loader!./partials/filters/comment.avg.html'),
-  require('html-loader!./partials/filters/other.html')
+require('html-loader!./partials/filters/comment.avg.html'),
+require('html-loader!./partials/filters/other.html')
+
 ];
 %>
 <body class="bg-light">
@@ -150,12 +151,12 @@ const filters = [
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-12 pt-2 d-none d-md-block">
+                              <div class="col-12 pt-2">
                                 <div class="row">
-                                  <div class="col-auto">
+                                  <div class="col-12 col-lg-auto">
                                     <span class="small text-asphalt">Filters</span>
                                   </div>
-                                  <div class="col px-0">
+                                  <div class="col px-lg-0">
                                     <ul id="searchFilter" class="search-filter--ul btn-group" data-toggle="filter">
                                       <% for(let i = 0; i < filters.length;i++) { %>
                                       <li class="dropdown">
@@ -169,11 +170,11 @@ const filters = [
                                   </div>
                                 </div>
                               </div>
-                              <div class="col d-md-none pt-2">
-                                <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal"
-                                  data-target=".modal-filters">Filters
-                                </button>
-                              </div>
+                              <!--<div class="col d-md-none pt-2">-->
+                                <!--<button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal"-->
+                                  <!--data-target=".modal-filters">Filters-->
+                                <!--</button>-->
+                              <!--</div>-->
                               <div class="col-12 px-0">
                                 <hr>
                               </div>
