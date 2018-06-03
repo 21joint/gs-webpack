@@ -1,4 +1,4 @@
-import { Icons } from './icons';
+import {Icons} from './icons';
 
 const _Icons = new Icons();
 
@@ -29,7 +29,7 @@ export class Influencer {
 
     for (let key in _instance.social) {
       if (_instance.social.hasOwnProperty(key)) {
-        _social += '<li>' + _Icons.insertIcon({ title: key }) + '<span class="text-asphalt">' + _quantityHandler(_instance.social[key]) +
+        _social += '<li>' + _Icons.insertIcon({title: key}) + '<span class="text-asphalt">' + _quantityHandler(_instance.social[key]) +
           'k</span></li>';
       }
     }
@@ -73,15 +73,15 @@ export class Influencer {
               <div class="single-card--owlwrapper">
                  <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__${new Date().getTime()}">
                     ${ this.createSlides() }
-                    <div class="single-card--slide">
-                      <div class="single-slide--more d-flex flex-column flex-wrap justify-content-center align-items-center p-3 h-100">
-                        <div class="col-auto">
-                        <h4 class="mb-3">LifeStyle, Parenting</h4>
-                        <p>Pueraria Mirifica And Study Phyto Estrogens. Answer: Unless your complexion is very oily, your doctor is right:</p>
-                         <div><button class="btn btn-sm btn-primary" data-toggle="modal" data-target=".modal-single--influencer">See More &amp; Contact</button></div>
-              </div>
-                      </div>
-                    </div>
+                    <!--<div class="single-card&#45;&#45;slide">-->
+                      <!--<div class="single-slide&#45;&#45;more d-flex flex-column flex-wrap justify-content-center align-items-center p-3 h-100">-->
+                        <!--<div class="col-auto">-->
+                        <!--<h4 class="mb-3">LifeStyle, Parenting</h4>-->
+                        <!--<p>Pueraria Mirifica And Study Phyto Estrogens. Answer: Unless your complexion is very oily, your doctor is right:</p>-->
+                         <!--<div><button class="btn btn-sm btn-primary" data-toggle="modal" data-target=".modal-single&#45;&#45;influencer">See More &amp; Contact</button></div>-->
+              <!--</div>-->
+                      <!--</div>-->
+                    <!--</div>-->
                 </div>
               </div>
               <div class="single-card--networks">

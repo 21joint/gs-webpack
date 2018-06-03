@@ -69,7 +69,7 @@ const influencers = [
   }
 ];
 const filters = [
-  require('html-loader!./partials/filters/gender.html'),
+  require('html-loader?interpolate=true!./partials/filters/gender.html'),
   require('html-loader!./partials/filters/price.range.html'),
   // require('html-loader!./partials/filters/categories.html'),
   require('html-loader!./partials/filters/networks.html'),
@@ -199,7 +199,7 @@ require('html-loader!./partials/filters/other.html')
                               <% for(let i = 0; i < influencers.length;i++) {
                                 let _infl = new Influencer(influencers[i])
                               %>
-                              <div class="col-12 col-sm-6 col-lg-3">
+                              <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
                                 <%= _infl.load() %>
                               </div>
                               <% } %>
