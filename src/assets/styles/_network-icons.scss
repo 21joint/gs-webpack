@@ -8,6 +8,7 @@
   background-color: #ffffff;
   background-size: 100%;
   background-repeat: no-repeat;
+  flex: 0 0 20px;
   &.with-title {
     margin-right: 0.2125rem;
     @include media-breakpoint-up(sm) {

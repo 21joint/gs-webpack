@@ -76,7 +76,7 @@ const Filters = (() => {
         .dropdown('toggle');
     })
     .dropdown({
-      boundary: document.querySelector('.content-box'),
+      boundary: 'window',
       flip: false
     });
   jQuery('.btn-clear')
@@ -87,6 +87,7 @@ const Filters = (() => {
       .text('');
 
   })
+
 })();
 
 
