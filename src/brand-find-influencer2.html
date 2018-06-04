@@ -8,255 +8,227 @@
 <%
 const { Influencer } = require('./partials/influencer.card');
 const influencers = [
-  {
-    name: 'Betty Boo',
-    age: 27,
-    photos: [
-      require('./assets/images/influencer-1.png'),
-      require('./assets/images/influencer-2.png'),
-      require('./assets/images/influencer-3.png')
-    ],
-    social: {
-      tumblr: 4222,
-      pinterest: 32122,
-      blog: 12100
-    }
-  },
-  {
-    name: 'Lindsey Joe',
-    age: 23,
-    photos: [
-      require('./assets/images/influencer-1.png'),
-      require('./assets/images/influencer-4.png'),
-      require('./assets/images/influencer-5.png')
-    ],
-    social: {
-      facebook: 9156,
-      tumblr: 3200,
-      pinterest: 12098,
-      blog: 1200
-    }
-  },
-  {
-    name: 'Monica Belucci',
-    age: 27,
-    photos: [
-      require('./assets/images/influencer-3.png'),
-      require('./assets/images/influencer-1.png'),
-      require('./assets/images/influencer-4.png')
-    ],
-    social: {
-      snapchat: 9156,
-      twitter: 3200,
-      instagram: 12098,
-      podcast: 1200
-    }
-  },
-  {
-    name: 'Lina Van',
-    age: 22,
-    photos: [
-      require('./assets/images/influencer-5.png'),
-      require('./assets/images/influencer-4.png'),
-      require('./assets/images/influencer-3.png')
-    ],
-    social: {
-      facebook: 9156,
-      tumblr: 3200,
-      pinterest: 12098,
-      blog: 55000
-    }
-  }
+{
+name: 'Betty Boo',
+age: 27,
+gscore: 76,
+photos: [
+require('./assets/images/influencer-1.png'),
+require('./assets/images/influencer-2.png'),
+require('./assets/images/influencer-3.png')
+],
+social: {
+tumblr: 4222,
+pinterest: 32122,
+blog: 12100
+}
+},
+{
+name: 'Lindsey Joe',
+age: 23,
+gscore: 15,
+photos: [
+require('./assets/images/influencer-1.png'),
+require('./assets/images/influencer-4.png'),
+require('./assets/images/influencer-5.png')
+],
+social: {
+facebook: 9156,
+tumblr: 3200,
+pinterest: 12098,
+blog: 1200
+}
+},
+{
+name: 'Monica Belucci',
+age: 27,
+gscore: 49,
+photos: [
+require('./assets/images/influencer-3.png'),
+require('./assets/images/influencer-1.png'),
+require('./assets/images/influencer-4.png')
+],
+social: {
+snapchat: 9156,
+twitter: 3200,
+instagram: 12098,
+podcast: 1200
+}
+},
+{
+name: 'Lina Van',
+age: 22,
+gscore: 7,
+photos: [
+require('./assets/images/influencer-5.png'),
+require('./assets/images/influencer-4.png'),
+require('./assets/images/influencer-3.png')
+],
+social: {
+facebook: 9156,
+tumblr: 3200,
+pinterest: 12098,
+blog: 55000
+}
+}
 ];
 const filters = [
-  require('html-loader?interpolate=true!./partials/filters/gender.html'),
-  require('html-loader!./partials/filters/price.range.html'),
-  // require('html-loader!./partials/filters/categories.html'),
-  require('html-loader!./partials/filters/networks.html'),
-  require('html-loader!./partials/filters/languages.html'),
-  require('html-loader!./partials/filters/agencies.html'),
-  require('html-loader!./partials/filters/seo.html'),
-  require('html-loader!./partials/filters/followers.html'),
-  require('html-loader!./partials/filters/engagement.html'),
-  require('html-loader!./partials/filters/targeting.html'),
-  require('html-loader!./partials/filters/sponsored.html'),
-  require('html-loader!./partials/filters/comments.html'),
-  require('html-loader!./partials/filters/comment.avg.html'),
-  require('html-loader!./partials/filters/other.html')
+require('html-loader!./partials/filters/languages.html'),
+require('html-loader?interpolate=true!./partials/filters/gender.html'),
+require('html-loader!./partials/filters/followers.html'),
+require('html-loader!./partials/filters/likes.html'),
+require('html-loader!./partials/filters/comments.html'),
+require('html-loader!./partials/filters/video-view.html'),
+require('html-loader!./partials/filters/platforms.html'),
+require('html-loader!./partials/filters/sponsored.html'),
+require('html-loader!./partials/filters/email.html')
 
 ];
 %>
 <body class="bg-light">
-  <%= require('html-loader!./partials/header/header-fluid.html') %>
-  <main class="main-content">
-    <!--FIND INFLUENCERS-->
-    <div class="find-influencer">
-      <div class="container-fluid py-3 pt-lg-4">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h2 class="content-box__title mb-4 mt-2">Find influencer</h2>
-          </div>
-          <div class="col-12">
-            <div class="content-box rounded bg-white">
-              <section class="content-box--group">
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-12">
-                      <!--TABS NAVIGATION-->
-                      <nav class="d-none d-md-flex">
-                        <ul class="nav nav-tabs find-influencer--navtabs border-0 py-3" id="searchTabsNav"
-                          role="tablist">
-                          <li class="nav-item">
-                            <a class="nav-link active m-0 px-0" data-toggle="tab" href="#searchTab" role="tab"
-                              aria-expanded="true" aria-controls="searchTab"
-                              aria-selected="true">Find new influencers</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link m-0 px-0" data-toggle="tab" href="#likedTab" role="tab"
-                              aria-controls="likedTab" aria-selected="false">Liked/Saved Influencers</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link m-0 px-0" data-toggle="tab" href="#myTab" role="tab"
-                              aria-controls="myTab" aria-selected="false">My influencers</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link m-0 px-0" data-toggle="tab" href="#wishlistTab" role="tab"
-                              aria-controls="wishlistTab" aria-selected="false">Wishlist</a>
-                          </li>
-                        </ul>
-                      </nav>
-                      <!--TABS MOBILE NAVIGATION -->
-                      <nav class="d-md-none"></nav>
-                    </div>
-                    <div class="col-12">
-                      <!--TABS CONTENT-->
-                      <div class="tab-content">
-                        <!--done-->
-                        <div class="tab-pane fade show active" id="searchTab" role="tabpanel">
-                          <form id="searchForm" class="form-horizontal">
-                            <div class="row align-items-center">
-                              <div class="col-12 col-lg">
-                                <div class="row align-items-center">
-                                  <div class="col pr-0">
-                                    <div class="form-group mb-0">
-                                      <input type="search" class="form-control" id="inputSearch"
-                                        placeholder="Search for influencer">
-                                    </div>
+<%= require('html-loader!./partials/header/header-fluid2.html') %>
+<main class="main-content">
+  <!--FIND INFLUENCERS-->
+  <div class="find-influencer">
+    <div class="container-fluid py-3 pt-lg-4">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="content-box__title mb-4 mt-2">Find influencer</h2>
+        </div>
+        <div class="col-12">
+          <div class="content-box rounded bg-white">
+            <section class="content-box--group">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12">
+                    <!--TABS CONTENT-->
+                    <div class="tab-content">
+                      <!--done-->
+                      <div class="tab-pane fade show active" id="searchTab" role="tabpanel">
+                        <form id="searchForm" class="form-horizontal">
+                          <div class="row align-items-center">
+                            <div class="col-12 col-lg pt-4">
+                              <div class="row align-items-center">
+                                <div class="col pr-0">
+                                  <div class="form-group mb-0">
+                                    <input type="search" class="form-control" id="inputSearch"
+                                           placeholder="Search here. Enter keyword or hashtag to begin.">
                                   </div>
-                                  <div class="col-auto">
-                                    <div class="form-group mb-0">
-                                      <button class="btn btn-primary btn-block btn-search">
-                                        <i class="icon-search"></i></button>
-                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                  <div class="form-group mb-0">
+                                    <button class="btn btn-primary btn-block btn-search">
+                                      Search now
+                                    </button>
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-12 pt-2">
-                                <div class="row">
-                                  <div class="col-12 col-lg-auto mb-2 mb-lg-0">
-                                    <span class="small text-asphalt">Filters</span>
-                                  </div>
-                                  <div class="col px-lg-0">
-                                    <ul id="searchFilter" class="search-filter--ul btn-group" data-toggle="filter">
-                                      <% for(let i = 0; i < filters.length;i++) { %>
-                                      <li class="dropdown">
-                                        <%= filters[i] %>
-                                      </li>
-                                      <% } %>
-                                    </ul>
-                                  </div>
-                                  <div class="col-lg-auto pl-0">
-                                    <a role="button" class="btn btn-clear">Clear all filters</a>
-                                  </div>
+                            </div>
+                            <div class="col-12 pt-2">
+                              <div class="row">
+                                <div class="col-12 col-lg-auto mb-2 mb-lg-0">
+                                  <span class="small text-asphalt">Filters</span>
+                                </div>
+                                <div class="col px-lg-0">
+                                  <ul id="searchFilter" class="search-filter--ul btn-group" data-toggle="filter">
+                                    <% for(let i = 0; i < filters.length;i++) { %>
+                                    <li class="dropdown">
+                                      <%= filters[i] %>
+                                    </li>
+                                    <% } %>
+                                  </ul>
+                                </div>
+                                <div class="col-lg-auto pl-0">
+                                  <a role="button" class="btn btn-clear">Change filter</a>
                                 </div>
                               </div>
-                              <!--<div class="col d-md-none pt-2">-->
-                              <!--<button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal"-->
-                              <!--data-target=".modal-filters">Filters-->
-                              <!--</button>-->
-                              <!--</div>-->
-                              <div class="col-12 px-0">
-                                <hr>
-                              </div>
                             </div>
-                            <div class="row justify-content-between align-items-center">
-                              <div class="col-12 col-md-8 mb-3 mb-md-0">
-                                <h4 class="text-asphalt mb-0">We found 31 influencers within your search criteria</h4>
-                              </div>
-                              <div class="col-12 col-md-4">
-                                <select title="sortBy" style="width: 100%;" name="sortBy" id="sortBy"
-                                  class="form-control">
-                                  <option>Followers</option>
-                                  <option>Rating</option>
-                                  <option>Feedback</option>
-                                  <option>Earnings</option>
-                                </select>
-                              </div>
-                            </div>
-                          </form>
-                          <div class="search-results" aria-describedby="searchForm">
-                            <div class="row p-3">
-                              <% for(let i = 0; i < influencers.length;i++) {
-                                let _infl = new Influencer(influencers[i])
-                              %>
-                              <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                                <%= _infl.load() %>
-                              </div>
-                              <% } %>
+                            <div class="col-12 px-0">
+                              <hr>
                             </div>
                           </div>
-                        </div>
-                        <div class="tab-pane fade" id="likedTab" role="tabpanel">
+                          <div class="row justify-content-between align-items-center">
+                            <div class="col-12 col-md-8 mb-3 mb-md-0">
+                              <h4 class="text-asphalt mb-0">We found 31 influencers within your search criteria</h4>
+                            </div>
+                            <div class="col-12 col-md-4">
+                              <select title="sortBy" style="width: 100%;" name="sortBy" id="sortBy"
+                                      class="form-control">
+                                <option>G-Score</option>
+                                <option>Following</option>
+                                <option>Likes Per Post</option>
+                                <option>Likes Per Post % of followers</option>
+                                <option>Comments Per Post</option>
+                                <option>Comments % of followers</option>
+                              </select>
+                            </div>
+                          </div>
+                        </form>
+                        <div class="search-results" aria-describedby="searchForm">
                           <div class="row p-3">
                             <% for(let i = 0; i < influencers.length;i++) {
-                              let _infl = new Influencer(influencers[i])
+                            let _infl = new Influencer(influencers[i])
                             %>
-                            <div class="col-12 col-sm-6 col-lg-3">
-                              <%= _infl.load() %>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                              <%= _infl.load({
+                              closable:true
+                              }) %>
                             </div>
                             <% } %>
                           </div>
-                          <div class="row py-3 justify-content-center tab-pane--pages">
-                            <div class="col-auto">
-                              <div class="container-fluid">
-                                <%= require('html-loader!./partials/pagination/pagination.html') %>
-                              </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="likedTab" role="tabpanel">
+                        <div class="row p-3">
+                          <% for(let i = 0; i < influencers.length;i++) {
+                          let _infl = new Influencer(influencers[i])
+                          %>
+                          <div class="col-12 col-sm-6 col-lg-3">
+                            <%= _infl.load() %>
+                          </div>
+                          <% } %>
+                        </div>
+                        <div class="row py-3 justify-content-center tab-pane--pages">
+                          <div class="col-auto">
+                            <div class="container-fluid">
+                              <%= require('html-loader!./partials/pagination/pagination.html') %>
                             </div>
                           </div>
                         </div>
-                        <div class="tab-pane fade" id="myTab" role="tabpanel">
-                          <div class="row p-3">
-                            <div class="col-12 col-sm-6 col-lg-4"></div>
-                          </div>
-                          <div class="row py-3 justify-content-center tab-pane--pages">
-                            <div class="col-auto">
-                              <div class="container-fluid">
-                                <%= require('html-loader!./partials/pagination/pagination.html') %>
-                              </div>
+                      </div>
+                      <div class="tab-pane fade" id="myTab" role="tabpanel">
+                        <div class="row p-3">
+                          <div class="col-12 col-sm-6 col-lg-4"></div>
+                        </div>
+                        <div class="row py-3 justify-content-center tab-pane--pages">
+                          <div class="col-auto">
+                            <div class="container-fluid">
+                              <%= require('html-loader!./partials/pagination/pagination.html') %>
                             </div>
                           </div>
                         </div>
-                        <div class="tab-pane fade" id="wishlistTab" role="tabpanel">
-                          <div class="row p-3">
-                            <div class="col-12">
-                              Wishlist
-                            </div>
+                      </div>
+                      <div class="tab-pane fade" id="wishlistTab" role="tabpanel">
+                        <div class="row p-3">
+                          <div class="col-12">
+                            Wishlist
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </section>
-              <div class="white-overlay"></div>
-            </div>
+              </div>
+            </section>
+            <div class="white-overlay"></div>
           </div>
         </div>
       </div>
     </div>
-  </main>
-  <%= require('html-loader!./partials/filters.mobile.html') %>
-  <%= require('html-loader!./partials/single-influencer.html') %>
+  </div>
+</main>
+<%= require('html-loader!./partials/filters.mobile.html') %>
+<%= require('html-loader!./partials/single-influencer.html') %>
 </body>
 </html>
 

@@ -16,6 +16,8 @@
     &:before, &:after {
       top: 100%;
       visibility: hidden;
+      margin-left: -20px;
+      left: 50%;
     }
     &:before {
       content: '';
