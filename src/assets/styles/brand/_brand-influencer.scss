@@ -653,9 +653,11 @@
   .dropdown-menu {
     min-width: 290px;
     .btn-plus {
-      width: 40px;
+      width: 30px;
       line-height: 1;
-      height: 40px;
+      height: 30px;
+      font-size: 21px;
+      border-radius: 25%;
       @include button-outline-variant($border-color, $border-color, #ffffff, $border-color);
       border: none;
       box-shadow: 0 0 0 1px $border-color;
