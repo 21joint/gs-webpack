@@ -87,9 +87,14 @@
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: transparent;
+  border: none;
+  position: relative;
 }
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
-  font-size: 20px;
+  font-size: 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
 }
 .select2-container--default.select2-container--focus .select2-selection--multiple{
   border: 1px solid #56A4D6;
