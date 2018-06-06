@@ -1,16 +1,25 @@
-const path = require('path');
 const merge = require('webpack-merge');
-const config = require('./webpack.config');
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config');
 
-module.exports = merge(config, {
+module.exports = merge(webpackConfig, {
   devServer: {
-    // contentBase: path.join(__dirname, 'dist'),
     watchContentBase: true,
-    compress: true,
-    host: '0',
     port: 2121,
+    hot: true,
     open: true,
-    historyApiFallback: true, // true for index.html upon 404, object for multiple paths,
     publicPath: '/'
-  }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+    ],
+  },
+  devtool: 'inline-source-map',
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 });
