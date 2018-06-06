@@ -82,6 +82,7 @@ module.exports = {
           ]
         }))
       },
+
       // FONTS/IMAGES
       {
         test: /\.(woff|woff2|ttf|eot|otf|svg|gif|png|jpe?g)$/i,
@@ -140,8 +141,7 @@ module.exports = {
     }),
     ...renderHtmlTemplates(),
     new ExtractTextPlugin({
-      filename: 'styles/[name].css',
-      disable: IS_DEV
+      filename: 'styles/[name].css'
     })
   ],
   devtool: 'source-map'
