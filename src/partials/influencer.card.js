@@ -3,6 +3,7 @@ import {Icons} from './icons';
 const _Icons = new Icons();
 
 export class Influencer {
+
   constructor(influencer) {
     this.name = influencer.name;
     this.age = influencer.age;
@@ -45,8 +46,6 @@ export class Influencer {
     }
     return _slides;
   }
-
-
 
   static isClosable() {
     return `<button class="infl-archive p-0">            
@@ -107,21 +106,21 @@ export class Influencer {
           </div>`;
   }
 
-  miban(x){
+  miban(x) {
     let cl = '';
-    if (x >= 0 && x <= 10){
+    if (x >= 0 && x <= 10) {
       cl = 'gs-score--1'
     }
-    if (x > 10 && x<= 25){
+    if (x > 10 && x <= 25) {
       cl = 'gs-score--2'
     }
-    if (x > 25 && x<= 50 ){
+    if (x > 25 && x <= 50) {
       cl = 'gs-score--3'
     }
-    if (x > 50 && x <= 75){
-     cl = 'gs-score--4'
+    if (x > 50 && x <= 75) {
+      cl = 'gs-score--4'
     }
-    if (x > 75 && x <= 100){
+    if (x > 75 && x <= 100) {
       cl = 'gs-score--5'
     }
     return `<div class="single-infl-gscore d-flex align-items-center">
@@ -130,5 +129,10 @@ export class Influencer {
                   </div>`
   }
 
+}
 
+export class Language {
+  constructor(language){
+
+  }
 }

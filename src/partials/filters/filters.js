@@ -1,3 +1,4 @@
+
 const Filters = (() => {
   let filters = [];
 
@@ -89,6 +90,8 @@ const Filters = (() => {
   })
 
 })();
+
+
 
 
 export default Filters;
