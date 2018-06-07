@@ -128,7 +128,7 @@
 
 .select2.select2-container--focus .select2-selection--multiple {
   box-shadow: 0 0 0 1px #56A4D6;
-  border: transparent !important;
+  border: none !important;
 }
 
 .select2-container .select2-results__option[aria-selected=true] {
@@ -146,7 +146,7 @@
 }
 
 .zoomingOut {
- animation-name: zoomOut;
+  animation-name: zoomOut;
   animation-fill-mode: forwards;
   animation-duration: 0.7s;
 }
