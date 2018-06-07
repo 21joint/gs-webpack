@@ -28,7 +28,7 @@
   }
 }
 
-.infl-archive {
+.single-influencer--archive {
   visibility: hidden;
   position: absolute;
   z-index: 40;
@@ -50,7 +50,7 @@
 }
 
 .single-profile--card:hover {
-  .infl-archive {
+  single-influencer--archive {
     visibility: visible;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -85,24 +85,81 @@
   background-color: #368D21;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
+.select2 .select2-selection--multiple .select2-selection__choice {
   background-color: transparent;
   border: none;
   position: relative;
+  display: flex;
+  align-items: center;
+  margin: 10px 5px;
 }
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
+
+.select2 .select2-selection--multiple .select2-selection__choice__remove {
   font-size: 0;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-}
-.select2-container--default.select2-container--focus .select2-selection--multiple{
-  border: 1px solid #56A4D6;
-}
-.select2-container .select2-results__option[aria-selected=true]{
+  margin-right: 5px;
+  width: 24px;
+  height: 24px;
+  line-height: 1;
+  color: #BDC0C9;
+  padding: 0;
+  border-radius: 8px;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: 0 0 0 1px #BDC0C9;
+  .select2-selection__rendered {
+    padding: 0;
+    > li {
+      margin: 5px 0 2.5px;
+    }
+  }
+  &:before {
+    content: "\e924";
+    font-family: 'icomoon';
+    transform: rotate(45deg);
+    font-size: 14px;
+  }
+  &:hover {
+    color: darken(#BDC0C9,10%);
+  }
 }
 
+.select2.select2-container--focus .select2-selection--multiple {
+  box-shadow: 0 0 0 1px #56A4D6;
+  border: transparent !important;
+}
 
+.select2-container .select2-results__option[aria-selected=true] {
+  background-color: transparent;
+  opacity: 0.5;
+}
 
+.select2-container.select2-results > .select2-results__options {
+  overflow-y: scroll;
+}
 
+.select2-container .select2-search--inline {
+  margin: 0;
+  height: 100%;
+}
+
+.zoomingOut {
+ animation-name: zoomOut;
+  animation-fill-mode: forwards;
+  animation-duration: 0.7s;
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1
+  }
+  50% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3)
+  }
+  to {
+    opacity: 0
+  }
+}

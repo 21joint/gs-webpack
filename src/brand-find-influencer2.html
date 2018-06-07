@@ -6,249 +6,249 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <%
-  const { Influencer } = require('./partials/influencer.card');
-  const { Language } = require('./partials/influencer.card');
-  const influencers = [
+const { Influencer } = require('./partials/influencer.card');
+const { Language } = require('./partials/influencer.card');
+const influencers = [
   {
-  name: 'Betty Boo',
-  age: 27,
-  gscore: 76,
-  photos: [
-  require('./assets/images/influencer-1.png'),
-  require('./assets/images/influencer-2.png'),
-  require('./assets/images/influencer-3.png')
-  ],
-  social: {
-  tumblr: 4222,
-  pinterest: 32122,
-  blog: 12100
-  }
+    name: 'Betty Boo',
+    age: 27,
+    gscore: 76,
+    photos: [
+      require('./assets/images/influencer-1.png'),
+      require('./assets/images/influencer-2.png'),
+      require('./assets/images/influencer-3.png')
+    ],
+    social: {
+      tumblr: 4222,
+      pinterest: 32122,
+      blog: 12100
+    }
   },
   {
-  name: 'Lindsey Joe',
-  age: 23,
-  gscore: 15,
-  photos: [
-  require('./assets/images/influencer-1.png'),
-  require('./assets/images/influencer-4.png'),
-  require('./assets/images/influencer-5.png')
-  ],
-  social: {
-  facebook: 9156,
-  tumblr: 3200,
-  pinterest: 12098,
-  blog: 1200
-  }
+    name: 'Lindsey Joe',
+    age: 23,
+    gscore: 15,
+    photos: [
+      require('./assets/images/influencer-1.png'),
+      require('./assets/images/influencer-4.png'),
+      require('./assets/images/influencer-5.png')
+    ],
+    social: {
+      facebook: 9156,
+      tumblr: 3200,
+      pinterest: 12098,
+      blog: 1200
+    }
   },
   {
-  name: 'Monica Belucci',
-  age: 27,
-  gscore: 49,
-  photos: [
-  require('./assets/images/influencer-3.png'),
-  require('./assets/images/influencer-1.png'),
-  require('./assets/images/influencer-4.png')
-  ],
-  social: {
-  snapchat: 9156,
-  twitter: 3200,
-  instagram: 12098,
-  podcast: 1200
-  }
+    name: 'Monica Belucci',
+    age: 27,
+    gscore: 49,
+    photos: [
+      require('./assets/images/influencer-3.png'),
+      require('./assets/images/influencer-1.png'),
+      require('./assets/images/influencer-4.png')
+    ],
+    social: {
+      snapchat: 9156,
+      twitter: 3200,
+      instagram: 12098,
+      podcast: 1200
+    }
   },
   {
-  name: 'Lina Van',
-  age: 22,
-  gscore: 7,
-  photos: [
-  require('./assets/images/influencer-5.png'),
-  require('./assets/images/influencer-4.png'),
-  require('./assets/images/influencer-3.png')
-  ],
-  social: {
-  facebook: 9156,
-  tumblr: 3200,
-  pinterest: 12098,
-  blog: 55000
+    name: 'Lina Van',
+    age: 22,
+    gscore: 7,
+    photos: [
+      require('./assets/images/influencer-5.png'),
+      require('./assets/images/influencer-4.png'),
+      require('./assets/images/influencer-3.png')
+    ],
+    social: {
+      facebook: 9156,
+      tumblr: 3200,
+      pinterest: 12098,
+      blog: 55000
+    }
   }
-  }
-  ];
-  const filters = [
-    require('./partials/filters/languages').default,
-    require('html-loader?interpolate=true!./partials/filters/gender.html'),
-    require('html-loader!./partials/filters/followers.html'),
-    require('html-loader!./partials/filters/likes.html'),
-    require('html-loader!./partials/filters/comments.html'),
-    require('html-loader!./partials/filters/video-view.html'),
-    require('html-loader!./partials/filters/platforms.html'),
-    require('html-loader!./partials/filters/sponsored.html'),
-    require('html-loader!./partials/filters/email.html')
-  ];
+];
+const filters = [
+  require('./partials/filters/languages').default,
+  require('html-loader?interpolate=true!./partials/filters/gender.html'),
+  require('html-loader!./partials/filters/followers.html'),
+  require('html-loader!./partials/filters/likes.html'),
+  require('html-loader!./partials/filters/comments.html'),
+  require('html-loader!./partials/filters/video-view.html'),
+  require('html-loader!./partials/filters/platforms.html'),
+  require('html-loader!./partials/filters/sponsored.html'),
+  require('html-loader!./partials/filters/email.html')
+];
 %>
 <body class="bg-light">
-<%= require('html-loader!./partials/header/header-fluid2.html') %>
-<main class="main-content">
-  <!--FIND INFLUENCERS-->
-  <div class="find-influencer">
-    <div class="container-fluid py-3 pt-lg-4">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="content-box__title mb-4 mt-2">Find influencer</h2>
-        </div>
-        <div class="col-12">
-          <div class="content-box rounded bg-white">
-            <section class="content-box--group">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-12">
-                    <!--TABS CONTENT-->
-                    <div class="tab-content">
-                      <!--done-->
-                      <div class="tab-pane fade show active" id="searchTab" role="tabpanel">
-                        <form id="searchForm" class="form-horizontal">
-                          <div class="row align-items-center">
-                            <div class="col-12 col-lg pt-4">
-                              <div class="row align-items-center">
-                                <div class="col pr-0">
-                                  <div class="form-group position-relative mb-0">
-                                    <svg class="gs-infl-search" width="20px" height="20px" viewBox="0 0 20 20"
-                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                      <defs>
-                                        <polygon id="path-1"
-                                                 points="2.85316361e-20 0.000210526316 2.85316361e-20 19.7705263 19.9997895 19.7705263 19.9997895 0.000210526316"></polygon>
-                                      </defs>
-                                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <g id="Find-influencer" transform="translate(-144.000000, -213.000000)">
-                                          <g id="Page-1" transform="translate(144.000000, 213.000000)">
-                                            <mask id="mask-2" fill="white">
-                                              <use xlink:href="#path-1"></use>
-                                            </mask>
-                                            <g id="Clip-2"></g>
-                                            <path
-                                              d="M11.7634737,14.8944211 C8.09242105,14.8944211 5.10610526,11.9081053 5.10610526,8.23705263 C5.10610526,4.56547368 8.09242105,1.57915789 11.7634737,1.57915789 C15.4345263,1.57915789 18.4208421,4.56547368 18.4208421,8.23705263 C18.4208421,11.9081053 15.4345263,14.8944211 11.7634737,14.8944211 M11.7634737,0.000210526316 C7.22189474,0.000210526316 3.52715789,3.69494737 3.52715789,8.23705263 C3.52715789,10.1923158 4.21505263,11.9891579 5.35821053,13.4033684 L0.237157895,18.4170526 C0.0792631579,18.5712632 -0.000210526316,18.776 -0.000210526316,18.9812632 C-0.000210526316,19.1802105 0.0750526316,19.3796842 0.225578947,19.5333684 C0.380315789,19.6912632 0.584526316,19.7707368 0.789263158,19.7707368 C0.988736842,19.7707368 1.18821053,19.6954737 1.34189474,19.5449474 L6.46294737,14.5317895 C7.89663158,15.7407368 9.74557895,16.4733684 11.7634737,16.4733684 C16.3050526,16.4733684 19.9997895,12.7781053 19.9997895,8.23705263 C19.9997895,3.69494737 16.3050526,0.000210526316 11.7634737,0.000210526316"
-                                              id="Fill-1" fill="#BDC0C9" mask="url(#mask-2)"></path>
+  <%= require('html-loader!./partials/header/header-fluid2.html') %>
+  <main class="main-content">
+    <!--FIND INFLUENCERS-->
+    <div class="find-influencer">
+      <div class="container-fluid py-3 pt-lg-4">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2 class="content-box__title mb-4 mt-2">Find influencer</h2>
+          </div>
+          <div class="col-12">
+            <div class="content-box rounded bg-white">
+              <section class="content-box--group">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <!--TABS CONTENT-->
+                      <div class="tab-content">
+                        <!--done-->
+                        <div class="tab-pane fade show active" id="searchTab" role="tabpanel">
+                          <form id="searchForm" class="form-horizontal">
+                            <div class="row align-items-center">
+                              <div class="col-12 col-lg pt-4">
+                                <div class="row align-items-center">
+                                  <div class="col pr-0">
+                                    <div class="form-group position-relative mb-0">
+                                      <svg class="gs-infl-search" width="20px" height="20px" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <defs>
+                                          <polygon id="path-1"
+                                            points="2.85316361e-20 0.000210526316 2.85316361e-20 19.7705263 19.9997895 19.7705263 19.9997895 0.000210526316"></polygon>
+                                        </defs>
+                                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                          <g id="Find-influencer" transform="translate(-144.000000, -213.000000)">
+                                            <g id="Page-1" transform="translate(144.000000, 213.000000)">
+                                              <mask id="mask-2" fill="white">
+                                                <use xlink:href="#path-1"></use>
+                                              </mask>
+                                              <g id="Clip-2"></g>
+                                              <path
+                                                d="M11.7634737,14.8944211 C8.09242105,14.8944211 5.10610526,11.9081053 5.10610526,8.23705263 C5.10610526,4.56547368 8.09242105,1.57915789 11.7634737,1.57915789 C15.4345263,1.57915789 18.4208421,4.56547368 18.4208421,8.23705263 C18.4208421,11.9081053 15.4345263,14.8944211 11.7634737,14.8944211 M11.7634737,0.000210526316 C7.22189474,0.000210526316 3.52715789,3.69494737 3.52715789,8.23705263 C3.52715789,10.1923158 4.21505263,11.9891579 5.35821053,13.4033684 L0.237157895,18.4170526 C0.0792631579,18.5712632 -0.000210526316,18.776 -0.000210526316,18.9812632 C-0.000210526316,19.1802105 0.0750526316,19.3796842 0.225578947,19.5333684 C0.380315789,19.6912632 0.584526316,19.7707368 0.789263158,19.7707368 C0.988736842,19.7707368 1.18821053,19.6954737 1.34189474,19.5449474 L6.46294737,14.5317895 C7.89663158,15.7407368 9.74557895,16.4733684 11.7634737,16.4733684 C16.3050526,16.4733684 19.9997895,12.7781053 19.9997895,8.23705263 C19.9997895,3.69494737 16.3050526,0.000210526316 11.7634737,0.000210526316"
+                                                id="Fill-1" fill="#BDC0C9" mask="url(#mask-2)"></path>
+                                            </g>
                                           </g>
                                         </g>
-                                      </g>
-                                    </svg>
-                                    <input type="search" class="form-control pl-5" id="inputSearch"
-                                           placeholder="Search here. Enter keyword or hashtag to begin.">
+                                      </svg>
+                                      <input type="search" class="form-control pl-5" id="inputSearch"
+                                        placeholder="Search here. Enter keyword or hashtag to begin.">
+                                    </div>
                                   </div>
-                                </div>
-                                <div class="col-auto">
-                                  <div class="form-group mb-0">
-                                    <button class="btn btn-primary btn-block btn-search">
-                                      Search now
-                                    </button>
+                                  <div class="col-auto">
+                                    <div class="form-group mb-0">
+                                      <button class="btn btn-primary btn-block btn-search">
+                                        Search now
+                                      </button>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="col-12 pt-2">
-                              <div class="row">
-                                <div class="col-12 col-lg-auto mb-2 mb-lg-0">
-                                  <span class="small text-asphalt">Filters</span>
-                                </div>
-                                <div class="col px-lg-0">
-                                  <ul id="searchFilter" class="search-filter--ul btn-group" data-toggle="filter">
-                                    <% for(let i = 0; i < filters.length;i++) { %>
-                                    <li class="dropdown">
-                                      <%= filters[i] %>
-                                    </li>
-                                    <% } %>
-                                  </ul>
-                                </div>
-                                <div class="col-lg-auto pl-0">
-                                  <a role="button" class="btn btn-clear">Change filter</a>
+                              <div class="col-12 pt-2">
+                                <div class="row">
+                                  <div class="col-12 col-lg-auto mb-2 mb-lg-0">
+                                    <span class="small text-asphalt">Filters</span>
+                                  </div>
+                                  <div class="col px-lg-0">
+                                    <ul id="searchFilter" class="search-filter--ul btn-group" data-toggle="filter">
+                                      <% for(let i = 0; i < filters.length;i++) { %>
+                                      <li class="dropdown">
+                                        <%= filters[i] %>
+                                      </li>
+                                      <% } %>
+                                    </ul>
+                                  </div>
+                                  <div class="col-lg-auto pl-0">
+                                    <a role="button" class="btn btn-clear">Change filter</a>
+                                  </div>
                                 </div>
                               </div>
+                              <div class="col-12 px-0">
+                                <hr>
+                              </div>
                             </div>
-                            <div class="col-12 px-0">
-                              <hr>
+                            <div class="row justify-content-between align-items-center">
+                              <div class="col-12 col-md-8 mb-3 mb-md-0">
+                                <h4 class="text-asphalt mb-0">We found 31 influencers within your search criteria</h4>
+                              </div>
+                              <div class="col-12 col-md-4">
+                                <select title="sortBy" style="width: 100%;" name="sortBy" id="sortBy"
+                                  class="form-control">
+                                  <option>G-Score</option>
+                                  <option>Following</option>
+                                  <option>Likes Per Post</option>
+                                  <option>Likes Per Post % of followers</option>
+                                  <option>Comments Per Post</option>
+                                  <option>Comments % of followers</option>
+                                </select>
+                              </div>
+                            </div>
+                          </form>
+                          <div class="search-results" aria-describedby="searchForm">
+                            <div class="row p-3">
+                              <% for(let i = 0; i < influencers.length;i++) {
+                                let _infl = new Influencer(influencers[i])
+                              %>
+                              <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <%= _infl.load({
+                                  closable: true
+                                }) %>
+                              </div>
+                              <% } %>
                             </div>
                           </div>
-                          <div class="row justify-content-between align-items-center">
-                            <div class="col-12 col-md-8 mb-3 mb-md-0">
-                              <h4 class="text-asphalt mb-0">We found 31 influencers within your search criteria</h4>
-                            </div>
-                            <div class="col-12 col-md-4">
-                              <select title="sortBy" style="width: 100%;" name="sortBy" id="sortBy"
-                                      class="form-control">
-                                <option>G-Score</option>
-                                <option>Following</option>
-                                <option>Likes Per Post</option>
-                                <option>Likes Per Post % of followers</option>
-                                <option>Comments Per Post</option>
-                                <option>Comments % of followers</option>
-                              </select>
-                            </div>
-                          </div>
-                        </form>
-                        <div class="search-results" aria-describedby="searchForm">
+                        </div>
+                        <div class="tab-pane fade" id="likedTab" role="tabpanel">
                           <div class="row p-3">
                             <% for(let i = 0; i < influencers.length;i++) {
-                            let _infl = new Influencer(influencers[i])
+                              let _infl = new Influencer(influencers[i])
                             %>
-                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                              <%= _infl.load({
-                              closable:true
-                              }) %>
+                            <div class="col-12 col-sm-6 col-lg-3">
+                              <%= _infl.load() %>
                             </div>
                             <% } %>
                           </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane fade" id="likedTab" role="tabpanel">
-                        <div class="row p-3">
-                          <% for(let i = 0; i < influencers.length;i++) {
-                          let _infl = new Influencer(influencers[i])
-                          %>
-                          <div class="col-12 col-sm-6 col-lg-3">
-                            <%= _infl.load() %>
-                          </div>
-                          <% } %>
-                        </div>
-                        <div class="row py-3 justify-content-center tab-pane--pages">
-                          <div class="col-auto">
-                            <div class="container-fluid">
-                              <%= require('html-loader!./partials/pagination/pagination.html') %>
+                          <div class="row py-3 justify-content-center tab-pane--pages">
+                            <div class="col-auto">
+                              <div class="container-fluid">
+                                <%= require('html-loader!./partials/pagination/pagination.html') %>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="tab-pane fade" id="myTab" role="tabpanel">
-                        <div class="row p-3">
-                          <div class="col-12 col-sm-6 col-lg-4"></div>
-                        </div>
-                        <div class="row py-3 justify-content-center tab-pane--pages">
-                          <div class="col-auto">
-                            <div class="container-fluid">
-                              <%= require('html-loader!./partials/pagination/pagination.html') %>
+                        <div class="tab-pane fade" id="myTab" role="tabpanel">
+                          <div class="row p-3">
+                            <div class="col-12 col-sm-6 col-lg-4"></div>
+                          </div>
+                          <div class="row py-3 justify-content-center tab-pane--pages">
+                            <div class="col-auto">
+                              <div class="container-fluid">
+                                <%= require('html-loader!./partials/pagination/pagination.html') %>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="tab-pane fade" id="wishlistTab" role="tabpanel">
-                        <div class="row p-3">
-                          <div class="col-12">
-                            Wishlist
+                        <div class="tab-pane fade" id="wishlistTab" role="tabpanel">
+                          <div class="row p-3">
+                            <div class="col-12">
+                              Wishlist
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </section>
-            <div class="white-overlay"></div>
+              </section>
+              <div class="white-overlay"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</main>
-<%= require('html-loader!./partials/filters.mobile.html') %>
-<%= require('html-loader!./partials/single-influencer.html') %>
+  </main>
+  <%= require('html-loader!./partials/filters.mobile.html') %>
+  <%= require('html-loader!./partials/single-influencer.html') %>
 </body>
 </html>
 

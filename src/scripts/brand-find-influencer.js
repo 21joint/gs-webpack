@@ -41,9 +41,6 @@ import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
       callback();
     }
   };
-  const refreshScrollSpy = function (element) {
-
-  };
 
   $singleInflModal
     .on('scroll', function (e) {
@@ -91,6 +88,12 @@ import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
         _profile = _self.parents('.single-profile--card');
 
       likeProfileToggle(_profile);
+    })
+    .on('click', '.single-influencer--archive', function () {
+      let _self = jQuery(this),
+        _profile = _self.parents('.single-profile--card');
+
+      _profile.addClass('zoomingOut');
     })
     .on('click', '.dropdown-menu.show', function (e) {
       !e.target.dataset.dismiss && e.stopPropagation();

@@ -118,14 +118,8 @@ module.exports = {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           chunks: 'initial',
-          name: 'vendors',
-          priority: -10
+          name: 'vendors'
         },
-        commons: {
-          test: /[\\/]src[\\/]/,
-          chunks: 'all',
-          name: 'commons'
-        }
       }
     }
   },
@@ -144,5 +138,4 @@ module.exports = {
       disable: IS_DEV
     })
   ],
-  devtool: 'source-map'
 };

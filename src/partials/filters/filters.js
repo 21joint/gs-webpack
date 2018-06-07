@@ -1,10 +1,19 @@
-
 const Filters = (() => {
   let filters = [];
 
   jQuery('#searchForm')
     .on('submit', function (e) {
       e.preventDefault();
+    });
+
+
+  jQuery('select')
+    .on('select2:unselect', function (e) {
+
+      if (!e.params.originalEvent) {
+        return;
+      }
+      e.params.originalEvent.stopPropagation();
     });
 
   jQuery('.search-filter--ul .dropdown')
@@ -48,8 +57,8 @@ const Filters = (() => {
                 _query += el.dataset.use.replace(/label/, el.parentNode.querySelector('label').innerText ||
                   el.parentNode.parentNode.querySelector('label').innerText);
               }
-              if(el.checked && el.dataset.use.match(/name/)) {
-                _query += el.dataset.use.replace(/name/, el.getAttribute('name'))
+              if (el.checked && el.dataset.use.match(/name/)) {
+                _query += el.dataset.use.replace(/name/, el.getAttribute('name'));
               }
             });
 
@@ -66,7 +75,7 @@ const Filters = (() => {
 
 
   jQuery('.search-filter--ul [data-toggle="dropdown"]')
-    .on('click', 'i', (e)=> {
+    .on('click', 'i', (e) => {
       jQuery(e.target)
         .closest('button')
         .removeClass('active')
@@ -81,17 +90,16 @@ const Filters = (() => {
       flip: false
     });
   jQuery('.btn-clear')
-    .on('click', (e)=> {
-    jQuery('.search-filter--ul [data-toggle="dropdown"]')
-      .removeClass('active')
-      .find('span')
-      .text('');
+    .on('click', (e) => {
+      jQuery('.search-filter--ul [data-toggle="dropdown"]')
+        .removeClass('active')
+        .find('span')
+        .text('');
 
-  })
+    });
+
 
 })();
-
-
 
 
 export default Filters;

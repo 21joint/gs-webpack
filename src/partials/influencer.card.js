@@ -48,7 +48,7 @@ export class Influencer {
   }
 
   static isClosable() {
-    return `<button class="infl-archive p-0">            
+    return `<button class="single-influencer--archive p-0">            
                 <svg width="26px" height="26px" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
         <g id="Find-influencer" transform="translate(-464.000000, -472.000000)" stroke="#FFFFFF" stroke-width="3">

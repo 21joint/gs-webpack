@@ -34,19 +34,11 @@ const createOptions = () => {
           ${generateLanguages()}
         </select>
       </div>
-      <div class="col-auto">
-        <button type="button" class="btn btn-plus icon-plus p-0" data-submit="tags"></button>
-      </div>
     </div>
     <div class="form-row py-3 align-items-center justify-content-between dropdown-menu--actions">
       <div class="col-auto">
         <button class="btn btn-block btn-sm btn-cancel" type="button" data-dismiss="dropdown">
           Cancel
-        </button>
-      </div>
-      <div class="col-auto">
-        <button class="btn btn-block btn-primary btn-sm btn-apply" type="button">
-          Apply
         </button>
       </div>
     </div>
