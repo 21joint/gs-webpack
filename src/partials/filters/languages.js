@@ -41,6 +41,11 @@ const createOptions = () => {
           Cancel
         </button>
       </div>
+      <div class="col-auto">
+        <button class="btn btn-block btn-primary btn-sm btn-apply" type="button">
+          Apply
+        </button>
+      </div>
     </div>
   </div>
 </div>`;

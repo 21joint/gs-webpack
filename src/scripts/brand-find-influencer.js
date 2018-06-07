@@ -91,9 +91,14 @@ import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
     })
     .on('click', '.single-influencer--archive', function () {
       let _self = jQuery(this),
-        _profile = _self.parents('.single-profile--card');
+        _profile = _self.closest('[class^="col-"]');
 
-      _profile.addClass('zoomingOut');
+      _profile.addClass('zoomingOut').delay(500).queue(function (next) {
+        jQuery(this).remove();
+        next()
+      })
+
+
     })
     .on('click', '.dropdown-menu.show', function (e) {
       !e.target.dataset.dismiss && e.stopPropagation();

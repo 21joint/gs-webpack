@@ -50,7 +50,7 @@
 }
 
 .single-profile--card:hover {
-  single-influencer--archive {
+  .single-influencer--archive {
     visibility: visible;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -160,6 +160,6 @@
     transform: scale3d(.3, .3, .3)
   }
   to {
-    opacity: 0
+    opacity: 0;
   }
 }

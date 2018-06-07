@@ -7,12 +7,12 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = merge(webpackConfig, {
   target: 'web',
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'docs'),
     filename: 'scripts/[name].[chunkhash].js'
   },
 
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['docs']),
   ],
   devtool: 'source-map'
 

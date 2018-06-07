@@ -131,6 +131,8 @@ const OwlTabs = (() => {
     return OwlTabs.__extendJquery;
   };
 
+
+
   return OwlTabs;
 
 })();
