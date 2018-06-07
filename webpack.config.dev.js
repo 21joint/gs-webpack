@@ -1,18 +1,14 @@
-const path = require('path');
 const merge = require('webpack-merge');
-const config = require('./webpack.config');
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config');
 
-module.exports = merge(config, {
+module.exports = merge(webpackConfig, {
   devServer: {
-    // contentBase: path.join(__dirname, 'dist'),
     watchContentBase: true,
-    compress: true,
-    host: '0',
-    port: 5000,
+    port: 2121,
+    hot: true,
     open: true,
-    historyApiFallback: true, // true for index.html upon 404, object for multiple paths,
     publicPath: '/'
-<<<<<<< HEAD
   },
   module: {
     rules: [
@@ -26,7 +22,4 @@ module.exports = merge(config, {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
-=======
-  }
->>>>>>> f8b509bd2881ff7c99ca8b8b5f5d6777f1cfac7f
 });
