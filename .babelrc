@@ -1,17 +1,7 @@
 {
   "presets": [
     [
-      "@babel/env",
-      {
-        "modules": false,
-        "plugins": [
-          "@babel/register",
-          "babel-plugin-add-module-exports",
-          "babel-plugin-transform-class-properties",
-          "babel-plugin-transform-es2015-template-literals",
-          "@babel/plugin-proposal-class-properties"
-        ]
-      }
+      "@babel/env"
     ]
   ]
 }

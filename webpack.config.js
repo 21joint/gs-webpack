@@ -50,7 +50,7 @@ module.exports = {
       // SCSS
       {
         test: /\.scss$/,
-        use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
+        use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             {
@@ -80,7 +80,7 @@ module.exports = {
               }
             }
           ]
-        }))
+        })
       },
 
       // FONTS/IMAGES
