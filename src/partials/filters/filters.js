@@ -51,6 +51,12 @@ const Filters = (() => {
             .find('[data-use]')
             .each(function (i, el) {
               if (el.dataset.use.match(/value/)) {
+                if (jQuery.isArray(jQuery(el).val())) {
+                  jQuery(jQuery(el).val()).each(function (i, v) {
+                    _query += el.dataset.use.replace(/value/, v);
+                  });
+                  return;
+                }
                 _query += el.dataset.use.replace(/value/, el.value);
               }
               if (el.checked && el.dataset.use.match(/label/)) {
@@ -70,7 +76,6 @@ const Filters = (() => {
 
         });
       filters.push(_filter);
-      console.log(filters);
     });
 
 
@@ -100,6 +105,7 @@ const Filters = (() => {
 
 
 })();
+
 
 
 export default Filters;

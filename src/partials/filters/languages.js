@@ -3,7 +3,7 @@ import LanguageData from '../../languages';
 
 const generateLanguages = () => {
   let html = '';
-  _.each(LanguageData, (language)=> {
+  _.each(LanguageData, (language) => {
     html += `<option value="${language.name}">${language.name}</option>`
   });
   return html;
@@ -12,7 +12,7 @@ const generateLanguages = () => {
 const createOptions = () => {
 
   let template;
-    template = `<button type="button" class="btn btn-sm btn-outline-primary" data-toggle="dropdown" aria-haspopup="true"
+  template = `<button type="button" class="btn btn-sm btn-outline-primary" data-toggle="dropdown" aria-haspopup="true"
         title="Language" aria-expanded="false">
   <i class="icon-close ml-2 align-middle"></i>
 </button><div class="dropdown-menu p-0" style="max-width: 400px;">
@@ -29,7 +29,7 @@ const createOptions = () => {
       <div class="col">
         <!--<input data-tags title="Targeting" placeholder="Write language here" type="text" class="form-control"-->
                <!--data-use=" "> <input class="input-tags&#45;&#45;query" type="hidden">-->
-        <select name="languages" title="Languages" style="width: 100%" id="barmi${new Date().getTime()}" multiple="multiple">
+        <select name="languages" data-use=" value," title="Languages" style="width: 100%" id="barmi${new Date().getTime()}" multiple="multiple">
           ${generateLanguages()}
         </select>
       </div>
@@ -50,6 +50,7 @@ const createOptions = () => {
 </div>`;
   return template;
 };
+
 
 let html = createOptions();
 
