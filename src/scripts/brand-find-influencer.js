@@ -145,7 +145,4 @@ import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
     $parentEl.width(targetW);
   }
 
-  jQuery("select[name='languages']").on('change', function (e) {
-    // console.log(jQuery(e.target).val());
-  });
 })();
