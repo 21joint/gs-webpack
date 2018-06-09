@@ -7,77 +7,100 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-  <%= require('html-loader?interpolate=true&minimize=false!./partials/header/header.html') %>
-  <div class="ui ui-kit">
-    <div class="ui_kit_section">
-      <div class="container">
-        <div class="ui-group">
-          <h1>Grow Social logo</h1>
-          <p><img src="/src/assets/images/logo.svg"></p>
-        </div>
-        <div class="ui-group">
-          <h1>Buttons</h1>
-          <p>
-            <button class="btn btn-primary">Submit feedback</button>
-            <button class="btn btn-outline-primary">Show more deals</button>
-          </p>
-        </div>
-        <div class="ui-group">
-          <p>
-            <button type="button" class="btn btn-sm btn-primary">Starbucks</button>
-            <button type="button" class="btn btn-sm btn-outline-primary">Starbucks</button>
-          </p>
-        </div>
-        <div class="ui-group">
-          <h1>Icons</h1>
-          <p>
-            <i class="icon-help"></i><i class="icon-pause"></i><i class="icon-money"></i> <i
-              class="icon-download"></i><i class="icon-upload"></i><i class="icon-send"></i> <i
-              class="icon-socialbox"></i><i class="icon-marker"></i><i class="icon-search"></i> <i
-              class="icon-delete"></i><i class="icon-wrote"></i><i class="icon-back"></i>
-          </p>
-          <p>
-            <i class="icon-settings"></i><i class="icon-arrow-left"></i><i class="icon-arrow-right"></i> <i
-              class="icon-load"></i><i class="icon-time"></i><i class="icon-star"></i><i class="icon-play"></i><i
-              class="icon-like"></i><i class="icon-phone"></i><i class="icon-photo"></i><i class="icon-logout1"></i> <i
-              class="icon-save"></i>
-          </p>
-          <p>
-            <i class="icon-arrow-up-bold"></i> <i class="icon-arrow-down-bold"></i><i class="icon-arrow-left-bold"></i><i
-              class="icon-arrow-right-bold"></i>
-          </p>
-        </div>
-        <div class="ui-group">
-          <h1>Socila media icons</h1>
-          <ul class="row no-gutters">
-            <li>
-              <img src="/src/assets/images/networks/twitter.svg" alt="">
-            </li>
-            <li>
-              <img src="/src/assets/images/networks/instagram.svg" alt="">
-            </li>
-            <li>
-              <img src="/src/assets/images/networks/tumblr.svg" alt="">
-            </li>
-            <li>
-              <img src="/src/assets/images/networks/fb.svg" alt="">
-            </li>
-            <li>
-              <img src="/src/assets/images/networks/pinterest.svg" alt="">
-            </li>
-            <li>
-              <img src="/src/assets/images/networks/blog.svg" alt="">
-            </li>
-            <li>
-              <img src="/src/assets/images/networks/snapchat.svg" alt="">
-            </li>
-            <li>
-              <img src="/src/assets/images/networks/podcast.svg" alt="">
-            </li>
-          </ul>
-        </div>
+<%
+const filters = [
+require('html-loader?interpolate=true!./partials/filters/gscore.html'),
+require('./partials/filters/languages').default,
+require('html-loader?interpolate=true!./partials/filters/gender.html'),
+require('html-loader!./partials/filters/followers.html'),
+require('html-loader!./partials/filters/likes.html'),
+require('html-loader!./partials/filters/comments.html'),
+require('html-loader!./partials/filters/platforms.html'),
+require('html-loader!./partials/filters/sponsored.html'),
+require('html-loader!./partials/filters/email.html')
+];
+%>
+<%= require('html-loader?interpolate=true&minimize=false!./partials/header/header.html') %>
+<div class="ui ui-kit">
+  <div class="ui_kit_section">
+    <div class="container">
+      <div class="ui-group">
+        <h1>Grow Social logo</h1>
+        <p><img src="/src/assets/images/logo.svg"></p>
+      </div>
+      <div class="ui-group">
+        <h1>Buttons</h1>
+        <p>
+          <button class="btn btn-primary">Submit feedback</button>
+          <button class="btn btn-outline-primary">Show more deals</button>
+        </p>
+      </div>
+      <div class="ui-group">
+        <h1>Filters</h1>
+        <ul id="searchFilter" class="search-filter--ul btn-group" data-toggle="filter">
+          <% for(let i = 0; i < filters.length;i++) { %>
+          <li class="dropdown">
+            <%= filters[i] %>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+      <div class="ui-group">
+        <p>
+          <button type="button" class="btn btn-sm btn-primary">Starbucks</button>
+          <button type="button" class="btn btn-sm btn-outline-primary">Starbucks</button>
+        </p>
+      </div>
+      <div class="ui-group">
+        <h1>Icons</h1>
+        <p>
+          <i class="icon-help"></i><i class="icon-pause"></i><i class="icon-money"></i> <i
+          class="icon-download"></i><i class="icon-upload"></i><i class="icon-send"></i> <i
+          class="icon-socialbox"></i><i class="icon-marker"></i><i class="icon-search"></i> <i
+          class="icon-delete"></i><i class="icon-wrote"></i><i class="icon-back"></i>
+        </p>
+        <p>
+          <i class="icon-settings"></i><i class="icon-arrow-left"></i><i class="icon-arrow-right"></i> <i
+          class="icon-load"></i><i class="icon-time"></i><i class="icon-star"></i><i class="icon-play"></i><i
+          class="icon-like"></i><i class="icon-phone"></i><i class="icon-photo"></i><i class="icon-logout1"></i> <i
+          class="icon-save"></i>
+        </p>
+        <p>
+          <i class="icon-arrow-up-bold"></i> <i class="icon-arrow-down-bold"></i><i class="icon-arrow-left-bold"></i><i
+          class="icon-arrow-right-bold"></i>
+        </p>
+      </div>
+      <div class="ui-group">
+        <h1>Socila media icons</h1>
+        <ul class="row no-gutters">
+          <li>
+            <img src="/src/assets/images/networks/twitter.svg" alt="">
+          </li>
+          <li>
+            <img src="/src/assets/images/networks/instagram.svg" alt="">
+          </li>
+          <li>
+            <img src="/src/assets/images/networks/tumblr.svg" alt="">
+          </li>
+          <li>
+            <img src="/src/assets/images/networks/fb.svg" alt="">
+          </li>
+          <li>
+            <img src="/src/assets/images/networks/pinterest.svg" alt="">
+          </li>
+          <li>
+            <img src="/src/assets/images/networks/blog.svg" alt="">
+          </li>
+          <li>
+            <img src="/src/assets/images/networks/snapchat.svg" alt="">
+          </li>
+          <li>
+            <img src="/src/assets/images/networks/podcast.svg" alt="">
+          </li>
+        </ul>
       </div>
     </div>
   </div>
+</div>
 </body>
 </html>

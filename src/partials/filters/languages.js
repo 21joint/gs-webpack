@@ -29,7 +29,7 @@ const createOptions = () => {
       <div class="col">
         <!--<input data-tags title="Targeting" placeholder="Write language here" type="text" class="form-control"-->
                <!--data-use=" "> <input class="input-tags&#45;&#45;query" type="hidden">-->
-        <select name="languages" data-use=" value," title="Languages" style="width: 100%" id="barmi${new Date().getTime()}" multiple="multiple">
+        <select name="languages" data-use=" value," title="Languages" style="width: 100%" id="barmi${new Date().getTime()}" multiple="true">
           ${generateLanguages()}
         </select>
       </div>
