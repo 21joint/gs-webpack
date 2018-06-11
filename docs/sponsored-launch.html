@@ -5,7 +5,7 @@
         aria-expanded="false">
   <i class="icon-close ml-2 align-middle"></i>
 </button>
-<div class="dropdown-menu p-0" style="max-width: 290px;">
+<div class="dropdown-menu p-0" style="max-width: 100%; width: 470px;">
   <div class="container-fluid">
     <div class="form-row py-3 align-items-center">
       <div class="col">
@@ -36,7 +36,46 @@
                  class="gs-range--slider"
                  data-start="0,30"
                  data-min="0"
-                 data-max="30"
+                 data-max="70"
+                 data-suffix="+"
+                 data-step="1"
+                 data-connect="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="form-row py-3 align-items-center">
+      <div class="col">
+        <h6 class="text-dark mb-0"><strong>Percantage of posts being sponsored</strong></h6>
+      </div>
+    </div>
+    <div class="form-row py-3 align-items-center">
+      <div class="col-12">
+        <div class="form-range-group">
+          <div class="form-group">
+            <div class="mb-4">
+              <input style="max-width: 100px;"
+                     title="gs-handle--input"
+                     type="text"
+                     class="form-control d-inline"
+                     data-handle="0"
+                     data-use="value - "/>
+              <span class="text-asphalt mx-1">-</span>
+              <input style="max-width: 100px;"
+                     title="gs-handle--input"
+                     type="text"
+                     class="form-control d-inline"
+                     data-handle="1"
+                     data-use="value"/>
+            </div>
+            <div id="sliderPercantage"
+                 class="gs-range--slider"
+                 data-start="0,100"
+                 data-min="0"
+                 data-max="200"
                  data-step="1"
                  data-connect="true"></div>
           </div>

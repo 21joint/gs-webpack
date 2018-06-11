@@ -1,6 +1,5 @@
 const Conf = require('./conf');
 const path = require('path');
-const Visualizer = require('webpack-visualizer-plugin');
 const Pkg = require('./package');
 const _ = require('lodash');
 const glob = require('glob');

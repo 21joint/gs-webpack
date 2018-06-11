@@ -54,4 +54,4 @@ const createOptions = () => {
 
 let html = createOptions();
 
-export default html;
+module.exports = html;

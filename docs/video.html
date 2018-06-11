@@ -1,17 +1,49 @@
 <head><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="styles/app.css" rel="stylesheet"></head><button class="btn btn-sm btn-outline-primary"
         data-toggle="dropdown"
         aria-haspopup="true"
-        title="Sponsored"
+        title="Video"
         aria-expanded="false">
   <i class="icon-close ml-2 align-middle"></i>
 </button>
-<div class="dropdown-menu p-0" style="max-width: 290px;">
+<div class="dropdown-menu p-0" style="max-width: 100%; width: 470px;">
   <div class="container-fluid">
     <div class="form-row py-3 align-items-center">
       <div class="col">
-        <h6 class="text-dark mb-0"><strong>Number of sponsored posts per month</strong></h6>
+        <h6 class="text-dark mb-0"><strong>Average views per video</strong></h6>
       </div>
       <div class="col-auto"><img src="/images/info.svg" class="r-icon--medium align-middle ml-1" alt=" "></div>
+    </div>
+    <div class="form-row py-3 align-items-center">
+      <div class="col-12">
+        <div class="form-range-group">
+          <div class="form-group">
+            <div class="mb-4">
+              <input style="max-width: 100px;"
+                     title="gs-handle--input"
+                     type="text"
+                     class="form-control d-inline"
+                     data-handle="0"
+                     data-use="value - "
+                     value="0"/>
+              <span class="text-asphalt mx-1">-</span>
+              <input style="max-width: 100px;"
+                     title="gs-handle--input"
+                     type="text"
+                     class="form-control d-inline"
+                     data-handle="1"
+                     data-use="value"
+                     value="1000"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-row py-3 align-items-center">
+      <div class="col">
+        <h6 class="text-dark mb-0"><strong>Percantage of followers view average video</strong></h6>
+      </div>
     </div>
     <div class="form-row py-3 align-items-center">
       <div class="col-12">
@@ -32,12 +64,13 @@
                      data-handle="1"
                      data-use="value"/>
             </div>
-            <div id="sliderSponsored"
+            <div id="sliderVideo"
                  class="gs-range--slider"
-                 data-start="0,30"
+                 data-start="0,100"
                  data-min="0"
-                 data-max="30"
+                 data-max="100"
                  data-step="1"
+                 data-suffix="%"
                  data-connect="true"></div>
           </div>
         </div>
