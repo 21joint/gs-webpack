@@ -2,6 +2,7 @@ const Conf = require('./conf');
 const path = require('path');
 const Pkg = require('./package');
 const _ = require('lodash');
+const args = require('yargs').argv;
 const glob = require('glob');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -99,7 +100,8 @@ module.exports = {
                 }
               },
               fallback: 'file-loader',
-              outputPath: './'
+              outputPath: './',
+              publicPath: args.git ? '../': '/'
             }
           }
         ]
