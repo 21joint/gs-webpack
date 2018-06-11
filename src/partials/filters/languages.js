@@ -22,7 +22,7 @@ const createOptions = () => {
         <h6 class="text-dark mt-1 mb-3"><strong>Language</strong></h6>
       </div>
       <div class="col-auto">
-        <img class="r-icon--medium" src="../../assets/images/info.svg" alt="Awareness">
+        <img class="r-icon--medium" src="${require('../../assets/images/info.svg')}" alt="Awareness">
       </div>
     </div>
     <div class="form-row pb-3 align-items-center">
