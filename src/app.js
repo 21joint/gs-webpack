@@ -1,6 +1,7 @@
 /**
  * Application entry point
  */
+import './assets/icomoon/style.scss';
 import './assets/styles/index.scss';
 import 'owl.carousel/dist/owl.carousel.min';
 import 'select2/dist/js/select2.min';
