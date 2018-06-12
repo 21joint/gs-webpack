@@ -102,7 +102,7 @@ module.exports = {
               },
               fallback: 'file-loader',
               outputPath: './',
-              publicPath: '/'
+              publicPath: '/gs-webpack/'
             }
           }
         ]
