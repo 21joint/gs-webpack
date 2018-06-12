@@ -651,7 +651,9 @@
     }
   }
   .dropdown-menu {
-    min-width: 290px;
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+    }
     .btn-plus {
       width: 30px;
       line-height: 1;
@@ -672,7 +674,6 @@
       width: 100px;
     }
   }
-
 }
 
 .single-card--title {

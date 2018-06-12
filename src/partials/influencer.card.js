@@ -1,4 +1,4 @@
-import {Icons} from './icons';
+import { Icons } from './icons';
 
 const _Icons = new Icons();
 
@@ -10,6 +10,21 @@ export class Influencer {
     this.photos = influencer.photos;
     this.social = influencer.social;
     this.gscore = influencer.gscore;
+  }
+
+  static isClosable() {
+    return `<button class="single-influencer--archive p-0">            
+                <svg width="26px" height="26px" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Find-influencer" transform="translate(-464.000000, -472.000000)" stroke="#FFFFFF" stroke-width="3">
+            <g id="Group-6-Copy" transform="translate(466.000000, 474.000000)">
+                <path d="M0,0 L18,18" id="Stroke-1"></path>
+                <path d="M18,0 L0,18" id="Stroke-3"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+              </button>`;
   }
 
   createSocial() {
@@ -31,7 +46,7 @@ export class Influencer {
 
     for (let key in _instance.social) {
       if (_instance.social.hasOwnProperty(key)) {
-        _social += '<li>' + _Icons.insertIcon({title: key}) + '<span class="text-asphalt">' + _quantityHandler(_instance.social[key]) +
+        _social += '<li>' + _Icons.insertIcon({ title: key }) + '<span class="text-asphalt">' + _quantityHandler(_instance.social[key]) +
           'k</span></li>';
       }
     }
@@ -47,21 +62,6 @@ export class Influencer {
     return _slides;
   }
 
-  static isClosable() {
-    return `<button class="single-influencer--archive p-0">            
-                <svg width="26px" height="26px" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g id="Find-influencer" transform="translate(-464.000000, -472.000000)" stroke="#FFFFFF" stroke-width="3">
-            <g id="Group-6-Copy" transform="translate(466.000000, 474.000000)">
-                <path d="M0,0 L18,18" id="Stroke-1"></path>
-                <path d="M18,0 L0,18" id="Stroke-3"></path>
-            </g>
-        </g>
-    </g>
-</svg>
-              </button>`
-  }
-
   load(opts) {
     // language=HTML
     return `<div class="single-profile--card">             
@@ -73,7 +73,7 @@ export class Influencer {
                         <b>${this.name}, ${this.age}</b></h5></a>
                   </div>
                   <div class="col-auto">
-                      ${this.miban(this.gscore)}     
+                      ${this.gsScoreHandler(this.gscore)}     
                   </div>
                 </div>
               </div>
@@ -106,33 +106,33 @@ export class Influencer {
           </div>`;
   }
 
-  miban(x) {
+  gsScoreHandler(x) {
     let cl = '';
     if (x >= 0 && x <= 10) {
-      cl = 'gs-score--1'
+      cl = 'gs-score--1';
     }
     if (x > 10 && x <= 25) {
-      cl = 'gs-score--2'
+      cl = 'gs-score--2';
     }
     if (x > 25 && x <= 50) {
-      cl = 'gs-score--3'
+      cl = 'gs-score--3';
     }
     if (x > 50 && x <= 75) {
-      cl = 'gs-score--4'
+      cl = 'gs-score--4';
     }
     if (x > 75 && x <= 100) {
-      cl = 'gs-score--5'
+      cl = 'gs-score--5';
     }
     return `<div class="single-infl-gscore d-flex align-items-center">
                     <span class="gs-score ${cl}"></span>
                     <span>${x}%</span>
-                  </div>`
+                  </div>`;
   }
 
 }
 
 export class Language {
-  constructor(language){
+  constructor(language) {
 
   }
 }

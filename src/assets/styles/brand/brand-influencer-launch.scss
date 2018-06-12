@@ -39,14 +39,8 @@
   outline: 0;
   border: none;
   font-size: 30px;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
   transform: scale(0);
-  -webkit-transition: 0.27s visibility, 0.27s -webkit-transform;
-  transition: 0.27s visibility, 0.27s -webkit-transform;
-  -o-transition: 0.27s transform, 0.27s visibility;
-  transition: 0.27s transform, 0.27s visibility;
-  transition: 0.27s transform, 0.27s visibility, 0.27s -webkit-transform;
+  transition: 0.27s all;
 }
 
 .single-profile--card:hover {
@@ -92,38 +86,6 @@
   display: flex;
   align-items: center;
   margin: 10px 5px;
-}
-
-.select2 .select2-selection--multiple .select2-selection__choice__remove {
-  font-size: 0;
-  margin-right: 5px;
-  width: 24px;
-  height: 24px;
-  line-height: 1;
-  color: #BDC0C9;
-  padding: 0;
-  border-radius: 8px;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  box-shadow: 0 0 0 1px #BDC0C9;
-  .select2-selection__rendered {
-    padding: 0;
-    > li {
-      margin: 5px 0 2.5px;
-    }
-  }
-  &:before {
-    content: "\e924";
-    font-family: 'icomoon';
-    transform: rotate(45deg);
-    font-size: 14px;
-  }
-  &:hover {
-    color: darken(#BDC0C9,10%);
-  }
 }
 
 .select2.select2-container--focus .select2-selection--multiple {

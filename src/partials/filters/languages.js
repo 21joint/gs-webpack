@@ -15,7 +15,7 @@ const createOptions = () => {
   template = `<button type="button" class="btn btn-sm btn-outline-primary" data-toggle="dropdown" aria-haspopup="true"
         title="Language" aria-expanded="false">
   <i class="icon-close ml-2 align-middle"></i>
-</button><div class="dropdown-menu p-0" style="max-width: 400px;">
+</button><div class="dropdown-menu p-0" style="width: 400px;">
   <div class="container-fluid">
     <div class="form-row py-3 justify-content-between">
       <div class="col-auto">

@@ -73,7 +73,7 @@ const influencers = [
   }
 ];
 const filters = [
-  require('html-loader?interpolate=true!./partials/filters/gscore.html'),
+  require('html-loader!./partials/filters/gscore.html'),
   require('./partials/filters/languages'),
   require('html-loader?interpolate=true!./partials/filters/gender.html'),
   require('html-loader!./partials/filters/followers.html'),
@@ -85,7 +85,7 @@ const filters = [
 ];
 %>
 <body class="bg-light">
-  <%= require('html-loader!./partials/header/header-fluid2.html') %>
+  <%= require('html-loader?interpolate=true!./partials/header/header-fluid2.html') %>
   <main class="main-content">
     <!--FIND INFLUENCERS-->
     <div class="find-influencer">
@@ -143,7 +143,7 @@ const filters = [
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-12 pt-2">
+                              <div class="col-12 pt-4">
                                 <div class="row">
                                   <div class="col-12 col-lg-auto mb-2 mb-lg-0">
                                     <span class="small text-asphalt">Filters</span>

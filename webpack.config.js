@@ -11,7 +11,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const IS_DEV = (process.env.NODE_ENV === 'dev');
 const renderHtmlTemplates = () =>
-  glob.sync('src/**/*.html')
+  glob.sync('src/*.html')
     .map(dir => new HtmlWebpackPlugin({
       // Output
       filename: path.basename(dir),
@@ -47,9 +47,10 @@ module.exports = {
           'babel-loader'
         ]
       },
+
       // SCSS
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [

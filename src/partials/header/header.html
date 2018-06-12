@@ -1,3 +1,4 @@
+${(!IS_DEV) ? `
 <div class="main-loader">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 369">
     <path
@@ -5,7 +6,8 @@
       transform="scale(0.9)" stroke-dasharray="2700" stroke-dashoffset="-2700" fill="transparent" stroke="#4c99d1"
       stroke-width="2"></path>
   </svg>
-</div>
+</div>`
+: ``}
 <header class="header">
   <div class="container-fluid">
     <div class="row header_main__row align-items-center">

@@ -10,14 +10,6 @@ module.exports = merge(webpackConfig, {
     open: true,
     publicPath: '/'
   },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-    ],
-  },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
