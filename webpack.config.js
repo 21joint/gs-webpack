@@ -102,7 +102,7 @@ module.exports = {
               },
               fallback: 'file-loader',
               outputPath: './',
-              publicPath: '/gs-webpack/'
+              publicPath: args.git ? '/gs-webpack/' : '/'
             }
           }
         ]
@@ -122,7 +122,7 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           chunks: 'initial',
           name: 'vendors'
-        },
+        }
       }
     }
   },
@@ -139,5 +139,5 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'styles/[name].css'
     })
-  ],
+  ]
 };
