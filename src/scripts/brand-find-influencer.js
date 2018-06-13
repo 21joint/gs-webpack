@@ -57,7 +57,8 @@ import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
 
   jQuery(document)
     .on('show.bs.modal', '.modal-single--influencer', function (e) {
-      console.log(e.relatedTarget)
+      console.log(e.relatedTarget);
+      jQuery('.modal-single--influencer').find('.single-card--name').text(e.relatedTarget.dataset.infname)
     })
     .on('shown.bs.modal', '.modal-single--influencer', function () {
       updateOffsets(jQuery(this));
