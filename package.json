@@ -11,7 +11,7 @@
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --mode development --config webpack.config.dev.js",
     "build": "webpack -p --progress --mode production --config webpack.config.build.js",
     "build:git": "webpack -p --progress --mode production --config webpack.config.build.js --git",
-    "git-push": "git add . && git pull && git commit -m'updates' && git push"
+    "git-push": "npm run build:git && git add . && git pull && git commit -m'updates' && git push"
   },
   "dependencies": {
     "babel-polyfill": "*",
