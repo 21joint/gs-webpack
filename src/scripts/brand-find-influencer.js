@@ -56,6 +56,9 @@ import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
     });
 
   jQuery(document)
+    .on('show.bs.modal', '.modal-single--influencer', function (e) {
+      console.log(e.relatedTarget)
+    })
     .on('shown.bs.modal', '.modal-single--influencer', function () {
       updateOffsets(jQuery(this));
     })
