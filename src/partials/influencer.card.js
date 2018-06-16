@@ -76,7 +76,7 @@ export class Influencer {
                     data-gscore="${this.gscore}"><h5><b>${this.name}, ${this.age}</b></h5></a>
                   </div>
                   <div class="col-auto">
-                      ${this.gsScoreHandler(this.gscore)}     
+                      ${Influencer.gsScoreHandler(this.gscore)}     
                   </div>
                 </div>
               </div>
@@ -100,7 +100,7 @@ export class Influencer {
           </div>`;
   }
 
-  gsScoreHandler(x) {
+  static gsScoreHandler(x) {
     let cl = '';
     if (x >= 0 && x <= 10) {
       cl = 'gs-score--1';

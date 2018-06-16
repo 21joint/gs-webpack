@@ -3,6 +3,8 @@ import '../partials/filters/filters';
 import '../partials/input.tags';
 import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
 
+import {Influencer} from '../partials/influencer.card'
+
 
 (!!document.querySelector('.find-influencer')) && (function () {
 
@@ -59,6 +61,7 @@ import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
     .on('show.bs.modal', '.modal-single--influencer', function (e) {
       console.log(e.relatedTarget);
       jQuery('.modal-single--influencer').find('.single-card--name').text(e.relatedTarget.dataset.infname)
+
     })
     .on('shown.bs.modal', '.modal-single--influencer', function () {
       updateOffsets(jQuery(this));
@@ -90,6 +93,12 @@ import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
     .on('click', '.single-card--likebtn', function () {
       let _self = jQuery(this),
         _profile = _self.parents('.single-profile--card');
+
+      likeProfileToggle(_profile);
+    })
+    .on('click', '.single-card--likebtn', function () {
+      let _self = jQuery(this),
+        _profile = _self.parents('.single-card--image');
 
       likeProfileToggle(_profile);
     })
