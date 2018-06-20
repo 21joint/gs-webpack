@@ -31,12 +31,12 @@ import {Influencer} from '../partials/influencer.card'
   const likeProfileToggle = function (profile, callback) {
     //TODO dummy function to make ajax call to like profile
 
-    if (profile.hasClass('in-likes')) {
+    if (profile.hasClass('liked')) {
 
-      profile.removeClass('in-likes');
+      profile.removeClass('liked');
     }
     else {
-      profile.addClass('in-likes');
+      profile.addClass('liked');
     }
 
     if (typeof callback === 'function') {
@@ -59,13 +59,16 @@ import {Influencer} from '../partials/influencer.card'
 
   jQuery(document)
     .on('show.bs.modal', '.modal-single--influencer', function (e) {
-      let $targetObj = jQuery(e.relatedTarget).closest('.single-profile--card');
-      let inflName = $targetObj.data('infname');
-      let gscore = $targetObj.data('gscore');
-      jQuery('.modal-single--influencer').find('.single-card--name').html(inflName);
-      jQuery('.modal-single--influencer').find('.single-infl--gscore').html(Influencer.gsScoreHandler(gscore));
+      let $thisCard = jQuery(e.relatedTarget).closest('.single-profile--card');
+      let inflName = $thisCard.data('infname');
+      let gscore = $thisCard.data('gscore');
+      jQuery(this).find('.single-card--name').text(inflName);
+      jQuery(this).find('.single-infl--gscore').html(Influencer.gsScoreHandler(gscore) || '');
+      $thisCard.append(jQuery(this));
 
-
+    })
+    .on('hide.bs.modal','.modal-single--influencer', function(e) {
+      jQuery('body').append(jQuery(this));
     })
     .on('shown.bs.modal', '.modal-single--influencer', function () {
       updateOffsets(jQuery(this));
@@ -97,33 +100,27 @@ import {Influencer} from '../partials/influencer.card'
     .on('click', '.single-card--likebtn', function () {
       let _self = jQuery(this),
         _profile = _self.parents('.single-profile--card');
-
-      likeProfileToggle(_profile);
-    })
-    .on('click', '.single-card--likebtn', function () {
-      let _self = jQuery(this),
-        _profile = _self.parents('.single-card--image');
-
       likeProfileToggle(_profile);
     })
     .on('click', '.single-influencer--archive', function () {
 
-      let _self = jQuery(this),
-        _profile = _self.closest('[class^="col-"]'),
-        _modal = _self.closest('.modal-single--influencer');
+      let $btn = jQuery(this),
+        $colmn = $btn.parents('.single-profile--card').parent(),
+        $modal = $colmn.find('.modal-single--influencer');
 
 
-      if (_modal.length > 0) {
-        _modal.modal('hide');
-        _profile.addClass('zoomingOut').delay(500).queue(function (next) {
-          jQuery(this).remove();
-          next()
+      if ($modal.length > 0) {
+        $modal.modal('hide').delay(500).queue(function (next) {
+          $colmn.addClass('zoomingOut').delay(500).queue(function (next2) {
+            jQuery(this).remove();
+            next2()
+          });
+          next();
         });
         return
       }
-      _profile = _self.closest('[class^="col-"]');
 
-      _profile.addClass('zoomingOut').delay(500).queue(function (next) {
+      $colmn.addClass('zoomingOut').delay(500).queue(function (next) {
         jQuery(this).remove();
         next()
       })
