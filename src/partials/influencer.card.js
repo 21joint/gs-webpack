@@ -64,16 +64,14 @@ export class Influencer {
 
   load(opts) {
     // language=HTML
-    return `<div class="single-profile--card">             
+    return `<div class="single-profile--card" data-infname="${this.name}" data-infage="${this.age}" data-gscore="${this.gscore}">             
               <div class="single-card--title">
                 <div class="row justify-content-between flex-nowrap align-items-center">
                   <div class="col">
                     <a tabindex="-1" 
                     data-toggle="modal"
-                    href=".modal-single--influencer" 
-                    data-infname="${this.name}" 
-                    data-infage="${this.age}"
-                    data-gscore="${this.gscore}"><h5><b>${this.name}, ${this.age}</b></h5></a>
+                    href=".modal-single--influencer"                
+                    <h5><b>${this.name}, ${this.age}</b></h5></a>
                   </div>
                   <div class="col-auto">
                       ${Influencer.gsScoreHandler(this.gscore)}     

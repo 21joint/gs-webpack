@@ -59,8 +59,12 @@ import {Influencer} from '../partials/influencer.card'
 
   jQuery(document)
     .on('show.bs.modal', '.modal-single--influencer', function (e) {
-      console.log(e.relatedTarget);
-      jQuery('.modal-single--influencer').find('.single-card--name').text(e.relatedTarget.dataset.infname)
+      let $targetObj = jQuery(e.relatedTarget).closest('.single-profile--card');
+      let inflName = $targetObj.data('infname');
+      let gscore = $targetObj.data('gscore');
+      jQuery('.modal-single--influencer').find('.single-card--name').html(inflName);
+      jQuery('.modal-single--influencer').find('.single-infl--gscore').html(Influencer.gsScoreHandler(gscore));
+
 
     })
     .on('shown.bs.modal', '.modal-single--influencer', function () {
@@ -103,8 +107,21 @@ import {Influencer} from '../partials/influencer.card'
       likeProfileToggle(_profile);
     })
     .on('click', '.single-influencer--archive', function () {
+
       let _self = jQuery(this),
-        _profile = _self.closest('[class^="col-"]');
+        _profile = _self.closest('[class^="col-"]'),
+        _modal = _self.closest('.modal-single--influencer');
+
+
+      if (_modal.length > 0) {
+        _modal.modal('hide');
+        _profile.addClass('zoomingOut').delay(500).queue(function (next) {
+          jQuery(this).remove();
+          next()
+        });
+        return
+      }
+      _profile = _self.closest('[class^="col-"]');
 
       _profile.addClass('zoomingOut').delay(500).queue(function (next) {
         jQuery(this).remove();

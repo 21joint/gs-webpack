@@ -137,14 +137,24 @@
   .single-influencer--archive {
     visibility: visible;
     left: 14px;
-    top: 14px;
+    bottom: 12px;
+    top: auto;
     transform: none;
+    @include media-breakpoint-up(sm){
+      top: 14px;
+      bottom: auto;
+    }
   }
   .single-card--likebtn {
     visibility: visible;
     transform: none;
-    top: 10px;
+    bottom: 10px;
+    top: auto;
     right: 10px;
+    @include media-breakpoint-up(sm){
+      bottom: auto;
+      top: 10px;
+    }
   }
 }
 
@@ -189,6 +199,9 @@
       opacity: 1;
       visibility: visible;
     }
+  }
+  iframe{
+    display: block;
   }
 }
 
