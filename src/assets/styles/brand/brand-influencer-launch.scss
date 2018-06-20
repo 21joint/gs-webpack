@@ -209,6 +209,7 @@
   .badge {
     overflow: hidden;
     position: relative;
+    line-height: 1;
     &:before {
       position: absolute;
       content: "";
