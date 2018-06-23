@@ -4,9 +4,6 @@ export default (function () {
       window.loaded = true;
     });
 
-  const $contentLoader = jQuery('<div></div>')
-    .addClass('white-overlay');
-
   let mainLoader,
     currOffset,
     count = 0,
