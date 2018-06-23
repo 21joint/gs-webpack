@@ -1,15 +1,17 @@
+import Masonry from 'masonry-layout';
 import '../partials/range-sliders';
 import '../partials/filters/filters';
 import '../partials/input.tags';
 import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
 
-import {Influencer} from '../partials/influencer.card'
+import { Influencer } from '../partials/influencer.card';
 
 
 (!!document.querySelector('.find-influencer')) && (function () {
 
   let $fixedNavHeight,
-    $sectionsWrapperOffset;
+    $sectionsWrapperOffset,
+    msnry;
 
   const $fixedNav = jQuery('.single-card--fixednav');
   const $sectionsWrapper = jQuery('.single-card--sections');
@@ -58,17 +60,41 @@ import {Influencer} from '../partials/influencer.card'
     });
 
   jQuery(document)
+    .ready(function () {
+      // vanilla JS
+// init with element
+      var grid = document.querySelector('.grid');
+      msnry = new Masonry(grid, {
+        // options...
+        itemSelector: '.grid-item',
+        columnWidth: 200,
+        horizontalOrder: true
+      });
+
+// init with selector
+      msnry = new Masonry('.grid', {
+        // options...
+      });
+    });
+
+  jQuery(document)
     .on('show.bs.modal', '.modal-single--influencer', function (e) {
-      let $thisCard = jQuery(e.relatedTarget).closest('.single-profile--card');
+      let $thisCard = jQuery(e.relatedTarget)
+        .closest('.single-profile--card');
       let inflName = $thisCard.data('infname');
       let gscore = $thisCard.data('gscore');
-      jQuery(this).find('.single-card--name').text(inflName);
-      jQuery(this).find('.single-infl--gscore').html(Influencer.gsScoreHandler(gscore) || '');
+      jQuery(this)
+        .find('.single-card--name')
+        .text(inflName);
+      jQuery(this)
+        .find('.single-infl--gscore')
+        .html(Influencer.gsScoreHandler(gscore) || '');
       $thisCard.append(jQuery(this));
 
     })
-    .on('hide.bs.modal','.modal-single--influencer', function(e) {
-      jQuery('body').append(jQuery(this));
+    .on('hide.bs.modal', '.modal-single--influencer', function (e) {
+      jQuery('body')
+        .append(jQuery(this));
     })
     .on('shown.bs.modal', '.modal-single--influencer', function () {
       updateOffsets(jQuery(this));
@@ -105,25 +131,34 @@ import {Influencer} from '../partials/influencer.card'
     .on('click', '.single-influencer--archive', function () {
 
       let $btn = jQuery(this),
-        $colmn = $btn.parents('.single-profile--card').parent(),
+        $colmn = $btn.parents('.single-profile--card')
+          .parent(),
         $modal = $colmn.find('.modal-single--influencer');
 
 
       if ($modal.length > 0) {
-        $modal.modal('hide').delay(500).queue(function (next) {
-          $colmn.addClass('zoomingOut').delay(500).queue(function (next2) {
-            jQuery(this).remove();
-            next2()
+        $modal.modal('hide')
+          .delay(500)
+          .queue(function (next) {
+            $colmn.addClass('zoomingOut')
+              .delay(500)
+              .queue(function (next2) {
+                jQuery(this)
+                  .remove();
+                next2();
+              });
+            next();
           });
-          next();
-        });
-        return
+        return;
       }
 
-      $colmn.addClass('zoomingOut').delay(500).queue(function (next) {
-        jQuery(this).remove();
-        next()
-      })
+      $colmn.addClass('zoomingOut')
+        .delay(500)
+        .queue(function (next) {
+          jQuery(this).remove();
+          next();
+          msnry.layout();
+        });
 
 
     })

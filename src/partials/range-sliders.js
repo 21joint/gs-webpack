@@ -27,10 +27,10 @@ export default (evt => {
             decimals: el.dataset.decimals || 0,
             thousand: el.dataset.thousand || undefined,
             edit: function (val) {
-              return hasPrefix() + val + hasSuffix();
+              return hasPrefix() + (parseInt(val) == parseInt(el.dataset.max) ? Math.round(val) : val) + hasSuffix();
             }
           };
-          return wNumb(wnOptions)
+          return wNumb(wnOptions);
         })()
       };
 

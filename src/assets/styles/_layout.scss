@@ -41,9 +41,6 @@
     margin-left: -15px;
   }
   @include media-breakpoint-up(lg) {
-    .container-fluid {
-      padding: 0 rem-calc(40);
-    }
     .full-width {
       margin-left: rem-calc(-40);
       margin-right: rem-calc(-40);

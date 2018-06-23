@@ -106,7 +106,7 @@ const filters = [
                         <div class="tab-pane fade show active" id="searchTab" role="tabpanel">
                           <form id="searchForm" class="form-horizontal">
                             <div class="row align-items-center">
-                              <div class="col-12 col-lg pt-4">
+                              <div class="col-12 col-lg pt-4 pt-sm-5">
                                 <div class="row align-items-center">
                                   <div class="col pr-0">
                                     <div class="form-group position-relative mb-0">
@@ -162,11 +162,11 @@ const filters = [
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-12 px-0">
+                              <div class="col-12">
                                 <hr>
                               </div>
                             </div>
-                            <div class="row justify-content-between align-items-center">
+                            <div class="row justify-content-between align-items-center mb-4">
                               <div class="col-12 col-md-8 mb-3 mb-md-0">
                                 <h4 class="text-asphalt mb-0">We found 31 influencers within your search criteria</h4>
                               </div>
@@ -184,16 +184,18 @@ const filters = [
                             </div>
                           </form>
                           <div class="search-results" aria-describedby="searchForm">
-                            <div class="row p-3">
-                              <% for(let i = 0; i < influencers.length;i++) {
+                            <div class="container-fluid">
+                              <div class="row grid">
+                                <% for(let i = 0; i < influencers.length;i++) {
                                 let _infl = new Influencer(influencers[i])
-                              %>
-                              <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                                <%= _infl.load({
+                                %>
+                                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-item">
+                                  <%= _infl.load({
                                   closable: true
-                                }) %>
+                                  }) %>
+                                </div>
+                                <% } %>
                               </div>
-                              <% } %>
                             </div>
                           </div>
                         </div>
