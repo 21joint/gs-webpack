@@ -80,7 +80,7 @@ export class Influencer {
     let _slides = '';
     for (let j = 0; j < this.photos.length; j++) {
       const photo = this.photos[j];
-      _slides += `<div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" data-target="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(${ photo });"></div></a></div>`;
+      _slides += `<div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(${ photo });"></div></a></div>`;
     }
     return _slides;
   }
@@ -94,7 +94,7 @@ export class Influencer {
                     <a tabindex="-1" 
                     data-toggle="modal"
                     aria-expanded="false"
-                    data-target="#modalSingleInfl"       
+                    href="#modalSingleInfl"       
                     <h5><b>${this.name}, ${this.age}</b></h5></a>
                   </div>
                   <div class="col-auto">
