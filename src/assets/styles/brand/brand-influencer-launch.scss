@@ -140,7 +140,7 @@
     bottom: 12px;
     top: auto;
     transform: none;
-    @include media-breakpoint-up(sm){
+    @include media-breakpoint-up(sm) {
       top: 14px;
       bottom: auto;
     }
@@ -151,7 +151,7 @@
     bottom: 10px;
     top: auto;
     right: 10px;
-    @include media-breakpoint-up(sm){
+    @include media-breakpoint-up(sm) {
       bottom: auto;
       top: 10px;
     }
@@ -200,7 +200,7 @@
       visibility: visible;
     }
   }
-  iframe{
+  iframe {
     display: block;
   }
 }
@@ -220,26 +220,26 @@
       background-color: transparent;
       right: 0;
     }
-    &.gs-badge--score-1:before{
+    &.gs-badge--score-1:before {
       background-color: #8D2121;
     }
-    &.gs-badge--score-2:before{
+    &.gs-badge--score-2:before {
       background-color: #D4877E;
     }
-    &.gs-badge--score-3:before{
+    &.gs-badge--score-3:before {
       background-color: #FFDB94;
     }
-    &.gs-badge--score-4:before{
+    &.gs-badge--score-4:before {
       background-color: #B1E9A3;
     }
-    &.gs-badge--score-5:before{
+    &.gs-badge--score-5:before {
       background-color: #368D21;
     }
 
   }
 }
 
-.single-card--name{
+.single-card--name {
   overflow: hidden;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
