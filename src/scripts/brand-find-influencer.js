@@ -113,7 +113,7 @@ import { Influencer } from '../partials/influencer.card';
         .attr('href'));
 
       $singleInflModal.animate({
-        'scrollTop': $target.position().top - $fixedNavHeight + 2
+        'scrollTop': $target.position().top - $fixedNavHeight + 3
       }, 600, 'easeNav');
     })
     .on('click', '.single-card--infobtn', function (e) {
