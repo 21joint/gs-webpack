@@ -5,7 +5,7 @@ const webpackConfig = require('./webpack.config');
 module.exports = merge(webpackConfig, {
   devServer: {
     watchContentBase: true,
-    port: 3030,
+    port: 4040,
     hot: true,
     open: true,
     publicPath: '/'

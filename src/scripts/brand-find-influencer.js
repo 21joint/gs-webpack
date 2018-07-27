@@ -167,7 +167,7 @@ import { Influencer } from '../partials/influencer.card';
     });
 
   jQuery('.badge-outline--dark')
-    .tooltip();
+    .tooltip({trigger: "click"});
 
   jQuery('.find-influencer--navtabs')
     .owlTabs({
