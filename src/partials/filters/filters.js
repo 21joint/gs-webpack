@@ -49,19 +49,23 @@ const Filters = (() => {
           jQuery(this)
             .closest('.dropdown-menu')
             .find('[data-use]')
-            .each(function (i, el) {
+            .each(function (j, el) {
               if (el.dataset.use.match(/value/)) {
-                if (jQuery.isArray(jQuery(el).val())) {
-                  jQuery(jQuery(el).val()).each(function (i, v) {
-                    _query += el.dataset.use.replace(/value/, v);
-                  });
+                if (jQuery.isArray(jQuery(el)
+                  .val())) {
+                  jQuery(jQuery(el)
+                    .val())
+                    .each(function (j, v) {
+                      _query += el.dataset.use.replace(/value/, v);
+                    });
                   return;
                 }
                 _query += el.dataset.use.replace(/value/, el.value);
               }
               if (el.checked && el.dataset.use.match(/label/)) {
-                _query += el.dataset.use.replace(/label/, el.parentNode.querySelector('label').innerText ||
-                  el.parentNode.parentNode.querySelector('label').innerText);
+                _query += el.dataset.use.replace(_applyButton.closest('.dropdown-menu')
+                    .find('[data-use]:checked').length === j + 1 ? /label,/ : /label/,
+                  el.parentNode.querySelector('label').innerText || el.parentNode.parentNode.querySelector('label').innerText);
               }
               if (el.checked && el.dataset.use.match(/name/)) {
                 _query += el.dataset.use.replace(/name/, el.getAttribute('name'));
@@ -105,7 +109,6 @@ const Filters = (() => {
 
 
 })();
-
 
 
 export default Filters;
