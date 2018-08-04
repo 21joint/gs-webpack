@@ -44,10 +44,10 @@ const Filters = (() => {
           let _query = '',
             _applyButton = jQuery(this),
             _dropdown = _applyButton.closest('.dropdown'),
-            _valueEl = _dropdown.find('.value__el');
+            _valueEl = _dropdown.find('.value__el'),
+            _checkedCount = _dropdown.find('[data-use]:checked').length;
 
-          jQuery(this)
-            .closest('.dropdown-menu')
+          _dropdown
             .find('[data-use]')
             .each(function (j, el) {
               if (el.dataset.use.match(/value/)) {
@@ -55,20 +55,20 @@ const Filters = (() => {
                   .val())) {
                   jQuery(jQuery(el)
                     .val())
-                    .each(function (j, v) {
-                      _query += el.dataset.use.replace(/value/, v);
+                    .each(function (h, v) {
+                      _query += el.dataset.use.replace(jQuery(el).val().length  === h + 1 ? /value,/ : /value/, v);
                     });
-                  return;
                 }
-                _query += el.dataset.use.replace(/value/, el.value);
+                else {
+                  _query += el.dataset.use.replace(/value/, el.value);
+                }
               }
               if (el.checked && el.dataset.use.match(/label/)) {
-                _query += el.dataset.use.replace(_applyButton.closest('.dropdown-menu')
-                    .find('[data-use]:checked').length === j + 1 ? /label,/ : /label/,
+                _query += el.dataset.use.replace(_checkedCount === j + 1 ? /label,/ : /label/,
                   el.parentNode.querySelector('label').innerText || el.parentNode.parentNode.querySelector('label').innerText);
               }
               if (el.checked && el.dataset.use.match(/name/)) {
-                _query += el.dataset.use.replace(/name/, el.getAttribute('name'));
+                _query += el.dataset.use.replace(_checkedCount === j + 1 ? /name,/ : /name/, el.getAttribute('name'));
               }
             });
 
