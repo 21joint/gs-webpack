@@ -166,8 +166,9 @@ import { Influencer } from '../partials/influencer.card';
       !e.target.dataset.dismiss && e.stopPropagation();
     });
 
-  jQuery('.badge-outline--dark')
-    .tooltip({trigger: "click"});
+  jQuery('.badge-outline--dark,.single-infl--gscore')
+    .tooltip();
+
 
   jQuery('.find-influencer--navtabs')
     .owlTabs({
