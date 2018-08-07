@@ -110,5 +110,8 @@ const Filters = (() => {
 
 })();
 
+$('#searchFilter .modal').on('click', function(e){
+  e.stopPropagation();
+})
 
 export default Filters;

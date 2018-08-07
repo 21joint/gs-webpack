@@ -22,7 +22,10 @@ const createOptions = () => {
         <h6 class="text-dark mt-1 mb-3"><strong>Language</strong></h6>
       </div>
       <div class="col-auto">
-        <img class="r-icon--medium" src="${require('../../assets/images/info.svg')}" alt="Awareness">
+      <button type="button" class="btn p-0" data-toggle="modal" data-target="#answerLanguage">
+                  <img class="r-icon--medium" src="${require('../../assets/images/info.svg')}" alt="Awareness">
+                </button>
+
       </div>
     </div>
     <div class="form-row pb-3 align-items-center">
@@ -47,7 +50,39 @@ const createOptions = () => {
       </div>
     </div>
   </div>
-</div>`;
+</div>
+<div class="modal fade" id="answerLanguage" tabindex="-1" role="dialog" aria-labelledby="answerModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="container-fluid">
+        <div class="form-row py-4">
+          <div class="col">
+            <h6 class="text-dark text-center mb-0"><strong>Answer</strong></h6>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <p class="m-0">Lucky for us, we too have significant social media following. we have 186k followers
+              on our two Facebook pages, an estimated 80k on our Snapchat, 32k on Instagram and a paltry 12k on our
+              Twitter, but Jesus Christ, I would never in a million years ask anyone for anything for free.</p>
+          </div>
+
+        </div>
+        <div class="form-row py-4">
+          <div class="col text-center">
+            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+`;
   return template;
 };
 
