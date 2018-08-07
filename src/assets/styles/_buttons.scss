@@ -4,6 +4,7 @@ button {
   }
   &:focus {
     outline: 0;
+    box-shadow: none;
   }
 }
 
@@ -11,6 +12,9 @@ button {
   max-width: 100%;
   &:not([disabled]) {
     cursor: pointer;
+  }
+  &:focus{
+    box-shadow: none !important;
   }
 }
 
