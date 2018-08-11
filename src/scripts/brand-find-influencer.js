@@ -49,9 +49,7 @@ import { Influencer } from '../partials/influencer.card';
   $singleInflModal
     .on('scroll', function (e) {
 
-      if (jQuery(this)
-        .scrollTop() > jQuery('.single-card--fixednav')
-        .outerHeight()) {
+      if ($singleInflModal.scrollTop() > 200) {
         $fixedNav.addClass('down');
       }
       else {
@@ -61,19 +59,12 @@ import { Influencer } from '../partials/influencer.card';
 
   jQuery(document)
     .ready(function () {
-      // vanilla JS
-// init with element
-      var grid = document.querySelector('.grid');
-      msnry = new Masonry(grid, {
-        // options...
-        itemSelector: '.grid-item',
-        columnWidth: 200,
-        horizontalOrder: true
-      });
 
-// init with selector
+// init with selectors
       msnry = new Masonry('.grid', {
         // options...
+        itemSelector: '.grid-item',
+        horizontalOrder: true
       });
     });
 
@@ -99,7 +90,7 @@ import { Influencer } from '../partials/influencer.card';
     .on('shown.bs.modal', '.modal-single--influencer', function () {
       updateOffsets(jQuery(this));
     })
-    .on('hide.bs.dropdown', '.keepDropdownOpen .dropdown.show', function (e) {
+    .on('hide.bs.dropdown', '.keepDropdownOpen .dropdown, .modal-open .dropdown ', function (e) {
       e.preventDefault();
     })
     .on('shown.bs.tab', function (e) {
@@ -146,6 +137,10 @@ import { Influencer } from '../partials/influencer.card';
                 jQuery(this)
                   .remove();
                 next2();
+                msnry.layout({
+                  horizontalOrder: true,
+                  itemSelector: '.grid-item'
+                });
               });
             next();
           });
@@ -155,9 +150,13 @@ import { Influencer } from '../partials/influencer.card';
       $colmn.addClass('zoomingOut')
         .delay(500)
         .queue(function (next) {
-          jQuery(this).remove();
+          jQuery(this)
+            .remove();
           next();
-          msnry.layout();
+          msnry.layout({
+            horizontalOrder: true,
+            itemSelector: '.grid-item'
+          });
         });
 
 

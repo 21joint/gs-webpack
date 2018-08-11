@@ -7,6 +7,7 @@ module.exports = merge(webpackConfig, {
     watchContentBase: true,
     port: 4040,
     hot: true,
+    host: '0.0.0.0',
     open: true,
     publicPath: '/'
   },
