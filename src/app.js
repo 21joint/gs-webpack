@@ -26,6 +26,13 @@ jQuery('select')
       .hasClass('with-flags') ? SelectCountry : undefined,
     templateSelection: jQuery(this)
       .hasClass('with-flags') ? SelectCountry : undefined
+  })
+  .on('select2:unselect', function (e) {
+
+    if (e.params.originalEvent) {
+      e.params.originalEvent.stopPropagation();
+    }
+
   });
 
 jQuery(document)

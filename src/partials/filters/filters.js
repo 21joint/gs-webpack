@@ -1,21 +1,9 @@
 const Filters = (() => {
   let filters = [];
-
   jQuery('#searchForm')
     .on('submit', function (e) {
       e.preventDefault();
     });
-
-
-  jQuery('select')
-    .on('select2:unselect', function (e) {
-
-      if (!e.params.originalEvent) {
-        return;
-      }
-      e.params.originalEvent.stopPropagation();
-    });
-
   jQuery('.search-filter--ul .dropdown')
     .on('shown.bs.dropdown', function () {
       jQuery('body')
@@ -29,7 +17,7 @@ const Filters = (() => {
     .each(function (i, el) {
       let _filter = {};
 
-      _filter.id = 'searchFilter' + i;
+      _filter.id = 'searchFilter' + i + '__' + new Date().getTime();
       _filter.$el = jQuery(el);
       _filter.$el.attr('id', _filter.id);
       _filter.$inputs = _filter.$el.find('input');
@@ -37,54 +25,58 @@ const Filters = (() => {
       _filter.$valueEl = jQuery('<span class="value__el align-middle"></span>');
       _filter.$toggler.append(_filter.$valueEl);
       _filter.$applyBtn = _filter.$el.find('.btn-apply');
-      jQuery(document)
-        .on('click', '.btn-apply', function (e) {
+
+      _filter.$el
+        .find('[data-use]');
+
+      _filter.$applyBtn
+        .on('click', function (e) {
           e.preventDefault();
+          let _query = '';
 
-          let _query = '',
-            _applyButton = jQuery(this),
-            _dropdown = _applyButton.closest('.dropdown'),
-            _valueEl = _dropdown.find('.value__el'),
-            _checkedCount = _dropdown.find('[data-use]:checked').length;
-
-          _dropdown
+          _filter.$el
             .find('[data-use]')
             .each(function (j, el) {
+              if (el.getAttribute('type') === 'checkbox') {
+                console.info('type: checkbox');
+                if (el.checked && el.dataset.use.match(/label/)) {
+                  console.info('using as filter badge text:', 'label');
+                  _query += el.dataset.use.replace(/label/,
+                    el.parentNode.querySelector('label').innerText || el.parentNode.parentNode.querySelector('label').innerText);
+                }
+                if (el.checked && el.dataset.use.match(/name/)) {
+                  console.info('using as filter badge text:', 'name');
+                  _query += el.dataset.use.replace(/name/, el.getAttribute('name'));
+                }
+              }
               if (el.dataset.use.match(/value/)) {
+                console.info('using as filter badge text:', 'value');
                 if (jQuery.isArray(jQuery(el)
                   .val())) {
                   jQuery(jQuery(el)
                     .val())
                     .each(function (h, v) {
-                      _query += el.dataset.use.replace(jQuery(el).val().length  === h + 1 ? /value,/ : /value/, v);
+                      _query += el.dataset.use.replace(/value/, v);
                     });
                 }
                 else {
                   _query += el.dataset.use.replace(/value/, el.value);
                 }
               }
-              if (el.checked && el.dataset.use.match(/label/)) {
-                _query += el.dataset.use.replace(_checkedCount === j + 1 ? /label,/ : /label/,
-                  el.parentNode.querySelector('label').innerText || el.parentNode.parentNode.querySelector('label').innerText);
-              }
-              if (el.checked && el.dataset.use.match(/name/)) {
-                _query += el.dataset.use.replace(_checkedCount === j + 1 ? /name,/ : /name/, el.getAttribute('name'));
-              }
             });
+          _filter.$valueEl.text(_query.replace(/,\s*$/, ''));
 
-          _valueEl.text(_query)
-            .end()
-            .closest('.dropdown')
-            .find('[data-toggle="dropdown"]')
-            .addClass('active');
+          _filter.$toggler
+            .addClass(_filter.$valueEl.text().length > 0 ? 'active' : '');
+          _filter.$toggler.is('.active') && !_filter.$valueEl.text().length && _filter.$toggler.removeClass('active');
 
         });
       filters.push(_filter);
     });
 
-
+  console.log(filters);
   jQuery('.search-filter--ul [data-toggle="dropdown"]')
-    .on('click', 'i', (e) => {
+    .on('click', '.icon-close', (e) => {
       jQuery(e.target)
         .closest('button')
         .removeClass('active')
@@ -106,12 +98,11 @@ const Filters = (() => {
         .text('');
 
     });
-
-
 })();
 
-$('#searchFilter .modal').on('click', function(e){
-  e.stopPropagation();
-})
+$('#searchFilter .modal')
+  .on('click', function (e) {
+    e.stopPropagation();
+  });
 
 export default Filters;
