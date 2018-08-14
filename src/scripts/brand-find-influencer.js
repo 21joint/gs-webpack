@@ -176,6 +176,12 @@ import { Influencer } from '../partials/influencer.card';
         '<i class="icon-arrow-right-bold"></i>'
       ]
     });
+   jQuery('.single-card--fixednav .btn-close')
+    .on('click', function(e){
+
+     jQuery('#modalSingleInfl').modal('hide');
+     jQuery('.single-card--fixednav').removeClass('down')
+    });
 
   jQuery('.single-card--carousel')
     .owlCarousel({

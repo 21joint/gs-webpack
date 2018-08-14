@@ -74,7 +74,7 @@ const Filters = (() => {
       filters.push(_filter);
     });
 
-  console.log(filters);
+
   jQuery('.search-filter--ul [data-toggle="dropdown"]')
     .on('click', '.icon-close', (e) => {
       jQuery(e.target)

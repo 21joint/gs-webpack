@@ -22,7 +22,7 @@ const createOptions = () => {
         <h6 class="text-dark mt-1 mb-3"><strong>Language</strong></h6>
       </div>
       <div class="col-auto">
-      <button type="button" class="btn p-0" data-toggle="modal" data-target="#answerLanguage">
+      <button type="button" class="btn p-0 bg-white" data-toggle="modal" data-target="#answerLanguage">
                   <img class="r-icon--medium" src="${require('../../assets/images/info.svg')}" alt="Awareness">
                 </button>
 
