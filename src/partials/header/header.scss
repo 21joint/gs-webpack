@@ -55,17 +55,14 @@
   }
 
   .navbar_toggler {
-    position: absolute;
+    position: relative;
     cursor: pointer;
-    top: 50%;
-    right: 15px;
     display: block;
     width: 30px;
     height: 30px;
     padding: 0;
     border: none;
     background-color: transparent;
-    transform: translate(0, -50%);
     z-index: 100;
     .line {
       display: block;

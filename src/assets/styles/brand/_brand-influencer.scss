@@ -324,16 +324,33 @@
     }
   }
   .nav-item {
+    &:first-child{
+      margin-left: 0;
+    }
     margin-bottom: 0;
     i{
       font-size: 27px;
       color: #BDC0C9;
       margin-right: 6px;
+      vertical-align: middle;
     }
     svg{
-      margin-right: 6px;
+      margin-right: 0;
     }
-    margin-left: 20px;
+    margin: 0;
+    margin-left: 15px;
+    @media (min-width: 576px) {
+      margin-left: 20px;
+
+    }
+    @include media-breakpoint-up(md){
+      &:first-child{
+        margin-left: 15px;
+      }
+      svg{
+        margin-right: 6px;
+      }
+    }
     @include media-breakpoint-up(lg) {
       margin-left: 40px;
     }
