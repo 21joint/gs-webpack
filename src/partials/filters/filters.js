@@ -98,6 +98,16 @@ const Filters = (() => {
         .text('');
 
     });
+    jQuery('[title=gs-handle--input]')
+    .on('keyup', (e) => {
+
+       if(e.keyCode == 38){
+        e.target.value++
+       }
+       if(e.keyCode == 40){
+       e.target.value--
+       }
+    });
 })();
 
 export default Filters;
