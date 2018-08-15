@@ -38,7 +38,6 @@ const Filters = (() => {
             .find('[data-use]')
             .each(function (j, el) {
               if (el.getAttribute('type') == 'checkbox' || el.getAttribute('type') == 'radio') {
-                console.info('type: checkbox');
                 if (el.checked && el.dataset.use.match(/label/)) {
                   console.info('using as filter badge text:', 'label');
                   _query += el.dataset.use.replace(/label/,
