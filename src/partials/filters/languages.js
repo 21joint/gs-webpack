@@ -53,7 +53,7 @@ const createOptions = () => {
 </div>
 <div class="modal fade" id="answerLanguage" tabindex="-1" role="dialog" aria-labelledby="answerModalLabel"
      aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="container-fluid">
         <div class="form-row py-4">
