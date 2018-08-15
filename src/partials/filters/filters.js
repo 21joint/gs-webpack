@@ -75,7 +75,7 @@ const Filters = (() => {
 
 
   jQuery('.search-filter--ul [data-toggle="dropdown"]')
-    .on('click', '.icon-close', (e) => {
+    .on('click', '.btn-svg--close', (e) => {
       jQuery(e.target)
         .closest('button')
         .removeClass('active')
