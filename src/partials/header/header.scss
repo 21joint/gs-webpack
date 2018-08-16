@@ -268,7 +268,7 @@ nav {
       }
     }
     &.profile {
-      a {
+      >a {
         padding: 0;
         @include media-breakpoint-up(md) {
           line-height: 60px;
@@ -396,4 +396,8 @@ nav {
     transition: 0.3s all linear;
     fill: #56a4d6;
   }
+}
+
+.dropdown-menu-right{
+  border-radius: 0;
 }
