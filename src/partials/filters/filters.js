@@ -69,6 +69,7 @@ const Filters = (() => {
             .addClass(_filter.$valueEl.text().length > 0 ? 'active' : '');
           _filter.$toggler.is('.active') && !_filter.$valueEl.text().length && _filter.$toggler.removeClass('active');
 
+
         });
       filters.push(_filter);
     });
@@ -89,7 +90,7 @@ const Filters = (() => {
       boundary: 'window',
       flip: false
     });
-  jQuery('.btn-clear')
+  jQuery('.btn-cancel')
     .on('click', (e) => {
       jQuery('.search-filter--ul [data-toggle="dropdown"]')
         .removeClass('active')

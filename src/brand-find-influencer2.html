@@ -173,11 +173,16 @@
               <div class="white-overlay"></div>
             </div>
           </div>
+          <div class="col-12">
+            <%= require('html-loader?interpolate=true!./partials/package/package-box.html') %>
+          </div>
+
         </div>
       </div>
     </div>
   </main>
   <%= require('html-loader!./partials/filters.mobile.html') %> <%= require('html-loader?interpolate=true!./partials/single-influencer--launch.html') %>
+
 </body>
 </html>
 

@@ -1,0 +1,53 @@
+.package-card{
+  .card-title{
+    width: 265px;
+    border-bottom: 1px solid #D5D6DC;
+  }
+}
+.package-price {
+  font-size: 52px;
+  color: #3E99D2;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.package-month {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.package-btn{
+  background-color: #FA6173;
+  color: white;
+  border-radius: 7px;
+  font-size: 20px;
+}
+.package-card--bottom{
+  padding: 15px 20px;
+  ul{
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+}
+.package-card--body{
+  li{
+    padding-left: 20px;
+    position: relative;
+  }
+  li:before{
+    content: '';
+    background-image: url('../../assets/images/checked.svg');
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+
+
+    background-size: 100%;
+
+    background-repeat: no-repeat;
+
+  }
+}

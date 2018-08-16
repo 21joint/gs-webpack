@@ -226,7 +226,7 @@ $grid-breakpoints: (
 //
 //$border-width: 1px !default;
 //
-$border-radius: 6px;
+$border-radius: 14px;
 $border-radius-sm: 6px;
 $border-radius-lg: 6px;
 //
@@ -623,11 +623,11 @@ $dropdown-item-padding-x:        15px !default;
 //
 //// Cards
 //
-//$card-spacer-y:            .75rem !default;
-//$card-spacer-x:            1.25rem !default;
+$card-spacer-y:            .75rem !default;
+$card-spacer-x:             30px 25px !default;
 //$card-border-width:        1px !default;
-//$card-border-radius:       $border-radius !default;
-//$card-border-color:        rgba($black,.125) !default;
+$card-border-radius:       $border-radius !default;
+$card-border-color:        #BDC0C9 !default;
 //$card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
 //$card-cap-bg:              rgba($black, .03) !default;
 //$card-bg:                  $white !default;
