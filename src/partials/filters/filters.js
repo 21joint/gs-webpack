@@ -74,7 +74,14 @@ const Filters = (() => {
       filters.push(_filter);
     });
 
+  jQuery('.btn-clear')
+    .on('click', (e) => {
+      jQuery('.search-filter--ul [data-toggle="dropdown"]')
+        .removeClass('active')
+        .find('span')
+        .text('');
 
+    });
   jQuery('.search-filter--ul [data-toggle="dropdown"]')
     .on('click', '.btn-svg--close', (e) => {
       jQuery(e.target)
@@ -90,23 +97,29 @@ const Filters = (() => {
       boundary: 'window',
       flip: false
     });
-  jQuery('.btn-cancel')
-    .on('click', (e) => {
-      jQuery('.search-filter--ul [data-toggle="dropdown"]')
+
+
+  jQuery('.search-filter--ul .dropdown-menu')
+    .on('click', '.btn-cancel', (e) => {
+      jQuery(e.target)
+        .parents('li').find('[data-toggle="dropdown"]')
         .removeClass('active')
         .find('span')
         .text('');
 
     });
-    jQuery('[title=gs-handle--input]')
+
+
+
+  jQuery('[title=gs-handle--input]')
     .on('keyup', (e) => {
 
-       if(e.keyCode == 38){
+      if (e.keyCode == 38) {
         e.target.value++
-       }
-       if(e.keyCode == 40){
-       e.target.value--
-       }
+      }
+      if (e.keyCode == 40) {
+        e.target.value--
+      }
     });
 })();
 
