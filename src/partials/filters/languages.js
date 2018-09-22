@@ -29,7 +29,7 @@ const createOptions = () => {
   <div class="container-fluid">
     <div class="form-row py-3 justify-content-between">
       <div class="col-auto">
-        <h6 class="text-dark mt-1 mb-3"><strong>Language</strong></h6>
+        <h6 class="text-dark m-0"><strong>Language</strong></h6>
       </div>
       <div class="col-auto">
       <button type="button" class="btn p-0 bg-white" data-toggle="modal" data-target="#answerLanguage">

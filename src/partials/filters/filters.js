@@ -105,7 +105,7 @@ const Filters = (() => {
         .parents('li').find('[data-toggle="dropdown"]')
         .removeClass('active')
         .find('span')
-        .text('');
+        .text('');np
 
     });
 
