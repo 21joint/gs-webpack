@@ -19,7 +19,6 @@
 
   }
   .media-body {
-    font-weight: bold;
     @include media-breakpoint-down(sm) {
       flex: 0 0 100%;
       max-width: 100%;
