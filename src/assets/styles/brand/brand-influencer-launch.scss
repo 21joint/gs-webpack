@@ -259,3 +259,29 @@
     }
   }
 }
+
+.search-form{
+  .input-group-text{
+    border: none;
+    background-color: transparent;
+  }
+  input{
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+  .input-group-prepend{
+    z-index: 10;
+    margin-right: -4px;
+  }
+  .form-control:focus{
+      border-color: #d6d6d6;
+      color: #444;
+
+  }
+}
+#searchForm{
+  .input-group-append{
+    margin-left: -3px;
+  }
+}

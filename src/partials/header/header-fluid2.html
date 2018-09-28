@@ -127,14 +127,27 @@ ${(!IS_DEV) ? `
       </div>
       <div class="col-auto ml-auto d-none d-md-block">
         <div class="right_nav align-items-center">
-          <div><a href="#">See video tutorial</a></div>
-          <div><a class="btn" href="#"><i class="icon-help"></i></a></div>
+          <div class="dropdown video-tutorial">
+            <a data-toggle="dropdown" aria-expanded="false">See video tutorial</a>
+            <div class="dropdown-menu p-0">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-3">sss</div>
+                  <div class="col-3">aaa</div>
+                  <div class="col-3">aaa</div>
+                  <div class="col-3">aaass</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <a class="btn"><i class="icon-help"></i></a>
+          </div>
           <div class="dropdown profile">
             <a class="btn btn-block btn-dropdown--account" data-toggle="dropdown" aria-expanded="false"><img
               class="img-fluid rounded-circle border-0" src="../../assets/images/bitmap-user.png"
               alt="User Nameson"></a>
             <div class="dropdown-menu dropdown-menu-right p-0" style="width: 280px;">
-
 
               <a class="dropdown-item" href="#">Edit profile</a>
               <div class="dropdown-divider m-0"></div>
