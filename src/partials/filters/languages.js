@@ -54,7 +54,7 @@ const createOptions = () => {
         </button>
       </div>
       <div class="col-auto">
-        <button class="btn btn-block btn-primary btn-sm btn-apply" type="button" data-dismiss="dropdown">
+        <button id="lang-apply" class="btn btn-block btn-primary btn-sm btn-apply" type="button" data-dismiss="dropdown">
           Apply
         </button>
       </div>

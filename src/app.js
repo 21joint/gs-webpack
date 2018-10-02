@@ -7,6 +7,7 @@ import 'owl.carousel/dist/owl.carousel.min';
 import 'select2/dist/js/select2.min';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './scripts/brand-find-influencer';
+import './scripts/brand-find-influencer-api-integration';
 import './partials/header/header';
 import './partials/loader';
 import SelectCountry from './partials/select2.country';
