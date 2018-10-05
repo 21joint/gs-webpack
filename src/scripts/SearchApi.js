@@ -18,17 +18,18 @@ export class SearchApi{
 
 
         let infHtml ="";
+        
 
         $.each(influencers, function(key,inf) {
             console.log(inf.name);
             let infLocal = new Influencer(inf);
             infLocal.photos=[];
-            infHtml += infLocal.load({ closable: true });
+            infHtml += '<div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-item">'+infLocal.load({ closable: true })+'</div>';
         });
 
         //console.log($("#loadInfluencerSearchStrip").html());
 
-        $(".loadInfluencerSearchStrip").html(infHtml);
+        $("#search-result-grid").html(infHtml);
 
     }
 

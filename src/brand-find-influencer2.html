@@ -107,9 +107,9 @@
                           </form>
                           <div class="search-results" aria-describedby="searchForm">
                             <div class="container-fluid">
-                              <div class="row grid">
+                              <div class="row grid" id="search-result-grid">
                                 <% for(let i = 0; i < influencers.length;i++) { let _infl = new Influencer(influencers[i]) %>
-                                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-item loadInfluencerSearchStrip">
+                                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-item">
                                   <%= _infl.load({ closable: true }) %>
                                 </div>
                                 <% } %>
