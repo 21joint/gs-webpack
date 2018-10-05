@@ -73,14 +73,12 @@ const Filters = (() => {
         });
       filters.push(_filter);
     });
-
   jQuery('.btn-clear')
     .on('click', (e) => {
       jQuery('.search-filter--ul [data-toggle="dropdown"]')
         .removeClass('active')
         .find('span')
         .text('');
-
     });
   jQuery('.search-filter--ul [data-toggle="dropdown"]')
     .on('click', '.btn-svg--close', (e) => {
@@ -105,7 +103,7 @@ const Filters = (() => {
         .parents('li').find('[data-toggle="dropdown"]')
         .removeClass('active')
         .find('span')
-        .text('');np
+        .text('');
 
     });
 
@@ -120,6 +118,11 @@ const Filters = (() => {
       if (e.keyCode == 40) {
         e.target.value--
       }
+    });
+
+  jQuery(document)
+    .ready(function () {
+      console.log(filters);
     });
 })();
 

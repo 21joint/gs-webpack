@@ -351,18 +351,27 @@
 }
 
 .collapse-wrapper {
+  max-width: 190px;
+  margin-left: auto;
   &:after {
     content: '';
     position: absolute;
-    left: 0;
+    left: calc(100% - 185px);
     right: 0;
     top: 0;
-    bottom: 0;
+    bottom: calc(100% - 42px);
     background-color: #ffffff;
     z-index: -1;
     border-radius: 6px;
+    -webkit-box-shadow: 0 0 0 1px #eeeeee;
     box-shadow: 0 0 0 1px #eeeeee;
+    -webkit-transition: .35s all ease;
+    -o-transition: .35s all ease;
     transition: .2s all;
+  }
+  &.open:after {
+    left: 0;
+    bottom: 0;
   }
 }
 
@@ -375,6 +384,9 @@
   .card-title {
     line-height: 32px;
     min-height: 80px;
+  }
+  .card-text, .card-title {
+    color: #4d4d4d;
   }
 }
 
