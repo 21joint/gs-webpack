@@ -4,7 +4,7 @@ import '../partials/filters/filters';
 import '../partials/input.tags';
 import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
 
-import { Influencer } from '../partials/influencer.card';
+import {Influencer} from '../partials/influencer.card';
 
 
 (!!document.querySelector('.find-influencer')) && (function () {
@@ -176,11 +176,11 @@ import { Influencer } from '../partials/influencer.card';
         '<i class="icon-arrow-right-bold"></i>'
       ]
     });
-   jQuery('.single-card--fixednav .btn-close')
-    .on('click', function(e){
+  jQuery('.single-card--fixednav .btn-close')
+    .on('click', function (e) {
 
-     jQuery('#modalSingleInfl').modal('hide');
-     jQuery('.single-card--fixednav').removeClass('down')
+      jQuery('#modalSingleInfl').modal('hide');
+      jQuery('.single-card--fixednav').removeClass('down')
     });
 
   jQuery('.single-card--carousel')
@@ -212,6 +212,7 @@ import { Influencer } from '../partials/influencer.card';
 
     $parentEl.width(targetW);
   }
+
 
 })();
 

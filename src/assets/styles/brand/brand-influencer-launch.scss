@@ -252,36 +252,102 @@
   margin: 0;
 }
 
-.search-filter--ul{
-  .modal{
-    .btn{
+.search-filter--ul {
+  .modal {
+    .btn {
       width: 100px;
     }
   }
 }
 
-.search-form{
-  .input-group-text{
+.search-form {
+  .input-group-text {
     border: none;
     background-color: transparent;
   }
-  input{
+  input {
     border-left: none;
     border-right: none;
     border-radius: 0;
   }
-  .input-group-prepend{
+  .input-group-prepend {
     z-index: 10;
     margin-right: -4px;
   }
-  .form-control:focus{
-      border-color: #d6d6d6;
-      color: #444;
+  .form-control:focus {
+    border-color: #d6d6d6;
+    color: #444;
 
   }
 }
-#searchForm{
-  .input-group-append{
+
+#searchForm {
+  .input-group-append {
     margin-left: -3px;
+  }
+}
+
+.influencer-campaign {
+  padding: 20px;
+  a {
+    position: relative;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+  }
+  //.btn-svg-close{
+  //  font-size: 20px;
+  //  position: absolute;
+  //  right: 10px;
+  //  top: 50%;
+  //  -webkit-transform: translate(0, -50%) rotate(0deg) scale(1);
+  //  -ms-transform: translate(0, -50%) rotate(0deg) scale(1);
+  //  transform: translate(0, -50%) rotate(0deg) scale(1)
+  //}
+
+}
+
+.gs-see--tutorial {
+  .content-box {
+    box-shadow: none;
+  }
+  button {
+    border-color: #BDC0C9;
+    color: #4D4D4D;
+    right: 15px;
+    padding-right: 40px;
+    z-index: 10;
+
+    span {
+      position: absolute;
+      width: 40px;
+      height: 100%;
+      top: 0;
+      right: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      b {
+        @include my_caret();
+      }
+    }
+  }
+  button[aria-expanded='true'] {
+    border-color: transparent;
+    background-color: transparent;
+    b {
+      transform: rotate(-90deg) translate(0px, 0px);
+    }
+  }
+  .collapsing, .collapse.show {
+    border: 1px solid #BDC0C9;
+    background-color: white;
+
   }
 }
