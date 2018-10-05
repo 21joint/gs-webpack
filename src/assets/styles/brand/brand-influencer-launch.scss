@@ -315,8 +315,11 @@
     border-color: #BDC0C9;
     color: #4D4D4D;
     right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-right: 40px;
     z-index: 10;
+    border-radius: 7px;
 
     span {
       position: absolute;
@@ -348,6 +351,35 @@
   .collapsing, .collapse.show {
     border: 1px solid #BDC0C9;
     background-color: white;
+    border-radius: 7px;
 
+  }
+}
+
+.gs-see--tutorial--body{
+  padding: 20px 25px;
+  .card{
+    border: none;
+  }
+  .card-title{
+    line-height: 32px;
+    color: #4D4D4D !important;
+  }
+  .card-body{
+    padding: 0;
+    @media (min-width: 576px) {
+
+      min-height: 80px;
+    }
+  }
+  .card-text{
+    color: #4D4D4D !important;
+  }
+  img{
+    border-radius: 0;
+    margin-bottom: 15px;
+  }
+  .wistia_responsive_padding{
+    padding: 20px 0;
   }
 }
