@@ -3,7 +3,6 @@ import '../partials/range-sliders';
 import '../partials/filters/filters';
 import '../partials/input.tags';
 import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
-
 import { Influencer } from '../partials/influencer.card';
 
 
