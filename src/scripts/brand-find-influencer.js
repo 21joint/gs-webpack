@@ -4,7 +4,7 @@ import '../partials/filters/filters';
 import '../partials/input.tags';
 import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
 
-import {Influencer} from '../partials/influencer.card';
+import { Influencer } from '../partials/influencer.card';
 
 
 (!!document.querySelector('.find-influencer')) && (function () {
@@ -204,6 +204,26 @@ import {Influencer} from '../partials/influencer.card';
         .trigger('refresh.owl.carousel');
     })
     .resize();
+
+  jQuery(document)
+    .on('hide.bs.collapse hidden.bs.collapse show.bs.collapse shown.bs.collapse', function (e) {
+      // console.log(e.type);
+      const openClassname = 'open';
+      let $parent = jQuery(e.target)
+        .closest('[class*=collapse-]');
+
+      console.log(e.type);
+
+      if (e.type == 'show') {
+        //on show
+        $parent.addClass(openClassname);
+      }
+      if (e.type == 'hidden') {
+        //on hide
+        $parent.removeClass(openClassname);
+      }
+
+    });
 
   function owlFix(owl) {
     const $parentEl = owl.relatedTarget.$element.closest('.single-card--owlwrapper');

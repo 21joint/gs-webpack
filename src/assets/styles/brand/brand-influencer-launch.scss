@@ -307,48 +307,42 @@
 
 }
 
-.gs-see--tutorial {
-  .content-box {
-    box-shadow: none;
-  }
-  button {
-    border-color: #BDC0C9;
-    color: #4D4D4D;
-    right: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 40px;
-    z-index: 10;
-    border-radius: 7px;
-
-    span {
-      position: absolute;
-      width: 40px;
-      height: 100%;
-      top: 0;
-      right: 0;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      b {
-        @include my_caret();
-      }
+.btn-collapse--tutorial {
+  border: none;
+  background-color: transparent;
+  color: #4D4D4D;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 40px;
+  z-index: 10;
+  border-radius: 7px;
+  span {
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    b {
+      @include my_caret();
     }
   }
-  button[aria-expanded='true'] {
+  &[aria-expanded="true"] {
     border-color: transparent;
     background-color: transparent;
     b {
       transform: rotate(-90deg) translate(0px, 0px);
     }
   }
-  .collapsing, .collapse.show {
+  &.collapsing, &.collapse.show {
     border: 1px solid #BDC0C9;
     background-color: white;
     border-radius: 7px;
@@ -356,30 +350,32 @@
   }
 }
 
-.gs-see--tutorial--body{
-  padding: 20px 25px;
-  .card{
-    border: none;
-  }
-  .card-title{
-    line-height: 32px;
-    color: #4D4D4D !important;
-  }
-  .card-body{
-    padding: 0;
-    @media (min-width: 576px) {
-
-      min-height: 80px;
-    }
-  }
-  .card-text{
-    color: #4D4D4D !important;
-  }
-  img{
-    border-radius: 0;
-    margin-bottom: 15px;
-  }
-  .wistia_responsive_padding{
-    padding: 20px 0;
+.collapse-wrapper {
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: -1;
+    border-radius: 6px;
+    box-shadow: 0 0 0 1px #eeeeee;
+    transition: .2s all;
   }
 }
+
+.collapse-btn--wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.gs-see--tutorial--body {
+  .card-title {
+    line-height: 32px;
+    min-height: 80px;
+  }
+}
+
+
