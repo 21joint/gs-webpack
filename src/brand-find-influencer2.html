@@ -109,7 +109,7 @@
                             <div class="container-fluid">
                               <div class="row grid">
                                 <% for(let i = 0; i < influencers.length;i++) { let _infl = new Influencer(influencers[i]) %>
-                                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-item">
+                                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-item loadInfluencerSearchStrip">
                                   <%= _infl.load({ closable: true }) %>
                                 </div>
                                 <% } %>
@@ -140,7 +140,7 @@
                         <div class="tab-pane fade" id="likedTab" role="tabpanel">
                           <div class="row p-3">
                             <% for(let i = 0; i < influencers.length;i++) { let _infl = new Influencer(influencers[i]) %>
-                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 loadInfluencerSearchStrip">
                               <%= _infl.load({ closable: true }) %>
                             </div>
                             <% } %>

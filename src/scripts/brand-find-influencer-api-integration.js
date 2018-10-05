@@ -1,5 +1,6 @@
 import {SearchApi} from "./SearchApi";
 
+
 let searchApi = new SearchApi("http://api.growsocial.com");
 
 $('#lang-apply').on("click",function () {
@@ -8,7 +9,9 @@ $('#lang-apply').on("click",function () {
 
     searchApi.setLanguage(selectedValues);
 
-    searchApi.makeSearchRequest();
+    let influencers = searchApi.makeSearchRequest();
+
+
 });
 
 $('#followers-apply').on("click",function () {
@@ -16,7 +19,6 @@ $('#followers-apply').on("click",function () {
 
     searchApi.setFollowers(values);
 
-
-
     searchApi.makeSearchRequest();
 });
+
