@@ -3,9 +3,10 @@ import LanguageData from '../../languages';
 
 const generateLanguages = () => {
   let html = '';
-  _.each(LanguageData, (language) => {
-    html += `<option value="${language.name}">${language.name}</option>`;
+  _.each(LanguageData, (language,key) => {
+    html += `<option value="${key}">${language.name}</option>`;
   });
+
   return html;
 };
 
