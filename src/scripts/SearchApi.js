@@ -24,6 +24,8 @@ export class SearchApi{
             console.log(inf.name);
             let infLocal = new Influencer(inf);
             infLocal.photos=[];
+            infLocal.age="Age here";
+
             infHtml += '<div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-item">'+infLocal.load({ closable: true })+'</div>';
         });
 
