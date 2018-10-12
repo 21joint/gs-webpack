@@ -6,7 +6,7 @@ const args = require('yargs').argv;
 const glob = require('glob');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const IS_DEV = (process.env.NODE_ENV === 'dev');
@@ -39,10 +39,11 @@ module.exports = {
     rules: [
       // JS
       {
-        test: /\.js$/,
+        test: /\.jsx$/,
         include: [
           path.resolve(__dirname, 'src')
         ],
+        exclude: path.resolve(__dirname, 'src'),
         use: [
           'babel-loader'
         ]
@@ -50,38 +51,25 @@ module.exports = {
 
       // SCSS
       {
-        test: /\.s?css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                minimize: !IS_DEV,
-                sourceMap: IS_DEV,
-                publicPath: '../'
-              }
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: IS_DEV,
-                plugins: [
-                  require('postcss-flexbugs-fixes'),
-                  require('autoprefixer')({
-                    browsers: ['last 3 versions']
-                  })
-                ]
-              }
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: IS_DEV
-              }
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          IS_DEV ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: "postcss-loader",
+
+            options: {
+              sourceMap: IS_DEV,
+              plugins: [
+                require('postcss-flexbugs-fixes'),
+                require('autoprefixer')({
+                  browsers: ['last 3 versions']
+                })
+              ]
             }
-          ]
-        })
+          },
+          'sass-loader',
+        ],
       },
 
       // FONTS/IMAGES
@@ -109,23 +97,6 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    modules: [
-      'node_modules',
-      path.resolve(__dirname, 'src')
-    ]
-  },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          chunks: 'initial',
-          name: 'vendors'
-        }
-      }
-    }
-  },
   plugins: [
     new webpack.DefinePlugin({
       IS_DEV
@@ -136,8 +107,14 @@ module.exports = {
       'window.jQuery': 'jquery'
     }),
     ...renderHtmlTemplates(),
-    new ExtractTextPlugin({
-      filename: 'styles/[name].css'
+    // new ExtractTextPlugin({
+    //   filename: 'styles/[name].css'
+    // })
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: IS_DEV ? '[name].css' : '[name].[hash].css',
+      chunkFilename: IS_DEV ? '[id].css' : '[id].[hash].css',
     })
   ]
 };

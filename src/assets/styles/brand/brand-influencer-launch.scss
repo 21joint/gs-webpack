@@ -376,14 +376,13 @@
 }
 
 .collapse-btn--wrapper {
-  display: inline-block;
+  display: block;
   position: relative;
 }
 
 .gs-see--tutorial--body {
   .card-title {
-    line-height: 32px;
-    min-height: 80px;
+    min-height: 64px;
   }
   .card-text, .card-title {
     color: #4d4d4d;

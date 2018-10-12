@@ -1,4 +1,4 @@
-import { Icons } from './icons';
+import {Icons} from './icons';
 
 const _Icons = new Icons();
 
@@ -69,7 +69,7 @@ export class Influencer {
 
     for (let key in _instance.social) {
       if (_instance.social.hasOwnProperty(key)) {
-        _social += '<li>' + _Icons.insertIcon({ title: key }) + '<span class="text-asphalt">' + _quantityHandler(_instance.social[key]) +
+        _social += '<li>' + _Icons.insertIcon({title: key}) + '<span class="text-asphalt">' + _quantityHandler(_instance.social[key]) +
           'k</span></li>';
       }
     }

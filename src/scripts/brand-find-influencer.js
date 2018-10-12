@@ -3,7 +3,7 @@ import '../partials/range-sliders';
 import '../partials/filters/filters';
 import '../partials/input.tags';
 import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
-import { Influencer } from '../partials/influencer.card';
+import {Influencer} from '../partials/influencer.card';
 
 
 (!!document.querySelector('.find-influencer')) && (function () {
@@ -12,16 +12,16 @@ import { Influencer } from '../partials/influencer.card';
     $sectionsWrapperOffset,
     msnry;
 
-  const $fixedNav = jQuery('.single-card--fixednav');
-  const $sectionsWrapper = jQuery('.single-card--sections');
-  const $singleInflModal = jQuery('.modal-single--influencer');
+  const $fixedNav = $('.single-card--fixednav');
+  const $sectionsWrapper = $('.single-card--sections');
+  const $singleInflModal = $('.modal-single--influencer');
   const updateOffsets = function (element) {
-    let cacheScrolltop = jQuery(element)
+    let cacheScrolltop = $(element)
       .scrollTop();
     $fixedNavHeight = $fixedNav.outerHeight();
     $sectionsWrapperOffset = $sectionsWrapper.position().top;
 
-    jQuery(element)
+    $(element)
       .scrollTop(0)
       .scrollspy('dispose')
       .scrollspy({
@@ -56,7 +56,7 @@ import { Influencer } from '../partials/influencer.card';
       }
     });
 
-  jQuery(document)
+  $(document)
     .ready(function () {
 
 // init with selectors
@@ -67,39 +67,39 @@ import { Influencer } from '../partials/influencer.card';
       });
     });
 
-  jQuery(document)
+  $(document)
     .on('show.bs.modal', '.modal-single--influencer', function (e) {
-      let $thisCard = jQuery(e.relatedTarget)
+      let $thisCard = $(e.relatedTarget)
         .closest('.single-profile--card');
       let inflName = $thisCard.data('infname');
       let gscore = $thisCard.data('gscore');
-      jQuery(this)
+      $(this)
         .find('.single-card--name')
         .text(inflName);
-      jQuery(this)
+      $(this)
         .find('.single-infl--gscore')
         .html(Influencer.gsScoreHandler(gscore) || '');
-      $thisCard.append(jQuery(this));
+      $thisCard.append($(this));
 
     })
     .on('hide.bs.modal', '.modal-single--influencer', function (e) {
-      jQuery('body')
-        .append(jQuery(this));
+      $('body')
+        .append($(this));
     })
     .on('shown.bs.modal', '.modal-single--influencer', function () {
-      updateOffsets(jQuery(this));
+      updateOffsets($(this));
     })
     .on('hide.bs.dropdown', '.keepDropdownOpen .dropdown, .modal-open .dropdown ', function (e) {
       e.preventDefault();
     })
     .on('shown.bs.tab', function (e) {
-      jQuery(jQuery(e.target)
+      $($(e.target)
         .attr('href') + ' .owl-carousel')
         .resize();
     })
     .on('click', 'a.nav-link[href^="#"]', function (e) {
       e.preventDefault();
-      const $target = jQuery(jQuery(this)
+      const $target = $($(this)
         .attr('href'));
 
       $singleInflModal.animate({
@@ -107,20 +107,20 @@ import { Influencer } from '../partials/influencer.card';
       }, 600, 'easeNav');
     })
     .on('click', '.single-card--infobtn', function (e) {
-      let _profile = jQuery(e.currentTarget)
+      let _profile = $(e.currentTarget)
           .parents('.single-profile--card'),
         _slider = _profile.find('.owl-carousel');
 
       _slider.trigger('to.owl.carousel', _slider.data('owl.carousel')._items.length - 1);
     })
     .on('click', '.single-card--likebtn', function () {
-      let _self = jQuery(this),
+      let _self = $(this),
         _profile = _self.parents('.single-profile--card');
       likeProfileToggle(_profile);
     })
     .on('click', '.single-influencer--archive', function () {
 
-      let $btn = jQuery(this),
+      let $btn = $(this),
         $colmn = $btn.parents('.single-profile--card')
           .parent(),
         $modal = $colmn.find('.modal-single--influencer');
@@ -133,7 +133,7 @@ import { Influencer } from '../partials/influencer.card';
             $colmn.addClass('zoomingOut')
               .delay(500)
               .queue(function (next2) {
-                jQuery(this)
+                $(this)
                   .remove();
                 next2();
                 msnry.layout({
@@ -149,7 +149,7 @@ import { Influencer } from '../partials/influencer.card';
       $colmn.addClass('zoomingOut')
         .delay(500)
         .queue(function (next) {
-          jQuery(this)
+          $(this)
             .remove();
           next();
           msnry.layout({
@@ -164,25 +164,25 @@ import { Influencer } from '../partials/influencer.card';
       !e.target.dataset.dismiss && e.stopPropagation();
     });
 
-  jQuery('.badge-outline--dark,.single-infl--gscore')
+  $('.badge-outline--dark,.single-infl--gscore')
     .tooltip();
 
 
-  jQuery('.find-influencer--navtabs')
+  $('.find-influencer--navtabs')
     .owlTabs({
       navText: [
         '<i class="icon-arrow-left-bold"></i>',
         '<i class="icon-arrow-right-bold"></i>'
       ]
     });
-  jQuery('.single-card--fixednav .btn-close')
+  $('.single-card--fixednav .btn-close')
     .on('click', function (e) {
 
-      jQuery('#modalSingleInfl').modal('hide');
-      jQuery('.single-card--fixednav').removeClass('down')
+      $('#modalSingleInfl').modal('hide');
+      $('.single-card--fixednav').removeClass('down')
     });
 
-  jQuery('.single-card--carousel')
+  $('.single-card--carousel')
     .owlCarousel({
       nav: true,
       loop: true,
@@ -196,19 +196,19 @@ import { Influencer } from '../partials/influencer.card';
       ]
     });
 
-  jQuery(window)
+  $(window)
     .on('resize orientationchange', function () {
       updateOffsets('.modal-single--influencer');
-      jQuery('.owl-carousel')
+      $('.owl-carousel')
         .trigger('refresh.owl.carousel');
     })
     .resize();
 
-  jQuery(document)
+  $(document)
     .on('hide.bs.collapse hidden.bs.collapse show.bs.collapse shown.bs.collapse', function (e) {
       // console.log(e.type);
       const openClassname = 'open';
-      let $parent = jQuery(e.target)
+      let $parent = $(e.target)
         .closest('[class*=collapse-]');
 
       console.log(e.type);
