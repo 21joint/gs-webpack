@@ -9,6 +9,7 @@ module.exports = merge(webpackConfig, {
     watchContentBase: true,
     port: 3000,
     hot: true,
+    host: 'localhost',
     publicPath: '/'
   },
   plugins: [
