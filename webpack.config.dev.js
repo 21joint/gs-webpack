@@ -4,15 +4,13 @@ const webpackConfig = require('./webpack.config');
 
 module.exports = merge(webpackConfig, {
   devServer: {
-    watchContentBase: true,
-    port: 4040,
+    port: 3000,
+    host: 'localhost',
     hot: true,
-    host: '0.0.0.0',
     open: true,
     publicPath: '/'
   },
   plugins: [
-    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ],
   devtool: 'inline-source-map'
