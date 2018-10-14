@@ -1,4 +1,10 @@
 import {Influencer} from "../partials/influencer.card";
+$.fn.digits = function(){
+    return this.each(function(){
+        $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+    })
+}
+
 export class SearchApi{
 
     constructor(baseUrl){
@@ -15,11 +21,7 @@ export class SearchApi{
     drawInfluencerList(influencers) {
 
         console.log("drawing");
-
-
         let infHtml ="";
-        
-
         $.each(influencers, function(key,inf) {
             console.log(inf.name);
             let infLocal = new Influencer(inf);
@@ -28,14 +30,11 @@ export class SearchApi{
             if(infLocal.name ==""){
                 infLocal.name=inf.username;
             }
-
             infHtml += '<div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-item">'+infLocal.load({ closable: true })+'</div>';
         });
 
         //console.log($("#loadInfluencerSearchStrip").html());
-
         $("#search-result-grid").html(infHtml);
-
     }
 
     makeSearchRequest(){
@@ -68,22 +67,16 @@ export class SearchApi{
             // Work with the response
             success: function( response ) {
                 console.log( response ); // server response
-
                 objCur.drawInfluencerList(response.data);
-
+                objCur.paginate(response.total,1);
                 return response;
             }
         });
 
         return [];
-
     }
 
-    paginate(){
-
-
+    paginate(total,curPage){
+        $("#tot_inf_count").html(total).digits();
     }
-
-
-
 }
