@@ -21,6 +21,9 @@ export class SearchApi{
     setLikes(likes){
         this.likes = likes;
     }
+    setComments(comments){
+        this.comments = comments;
+    }
     drawInfluencerList(influencers) {
 
         console.log("drawing");
@@ -52,6 +55,9 @@ export class SearchApi{
 
         if(this.likes !=null){
             data["likes"] = this.likes;
+        }
+        if(this.comments !=null){
+            data["comments"] = this.comments;
         }
         let objCur = this;
         $.ajax({

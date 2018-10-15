@@ -22,15 +22,12 @@ $('#followers-apply').on("click",function () {
     searchApi.makeSearchRequest();
 });
 $('#likes-apply').on("click",function () {
-
-
-
     let values = {min: $("#likes-min").val().replace(/,/g, ""), max:$("#likes-max").val().replace(/,/g, "")};
-
     searchApi.setLikes(values);
-
     searchApi.makeSearchRequest();
-
-
 });
-
+$('#comments-apply').on("click",function () {
+    let values = {min: $("#comments-min").val().replace(/,/g, ""), max:$("#comments-max").val().replace(/,/g, "")};
+    searchApi.setComments(values);
+    searchApi.makeSearchRequest();
+});
