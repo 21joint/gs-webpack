@@ -18,6 +18,9 @@ export class SearchApi{
     setFollowers(followers){
         this.followers = followers;
     }
+    setLikes(likes){
+        this.likes = likes;
+    }
     drawInfluencerList(influencers) {
 
         console.log("drawing");
@@ -47,6 +50,9 @@ export class SearchApi{
             data["followers"] = this.followers;
         }
 
+        if(this.likes !=null){
+            data["likes"] = this.likes;
+        }
         let objCur = this;
         $.ajax({
             url: this.baseUrl+"/influencers?fields=*",

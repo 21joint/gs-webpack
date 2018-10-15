@@ -21,4 +21,16 @@ $('#followers-apply').on("click",function () {
 
     searchApi.makeSearchRequest();
 });
+$('#likes-apply').on("click",function () {
+
+
+
+    let values = {min: $("#likes-min").val().replace(/,/g, ""), max:$("#likes-max").val().replace(/,/g, "")};
+
+    searchApi.setLikes(values);
+
+    searchApi.makeSearchRequest();
+
+
+});
 
