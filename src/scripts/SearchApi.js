@@ -38,6 +38,18 @@ export class SearchApi{
     resetComments(){
         this.comments = null;
     }
+    setSponsored(sponsored){
+        this.sponsored = sponsored;
+    }
+    resetSponsored(){
+        this.sponsored = null;
+    }
+    setSponsoredPercentile(sponsoredPercentile){
+        this.sponsoredPercentile = sponsoredPercentile;
+    }
+    resetSponsoredPercentile(){
+        this.sponsoredPercentile = null;
+    }
     drawInfluencerList(influencers) {
 
         console.log("drawing");
@@ -72,6 +84,12 @@ export class SearchApi{
         }
         if(this.comments !=null){
             data["comments"] = this.comments;
+        }
+        if(this.sponsored !=null){
+            data["sponsored"] = this.sponsored;
+        }
+        if(this.sponsoredPercentile !=null){
+            data["sponsoredPercentile"] = this.sponsoredPercentile;
         }
         let objCur = this;
         $.ajax({

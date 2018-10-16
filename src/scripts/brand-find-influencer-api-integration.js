@@ -42,3 +42,15 @@ $('.reset-comments').on("click",function () {
     searchApi.resetComments();
     searchApi.makeSearchRequest();
 });
+$('#sponsored-apply').on("click",function () {
+    let valuesSponsored = {min: $("#sponsored-min").val().replace(/,/g, ""), max:$("#sponsored-max").val().replace(/,/g, "")};
+    searchApi.setSponsored(valuesSponsored);
+    let valuesSponsoredPercentitle = {min: $("#sponsored-percentile-min").val().replace(/,/g, ""), max:$("#sponsored-percentile-max").val().replace(/,/g, "")};
+    searchApi.setSponsoredPercentile(valuesSponsoredPercentitle);
+    searchApi.makeSearchRequest();
+});
+$('.reset-sponsored').on("click",function () {
+    searchApi.resetSponsored();
+    searchApi.resetSponsoredPercentile();
+    searchApi.makeSearchRequest();
+});
