@@ -15,14 +15,28 @@ export class SearchApi{
         this.languages = languages;
     }
 
+    resetLanguage(){
+        this.languages = null;
+    }
+
+
     setFollowers(followers){
         this.followers = followers;
+    }
+    resetFollowers(){
+        this.followers = null;
     }
     setLikes(likes){
         this.likes = likes;
     }
+    resetLikes(){
+        this.likes = null;
+    }
     setComments(comments){
         this.comments = comments;
+    }
+    resetComments(){
+        this.comments = null;
     }
     drawInfluencerList(influencers) {
 
