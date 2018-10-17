@@ -32,11 +32,23 @@ export class SearchApi{
     resetLikes(){
         this.likes = null;
     }
-    setComments(comments){
-        this.comments = comments;
+    setLikesPercentile(likesPercentile){
+        this.likesPercentile = likesPercentile;
+    }
+    resetLikesPercentile(){
+        this.likesPercentile = null;
+    }
+    setCommentsPercentile(commentsPercentile){
+        this.commentsPercentile = commentsPercentile;
+    }
+    resetCommentsPercentile(){
+        this.commentsPercentile = null;
     }
     resetComments(){
         this.comments = null;
+    }
+    setComments(comments){
+        this.comments = comments;
     }
     setSponsored(sponsored){
         this.sponsored = sponsored;
@@ -82,8 +94,14 @@ export class SearchApi{
         if(this.likes !=null){
             data["likes"] = this.likes;
         }
+        if(this.likesPercentile !=null){
+            data["likesPercentile"] = this.likesPercentile;
+        }
         if(this.comments !=null){
             data["comments"] = this.comments;
+        }
+        if(this.commentsPercentile !=null){
+            data["commentsPercentile"] = this.commentsPercentile;
         }
         if(this.sponsored !=null){
             data["sponsored"] = this.sponsored;

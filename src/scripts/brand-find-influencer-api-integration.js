@@ -27,19 +27,25 @@ $('.reset-followers').on("click",function () {
 $('#likes-apply').on("click",function () {
     let values = {min: $("#likes-min").val().replace(/,/g, ""), max:$("#likes-max").val().replace(/,/g, "")};
     searchApi.setLikes(values);
+    let valuesPercentitle = {min: $("#likes-percentile-min").val().replace(/,/g, ""), max:$("#likes-percentile-max").val().replace(/,/g, "")};
+    searchApi.setLikesPercentile(valuesPercentitle);
     searchApi.makeSearchRequest();
 });
 $('.reset-likes').on("click",function () {
     searchApi.resetLikes();
+    searchApi.resetLikesPercentile();
     searchApi.makeSearchRequest();
 });
 $('#comments-apply').on("click",function () {
     let values = {min: $("#comments-min").val().replace(/,/g, ""), max:$("#comments-max").val().replace(/,/g, "")};
     searchApi.setComments(values);
+    let valuesPercentile = {min: $("#comments-percentile-min").val().replace(/,/g, ""), max:$("#comments-percentile-max").val().replace(/,/g, "")};
+    searchApi.setCommentsPercentile(valuesPercentile);
     searchApi.makeSearchRequest();
 });
 $('.reset-comments').on("click",function () {
     searchApi.resetComments();
+    searchApi.resetCommentsPercentile();
     searchApi.makeSearchRequest();
 });
 $('#sponsored-apply').on("click",function () {
