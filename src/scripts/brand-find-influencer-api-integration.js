@@ -64,11 +64,11 @@ $('#search-sort #sortBy').on("change",function () {
 
     let sortField= $("select[name=sortBy]").val();
     let sortOrder = "desc";
-    if(sortField.localeCompare("followers-desc")){
+    if(sortField.localeCompare("followers-desc")===0){
         sortField="followers";
         sortOrder = "desc";
     }
-    if(sortField.localeCompare("followers-asc")){
+    if(sortField.localeCompare("followers-asc")===0){
         sortField="followers";
         sortOrder = "asc";
     }
