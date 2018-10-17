@@ -60,3 +60,17 @@ $('.reset-sponsored').on("click",function () {
     searchApi.resetSponsoredPercentile();
     searchApi.makeSearchRequest();
 });
+$('#search-sort #sortBy').on("change",function () {
+
+    let sortField= $(this).val();
+    let sortOrder = "desc";
+    if(sortField.localeCompare("followers-desc")){
+        sortField="followers";
+    }
+    if(sortField.localeCompare("followers-asc")){
+        sortField="followers";
+        sortOrder = "asc";
+    }
+    searchApi.setSortField(sortField,sortOrder);
+    searchApi.makeSearchRequest();
+});

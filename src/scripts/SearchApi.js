@@ -62,6 +62,11 @@ export class SearchApi{
     resetSponsoredPercentile(){
         this.sponsoredPercentile = null;
     }
+
+    setSortField(field,sortOrder){
+        this.sortField = field;
+        this.sortOrder = sortOrder;
+    }
     drawInfluencerList(influencers) {
 
         console.log("drawing");
@@ -108,6 +113,10 @@ export class SearchApi{
         }
         if(this.sponsoredPercentile !=null){
             data["sponsoredPercentile"] = this.sponsoredPercentile;
+        }
+        if(this.sortField !=null && this.sortOrder!=null){
+            data["sortField"] = this.sortField;
+            data["sortOrder"] = this.sortOrder;
         }
         let objCur = this;
         $.ajax({
