@@ -62,15 +62,17 @@ $('.reset-sponsored').on("click",function () {
 });
 $('#search-sort #sortBy').on("change",function () {
 
-    let sortField= $(this).val();
+    let sortField= $("select[name=sortBy]").val();
     let sortOrder = "desc";
     if(sortField.localeCompare("followers-desc")){
         sortField="followers";
+        sortOrder = "desc";
     }
     if(sortField.localeCompare("followers-asc")){
         sortField="followers";
         sortOrder = "asc";
     }
+
     searchApi.setSortField(sortField,sortOrder);
     searchApi.makeSearchRequest();
 });
