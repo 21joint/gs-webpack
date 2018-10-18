@@ -84,6 +84,7 @@ export class SearchApi{
 
         //console.log($("#loadInfluencerSearchStrip").html());
         $("#search-result-grid").html(infHtml);
+        $("#search-result-grid").css("height","");
     }
 
     makeSearchRequest(){
