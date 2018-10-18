@@ -79,6 +79,7 @@ export class SearchApi{
             if(infLocal.name ==""){
                 infLocal.name=inf.username;
             }
+            infLocal.social={instagram:inf.followers};
             infHtml += '<div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-item">'+infLocal.load({ closable: true })+'</div>';
         });
 
