@@ -75,7 +75,8 @@ export class SearchApi{
             console.log(inf.name);
             let infLocal = new Influencer(inf);
             infLocal.photos=[];
-            infLocal.age=inf.followers;
+            //infLocal.age=inf.followers;
+            infLocal.age="";
             if(infLocal.name ==""){
                 infLocal.name=inf.username;
             }
