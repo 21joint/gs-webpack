@@ -95,7 +95,7 @@ export class Influencer {
                     data-toggle="modal"
                     aria-expanded="false"
                     href="#modalSingleInfl"       
-                    <h5><b>${this.name}, ${this.age}</b></h5></a>
+                    <h5><b>${this.name}</b></h5></a>
                   </div>
                   <div class="col-auto">
                       ${Influencer.gsScoreHandler(this.gscore)}     
