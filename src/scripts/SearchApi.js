@@ -71,6 +71,7 @@ export class SearchApi{
 
         console.log("drawing");
         let infHtml ="";
+        let infHtml2 ="";
         $.each(influencers, function(key,inf) {
             console.log(inf.name);
             let infLocal = new Influencer(inf);
@@ -82,12 +83,17 @@ export class SearchApi{
             }
             infLocal.name = infLocal.name.substring(0, 17);
             infLocal.social={instagram:inf.followers};
-            infHtml += '<div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-item">'+infLocal.load({ closable: true })+'</div>';
+
+            let infSingleHtml =infLocal.load({ closable: true });
+            infHtml += '<div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-item">'+infSingleHtml+'</div>';
+            infHtml2 += '<div class="col-12 col-sm-6 col-lg-4 col-xl-3 loadInfluencerSearchStrip">'+infSingleHtml+'</div>';
         });
 
         //console.log($("#loadInfluencerSearchStrip").html());
         $("#search-result-grid").html(infHtml);
         $("#search-result-grid").css("height","");
+        $("#search-result-grid-2").html(infHtml2);
+        $("#search-result-grid-2").css("height","");
     }
 
     makeSearchRequest(){
