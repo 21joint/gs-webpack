@@ -252,10 +252,142 @@
   margin: 0;
 }
 
-.search-filter--ul{
-  .modal{
-    .btn{
+.search-filter--ul {
+  .modal {
+    .btn {
       width: 100px;
     }
   }
 }
+
+.search-form {
+  .input-group-text {
+    border: none;
+    background-color: transparent;
+  }
+  input {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+  .input-group-prepend {
+    z-index: 10;
+    margin-right: -4px;
+  }
+  .form-control:focus {
+    border-color: #d6d6d6;
+    color: #444;
+
+  }
+}
+
+#searchForm {
+  .input-group-append {
+    margin-left: -3px;
+  }
+}
+
+.influencer-campaign {
+  padding: 20px;
+  a {
+    position: relative;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+  }
+  //.btn-svg-close{
+  //  font-size: 20px;
+  //  position: absolute;
+  //  right: 10px;
+  //  top: 50%;
+  //  -webkit-transform: translate(0, -50%) rotate(0deg) scale(1);
+  //  -ms-transform: translate(0, -50%) rotate(0deg) scale(1);
+  //  transform: translate(0, -50%) rotate(0deg) scale(1)
+  //}
+
+}
+
+.btn-collapse--tutorial {
+  border: none;
+  background-color: transparent;
+  color: #4D4D4D;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 40px;
+  z-index: 10;
+  border-radius: 7px;
+  span {
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    b {
+      @include my_caret();
+    }
+  }
+  &[aria-expanded="true"] {
+    border-color: transparent;
+    background-color: transparent;
+    b {
+      transform: rotate(-90deg) translate(0px, 0px);
+    }
+  }
+  &.collapsing, &.collapse.show {
+    border: 1px solid #BDC0C9;
+    background-color: white;
+    border-radius: 7px;
+
+  }
+}
+
+.collapse-wrapper {
+  max-width: 190px;
+  margin-left: auto;
+  &:after {
+    content: '';
+    position: absolute;
+    left: calc(100% - 185px);
+    right: 0;
+    top: 0;
+    bottom: calc(100% - 42px);
+    background-color: #ffffff;
+    z-index: -1;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 0 0 1px #eeeeee;
+    box-shadow: 0 0 0 1px #eeeeee;
+    -webkit-transition: .35s all ease;
+    -o-transition: .35s all ease;
+    transition: .2s all;
+  }
+  &.open:after {
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.collapse-btn--wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.gs-see--tutorial--body {
+  .card-title {
+    line-height: 32px;
+    min-height: 80px;
+  }
+  .card-text, .card-title {
+    color: #4d4d4d;
+  }
+}
+
+

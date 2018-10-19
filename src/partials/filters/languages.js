@@ -3,10 +3,9 @@ import LanguageData from '../../languages';
 
 const generateLanguages = () => {
   let html = '';
-  _.each(LanguageData, (language,key) => {
-    html += `<option value="${key}">${language.name}</option>`;
+  _.each(LanguageData, (language) => {
+    html += `<option value="${language.name}">${language.name}</option>`;
   });
-
   return html;
 };
 
@@ -15,7 +14,7 @@ const createOptions = () => {
   let template;
   template = `<button type="button" class="btn btn-sm btn-outline-primary" data-toggle="dropdown" aria-haspopup="true"
         title="Language" aria-expanded="false">
-  <svg class="reset-language btn-svg--close" width="14px" height="14px" viewBox="0 0 22 22" version="1.1">
+  <svg class="btn-svg--close" width="14px" height="14px" viewBox="0 0 22 22" version="1.1">
       <defs></defs>
       <g id="Launch-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
         <g id="Profile-view" transform="translate(-109.000000, -384.000000)" stroke="#FFFFFF" stroke-width="3">
@@ -50,12 +49,12 @@ const createOptions = () => {
     </div>
     <div class="form-row py-3 align-items-center justify-content-between dropdown-menu--actions">
       <div class="col-auto">
-        <button class="reset-language btn btn-block btn-sm btn-cancel" type="button" data-dismiss="dropdown">
+        <button class="btn btn-block btn-sm btn-cancel" type="button" data-dismiss="dropdown">
           Clear
         </button>
       </div>
       <div class="col-auto">
-        <button id="lang-apply" class="btn btn-block btn-primary btn-sm btn-apply" type="button" data-dismiss="dropdown">
+        <button class="btn btn-block btn-primary btn-sm btn-apply" type="button" data-dismiss="dropdown">
           Apply
         </button>
       </div>

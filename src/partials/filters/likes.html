@@ -3,7 +3,7 @@
         aria-haspopup="true"
         title="Likes"
         aria-expanded="false">
-  <svg class="btn-svg--close reset-likes" width="14px" height="14px" viewBox="0 0 22 22" version="1.1">
+  <svg class="btn-svg--close" width="14px" height="14px" viewBox="0 0 22 22" version="1.1">
     <defs></defs>
     <g id="Launch-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
       <g id="Profile-view" transform="translate(-109.000000, -384.000000)" stroke="#FFFFFF" stroke-width="3">
@@ -31,7 +31,6 @@
           <div class="form-group">
             <div class="mb-4">
               <input style="max-width: 100px;"
-                     id="likes-min"
                      title="gs-handle--input"
                      type="text"
                      class="form-control d-inline"
@@ -40,7 +39,6 @@
                      value="0"/>
               <span class="text-asphalt mx-1">-</span>
               <input style="max-width: 100px;"
-                     id="likes-max"
                      title="gs-handle--input"
                      type="text"
                      class="form-control d-inline"
@@ -67,13 +65,11 @@
               <input style="max-width: 100px;"
                      title="gs-handle--input"
                      type="text"
-                     id="likes-percentile-min"
                      class="form-control d-inline"
                      data-handle="0"
                      data-use="value - "/>
               <span class="text-asphalt mx-1">-</span>
               <input style="max-width: 100px;"
-                     id="likes-percentile-max"
                      title="gs-handle--input"
                      type="text"
                      class="form-control d-inline"
@@ -94,12 +90,12 @@
     </div>
     <div class="form-row py-3 align-items-center justify-content-between dropdown-menu--actions">
       <div class="col-auto">
-        <button class="btn btn-block btn-sm btn-cancel reset-likes" type="button" data-dismiss="dropdown">
+        <button class="btn btn-block btn-sm btn-cancel" type="button" data-dismiss="dropdown">
           Clear
         </button>
       </div>
       <div class="col-auto">
-        <button id="likes-apply" class="btn btn-block btn-primary btn-sm btn-apply" type="button" data-dismiss="dropdown">
+        <button class="btn btn-block btn-primary btn-sm btn-apply" type="button" data-dismiss="dropdown">
           Apply
         </button>
       </div>

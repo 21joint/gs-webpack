@@ -3,7 +3,6 @@ import '../partials/range-sliders';
 import '../partials/filters/filters';
 import '../partials/input.tags';
 import '../partials/owl-bootstrap-tabs/owl.bootstrap.tabs';
-
 import { Influencer } from '../partials/influencer.card';
 
 
@@ -176,11 +175,11 @@ import { Influencer } from '../partials/influencer.card';
         '<i class="icon-arrow-right-bold"></i>'
       ]
     });
-   jQuery('.single-card--fixednav .btn-close')
-    .on('click', function(e){
+  jQuery('.single-card--fixednav .btn-close')
+    .on('click', function (e) {
 
-     jQuery('#modalSingleInfl').modal('hide');
-     jQuery('.single-card--fixednav').removeClass('down')
+      jQuery('#modalSingleInfl').modal('hide');
+      jQuery('.single-card--fixednav').removeClass('down')
     });
 
   jQuery('.single-card--carousel')
@@ -205,6 +204,26 @@ import { Influencer } from '../partials/influencer.card';
     })
     .resize();
 
+  jQuery(document)
+    .on('hide.bs.collapse hidden.bs.collapse show.bs.collapse shown.bs.collapse', function (e) {
+      // console.log(e.type);
+      const openClassname = 'open';
+      let $parent = jQuery(e.target)
+        .closest('[class*=collapse-]');
+
+      console.log(e.type);
+
+      if (e.type == 'show') {
+        //on show
+        $parent.addClass(openClassname);
+      }
+      if (e.type == 'hidden') {
+        //on hide
+        $parent.removeClass(openClassname);
+      }
+
+    });
+
   function owlFix(owl) {
     const $parentEl = owl.relatedTarget.$element.closest('.single-card--owlwrapper');
     const targetW = Math.trunc(owl.relatedTarget.$element.closest('.single-profile--card')
@@ -212,6 +231,7 @@ import { Influencer } from '../partials/influencer.card';
 
     $parentEl.width(targetW);
   }
+
 
 })();
 
