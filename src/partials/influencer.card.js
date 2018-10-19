@@ -15,15 +15,15 @@ export class Influencer {
   static isClosable() {
     return `<button class="single-influencer--archive p-0">            
                 <svg width="26px" height="26px" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g id="Find-influencer" transform="translate(-464.000000, -472.000000)" stroke="#FFFFFF" stroke-width="3">
-            <g id="Group-6-Copy" transform="translate(466.000000, 474.000000)">
-                <path d="M0,0 L18,18" id="Stroke-1"></path>
-                <path d="M18,0 L0,18" id="Stroke-3"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                        <g id="Find-influencer" transform="translate(-464.000000, -472.000000)" stroke="#FFFFFF" stroke-width="3">
+                            <g id="Group-6-Copy" transform="translate(466.000000, 474.000000)">
+                                <path d="M0,0 L18,18" id="Stroke-1"></path>
+                                <path d="M18,0 L0,18" id="Stroke-3"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
               </button>`;
   }
 

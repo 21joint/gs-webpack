@@ -6,6 +6,10 @@ const webpackConfig = require('./webpack.config');
 module.exports = merge(webpackConfig, {
   mode: "development",
   devServer: {
+    contentBase: [
+      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'dist')
+    ],
     watchContentBase: true,
     port: 3000,
     hot: true,

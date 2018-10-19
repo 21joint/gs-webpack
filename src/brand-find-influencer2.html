@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
-<% const { Influencer } = require('./partials/influencer.card'); const influencers = [ { name: 'Betty Boo', age: 27,
+
+
+<%
+const { Influencer } = require('./partials/influencer.card');
+const influencers = [ { name: 'Betty Boo', age: 27,
 gscore: 76, photos: [ require('./assets/images/influencer-1.png'), require('./assets/images/influencer-2.png'),
 require('./assets/images/influencer-3.png') ], social: { tumblr: 4222, pinterest: 32122, blog: 12100 } }, { name:
 'Lindsey Joe', age: 23, gscore: 15, photos: [ require('./assets/images/influencer-1.png'),
@@ -48,76 +52,104 @@ require('html-loader!./partials/filters/sponsored-launch.html'), require('html-l
               </button>
             </div>
             <div class="collapse text-left" id="tutsCollapse" style="">
-              <div class="gs-see--tutorial--body card-body border-0">
+              <div class="gs-tutorial--body card-body border-0">
                 <div class="row">
+                  <!--single tutorial-->
                   <div class="col-12 col-sm-6 col-md-4 col-xl-3">
                     <div class="wistia_responsive_padding">
-                      <div class="wistia_responsive_wrapper"><span
-                        class="wistia_embed wistia_async_z0iejnanfx popover=true popoverAnimateThumbnail=true popoverContent=link videoFoam=true wistia_embed_initialized"
-                        style="display:inline;position:relative" id="wistia-z0iejnanfx-1"><div
-                        id="wistia_88.thumb_container" class="wistia_click_to_play"
-                        style="position: relative; display: inline;"><a href="#"><div class="card border-0">
-                        <div class="card-header p-0 bg-transparent border-0 ">
-                          <h5 class="card-title m-0 pb-3">How To Boost Your Traffic Of Your Blog</h5>
+                      <div class="wistia_responsive_wrapper">
+                        <div
+                          class="wistia_embed wistia_async_z0iejnanfx popover=true popoverAnimateThumbnail=true popoverContent=link videoFoam=true wistia_embed_initialized"
+                          style="display:inline;position:relative" id="wistia-z0iejnanfx-1">
+                          <div
+                            id="wistia_88.thumb_container" class="wistia_click_to_play"
+                            style="position: relative; display: inline;"><a href="#">
+                            <div class="card border-0">
+                              <div class="card-header p-0 bg-transparent border-0 ">
+                                <h5 class="card-title m-0">How To Boost Your Traffic Of Your Blog</h5>
+                              </div>
+                              <img class="img-fluid" src="./assets/images/Rectangle1.png" alt="Card image cap">
+                              <p class="card-text mt-2">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                          </a></div>
                         </div>
-                        <img class="img-fluid" src="../src/assets/images/Rectangle1.png" alt="Card image cap">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                          additional content. This content is a little bit longer.</p>
-                      </div></a></div></span></div>
+                      </div>
                     </div>
                   </div>
+                  <!--single tutorial-->
                   <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                    <script src="https://fast.wistia.com/embed/medias/z0iejnanfx.jsonp" async=""></script>
-                    <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
                     <div class="wistia_responsive_padding">
-                      <div class="wistia_responsive_wrapper"><span
-                        class="wistia_embed wistia_async_z0iejnanfx popover=true popoverAnimateThumbnail=true popoverContent=link videoFoam=true wistia_embed_initialized"
-                        style="display:inline;position:relative" id="wistia-z0iejnanfx-2"><div
-                        id="wistia_98.thumb_container" class="wistia_click_to_play"
-                        style="position: relative; display: inline;"><a href="#"><div class="card border-0">
-                      <div class="card-header p-0 bg-transparent border-0 ">
-                        <h5 class="card-title m-0 pb-3">Destroy The Competition</h5>
+                      <div class="wistia_responsive_wrapper">
+                        <div
+                          class="wistia_embed wistia_async_z0iejnanfx popover=true popoverAnimateThumbnail=true popoverContent=link videoFoam=true wistia_embed_initialized"
+                          style="display:inline;position:relative" id="wistia-z0iejnanfx-2">
+                          <div
+                            id="wistia_98.thumb_container" class="wistia_click_to_play"
+                            style="position: relative; display: inline;"><a href="#">
+                            <div class="card border-0">
+                              <div class="card-header p-0 bg-transparent border-0 ">
+                                <h5 class="card-title m-0">Destroy The Competition</h5>
+                              </div>
+                              <img class="img-fluid" src="./assets/images/Rectangle2.png" alt="Card image cap">
+                              <p class="card-text mt-2">This is a wider card with supporting text below as a natural
+                                lead-in
+                                to
+                                additional content. This content is a little bit longer.</p>
+                            </div>
+                          </a></div>
+                        </div>
                       </div>
-                      <img class="img-fluid" src="../src/assets/images/Rectangle2.png" alt="Card image cap">
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    </div></a></div></span></div>
                     </div>
                   </div>
+                  <!--single tutorial-->
                   <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                    <script src="https://fast.wistia.com/embed/medias/z0iejnanfx.jsonp" async=""></script>
-                    <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
                     <div class="wistia_responsive_padding">
-                      <div class="wistia_responsive_wrapper"><span
-                        class="wistia_embed wistia_async_z0iejnanfx popover=true popoverAnimateThumbnail=true popoverContent=link videoFoam=true wistia_embed_initialized"
-                        style="display:inline;position:relative" id="wistia-z0iejnanfx-3"><div
-                        id="wistia_108.thumb_container" class="wistia_click_to_play"
-                        style="position: relative; display: inline;"><a href="#"><div class="card border-0">
-                      <div class="card-header p-0 bg-transparent border-0 ">
-                        <h5 class="card-title m-0 pb-3">Be Single Minded</h5>
+                      <div class="wistia_responsive_wrapper">
+                        <div
+                          class="wistia_embed wistia_async_z0iejnanfx popover=true popoverAnimateThumbnail=true popoverContent=link videoFoam=true wistia_embed_initialized"
+                          style="display:inline;position:relative" id="wistia-z0iejnanfx-3">
+                          <div
+                            id="wistia_108.thumb_container" class="wistia_click_to_play"
+                            style="position: relative; display: inline;"><a href="#">
+                            <div class="card border-0">
+                              <div class="card-header p-0 bg-transparent border-0 ">
+                                <h5 class="card-title m-0">Be Single Minded</h5>
+                              </div>
+                              <img class="img-fluid" src="./assets/images/Rectangle3.png" alt="Card image cap">
+                              <p class="card-text mt-2">This is a wider card with supporting text below as a natural
+                                lead-in
+                                to
+                                additional content. This content is a little bit longer.</p>
+                            </div>
+                          </a></div>
+                        </div>
                       </div>
-                      <img class="img-fluid" src="../src/assets/images/Rectangle3.png" alt="Card image cap">
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    </div></a></div></span></div>
                     </div>
                   </div>
+                  <!--single tutorial-->
                   <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                    <script src="https://fast.wistia.com/embed/medias/z0iejnanfx.jsonp" async=""></script>
-                    <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
                     <div class="wistia_responsive_padding">
-                      <div class="wistia_responsive_wrapper"><span
-                        class="wistia_embed wistia_async_z0iejnanfx popover=true popoverAnimateThumbnail=true popoverContent=link videoFoam=true wistia_embed_initialized"
-                        style="display:inline;position:relative" id="wistia-z0iejnanfx-4"><div
-                        id="wistia_118.thumb_container" class="wistia_click_to_play"
-                        style="position: relative; display: inline;"><a href="#"><div class="card border-0">
-                      <div class="card-header p-0 bg-transparent border-0 ">
-                        <h5 class="card-title m-0 pb-3">Promote With Postcards</h5>
+                      <div class="wistia_responsive_wrapper">
+                        <div
+                          class="wistia_embed wistia_async_z0iejnanfx popover=true popoverAnimateThumbnail=true popoverContent=link videoFoam=true wistia_embed_initialized"
+                          style="display:inline;position:relative" id="wistia-z0iejnanfx-4">
+                          <div
+                            id="wistia_118.thumb_container" class="wistia_click_to_play"
+                            style="position: relative; display: inline;"><a href="#">
+                            <div class="card border-0">
+                              <div class="card-header p-0 bg-transparent border-0 ">
+                                <h5 class="card-title m-0">Promote With Postcards</h5>
+                              </div>
+                              <img class="img-fluid" src="./assets/images/Rectangle4.png" alt="Card image cap">
+                              <p class="card-text mt-2">This is a wider card with supporting text below as a natural
+                                lead-in
+                                to
+                                additional content. This content is a little bit longer.</p>
+                            </div>
+                          </a></div>
+                        </div>
                       </div>
-                      <img class="img-fluid" src="../src/assets/images/Rectangle4.png" alt="Card image cap">
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    </div></a></div></span></div>
                     </div>
                   </div>
                 </div>
@@ -369,4 +401,3 @@ require('html-loader?interpolate=true!./partials/single-influencer--launch.html'
 <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
 </body>
 </html>
-

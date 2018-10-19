@@ -1,15 +1,13 @@
 const Conf = require('./conf');
 const path = require('path');
 const Pkg = require('./package');
-const _ = require('lodash');
 const args = require('yargs').argv;
 const glob = require('glob');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const IS_DEV = (process.env.NODE_ENV === 'dev');
+const IS_DEV = (process.env.NODE_ENV !== 'production');
 const renderHtmlTemplates = () =>
   glob.sync('src/*.html')
     .map(dir => new HtmlWebpackPlugin({
@@ -19,7 +17,7 @@ const renderHtmlTemplates = () =>
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       },
       template: dir,
-      title: Pkg.description
+      title: path.basename(dir)
     }));
 
 /**
@@ -54,7 +52,7 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           IS_DEV ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
+          'css-loader?sourceMap',
           {
             loader: "postcss-loader",
 
@@ -107,9 +105,6 @@ module.exports = {
       'window.jQuery': 'jquery'
     }),
     ...renderHtmlTemplates(),
-    // new ExtractTextPlugin({
-    //   filename: 'styles/[name].css'
-    // })
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
