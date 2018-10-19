@@ -20,6 +20,14 @@ label {
   font-weight: 900;
   font-size: 13px;
   margin-bottom: .7rem;
+
+  &.nar {
+    width: 250px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
 }
 
 .label-basic {
@@ -167,3 +175,124 @@ input[type="radio"] {
     bottom: 0;
   }
 }
+
+#step1-validate {
+  color:#fff;
+}
+
+.description {
+  color:$dark-text;
+  font-size: 14px;
+}
+
+.form-group {
+
+}
+
+#signupForm-2 {
+
+  textarea {
+    padding: 10px 15px;
+    height: 84px;
+    resize: none;
+  }
+
+}
+
+
+.language-select {
+
+  span.select2-selection__rendered, li {
+
+    &:after {
+      display: inline-block;
+      content: '';
+      width: 21px;
+      height: 21px;
+      position: absolute;
+      top: 9px;
+      margin-left: 15px;
+      background-image: url('../../assets/images/flags/flags.png');
+    }
+
+    &[title="Language"] {
+      &:after {
+        background: none;
+      }
+    }
+
+    &[title="English (USA)"] {
+      &:after {
+        background-position: -42px bottom;
+      }
+    }
+
+    &[title="English (UK)"] {
+      &:after {
+        background-position: -21px bottom;
+      }
+    }
+
+    &[title="French"] {
+      &:after {
+        background-position: -63px -21px;
+      }
+    }
+
+    &[title="Italian"] {
+      &:after {
+        background-position: -105px -42px;
+      }
+    }
+
+    &[title="Spanish"] {
+      &:after {
+        background-position: 0px -105px;
+      }
+    }
+
+    &[title="Dutch"] {
+      &:after {
+        background-position: -21px -63px;
+      }
+    }
+
+    &[title="Swedish"] {
+      &:after {
+        background-position: -21px -105px;
+      }
+    }
+
+    &[title="Polish"] {
+      &:after {
+        background-position: -21px -84px;
+      }
+    }
+
+    &[title="Finnish"] {
+      &:after {
+        background-position: -42px -21px;
+      }
+    }
+
+    &[title="Danish"] {
+      &:after {
+        background-position: -21px -21px;
+      }
+    }
+
+    &[title="Japanese"] {
+      &:after {
+        background-position: -126px -42px;
+      }
+    }
+
+  }
+
+}
+
+
+
+
+
+
