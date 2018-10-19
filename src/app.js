@@ -47,27 +47,3 @@ jQuery(document)
     e.stopPropagation();
 
   });
-
-
-
-jQuery('#step1-validate').on('click', function (e) {
-
-    var companyName = jQuery('#companyName').val();
-    var firstName = jQuery('#firstName').val();
-    var lastName = jQuery('#lastName').val();
-    var language = jQuery('#language').val();
-    var workEmail = jQuery('#workEmail').val();
-    var password = jQuery('#password').val();
-
-    if(companyName && firstName && lastName && language && workEmail && password) {
-        alert('proslo');
-    } else {
-
-        alert ('nije proslo');
-
-    }
-
-    });
-
-
-

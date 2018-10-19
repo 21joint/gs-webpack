@@ -3,5 +3,9 @@
     [
       "@babel/env"
     ]
+  ],
+  "plugins": [
+    "@babel/plugin-transform-template-literals",
+    "@babel/plugin-transform-runtime"
   ]
 }
