@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Growsocial</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="styles/app.css" rel="stylesheet"></head>
-<body class="bg-light has-fixed-bottom">
-  
+<body class="">
+
 <div class="main-loader">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 369">
     <path
@@ -239,206 +239,105 @@
 
 
 
-  <main class="main-content">
-    <div class="container-fluid py-4 pt-lg-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-9 col-xl-8">
-          <div class="content-box rounded bg-white">
-            <section class="content-box--header py-4">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-12 text-center">
-                    <h2 class="content-box__title mt-3 mb-0">User profile</h2>
-                    <hr class="mt-sm-4 mb-0"/>
+<main class="main-content">
+  <div class="container-fluid smaller">
+    <div class="row mt-5">
+      <div class="col-lg-12 text-center">
+        <img src="/src/assets/images/logo.svg" alt="Growsocial">
+      </div>
+    </div>
+    <div class="row align-items-start align-items-md-center cover-height-100">
+      <div class="col-12 mt-3 mb-md-4">
+        <div class="content-box bg-white px-3 pt-4 pb-3 px-sm-5 pt-sm-5">
+          <div class="container-fluid">
+
+            <form id="signupForm-1" class="form-horizontal">
+            <div class="row">
+              <div class="col-12">
+                <div class="content-box__header">
+                  <h2 class="content-box__title text-center mb-5">Start your free Growsocial trial</h2>
+                </div>
+              </div>
+            </div>
+              <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <input type="text" class="form-control" id="companyName" placeholder="Company Name">
+              </div>
+            </div>
+            </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                  <input type="text" class="form-control" id="firstName" placeholder="First Name">
                   </div>
-                  <div class="col-12">
-                    <form id="editProfileForm" class="form-horizontal">
-                      <div class="row">
-                        <div class="col">
-                          <h4 class="text-center py-3 py-sm-4 text-asphalt">Update your profile</h4>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12 col-sm-6">
-                          <div class="form-group">
-                            <label for="brandname">Brandname</label><input type="text"
-                              class="form-control"
-                              name="brandname"
-                              id="brandname"
-                              placeholder="Filip"/>
-                          </div>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                          <div class="form-group">
-                            <label for="xxx_1">XXX</label><input type="text"
-                              class="form-control"
-                              name="xxx_1"
-                              id="xxx_1"
-                              placeholder="Redelius"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12 col-sm-6">
-                          <div class="form-group">
-                            <label for="base_country">Country</label><select style="width: 100%;"
-                              name="base_country"
-                              id="base_country"
-                              class="form-control with-flags">
-                              <option>United Kingdom</option>
-                              <option>Finland</option>
-                              <option>Denmark</option>
-                              <option>Norway</option>
-                              <option>France</option>
-                              <option>Sweden</option>
-                              <option>Germany</option>
-                              <option>Netherlands</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                          <div class="form-group">
-                            <label for="xxx_2">XXX</label><input type="text"
-                              class="form-control"
-                              name="xxx_2"
-                              id="xxx_2"
-                              placeholder="Network/agency"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12 col-sm-6">
-                          <div class="form-group">
-                            <label for="email">E-mail</label><input type="email"
-                              class="form-control"
-                              name="E-mail"
-                              id="email"
-                              placeholder="Filip"/>
-                          </div>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                          <div class="form-group">
-                            <label for="xxx_3">XXX</label><input type="text"
-                              class="form-control"
-                              name="xxx_3"
-                              id="xxx_3"
-                              placeholder="Bra"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12 col-sm-6">
-                          <div class="form-group">
-                            <label for="timezone">Timezone</label><select style="width: 100%;"
-                              name="timezone"
-                              id="timezone"
-                              class="form-control with-flags">
-                              <option>(GMT +02:00) Europe/Copenhagen</option>
-                              <option>(GMT +03:00) Europe/Finland</option>
-                              <option>(GMT +03:00) Europe/Bergenn</option>
-                              <option>(GMT +02:00) Europe/Paris</option>
-                              <option>(GMT +02:00) Europe/Stockholm</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                          <div class="form-group">
-                            <label for="xxx_4">XXX</label><input type="text"
-                              class="form-control"
-                              name="xxx_4"
-                              id="xxx_4"
-                              placeholder="gandhi"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12 col-sm-6">
-                          <div class="form-group">
-                            <label for="language">Language</label><input type="text"
-                              class="form-control"
-                              name="language"
-                              id="language"
-                              placeholder="English"/>
-                          </div>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                          <div class="form-group">
-                            <label for="phone">Phone</label><input type="text"
-                              class="form-control"
-                              name="phone"
-                              id="phone"
-                              placeholder="+46723000116"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12 col-sm-6">
-                          <div class="form-group">
-                            <label for="passw">Password</label><input type="password"
-                              class="form-control"
-                              name="password"
-                              id="passw"
-                              placeholder="Write here"/>
-                          </div>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                          <div class="form-group">
-                            <label class="d-none d-sm-inline-block">&nbsp;</label>
-                            <button class="btn-block btn btn-big btn-outline-primary mt-3 mt-sm-0"> Generate password</button>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                  <input type="text" class="form-control" id="lastName" placeholder="Last Name">
                   </div>
                 </div>
               </div>
-            </section>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group language-select">
+                    <select title="language" style="width: 100%;" name="language" id="language"
+                            class="form-control">
+                      <option value="" selected disabled hidden>Language</option>
+                      <option>English (USA)</option>
+                      <option>English (UK)</option>
+                      <option>French</option>
+                      <option>Italian</option>
+                      <option>Spanish</option>
+                      <option>Dutch</option>
+                      <option>Swedish</option>
+                      <option>Polish</option>
+                      <option>Danish</option>
+                      <option>Finnish</option>
+                      <option>Japanese</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                <input type="email" class="form-control" id="workEmail" placeholder="Work Email">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <a id="step1-validate" class="btn btn-block btn-primary btn-login ml-auto">Get Started</a>
+                </div>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-12 text-center">
+                <p class="description">By clicking this button, you agree to our <a href="#">Terms, Privacy Policy</a> and <a href="#">Security Policy</a>.</p>
+              </div>
+              </div>
+            </form>
           </div>
-        </div>
-        <div class="col-lg-3 col-xl-4"></div>
-      </div>
-    </div>
-  </main>
-  <!--REGISTRATION PROGRESS-->
-  <div class="reg-progress fixed-bottom border-bottom-0">
-    <div class="container-fluid">
-      <div class="row flex-nowrap align-items-center">
-        <div class="col-lg-9 col-xl-8">
-          <div class="reg-progress-content">
-            <div class="row align-items-center">
-              <div class="col-auto d-none d-md-block">
-                <span class="font-weight-black">Your progress</span>
-              </div>
-              <div class="col-7 col-sm">
-                <ul class="row flex-nowrap justify-content-between reg-progress_ul mx-0">
-                  <li class="col text-center complete">
-                    <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
-                  </li>
-                  <li class="col text-center">
-                    <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
-                  </li>
-                  <li class="col text-center">
-                    <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
-                  </li>
-                  <li class="col text-center">
-                    <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
-                  </li>
-                  <li class="col text-center">
-                    <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
-                  </li>
-                  <li class="col text-center">
-                    <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-5 col-sm-auto">
-                <button class="btn btn-block btn-primary ml-auto"> Continue</button>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</main>
 <script type="text/javascript" src="scripts/vendors.88b2c090b214e89a5fca.js"></script><script type="text/javascript" src="scripts/app.bfc2d0273b83a654fa97.js"></script></body>
 </html>
