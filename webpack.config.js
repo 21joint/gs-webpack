@@ -1,13 +1,15 @@
 const Conf = require('./conf');
 const path = require('path');
 const Pkg = require('./package');
+const _ = require('lodash');
 const args = require('yargs').argv;
 const glob = require('glob');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const IS_DEV = (process.env.NODE_ENV !== 'production');
+const IS_DEV = (process.env.NODE_ENV === 'dev');
 const renderHtmlTemplates = () =>
   glob.sync('src/*.html')
     .map(dir => new HtmlWebpackPlugin({
@@ -17,7 +19,7 @@ const renderHtmlTemplates = () =>
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       },
       template: dir,
-      title: path.basename(dir)
+      title: Pkg.description
     }));
 
 /**
@@ -37,11 +39,10 @@ module.exports = {
     rules: [
       // JS
       {
-        test: /\.jsx$/,
+        test: /\.js$/,
         include: [
           path.resolve(__dirname, 'src')
         ],
-        exclude: path.resolve(__dirname, 'src'),
         use: [
           'babel-loader'
         ]
@@ -49,25 +50,38 @@ module.exports = {
 
       // SCSS
       {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          IS_DEV ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader?sourceMap',
-          {
-            loader: "postcss-loader",
-
-            options: {
-              sourceMap: IS_DEV,
-              plugins: [
-                require('postcss-flexbugs-fixes'),
-                require('autoprefixer')({
-                  browsers: ['last 3 versions']
-                })
-              ]
+        test: /\.s?css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: !IS_DEV,
+                sourceMap: IS_DEV,
+                publicPath: '../'
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: IS_DEV,
+                plugins: [
+                  require('postcss-flexbugs-fixes'),
+                  require('autoprefixer')({
+                    browsers: ['last 3 versions']
+                  })
+                ]
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: IS_DEV
+              }
             }
-          },
-          'sass-loader',
-        ],
+          ]
+        })
       },
 
       // FONTS/IMAGES
@@ -95,6 +109,23 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    modules: [
+      'node_modules',
+      path.resolve(__dirname, 'src')
+    ]
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'initial',
+          name: 'vendors'
+        }
+      }
+    }
+  },
   plugins: [
     new webpack.DefinePlugin({
       IS_DEV
@@ -105,11 +136,8 @@ module.exports = {
       'window.jQuery': 'jquery'
     }),
     ...renderHtmlTemplates(),
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: IS_DEV ? '[name].css' : '[name].[hash].css',
-      chunkFilename: IS_DEV ? '[id].css' : '[id].[hash].css',
+    new ExtractTextPlugin({
+      filename: 'styles/[name].css'
     })
   ]
 };

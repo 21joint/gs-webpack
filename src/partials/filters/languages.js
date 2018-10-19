@@ -96,4 +96,7 @@ const createOptions = () => {
   return template;
 };
 
-export default createOptions()
+
+let html = createOptions();
+
+module.exports = html;

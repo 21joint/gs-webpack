@@ -23,7 +23,7 @@
     &:hover {
       background-color: rgba(0, 0, 0, 0.5);
     }
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(sm){
       right: 15px;
       top: 15px;
     }

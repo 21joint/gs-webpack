@@ -44,6 +44,8 @@
 @import 'general';
 //header
 @import '../../partials/header/header';
+@import '../../partials/header/salespage-header';
+@import '../../partials/header/salespage-header-mobile-menu';
 @import '../../partials/package/package';
 // ** Registration **
 @import 'registration/progress';
