@@ -39,7 +39,8 @@
       i {
         line-height: inherit;
       }
-      &:before, i:before {
+      &:before,
+      i:before {
         font-size: 20px;
       }
     }
@@ -73,7 +74,7 @@
   }
   &:after {
     position: absolute;
-    content: '';
+    content: "";
     bottom: 0;
     left: 0;
     right: 0;
@@ -105,7 +106,8 @@
       }
     }
   }
-  .nav-pills .nav-link.active, .show > .nav-pills .nav-link {
+  .nav-pills .nav-link.active,
+  .show > .nav-pills .nav-link {
     background-color: transparent;
   }
   @include media-breakpoint-up(md) {
@@ -133,9 +135,8 @@
   .modal-dialog {
     overflow: hidden;
     margin: auto;
-    max-width: 1400px;
+    max-width: 1200px;
     @include media-breakpoint-up(lg) {
-
     }
   }
   .modal-body {
@@ -147,4 +148,3 @@
     }
   }
 }
-
