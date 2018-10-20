@@ -1,10 +1,4 @@
 .modal {
-  .modal-header {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-  }
   .btn-close {
     position: fixed;
     width: 36px;
@@ -23,12 +17,11 @@
     &:hover {
       background-color: rgba(0, 0, 0, 0.5);
     }
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(sm){
       right: 15px;
       top: 15px;
     }
   }
-
 }
 
 .modal-filters {

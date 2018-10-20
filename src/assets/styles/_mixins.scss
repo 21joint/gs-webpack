@@ -26,3 +26,8 @@
   padding-bottom: #{($h/$w)*100 + '%'};
 
 }
+
+@mixin height-lineheight($h, $lh) {
+  height: $h;
+  line-height: $lh;
+}

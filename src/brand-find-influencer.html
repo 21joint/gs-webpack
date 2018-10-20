@@ -70,24 +70,24 @@ blog: 55000
 ];
 const filters = [
 require('html-loader?interpolate=true!./partials/filters/gender.html'),
-require('html-loader!./partials/filters/price.range.html'),
-// require('html-loader!./partials/filters/categories.html'),
-require('html-loader!./partials/filters/networks.html'),
+require('html-loader?minimize=false!./partials/filters/price.range.html'),
+// require('html-loader?minimize=false!./partials/filters/categories.html'),
+require('html-loader?minimize=false!./partials/filters/networks.html'),
 require('./partials/filters/languages'),
-require('html-loader!./partials/filters/agencies.html'),
-require('html-loader!./partials/filters/seo.html'),
-require('html-loader!./partials/filters/followers.html'),
-require('html-loader!./partials/filters/engagement.html'),
-require('html-loader!./partials/filters/targeting.html'),
-require('html-loader!./partials/filters/sponsored.html'),
-require('html-loader!./partials/filters/comments.html'),
-require('html-loader!./partials/filters/comment.avg.html'),
-require('html-loader!./partials/filters/other.html')
+require('html-loader?minimize=false!./partials/filters/agencies.html'),
+require('html-loader?minimize=false!./partials/filters/seo.html'),
+require('html-loader?minimize=false!./partials/filters/followers.html'),
+require('html-loader?minimize=false!./partials/filters/engagement.html'),
+require('html-loader?minimize=false!./partials/filters/targeting.html'),
+require('html-loader?minimize=false!./partials/filters/sponsored.html'),
+require('html-loader?minimize=false!./partials/filters/comments.html'),
+require('html-loader?minimize=false!./partials/filters/comment.avg.html'),
+require('html-loader?minimize=false!./partials/filters/other.html')
 
 ];
 %>
 <body class="bg-light">
-<%= require('html-loader!./partials/header/header-fluid.html') %>
+<%= require('html-loader?minimize=false!./partials/header/header-fluid.html') %>
 <main class="main-content">
   <!--FIND INFLUENCERS-->
   <div class="find-influencer">
@@ -219,7 +219,7 @@ require('html-loader!./partials/filters/other.html')
                         <div class="row py-3 justify-content-center tab-pane--pages">
                           <div class="col-auto">
                             <div class="container-fluid">
-                              <%= require('html-loader!./partials/pagination/pagination.html') %>
+                              <%= require('html-loader?minimize=false!./partials/pagination/pagination.html') %>
                             </div>
                           </div>
                         </div>
@@ -231,7 +231,7 @@ require('html-loader!./partials/filters/other.html')
                         <div class="row py-3 justify-content-center tab-pane--pages">
                           <div class="col-auto">
                             <div class="container-fluid">
-                              <%= require('html-loader!./partials/pagination/pagination.html') %>
+                              <%= require('html-loader?minimize=false!./partials/pagination/pagination.html') %>
                             </div>
                           </div>
                         </div>
@@ -255,6 +255,7 @@ require('html-loader!./partials/filters/other.html')
     </div>
   </div>
 </main>
-
+<%= require('html-loader?minimize=false!./partials/filters.mobile.html') %>
+<%= require('html-loader?minimize=false!./partials/single-influencer.html') %>
 </body>
 </html>

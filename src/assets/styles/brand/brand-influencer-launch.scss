@@ -255,7 +255,7 @@
 .search-filter--ul {
   .modal {
     .btn {
-      width: 100px;
+      min-width: 100px;
     }
   }
 }
@@ -351,7 +351,7 @@
 }
 
 .collapse-wrapper {
-  //max-width: 190px;
+  max-width: 190px;
   margin-left: auto;
   &:after {
     content: '';
@@ -376,19 +376,18 @@
 }
 
 .collapse-btn--wrapper {
-  display: block;
+  display: inline-block;
   position: relative;
 }
 
-.gs-tutorial--body {
+.gs-see--tutorial--body {
   .card-title {
-    height: 64px;
+    line-height: 32px;
+    min-height: 80px;
   }
   .card-text, .card-title {
     color: #4d4d4d;
   }
 }
-
-
 
 

@@ -323,20 +323,20 @@
     }
   }
   .nav-item {
-    .nav-link {
+    .nav-link{
       padding-top: 12px;
     }
-    &:first-child {
+    &:first-child{
       margin-left: 0;
     }
     margin-bottom: 0;
-    i {
+    i{
       font-size: 27px;
       color: #BDC0C9;
       margin-right: 6px;
       vertical-align: middle;
     }
-    svg {
+    svg{
       margin-right: 0;
     }
     margin: 0;
@@ -345,11 +345,11 @@
       margin-left: 20px;
 
     }
-    @include media-breakpoint-up(md) {
-      &:first-child {
+    @include media-breakpoint-up(md){
+      &:first-child{
         margin-left: 15px;
       }
-      svg {
+      svg{
         margin-right: 6px;
       }
     }
