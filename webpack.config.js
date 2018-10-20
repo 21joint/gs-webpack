@@ -1,6 +1,5 @@
-const Conf = require("./conf");
 const path = require("path");
-const Pkg = require("./package");
+const PKG = require("./package");
 const args = require("yargs").argv;
 const glob = require("glob");
 const webpack = require("webpack");
@@ -39,9 +38,9 @@ module.exports = {
     rules: [
       // JS
       {
-        test: /\.jsx$/,
+        test: /\.js$/,
         include: [path.resolve(__dirname, "src")],
-        exclude: path.resolve(__dirname, "src"),
+        exclude: /node_modules/,
         use: ["babel-loader"]
       },
 
@@ -50,10 +49,15 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           IS_DEV ? "style-loader" : MiniCssExtractPlugin.loader,
-          "css-loader?sourceMap",
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: IS_DEV,
+              publicPath: "../"
+            }
+          },
           {
             loader: "postcss-loader",
-
             options: {
               sourceMap: IS_DEV,
               plugins: [
@@ -85,7 +89,7 @@ module.exports = {
               },
               fallback: "file-loader",
               outputPath: "./",
-              publicPath: args.git ? "/gs-webpack/" : "/"
+              publicPath: args.git ? "/" + PKG.name + "/" : "/"
             }
           }
         ]
@@ -119,8 +123,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: IS_DEV ? "[name].css" : "[name].[hash].css",
-      chunkFilename: IS_DEV ? "[id].css" : "[id].[hash].css"
+      filename: IS_DEV ? "styles/[name].css" : "styles/[name].[hash].css",
+      chunkFilename: IS_DEV ? "styles/[id].css" : "styles/[id].[hash].css"
     })
   ]
 };

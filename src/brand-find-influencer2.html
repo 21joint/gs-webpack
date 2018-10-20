@@ -24,7 +24,7 @@ tumblr: 3200, pinterest: 12098, blog: 55000 } } ];
 
 const filters = [
 require('html-loader?minimize=false!./partials/filters/gscore.html'),
-require('./partials/filters/languages').default,
+require('./partials/filters/languages'),
 require('html-loader?interpolate=true!./partials/filters/gender.html'),
 require('html-loader?minimize=false!./partials/filters/followers.html'),
 require('html-loader?minimize=false!./partials/filters/likes.html'),
@@ -399,7 +399,7 @@ require('html-loader?minimize=false!./partials/filters/email.html')
 </main>
 <%= require('html-loader?minimize=false!./partials/filters.mobile.html') %>
 <%= require('html-loader?interpolate=true!./partials/single-influencer--launch.html') %>
-<%= require('html-loader?minimize=false&interpolate!./partials/modals/save-modal.html') %>
+<%= require('html-loader?minimize=false&interpolate=true!./partials/modals/save-modal.html') %>
 <script src="https://fast.wistia.com/embed/medias/z0iejnanfx.jsonp" async=""></script>
 <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
 </body>

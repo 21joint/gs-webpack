@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></head>
 
 <body class="bg-light">
-${(!IS_DEV) ? `<div class="main-loader">
+${(IS_DEV) ? `<div class="main-loader">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 369">
     <path
       d="M572.22,91.63C521.36,33.84,411.58-.58,320.15,69.85c-87.1-65.43-194.36-43-252,21.95C8.84,158.65,4.3,256.36,59.36,328.19c27,35.19,62.6,58.44,106.07,67.67,56.58,12,108.53.48,154.91-35.29,40.88,30,85.79,44.31,136.3,38.21s91.71-29,123.2-68.76C634.94,260.53,633.85,161.65,572.22,91.63ZM562.3,305c-26.07,37.69-62.85,59.84-108.14,65.1s-86.29-7.2-121.68-37.15a580.91,580.91,0,0,1-72.08-72.37c-11-13.22-21-27.26-26.69-43.77A60.36,60.36,0,0,1,231,204.91c-2.82-21.75,12.6-31.59,27.57-35.39,6.25-1.59,13.3-1.34,19.77-.42,17.59,2.5,27.14,13.64,27.89,31.4,0.18,4.34,0,8.69,0,14.26h27.59c0.66-7,1.24-13.58,1.88-20.12,1.36-13.88,10.53-21.32,22.61-24.84a44.51,44.51,0,0,1,33.05,3c16.67,8.34,22.37,21.7,17.08,39.92C404.08,227.83,396,241,386.19,252.95c-12.54,15.3-26.08,29.78-39.3,44.51-1.73,1.92-4.16,3.22-7.08,5.42L362,322.81c8.11-8.16,15.95-15.52,23.18-23.44,13.55-14.85,26.56-30.21,36.87-47.55,7.29-12.27,13.44-25,16.1-39.34,4.43-23.87-3-43.11-21.52-58.08C395.1,137,359.73,133.86,336,147.76c-5.46,3.19-10.35,7.34-14.93,10.64-9-5.19-17.26-11.44-26.56-15-30.46-11.79-73.6.56-88.49,34.09-6.38,14.37-5.67,28.85-1.32,43.47,6.18,20.75,18.06,38.32,31.08,55.22,16.07,20.87,35.15,38.92,53.84,57.33,2.26,2.23,4.72,4.27,7.1,6.41-37,34.3-120.07,47.72-182.27,1.88C42.61,288.86,31.14,193,79.24,124.23c44-62.87,156.39-99.1,241.18-16.45,9.15-7.12,18.05-14.59,27.49-21.31C370,70.73,395,63.13,421.84,60.35a144.87,144.87,0,0,1,70.8,10.35c40.21,16.44,69.75,44.6,85.95,84.81C599.64,207.77,594.53,258.36,562.3,305Z"
@@ -236,8 +236,6 @@ ${(!IS_DEV) ? `<div class="main-loader">
     </li>
   </ul>
 </nav>
-
-
 
 <main class="main-content">
   <!--FIND INFLUENCERS-->
@@ -484,7 +482,87 @@ ${(!IS_DEV) ? `<div class="main-loader">
                                     </li>
                                     
                                     <li class="dropdown">
-                                      [object Module]
+                                      <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="dropdown" aria-haspopup="true"
+        title="Language" aria-expanded="false">
+  <svg class="btn-svg--close" width="14px" height="14px" viewBox="0 0 22 22" version="1.1">
+      <defs></defs>
+      <g id="Launch-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Profile-view" transform="translate(-109.000000, -384.000000)" stroke="#FFFFFF" stroke-width="3">
+          <g id="Group-6-Copy-2" transform="translate(111.000000, 386.000000)">
+            <path d="M0,0 L18,18" id="Stroke-1"></path>
+            <path d="M18,0 L0,18" id="Stroke-3"></path>
+          </g>
+        </g>
+      </g>
+    </svg>
+</button><div class="dropdown-menu p-0" style="width: 400px;">
+  <div class="container-fluid">
+    <div class="form-row py-3 justify-content-between">
+      <div class="col-auto">
+        <h6 class="text-dark m-0"><strong>Language</strong></h6>
+      </div>
+      <div class="col-auto">
+      <button type="button" class="btn p-0 bg-white" data-toggle="modal" data-target="#answerLanguage">
+                  <img class="r-icon--medium" src="/gs-webpack/images/info.svg" alt="Awareness">
+                </button>
+
+      </div>
+    </div>
+    <div class="form-row pb-3 align-items-center">
+      <div class="col">
+        <!--<input data-tags title="Targeting" placeholder="Write language here" type="text" class="form-control"-->
+               <!--data-use=" "> <input class="input-tags&#45;&#45;query" type="hidden">-->
+        <select name="languages" data-use=" value," title="Languages" style="width: 100%" id="barmi1540029692176" multiple="true">
+          <option value="Abkhaz">Abkhaz</option><option value="Afar">Afar</option><option value="Afrikaans">Afrikaans</option><option value="Akan">Akan</option><option value="Albanian">Albanian</option><option value="Amharic">Amharic</option><option value="Arabic">Arabic</option><option value="Aragonese">Aragonese</option><option value="Armenian">Armenian</option><option value="Assamese">Assamese</option><option value="Avaric">Avaric</option><option value="Avestan">Avestan</option><option value="Aymara">Aymara</option><option value="Azerbaijani">Azerbaijani</option><option value="Bambara">Bambara</option><option value="Bashkir">Bashkir</option><option value="Basque">Basque</option><option value="Belarusian">Belarusian</option><option value="Bengali">Bengali</option><option value="Bihari">Bihari</option><option value="Bislama">Bislama</option><option value="Bosnian">Bosnian</option><option value="Breton">Breton</option><option value="Bulgarian">Bulgarian</option><option value="Burmese">Burmese</option><option value="Catalan; Valencian">Catalan; Valencian</option><option value="Chamorro">Chamorro</option><option value="Chechen">Chechen</option><option value="Chichewa; Chewa; Nyanja">Chichewa; Chewa; Nyanja</option><option value="Chinese">Chinese</option><option value="Chuvash">Chuvash</option><option value="Cornish">Cornish</option><option value="Corsican">Corsican</option><option value="Cree">Cree</option><option value="Croatian">Croatian</option><option value="Czech">Czech</option><option value="Danish">Danish</option><option value="Divehi; Dhivehi; Maldivian;">Divehi; Dhivehi; Maldivian;</option><option value="Dutch">Dutch</option><option value="English">English</option><option value="Esperanto">Esperanto</option><option value="Estonian">Estonian</option><option value="Ewe">Ewe</option><option value="Faroese">Faroese</option><option value="Fijian">Fijian</option><option value="Finnish">Finnish</option><option value="French">French</option><option value="Fula; Fulah; Pulaar; Pular">Fula; Fulah; Pulaar; Pular</option><option value="Galician">Galician</option><option value="Georgian">Georgian</option><option value="German">German</option><option value="Greek, Modern">Greek, Modern</option><option value="Guaraní">Guaraní</option><option value="Gujarati">Gujarati</option><option value="Haitian; Haitian Creole">Haitian; Haitian Creole</option><option value="Hausa">Hausa</option><option value="Hebrew (modern)">Hebrew (modern)</option><option value="Herero">Herero</option><option value="Hindi">Hindi</option><option value="Hiri Motu">Hiri Motu</option><option value="Hungarian">Hungarian</option><option value="Interlingua">Interlingua</option><option value="Indonesian">Indonesian</option><option value="Interlingue">Interlingue</option><option value="Irish">Irish</option><option value="Igbo">Igbo</option><option value="Inupiaq">Inupiaq</option><option value="Ido">Ido</option><option value="Icelandic">Icelandic</option><option value="Italian">Italian</option><option value="Inuktitut">Inuktitut</option><option value="Japanese">Japanese</option><option value="Javanese">Javanese</option><option value="Kalaallisut, Greenlandic">Kalaallisut, Greenlandic</option><option value="Kannada">Kannada</option><option value="Kanuri">Kanuri</option><option value="Kashmiri">Kashmiri</option><option value="Kazakh">Kazakh</option><option value="Khmer">Khmer</option><option value="Kikuyu, Gikuyu">Kikuyu, Gikuyu</option><option value="Kinyarwanda">Kinyarwanda</option><option value="Kirghiz, Kyrgyz">Kirghiz, Kyrgyz</option><option value="Komi">Komi</option><option value="Kongo">Kongo</option><option value="Korean">Korean</option><option value="Kurdish">Kurdish</option><option value="Kwanyama, Kuanyama">Kwanyama, Kuanyama</option><option value="Latin">Latin</option><option value="Luxembourgish, Letzeburgesch">Luxembourgish, Letzeburgesch</option><option value="Luganda">Luganda</option><option value="Limburgish, Limburgan, Limburger">Limburgish, Limburgan, Limburger</option><option value="Lingala">Lingala</option><option value="Lao">Lao</option><option value="Lithuanian">Lithuanian</option><option value="Luba-Katanga">Luba-Katanga</option><option value="Latvian">Latvian</option><option value="Manx">Manx</option><option value="Macedonian">Macedonian</option><option value="Malagasy">Malagasy</option><option value="Malay">Malay</option><option value="Malayalam">Malayalam</option><option value="Maltese">Maltese</option><option value="Māori">Māori</option><option value="Marathi (Marāṭhī)">Marathi (Marāṭhī)</option><option value="Marshallese">Marshallese</option><option value="Mongolian">Mongolian</option><option value="Nauru">Nauru</option><option value="Navajo, Navaho">Navajo, Navaho</option><option value="Norwegian Bokmål">Norwegian Bokmål</option><option value="North Ndebele">North Ndebele</option><option value="Nepali">Nepali</option><option value="Ndonga">Ndonga</option><option value="Norwegian Nynorsk">Norwegian Nynorsk</option><option value="Norwegian">Norwegian</option><option value="Nuosu">Nuosu</option><option value="South Ndebele">South Ndebele</option><option value="Occitan">Occitan</option><option value="Ojibwe, Ojibwa">Ojibwe, Ojibwa</option><option value="Old Church Slavonic, Church Slavic, Church Slavonic, Old Bulgarian, Old Slavonic">Old Church Slavonic, Church Slavic, Church Slavonic, Old Bulgarian, Old Slavonic</option><option value="Oromo">Oromo</option><option value="Oriya">Oriya</option><option value="Ossetian, Ossetic">Ossetian, Ossetic</option><option value="Panjabi, Punjabi">Panjabi, Punjabi</option><option value="Pāli">Pāli</option><option value="Persian">Persian</option><option value="Polish">Polish</option><option value="Pashto, Pushto">Pashto, Pushto</option><option value="Portuguese">Portuguese</option><option value="Quechua">Quechua</option><option value="Romansh">Romansh</option><option value="Kirundi">Kirundi</option><option value="Romanian, Moldavian, Moldovan">Romanian, Moldavian, Moldovan</option><option value="Russian">Russian</option><option value="Sanskrit (Saṁskṛta)">Sanskrit (Saṁskṛta)</option><option value="Sardinian">Sardinian</option><option value="Sindhi">Sindhi</option><option value="Northern Sami">Northern Sami</option><option value="Samoan">Samoan</option><option value="Sango">Sango</option><option value="Serbian">Serbian</option><option value="Scottish Gaelic; Gaelic">Scottish Gaelic; Gaelic</option><option value="Shona">Shona</option><option value="Sinhala, Sinhalese">Sinhala, Sinhalese</option><option value="Slovak">Slovak</option><option value="Slovene">Slovene</option><option value="Somali">Somali</option><option value="Southern Sotho">Southern Sotho</option><option value="Spanish; Castilian">Spanish; Castilian</option><option value="Sundanese">Sundanese</option><option value="Swahili">Swahili</option><option value="Swati">Swati</option><option value="Swedish">Swedish</option><option value="Tamil">Tamil</option><option value="Telugu">Telugu</option><option value="Tajik">Tajik</option><option value="Thai">Thai</option><option value="Tigrinya">Tigrinya</option><option value="Tibetan Standard, Tibetan, Central">Tibetan Standard, Tibetan, Central</option><option value="Turkmen">Turkmen</option><option value="Tagalog">Tagalog</option><option value="Tswana">Tswana</option><option value="Tonga (Tonga Islands)">Tonga (Tonga Islands)</option><option value="Turkish">Turkish</option><option value="Tsonga">Tsonga</option><option value="Tatar">Tatar</option><option value="Twi">Twi</option><option value="Tahitian">Tahitian</option><option value="Uighur, Uyghur">Uighur, Uyghur</option><option value="Ukrainian">Ukrainian</option><option value="Urdu">Urdu</option><option value="Uzbek">Uzbek</option><option value="Venda">Venda</option><option value="Vietnamese">Vietnamese</option><option value="Volapük">Volapük</option><option value="Walloon">Walloon</option><option value="Welsh">Welsh</option><option value="Wolof">Wolof</option><option value="Western Frisian">Western Frisian</option><option value="Xhosa">Xhosa</option><option value="Yiddish">Yiddish</option><option value="Yoruba">Yoruba</option><option value="Zhuang, Chuang">Zhuang, Chuang</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row py-3 align-items-center justify-content-between dropdown-menu--actions">
+      <div class="col-auto">
+        <button class="btn btn-block btn-sm btn-cancel" type="button" data-dismiss="dropdown">
+          Clear
+        </button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-block btn-primary btn-sm btn-apply" type="button" data-dismiss="dropdown">
+          Apply
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="answerLanguage" tabindex="-1" role="dialog" aria-labelledby="answerModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="container-fluid">
+        <div class="form-row py-4">
+          <div class="col">
+            <h6 class="text-dark text-center mb-0"><strong>Answer</strong></h6>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <p class="m-0">Lucky for us, we too have significant social media following. we have 186k followers
+              on our two Facebook pages, an estimated 80k on our Snapchat, 32k on Instagram and a paltry 12k on our
+              Twitter, but Jesus Christ, I would never in a million years ask anyone for anything for free.</p>
+          </div>
+
+        </div>
+        <div class="form-row py-4">
+          <div class="col text-center">
+            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
                                     </li>
                                     
                                     <li class="dropdown">
@@ -1208,7 +1286,7 @@ ${(!IS_DEV) ? `<div class="main-loader">
                 </button>
               
               
-                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540027084033">
+                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540029692176">
                     <div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-1.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-2.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-3.png);"></div></a></div>          
                 </div>
               </div>
@@ -1254,7 +1332,7 @@ ${(!IS_DEV) ? `<div class="main-loader">
                 </button>
               
               
-                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540027084033">
+                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540029692176">
                     <div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-1.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-4.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-5.png);"></div></a></div>          
                 </div>
               </div>
@@ -1300,7 +1378,7 @@ ${(!IS_DEV) ? `<div class="main-loader">
                 </button>
               
               
-                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540027084033">
+                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540029692176">
                     <div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-3.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-1.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-4.png);"></div></a></div>          
                 </div>
               </div>
@@ -1343,7 +1421,7 @@ ${(!IS_DEV) ? `<div class="main-loader">
                 </button>
               
               
-                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540027084033">
+                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540029692176">
                     <div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-5.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-4.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-3.png);"></div></a></div>          
                 </div>
               </div>
@@ -1395,7 +1473,7 @@ ${(!IS_DEV) ? `<div class="main-loader">
                 </button>
               
               
-                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540027084033">
+                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540029692176">
                     <div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-1.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-2.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-3.png);"></div></a></div>          
                 </div>
               </div>
@@ -1441,7 +1519,7 @@ ${(!IS_DEV) ? `<div class="main-loader">
                 </button>
               
               
-                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540027084033">
+                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540029692176">
                     <div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-1.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-4.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-5.png);"></div></a></div>          
                 </div>
               </div>
@@ -1487,7 +1565,7 @@ ${(!IS_DEV) ? `<div class="main-loader">
                 </button>
               
               
-                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540027084033">
+                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540029692176">
                     <div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-3.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-1.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-4.png);"></div></a></div>          
                 </div>
               </div>
@@ -1530,7 +1608,7 @@ ${(!IS_DEV) ? `<div class="main-loader">
                 </button>
               
               
-                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540027084033">
+                 <div class="owl-carousel single-card--carousel" id="single-card--owlcarousel__1540029692176">
                     <div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-5.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-4.png);"></div></a></div><div class="single-card--slide"><a role="button" tabindex="-1" data-toggle="modal" href="#modalSingleInfl" aria-expanded="false"><div class="single-slide--image" style="background-image:url(/gs-webpack/images/influencer-3.png);"></div></a></div>          
                 </div>
               </div>
@@ -2758,5 +2836,5 @@ ${(!IS_DEV) ? `<div class="main-loader">
   </div>
 </div>
 
-<script type="text/javascript" src="scripts/app.54871fc058dd77b4c55c.js"></script></body>
+<script type="text/javascript" src="/scripts/vendors.25a40589d0d073ebb0a6.js"></script><script type="text/javascript" src="/scripts/app.6e2c9ebfb0718ba2ab92.js"></script></body>
 </html>

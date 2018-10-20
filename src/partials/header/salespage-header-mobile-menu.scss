@@ -1,6 +1,4 @@
-
 @media all and (max-width: 768px) {
-
   #menu-toggle {
     display: block;
     position: relative;
@@ -33,9 +31,8 @@
       border-radius: 3px;
       z-index: 1;
       transform-origin: 2px 0px;
-      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-      opacity 0.55s ease;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 
       &:first-child {
         transform-origin: 0% 0%;
@@ -48,9 +45,7 @@
   }
 
   .menu-open {
-
     #menu-toggle {
-
       input#mt ~ span {
         opacity: 1;
         transform: rotate(45deg) translate(-2px, -1px) !important;
@@ -66,7 +61,6 @@
         }
       }
     }
-
   }
 
   #menu {
@@ -80,19 +74,17 @@
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
     padding: 40px 25px 120px 25px !important;
     overflow: scroll;
   }
-
-
 
   body.menu-open {
     overflow-y: hidden;
 
     #header {
       position: fixed;
-      z-index:9;
+      z-index: 9;
       width: 100%;
       top: 0px;
     }
@@ -100,16 +92,13 @@
     #hero {
       margin-top: 60px;
     }
-
   }
-
-
 
   #header {
     position: fixed;
     width: 100%;
     top: 0px;
-    z-index:9;
+    z-index: 9;
 
     .container {
       width: 100%;
@@ -117,26 +106,23 @@
     }
 
     .col {
-      max-width:0px;
+      max-width: 0px;
       margin-top: -60px;
     }
 
     .col-md-auto {
       width: 100%;
-      text-align:center;
+      text-align: center;
 
       a {
         position: relative;
-        z-index:10;
+        z-index: 10;
       }
     }
 
     nav {
-
       #menu-toggle {
-
         ul {
-
           li {
             display: block;
             width: 100%;
@@ -169,16 +155,15 @@
                   width: 18px;
                   height: 10px;
                   position: absolute;
-                  content:"";
+                  content: "";
                   display: inline-block;
                   right: 0px;
                   top: 5px;
-                  background: url(/src/assets/images/langs-menu.svg) no-repeat center;
+                  background: url(/src/assets/images/langs-menu.svg) no-repeat
+                    center;
                   background-size: cover;
                   transform: rotate(180deg);
-
                 }
-
               }
 
               .arrow {
@@ -195,7 +180,7 @@
                 height: 0px;
                 overflow: hidden;
                 margin-bottom: 100px;
-                width: 100%!important;
+                width: 100% !important;
                 -webkit-transform: translate3d(0, 0, 0);
                 -moz-transform: translate3d(0, 0, 0);
                 -ms-transform: translate3d(0, 0, 0);
@@ -213,13 +198,12 @@
                   &.asia {
                     margin-top: 20px;
                   }
-
                 }
                 ul {
                   margin-top: 0px;
 
                   li {
-                    width: 49%!important;
+                    width: 49% !important;
                     height: auto;
                     line-height: normal;
 
@@ -234,63 +218,34 @@
                         top: 0px;
                         left: 0px;
                       }
-
-
                     }
-
                   }
-
                 }
-
               }
-
             }
-
           }
-
         }
-
       }
-
     }
-
   }
 
-
-
   body.languages-open {
-
     .languages {
-      height: auto!important;
+      height: auto !important;
     }
 
     #header nav #menu-toggle ul li.language-switcher a:after {
       transform: rotate(0deg);
       top: 5px;
-
-
     }
-
-
   }
 
   body.menu-open {
-
     #menu-toggle {
-
       ul {
         transform: none;
         left: 0px;
       }
     }
-
   }
-
-
-
-
 }
-
-
-
-
