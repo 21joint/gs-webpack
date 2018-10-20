@@ -13,7 +13,7 @@ module.exports = merge(webpackConfig, {
   target: "web",
   output: {
     path: path.join(__dirname, dist),
-    filename: "scripts/[name].[chunkhash].js",
+    filename: "[name].[chunkhash].js",
     publicPath: publicPath
   },
   plugins: [new CleanWebpackPlugin([dist])]
