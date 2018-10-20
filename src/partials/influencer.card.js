@@ -1,4 +1,4 @@
-import { Icons } from "./icons";
+import {Icons} from "./icons";
 
 const _Icons = new Icons();
 
@@ -53,7 +53,7 @@ export class Influencer {
     let _instance = this,
       _social = "",
       _quantityHandler;
-    _quantityHandler = function(quantity) {
+    _quantityHandler = function (quantity) {
       if (quantity < 1000) {
         return quantity;
       } else {
@@ -69,7 +69,7 @@ export class Influencer {
       if (_instance.social.hasOwnProperty(key)) {
         _social +=
           "<li>" +
-          _Icons.insertIcon({ title: key }) +
+          _Icons.insertIcon({title: key}) +
           '<span class="text-asphalt">' +
           _quantityHandler(_instance.social[key]) +
           "k</span></li>";
@@ -91,7 +91,7 @@ export class Influencer {
     // language=HTML
     return `<div class="single-profile--card" data-infname="${
       this.name
-    }" data-infage="${this.age}" data-gscore="${this.gscore}">             
+      }" data-infage="${this.age}" data-gscore="${this.gscore}">             
               <div class="single-card--title">
                 <div class="row justify-content-between flex-nowrap align-items-center">
                   <div class="col">
@@ -108,10 +108,10 @@ export class Influencer {
               </div>
               <div class="single-card--owlwrapper">
               ${
-                opts && opts.closable
-                  ? Influencer.isClosable(opts.closable)
-                  : ""
-              }
+      opts && opts.closable
+        ? Influencer.isClosable(opts.closable)
+        : ""
+      }
                         <button class="btn btn-save bg-transparent single-card--likebtn p-0" type="button" data-toggle="modal" data-target="#gsSaveModal" aria-expanded="false">
                         <svg width="28px" height="28px" viewBox="0 0 38 36" version="1.1" xmlns="http://www.w3.org/2000/svg">
                   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -134,5 +134,6 @@ export class Influencer {
 }
 
 export class Language {
-  constructor(language) {}
+  constructor(language) {
+  }
 }
