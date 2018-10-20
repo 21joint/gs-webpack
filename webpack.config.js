@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const IS_DEV = process.env.NODE_ENV !== "production";
+console.log(`Building ... mode: ${IS_DEV ? "development" : "production"}`);
 const publicPath = args.git ? "/" + PKG.name + "/" : "/";
 const renderHtmlTemplates = () =>
   glob.sync("src/*.html").map(
@@ -98,20 +99,6 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    modules: ["node_modules", path.resolve(__dirname, "src")]
-  },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          chunks: "initial",
-          name: "vendors"
-        }
-      }
-    }
-  },
   plugins: [
     new webpack.DefinePlugin({
       IS_DEV
@@ -121,12 +108,12 @@ module.exports = {
       jQuery: "jquery",
       "window.jQuery": "jquery"
     }),
-    ...renderHtmlTemplates(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: IS_DEV ? "[name].css" : "[name].[hash].css",
       chunkFilename: IS_DEV ? "[id].css" : "[id].[hash].css"
-    })
+    }),
+    ...renderHtmlTemplates()
   ]
 };

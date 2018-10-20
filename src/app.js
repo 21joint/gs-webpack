@@ -28,24 +28,24 @@ jQuery("select")
       ? SelectCountry
       : undefined
   })
-  .on("select2:unselect", function(e) {
+  .on("select2:unselect", function (e) {
     if (e.params.originalEvent) {
       e.params.originalEvent.stopPropagation();
     }
   });
 
 jQuery(document)
-  .on("click", ".checked-all", function(e) {
+  .on("click", ".checked-all", function (e) {
     let $checked = jQuery(e.currentTarget)
       .closest(".form-row" || "form-group")
       .find("input:checkbox");
     $checked.not(this).prop("checked", this.checked);
   })
-  .on("click", '.dropdown-menu.show [data-toggle="tab"]', function(e) {
+  .on("click", '.dropdown-menu.show [data-toggle="tab"]', function (e) {
     e.stopPropagation();
   });
 
-jQuery("#step1-validate").on("click", function(e) {
+jQuery("#step1-validate").on("click", function (e) {
   var companyName = jQuery("#companyName").val();
   var firstName = jQuery("#firstName").val();
   var lastName = jQuery("#lastName").val();
