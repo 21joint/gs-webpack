@@ -10,19 +10,20 @@
 <%
 const filters = [
 require('html-loader?interpolate=true!./partials/filters/gscore.html'),
-require('./partials/filters/languages'),
+require('./partials/filters/languages').default,
 require('html-loader?interpolate=true!./partials/filters/gender.html'),
-require('html-loader!./partials/filters/followers.html'),
-require('html-loader!./partials/filters/likes.html'),
-require('html-loader!./partials/filters/comments.html'),
-require('html-loader!./partials/filters/comments-launch.html'),
-require('html-loader!./partials/filters/platforms.html'),
-require('html-loader!./partials/filters/sponsored.html'),
-require('html-loader!./partials/filters/sponsored-launch.html'),
-require('html-loader!./partials/filters/email.html'),
-require('html-loader!./partials/filters/video.html'),
-require('html-loader!./partials/filters/answer.html'),
-require('html-loader!./partials/filters/filter-options.html')
+require('html-loader?minimize=false!./partials/filters/followers.html'),
+require('html-loader?minimize=false!./partials/filters/likes.html'),
+require('html-loader?minimize=false!./partials/filters/comments.html'),
+require('html-loader?minimize=false!./partials/filters/comments-launch.html'),
+require('html-loader?minimize=false!./partials/filters/platforms.html'),
+require('html-loader?minimize=false!./partials/filters/sponsored.html'),
+require('html-loader?minimize=false!./partials/filters/sponsored-launch.html'),
+require('html-loader?minimize=false!./partials/filters/email.html'),
+require('html-loader?minimize=false!./partials/filters/video.html'),
+require('html-loader?minimize=false!./partials/filters/answer.html'),
+require('html-loader?minimize=false!./partials/filters/filter-options.html'),
+require('html-loader?minimize=false!./partials/modals/save-modal.html')
 ];
 %>
 <%= require('html-loader?interpolate=true&minimize=false!./partials/header/header.html') %>

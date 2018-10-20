@@ -23,13 +23,15 @@ tumblr: 3200, pinterest: 12098, blog: 55000 } } ];
 
 
 const filters = [
-require('html-loader!./partials/filters/gscore.html'),
+require('html-loader?minimize=false!./partials/filters/gscore.html'),
 require('./partials/filters/languages').default,
 require('html-loader?interpolate=true!./partials/filters/gender.html'),
-require('html-loader!./partials/filters/followers.html'), require('html-loader!./partials/filters/likes.html'),
-require('html-loader!./partials/filters/comments-launch.html'),
-require('html-loader!./partials/filters/platforms.html'),
-require('html-loader!./partials/filters/sponsored-launch.html'), require('html-loader!./partials/filters/email.html')
+require('html-loader?minimize=false!./partials/filters/followers.html'),
+require('html-loader?minimize=false!./partials/filters/likes.html'),
+require('html-loader?minimize=false!./partials/filters/comments-launch.html'),
+require('html-loader?minimize=false!./partials/filters/platforms.html'),
+require('html-loader?minimize=false!./partials/filters/sponsored-launch.html'),
+require('html-loader?minimize=false!./partials/filters/email.html')
 ];
 %>
 <body class="bg-light">
@@ -303,7 +305,7 @@ require('html-loader!./partials/filters/sponsored-launch.html'), require('html-l
                         <div class="row py-3 justify-content-center tab-pane--pages">
                           <div class="col-auto">
                             <div class="container-fluid">
-                              <%= require('html-loader!./partials/pagination/pagination.html') %>
+                              <%= require('html-loader?minimize=false!./partials/pagination/pagination.html') %>
                             </div>
                           </div>
                         </div>
@@ -315,7 +317,7 @@ require('html-loader!./partials/filters/sponsored-launch.html'), require('html-l
                         <div class="row py-3 justify-content-center tab-pane--pages">
                           <div class="col-auto">
                             <div class="container-fluid">
-                              <%= require('html-loader!./partials/pagination/pagination.html') %>
+                              <%= require('html-loader?minimize=false!./partials/pagination/pagination.html') %>
                             </div>
                           </div>
                         </div>
@@ -395,8 +397,9 @@ require('html-loader!./partials/filters/sponsored-launch.html'), require('html-l
     </div>
   </div>
 </main>
-<%= require('html-loader!./partials/filters.mobile.html') %> <%=
-require('html-loader?interpolate=true!./partials/single-influencer--launch.html') %>
+<%= require('html-loader?minimize=false!./partials/filters.mobile.html') %>
+<%= require('html-loader?interpolate=true!./partials/single-influencer--launch.html') %>
+<%= require('html-loader?minimize=false&interpolate!./partials/modals/save-modal.html') %>
 <script src="https://fast.wistia.com/embed/medias/z0iejnanfx.jsonp" async=""></script>
 <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
 </body>
