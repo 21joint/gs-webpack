@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Growsocial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></head>
+<body class="has-fixed-bottom">
+  <main class="main-content bg-light reg-account_type">
+    <div class="container-fluid py-4 pt-lg-5">
+      <div class="row">
+        <div class="col-12 col-lg-9 col-xl-8">
+          <div class="content-box rounded bg-white">
+            <form action="" id="campaignType">
+              <fieldset class="content-box--header pt-3 pt-sm-4 text-center">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <h2 class="content-box__title mb-0 mt-3">Create campaign</h2>
+                      <hr class="mt-sm-4 mb-0"/>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="content-box--group py-3 py-sm-4 text-center">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <h4 class="text-center my-4 text-asphalt m-0">
+                        Focus </h4>
+                      <p class="text-center pb-3 pt-2">Pick 1 or more</p>
+                      <div class="form-group row justify-content-around justify-content-lg-between mb-0">
+                        <div class="col-sm-auto">
+                          <input type="checkbox" class="d-none" name="pick_role" id="incr_sales"/>
+                          <label for="incr_sales"
+                                 class="pick_role__box d-flex flex-column justify-content-center text-center mx-auto mw-100 p-0">
+                          <span class="pick_role__info" role="button"><img src="./assets/images/info.svg"
+                                                                           alt="Sales"></span> <span class="pick_role__icon"><i
+                                class="icon-money"></i></span> <span class="pick_role__title"><b>Increase sales</b></span></label>
+                        </div>
+                        <div class="col-sm-auto">
+                          <input type="checkbox" class="d-none" name="pick_role" id="social_engag"/>
+                          <label for="social_engag"
+                                 class="pick_role__box d-flex flex-column justify-content-center text-center mx-auto mw-100 p-0">
+                          <span class="pick_role__info" role="button"><img src="./assets/images/info.svg"
+                                                                           alt="Social"></span> <span class="pick_role__icon"><i
+                                class="icon-money"></i></span> <span class="pick_role__title"><b>Social engagement</b></span></label>
+                        </div>
+                        <div class="col-sm-auto">
+                          <input type="checkbox" class="d-none" name="pick_role" id="brand_aware"/>
+                          <label for="brand_aware"
+                                 class="pick_role__box d-flex flex-column justify-content-center text-center mx-auto mw-100 p-0">
+                          <span class="pick_role__info" role="button"><img src="./assets/images/info.svg" alt="Awarenes">
+                          </span><span class="pick_role__icon"><i class="icon-money"></i></span>
+                            <span class="pick_role__title"><b>Brand awareness</b></span></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <h4 class="text-center mt-5 mb-4 text-asphalt m-0">Campaign type </h4>
+                      <p class="text-center pb-3 pt-2">Pick 1 or more</p>
+                      <div class="form-group row justify-content-around justify-content-lg-between mb-0">
+                        <div class="col-sm-auto">
+                          <input type="checkbox" class="d-none" name="pick_role" id="product_rew"/>
+                          <label for="product_rew"
+                                 class="pick_role__box d-flex flex-column justify-content-center text-center mx-auto mw-100 p-0">
+                          <span class="pick_role__info" role="button"><img src="./assets/images/info.svg"
+                                                                           alt="review"></span> <span class="pick_role__icon"><i
+                                class="icon-money"></i></span> <span class="pick_role__title"><b>Product reviews</b></span></label>
+                        </div>
+                        <div class="col-sm-auto">
+                          <input type="checkbox" class="d-none" name="pick_role" id="cont_prom"/><label for="cont_prom"
+                                                                                                        class="pick_role__box d-flex flex-column justify-content-center text-center mx-auto mw-100 p-0">
+                          <span class="pick_role__info" role="button"><img src="./assets/images/info.svg" alt="Promotion">
+                          </span><span class="pick_role__icon"><i class="icon-money"></i></span>
+                            <span class="pick_role__title"><b>Contest Promotion</b></span></label>
+                        </div>
+                        <div class="col-sm-auto">
+                          <input type="checkbox" class="d-none" name="pick_role" id="share_cont"/>
+                          <label for="share_cont"
+                                 class="pick_role__box d-flex flex-column justify-content-center text-center mx-auto mw-100 p-0">
+                          <span class="pick_role__info" role="button"><img src="./assets/images/info.svg"
+                                                                           alt="Share"></span> <span class="pick_role__icon"><i
+                                class="icon-money"></i></span> <span class="pick_role__title"><b>Share content</b></span></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="content-box--group py-3 py-sm-4">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="budget-selection">
+                        <h4 class="text-asphalt mb-5 text-center">Select budget type </h4>
+                        <div class="row justify-content-center">
+                          <div class="form-group col-12 col-md-6">
+                            <input type="radio" name="management_type" id="budg-1" value="budg-1"/><label for="budg-1"
+                                                                                                          class="d-flex mx-auto mw-100 text-white bg-primary label_box">
+                            <span class="col-auto align-self-center pr-2">
+                              <span class="label_box__icon">
+                                <i class="icon-calendar"></i>
+                              </span>
+                            </span><span class="col pl-2 pt-2">
+                              <span class="label_title mb-2 pr-4">Recurring Campaigns</span>
+                              <span class="label_content">Recommend option for you. Guaranteed best results.</span>
+                            </span><span class="dot-outer m-0"></span></label>
+                          </div>
+                          <div class="form-group col-12 col-md-6">
+                            <input type="radio" name="management_type" id="budg-2" value="budg-2"/><label for="budg-2"
+                                                                                                          class="d-flex mx-auto mw-100 text-white bg-primary label_box">
+                            <span class="col-auto align-self-center pr-2">
+                              <span class="label_box__icon">
+                                <i class="icon-calendar"></i>
+                              </span>
+                            </span><span class="col pl-2 pt-2">
+                              <span class="label_title mb-2 pr-4">Single Campaign</span>
+                              <span class="label_content">One time campaign, decent option if you want a minor boost.</span>
+                            </span><span class="dot-outer m-0"></span></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <p class="pt-3 pb-1">Select budget size</p>
+                      <p>
+                        <label class="label-basic" for="budget">Monthly budget:</label><input class="ml-2"
+                                                                                              type="text"
+                                                                                              id="budget"
+                                                                                              readonly
+                                                                                              style="border:0; color:#5FBC83; font-weight:500;">
+                      </p>
+                      <!--<div id="slider-budget"></div>-->
+                      <div id="slider-budget" style="width:80%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="content-box--group py-3 py-sm-4">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="management-selection">
+                        <div class="row">
+                          <div class="col">
+                            <h4 class="text-center mt-5 mb-4 text-asphalt m-0">Management type </h4>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            <p class="text-center pb-4">Förkryssad den de har som förval</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group h-100">
+                              <div class="label-box h-100">
+                                <div class="col-content d-flex flex-wrap h-100">
+                                  <div>
+                                    <h6 class="label_title mb-3"><b>Self managed</b>
+                                    </h6>
+                                    <p class="label_content mb-4">Invite the influencers you like. If they don’t respond we will help to reach them by phone etc. But you keep the communication.</p>
+                                  </div>
+                                  <span class="d-block text-success align-self-end">
+                                  <strong>Cost: 10% on top of deal price</strong></span>
+                                </div>
+                                <input type="radio" name="management_type" id="self_manage" value="self_manage"/><label
+                                  for="self_manage"
+                                  class="d-block mb-0"><span class="dot m-0"></span></label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6 pt-3 pt-sm-0">
+                            <div class="form-group h-100">
+                              <div class="label-box h-100">
+                                <div class="d-flex flex-wrap col-content h-100">
+                                  <div>
+                                    <h6 class="label_title mb-3"><b>GrowSocial managed</b></h6>
+                                    <p class="label_content mb-4">GrowSocial handles everything.. from setting up the campaign, matching influencers, keeping all communication with the influencers, optimize the post to maximise results etc.</p>
+                                  </div>
+                                  <span class="d-block text-success align-self-end">
+                                  <strong>Cost: 25% on top of deal price</strong></span>
+                                </div>
+                                <input type="radio" name="management_type" id="grow_manage" value="grow_manage"/><label
+                                  for="grow_manage"
+                                  class="d-block mb-0"><span class="dot m-0"></span></label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="content-box--group py-3 pt-sm-4">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="campaign-create-title">
+                        <div class="row">
+                          <div class="col">
+                            <h4 class="text-center mt-5 mb-4 text-asphalt">Create campaign </h4>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            <p class="text-center pb-3 pt-1">Please give your information below</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                              <label for="country">Country</label><input type="text"
+                                                                         class="form-control"
+                                                                         name="Country"
+                                                                         id="country"
+                                                                         value="Sweden"/>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                              <label for="brand">Brand</label><input type="text"
+                                                                     class="form-control"
+                                                                     name="brand"
+                                                                     id="brand"
+                                                                     value="Start date"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                              <label for="camp_name">Campaign name</label><input type="text"
+                                                                                 class="form-control"
+                                                                                 name="name"
+                                                                                 id="camp_name"
+                                                                                 value="Campaign name"/>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                              <label for="start_date">Start date</label><input type="text"
+                                                                               class="form-control"
+                                                                               name="start"
+                                                                               id="start_date"
+                                                                               value="31 july 2017"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                              <label for="camp_name">Deal maker</label><input type="text"
+                                                                              class="form-control"
+                                                                              name="name"
+                                                                              id="camp_name"
+                                                                              value="End date"/>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                              <label for="end_date">End date</label><input type="text"
+                                                                           class="form-control"
+                                                                           name="end"
+                                                                           id="end_date"
+                                                                           value="31 october 2017"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row pt-3">
+                          <div class="col-12 col-sm-6">
+                            <p>Is this campaign of physical products being sent to influencer?</p>
+                            <div class="row justify-content-center">
+                              <div class="col-auto col-sm-12">
+                                <div class="form-group d-inline-block d-sm-block mb-3">
+                                  <input type="radio" name="previous_marketing" id="yes" value="yes"><label for="yes"
+                                                                                                            class="mb-0"> <span
+                                      class="dot"></span> Yes</label>
+                                </div>
+                              </div>
+                              <div class="col-auto col-sm-12">
+                                <div class="form-group d-inline-block d-sm-block">
+                                  <input type="radio" name="previous_marketing" id="no" value="no"><label for="no">
+                                    <span class="dot"></span> No</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <div class="row">
+                              <div class="col-6 col-sm-auto">
+                                <p>Upload images</p>
+                              </div>
+                              <div class="col-6 col-sm pl-0">
+                                <div class="form-group">
+                                  <label for="upload"
+                                         class="btn btn-sm btn-upload btn-outline-primary m-0">Browse files</label>
+                                  <input id="upload" type="file" name="img" style="display: none">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="dnd-file">
+                                  <div class="dnd-drop--area rounded border d-flex align-items-center justify-content-center">
+                                    <div class="col text-center">
+                                      <span class="d-block"><i class="icon-photo"></i></span>
+                                      <b class="d-block">Drag and drop here</b>
+                                    </div>
+                                  </div>
+                                  <div class="dnd-overlay"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="content-box--group pb-3 pb-sm-4">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="social-platforms-title">
+                        <div class="row">
+                          <div class="col-12 pb-3">
+                            <p class="mb-0">Social platforms</p>
+                          </div>
+                          <div class="col-12">
+                            <div class="row">
+                              <div class="col-6 col-sm-4 col-md-3">
+
+                              </div>
+                              <div class="col-6 col-sm-4 col-md-3">
+
+                                  <input type="checkbox" name="networks_tw" id="networks_tw"><label for="networks_tw">
+                                    <span class="box"></span><span class="network-icon mr-1 tw"></span> Twitter</label>
+                                </div>
+
+                              <div class="col-6 col-sm-4 col-md-3">
+
+                                  <input type="checkbox" name="networks_instagram" id="networks_instagram">
+                                  <label for="networks_instagram"><span class="box"></span>
+                                    <span class="network-icon mr-1 instagram"></span> Instagram</label>
+
+                              </div>
+                              <div class="col-6 col-sm-4 col-md-3">
+
+                                  <input type="checkbox" name="networks_youtube" id="networks_youtube">
+                                  <label for="networks_youtube"><span class="box"></span>
+                                    <span class="network-icon mr-1 youtube"></span> Youtube</label>
+
+                              </div>
+                              <div class="col-6 col-sm-4 col-md-3">
+
+                                  <input type="checkbox" name="networks_pinterest" id="networks_pinterest">
+                                  <label for="networks_pinterest"><span class="box"></span>
+                                    <span class="network-icon mr-1 pinterest"></span> Pinterest</label>
+
+                              </div>
+                              <div class="col-6 col-sm-4 col-md-3">
+
+                                  <input type="checkbox" name="networks_blog" id="networks_blog">
+                                  <label for="networks_blog"><span class="box"></span>
+                                    <span class="network-icon mr-1 blog"></span> Blog</label>
+                                </div>
+
+                              <div class="col-6 col-sm-4 col-md-3">
+
+                                  <input type="checkbox" name="networks_tumblr" id="networks_tumblr">
+                                  <label for="networks_tumblr"><span class="box"></span>
+                                    <span class="network-icon mr-1 tumblr"></span> Tumblr </label>
+                                </div>
+
+                              <div class="col-6 col-sm-4 col-md-3">
+
+                                  <input type="checkbox" name="networks_podcast" id="networks_podcast">
+                                  <label for="networks_podcast"><span class="box"></span>
+                                    <span class="network-icon mr-1 podcast"></span> Podcast </label>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="content-box--group py-3 py-sm-4">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col">
+                          <h4 class="text-asphalt mb-4 mb-sm-5 text-center">Which influencers should be </br>to apply for this campaign? </h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-sm-6">
+
+                            <input type="radio" name="invite_influencer" id="invite_recommended" value="recomm"><label
+                            for="invite_recommended">
+                              <div class="row">
+                                <div class="col-auto">
+                                  <span class="dot m-0"></span>
+                                </div>
+                                <div class="col pl-1">
+                                  <span>Influencers who match my criteria </br>(recommended)</span>
+                                </div>
+                              </div>
+                            </label>
+                          </div>
+
+                        <div class="col-12 col-sm-6">
+
+                            <input type="radio" name="invite_influencer" id="invite_like" value="like">
+                            <label for="invite_like">
+                              <div class="row">
+                                <div class="col-auto">
+                                  <span class="dot m-0"></span>
+                                </div>
+                                <div class="col pl-1">
+                                  <span> Invite only,<br> I will invite influencers I like</span>
+                                </div>
+                              </div>
+                            </label>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="content-box--group py-3 py-sm-4">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <h4 class="text-asphalt mb-4 mb-sm-5 text-center">Choose your influencer criterias below </h4>
+                      <p class="text-center"><b>Target audience</b></p>
+                      <p class="text-center">Please fill in your target audience</p>
+                      <div class="row py-2 py-sm-4">
+                        <div class="col-sm-2 col-md-auto">
+                          <div class="row justify-content-center flex-sm-column">
+                            <div class="col-auto">
+                              <div class="form-group mb-3">
+                                <input type="checkbox" name="men" id="men"><label for="men">
+                                  <span class="box"></span> Men</label>
+                              </div>
+                            </div>
+                            <div class="col-auto">
+                              <div class="form-group mb-3">
+                                <input type="checkbox" name="women" id="women"><label for="women">
+                                  <span class="box"></span> Women</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-5 col-md pb-5 py-sm-0">
+                          <p>
+                            <label class="label-basic" for="age">Age</label><input class="slider_val"
+                                                                                   type="text"
+                                                                                   id="age"
+                                                                                   readonly
+                                                                                   style="border:0; color:#898989; font-weight:normal;">
+                          </p>
+                          <div id="slider-age"></div>
+                        </div>
+                        <div class="col-sm-5 col-md">
+                          <p>
+                            <label class="label-basic" for="price">Price range</label><input class="slider_val"
+                                                                                             type="text"
+                                                                                             id="price"
+                                                                                             readonly
+                                                                                             style="border:0; color:#898989; font-weight:normal;">
+                          </p>
+                          <div id="slider-price"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="content-box--group py-3 py-sm-4">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-12 pb-2">
+                          <p class="text-center"><b>Categories & Topics</b></p>
+                          <p class="text-center">Please choose categories to reach your target audience. For mass
+                            <br/> consumer products you can select all.</p>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-row">
+                            <div class="col-6 col-md-3">
+
+                                <input type="checkbox" name="categories_all" id="categories_all">
+                                <label for="categories_all"><span class="box"></span> All categories</label>
+
+                            </div>
+                            <div class="col-6 col-md-3">
+
+                                <input type="checkbox" name="networks_fashion" id="networks_fashion">
+                                <label for="networks_fashion"><span class="box"></span> Fashion</label>
+
+                            </div>
+                            <div class="col-6 col-md-3">
+
+                                <input type="checkbox" name="networks_fashion1" id="networks_fashion1">
+                                <label for="networks_fashion1"><span class="box"></span> Fashion</label>
+
+                            </div>
+                            <div class="col-6 col-md-3">
+
+                                <input type="checkbox" name="networks_fashion2" id="networks_fashion2">
+                                <label for="networks_fashion2"><span class="box"></span> Fashion</label>
+
+                            </div>
+                            <div class="col-6 col-md-3">
+
+                                <input type="checkbox" name="categories_electronic" id="categories_electronic"><label
+                                for="categories_electronic"><span class="box"></span> Electronic</label>
+
+                            </div>
+                            <div class="col-6 col-md-3">
+
+                                <input type="checkbox" name="categories_electronic1" id="categories_electronic1"><label
+                                for="categories_electronic1"><span class="box"></span> Electronic</label>
+
+                            </div>
+                            <div class="col-6 col-md-3">
+
+                                <input type="checkbox" name="categories_electronic2" id="categories_electronic2"><label
+                                for="categories_electronic2"><span class="box"></span> Electronic</label>
+
+                            </div>
+                            <div class="col-6 col-md-3">
+
+                                <input type="checkbox" name="categories_electronic3" id="categories_electronic3"><label
+                                for="categories_electronic3"><span class="box"></span> Electronic</label>
+
+                            </div>
+                            <div class="col-6 col-md-3">
+
+                                <input type="checkbox" name="categories_yoga" id="categories_yoga">
+                                <label for="categories_yoga"><span class="box"></span> Yoga</label>
+
+                            </div>
+                            <div class="col-6 col-md-3">
+
+                                <input type="checkbox" name="categories_yoga1" id="categories_yoga1">
+                                <label for="categories_yoga1"><span class="box"></span> Yoga</label>
+
+                            </div>
+                            <div class="col-6 col-md-3">
+
+                                <input type="checkbox" name="categories_yoga2" id="categories_yoga2">
+                                <label for="categories_yoga2"><span class="box"></span> Yoga</label>
+
+                            </div>
+                            <div class="col-6 col-md-3">
+
+                                <input type="checkbox" name="categories_yoga3" id="categories_yoga3">
+                                <label for="categories_yoga3"><span class="box"></span> Yoga</label>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="content-box--group pb-3 pb-sm-4">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="row justify-content-end">
+                        <div class="col-12 col-md-7 align-self-end">
+                          <div class="row">
+                            <div class="col-12 col-sm pr-1">
+                              <div class="form-group">
+                                <button class="btn btn-block btn-outline-primary">Preview campaign</button>
+                              </div>
+                            </div>
+                            <div class="col-12 col-sm">
+                              <div class="form-group">
+                                <button class="btn btn-block btn-primary mt-3 mt-sm-0"> Pubish campaign</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="content-box--group py-3 py-sm-4">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col">
+                          <h4 class="text-asphalt mb-5 text-center">Invite influencers</h4>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-12 col-md-10">
+                          <div class="infl-slide"
+                               style="background-image: url(../src/assets/images/Bitmap11.png)"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 col-xl-4"></div>
+      </div>
+    </div>
+  </main>
+  <!--REGISTRATION PROGRESS-->
+  <div class="reg-progress fixed-bottom border-bottom-0">
+    <div class="container-fluid">
+      <div class="row flex-nowrap justify-content-center align-items-center">
+        <div class="col-12">
+          <div class="reg-progress-content">
+            <div class="row align-items-center">
+              <div class="col-auto d-none d-md-block">
+                <span class="font-weight-black">Your progress</span>
+              </div>
+              <div class="col-7 col-sm">
+                <ul class="row flex-nowrap justify-content-between reg-progress_ul mx-0">
+                  <li class="col text-center complete">
+                    <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
+                  </li>
+                  <li class="col text-center">
+                    <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
+                  </li>
+                  <li class="col text-center">
+                    <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
+                  </li>
+                  <li class="col text-center">
+                    <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
+                  </li>
+                  <li class="col text-center">
+                    <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
+                  </li>
+                  <li class="col text-center">
+                    <span class="d-inline-block align-middle rounded-circle reg-progress_circle"></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-5 col-sm-auto">
+                <button class="btn btn-block btn-primary ml-auto"> Continue</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript" src="/gs-webpack/vendors.25a40589d0d073ebb0a6.js"></script><script type="text/javascript" src="/gs-webpack/app.ad1b19a514fb1e46389d.js"></script></body>
+</html>
