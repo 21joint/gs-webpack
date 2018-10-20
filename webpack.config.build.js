@@ -1,10 +1,11 @@
+const PKG = require("./package");
 const path = require("path");
 const merge = require("webpack-merge");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const webpackConfig = require("./webpack.config");
 const args = require("yargs").argv;
 
-let publicPath = "/";
+let publicPath = args.git ? "/" + PKG.name + "/" : "/";
 let dist = args.git ? "docs" : "dist";
 
 module.exports = merge(webpackConfig, {

@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const IS_DEV = process.env.NODE_ENV !== "production";
+const publicPath = args.git ? "/" + PKG.name + "/" : "/";
 const renderHtmlTemplates = () =>
   glob.sync("src/*.html").map(
     dir =>
@@ -26,13 +27,14 @@ const renderHtmlTemplates = () =>
  */
 
 module.exports = {
+  mode: "development",
   entry: {
     app: "./src/app.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "scripts/[name].[hash].js",
-    publicPath: "/"
+    publicPath: publicPath
   },
   module: {
     rules: [
@@ -89,7 +91,7 @@ module.exports = {
               },
               fallback: "file-loader",
               outputPath: "./",
-              publicPath: args.git ? "/" + PKG.name + "/" : "/"
+              publicPath: publicPath
             }
           }
         ]
