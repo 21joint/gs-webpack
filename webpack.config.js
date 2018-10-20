@@ -92,6 +92,20 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    modules: ["node_modules", path.resolve(__dirname, "src")]
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          chunks: "initial",
+          name: "vendors"
+        }
+      }
+    }
+  },
   plugins: [
     new webpack.DefinePlugin({
       IS_DEV

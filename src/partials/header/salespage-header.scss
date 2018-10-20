@@ -1,0 +1,206 @@
+#header {
+  background: $white;
+  @include height-lineheight(60px, 60px);
+  overflow-x: visible;
+
+  nav {
+    float: right;
+
+    #menu-toggle {
+
+      input {
+        display: none;
+      }
+
+      ul {
+        list-style:none;
+        margin:0;
+        padding:0;
+
+        li {
+          display: inline-block;
+          font-size: 16px;
+          position: relative;
+
+          &.language-switcher {
+            margin-left: 30px;
+          }
+
+          a {
+            font-size: 16px;
+            color: $dark-text;
+            padding: 0px 12px;
+
+            &:hover {
+              color: $bg-color;
+              text-decoration: none;
+            }
+
+            span {
+              display: inline-block;
+              width: 26px;
+              height:26px;
+              border-radius: 26px;
+              margin-top: 16px;
+              float:left;
+              background-size: cover!important;
+              position: relative;
+
+              img {
+                position: absolute;
+                width: 100%;
+                left: 0px;
+                top: 0px;
+              }
+
+              &.gb {
+                background: url(/src/assets/images/flags/united-kingdom.png) no-repeat center;
+              }
+
+              &.text {
+                display: none;
+              }
+            }
+          }
+
+          .arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            border: 17px dashed #BDC0C9;
+            border-bottom-color: #BDC0C9;
+            right:20px;
+            top: 36px;
+            z-index:7;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: opacity .2s, visibility .2s;
+            transition: opacity .2s, visibility .2s;
+          }
+          .arrow:after {
+            content:'';
+            position:absolute;
+            width: 0;
+            height: 0;
+            border: 18px dashed #fff;
+            left: -18px;
+            top: -17px;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+          }
+
+          &:hover .arrow, &:hover .languages {
+            visibility:visible;
+            opacity:1;
+          }
+
+          .languages {
+            position: absolute;
+            width: 840px;
+            right: 0px;
+            top: 70px;
+            background: $white;
+            border: 1px solid #BDC0C9;
+            border-radius: 6px;
+            padding: 35px;
+            line-height: 1.6;
+            z-index:5;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: opacity .2s, visibility .2s;
+            transition: opacity .2s, visibility .2s;
+
+            .region {
+              display: block;
+              width: 100%;
+              font-size: 22px;
+              font-weight: 300;
+              margin-top: 30px;
+            }
+
+            ul {
+              margin: 10px 0 0 0;
+
+              li {
+                margin: 10px 0px;
+                display: inline-block;
+                width: 20%;
+
+                a {
+                  font-size: 15px;
+
+                  &:after {
+                    content:none;
+                  }
+
+                  i {
+                    display: inline-block;
+                    width:21px;
+                    height: 21px;
+                    float: left;
+                    border-radius: 100%;
+                    margin-top: 2px;
+                    background-size: cover!important;
+
+                    &.us {
+                      background: url(/src/assets/images/flags/united-states-of-america.png) no-repeat center;
+                    }
+                    &.de {
+                      background: url(/src/assets/images/flags/germany.png) no-repeat center;
+                    }
+                    &.uk {
+                      background: url(/src/assets/images/flags/united-kingdom.png) no-repeat center;
+                    }
+                    &.fr {
+                      background: url(/src/assets/images/flags/france.png) no-repeat center;
+                    }
+                    &.it {
+                      background: url(/src/assets/images/flags/italy.png) no-repeat center;
+                    }
+                    &.es {
+                      background: url(/src/assets/images/flags/spain.png) no-repeat center;
+                    }
+                    &.nl {
+                      background: url(/src/assets/images/flags/netherlands.png) no-repeat center;
+                    }
+                    &.se {
+                      background: url(/src/assets/images/flags/sweden.png) no-repeat center;
+                    }
+                    &.pl {
+                      background: url(/src/assets/images/flags/republic-of-poland.png) no-repeat center;
+                    }
+                    &.no {
+                      background: url(/src/assets/images/flags/norway.png) no-repeat center;
+                    }
+                    &.dk {
+                      background: url(/src/assets/images/flags/denmark.png) no-repeat center;
+                    }
+                    &.fi {
+                      background: url(/src/assets/images/flags/finland.png) no-repeat center;
+                    }
+                    &.ja {
+                      background: url(/src/assets/images/flags/japan.png) no-repeat center;
+                    }
+
+                  }
+                }
+              }
+            }
+          }
+
+          &.active {
+
+            a {
+              color: $bg-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
