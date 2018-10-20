@@ -2,6 +2,7 @@ import $ from "jquery";
 
 const Filters = (() => {
   let filters = [];
+
   $("#searchForm").on("submit", function(e) {
     e.preventDefault();
   });
@@ -21,21 +22,17 @@ const Filters = (() => {
       _filter.$el.attr("id", _filter.id);
       _filter.$inputs = _filter.$el.find("input");
       _filter.$toggler = _filter.$el.find('[data-toggle="dropdown"]');
-      _filter.$valueEl = $('<span class="value__el align-middle"></span>');
+      _filter.$valueEl = $('<span class="value__el"></span>');
       _filter.$toggler.append(_filter.$valueEl);
       _filter.$applyBtn = _filter.$el.find(".btn-apply");
-
       _filter.$el.find("[data-use]");
-
       _filter.$applyBtn.on("click", function(e) {
         e.preventDefault();
         let _query = "";
 
         _filter.$el.find("[data-use]").each(function(j, el) {
-          if (
-            el.getAttribute("type") == "checkbox" ||
-            el.getAttribute("type") == "radio"
-          ) {
+          console.log(el.type);
+          if (el.type === "checkbox") {
             if (el.checked && el.dataset.use.match(/label/)) {
               console.info("using as filter badge text:", "label");
               _query += el.dataset.use.replace(
@@ -48,15 +45,21 @@ const Filters = (() => {
               console.info("using as filter badge text:", "name");
               _query += el.dataset.use.replace(/name/, el.getAttribute("name"));
             }
-          }
-          if (el.dataset.use.match(/value/)) {
-            console.info("using as filter badge text:", "value");
-            if (jQuery.isArray($(el).val())) {
-              $($(el).val()).each(function(h, v) {
-                _query += el.dataset.use.replace(/value/, v);
-              });
-            } else {
-              _query += el.dataset.use.replace(/value/, el.value);
+          } else if (el.type === "radio") {
+            if (el.checked && el.dataset.use.match(/value/)) {
+              console.info("using as filter badge text:", "value");
+              _query = el.dataset.use.replace(/value/, el.id);
+            }
+          } else {
+            if (el.dataset.use.match(/value/)) {
+              console.info("using as filter badge text:", "value");
+              if (jQuery.isArray($(el).val())) {
+                $($(el).val()).each(function(h, v) {
+                  _query += el.dataset.use.replace(/value/, v);
+                });
+              } else {
+                _query += el.dataset.use.replace(/value/, el.value);
+              }
             }
           }
         });
@@ -109,10 +112,6 @@ const Filters = (() => {
     if (e.keyCode === 40) {
       e.target.value--;
     }
-  });
-
-  $(document).ready(function() {
-    console.log(filters);
   });
 })();
 

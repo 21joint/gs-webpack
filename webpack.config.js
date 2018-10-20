@@ -107,12 +107,12 @@ module.exports = {
       jQuery: "jquery",
       "window.jQuery": "jquery"
     }),
-    ...renderHtmlTemplates(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: IS_DEV ? "[name].css" : "[name].[hash].css",
       chunkFilename: IS_DEV ? "[id].css" : "[id].[hash].css"
     }),
+    ...renderHtmlTemplates()
   ]
 };
