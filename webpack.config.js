@@ -33,7 +33,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "scripts/[name].[hash].js",
+    filename: "[name].[hash].js",
     publicPath: publicPath
   },
   module: {
@@ -42,7 +42,7 @@ module.exports = {
       {
         test: /\.js$/,
         include: [path.resolve(__dirname, "src")],
-        exclude: /node_modules/,
+        exclude: /(node_modules)/,
         use: ["babel-loader"]
       },
 
@@ -125,8 +125,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: IS_DEV ? "styles/[name].css" : "styles/[name].[hash].css",
-      chunkFilename: IS_DEV ? "styles/[id].css" : "styles/[id].[hash].css"
+      filename: IS_DEV ? "[name].css" : "[name].[hash].css",
+      chunkFilename: IS_DEV ? "[id].css" : "[id].[hash].css"
     })
   ]
 };
