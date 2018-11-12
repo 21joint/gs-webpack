@@ -55,7 +55,7 @@ module.exports = {
             loader: "css-loader",
             options: {
               sourceMap: IS_DEV,
-              publicPath: "../"
+              publicPath: publicPath
             }
           },
           {
