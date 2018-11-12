@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const IS_DEV = process.env.NODE_ENV !== "production";
 console.log(`Building ... mode: ${IS_DEV ? "development" : "production"}`);
-const publicPath = args.git ? "/" + PKG.name + "/" : "/";
+const publicPath = args.git ? "/levon/" : "/";
 const renderHtmlTemplates = () =>
   glob.sync("src/*.html").map(
     dir =>
