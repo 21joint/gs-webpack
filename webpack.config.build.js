@@ -8,7 +8,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
-let publicPath = args.git ? "/" + PKG.name + "/" : "/";
+let publicPath = args.git ? "/" : "/";
 let dist = args.git ? "docs" : "dist";
 
 module.exports = merge(webpackConfig, {
