@@ -1,0 +1,24 @@
+.modal-save {
+  .collapse {
+    .btn {
+      width: 90px;
+      height: 25px;
+      padding: 1px;
+    }
+  }
+  .modal-content {
+    border-radius: 4px;
+  }
+  ul {
+    margin: 20px 0 10px;
+  }
+  li {
+    border-top: 1px solid #bdc0c9;
+    padding: 12px 0;
+  }
+  @include media-breakpoint-down(sm) {
+    .container-fluid {
+      padding: 0;
+    }
+  }
+}

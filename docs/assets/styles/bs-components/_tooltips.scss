@@ -1,0 +1,33 @@
+.tooltip-inner {
+  background-color: #fff;
+  border: 1px solid #58A3D5;
+  color: #000;
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.tooltip .arrow {
+  border-width: 1px 0 0 1px;
+  width: 18px;
+  height: 18px;
+  border-color: #69acda;
+  border-style: solid;
+  z-index: 1;
+  background-color: #fff;
+  &:before {
+    display: none;
+  }
+}
+.tooltip.show {
+  opacity: 1;
+}
+
+.bs-tooltip-bottom .arrow, .bs-tooltip-auto[x-placement^="bottom"] .arrow{
+  top: -6px;
+  transform: rotate(45deg) translate3d(0,4.5px,0);
+}
+
+.bs-tooltip-top .arrow, .bs-tooltip-auto[x-placement^="top"] .arrow{
+  bottom: -6px;
+  transform: rotate(-135deg) translate3d(0,-4.5px,0);
+}
