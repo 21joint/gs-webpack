@@ -1,0 +1,35 @@
+.modal {
+  .btn-close {
+    position: fixed;
+    width: 36px;
+    height: 36px;
+    margin-left: auto;
+    font-size: 16px;
+    border: none;
+    right: 22px;
+    top: 22px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    line-height: 1;
+    padding: 0;
+    z-index: 10;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    @include media-breakpoint-up(sm){
+      right: 15px;
+      top: 15px;
+    }
+  }
+}
+
+.modal-filters {
+  .modal-dialog {
+    max-width: none;
+    margin: 100px 0 0 0;
+  }
+  .modal-content {
+    border-radius: 0;
+  }
+}
