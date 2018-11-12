@@ -1,0 +1,52 @@
+.video-wrapper {
+  @include aspect(16, 9);
+  .video-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .video-playoverlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -1px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 6px;
+    i {
+      color: #fff;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      font-size: 60px;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  iframe {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 6px;
+    height: 100%;
+  }
+}

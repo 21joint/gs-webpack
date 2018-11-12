@@ -1,6 +1,7 @@
 const PKG = require("./package");
 const path = require("path");
 const merge = require("webpack-merge");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const webpackConfig = require("./webpack.config");
 const args = require("yargs").argv;
@@ -8,12 +9,12 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
+console.log(args);
+
 let publicPath = args.git ? "/" + PKG.name + "/" : "/levon/";
-let dist = "docs";
+let dist = args.git ? "docs" : "dist";
 
 module.exports = merge(webpackConfig, {
-  mode: "production",
-  target: "web",
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
@@ -29,5 +30,8 @@ module.exports = merge(webpackConfig, {
     filename: "[name].[chunkhash].js",
     publicPath: publicPath
   },
-  plugins: [new CleanWebpackPlugin([dist])]
+  plugins: [
+    new CleanWebpackPlugin([dist]),
+    new CopyWebpackPlugin([{ from: "src/assets", to: "assets", force: true }])
+  ]
 });

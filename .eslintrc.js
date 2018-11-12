@@ -1,8 +1,3 @@
 module.exports = {
-  parser: "babel-eslint",
-  parserOptions: {
-    target: {
-      browser: true
-    }
-  }
+  parser: "babel-eslint"
 };

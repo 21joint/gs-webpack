@@ -6,11 +6,10 @@ const webpackConfig = require("./webpack.config");
 module.exports = merge(webpackConfig, {
   mode: "development",
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
     watchContentBase: true,
-    port: 4040,
+    port: 3000,
     hot: true,
-    host: "0.0.0.0",
+    host: "localhost",
     open: true,
     publicPath: "/"
   },

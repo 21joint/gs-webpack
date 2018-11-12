@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const IS_DEV = process.env.NODE_ENV !== "production";
 console.log(`Building ... mode: ${IS_DEV ? "development" : "production"}`);
-const publicPath = args.git ? "/levon/" : "/";
+const publicPath = "/";
 const renderHtmlTemplates = () =>
   glob.sync("src/*.html").map(
     dir =>
@@ -42,7 +42,7 @@ module.exports = {
       // JS
       {
         test: /\.js$/,
-        include: [path.resolve(__dirname, "src")],
+        exclude: /node_modules/,
         use: ["babel-loader"]
       },
 
@@ -54,8 +54,7 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              sourceMap: IS_DEV,
-              publicPath: "/"
+              sourceMap: IS_DEV
             }
           },
           {
@@ -70,31 +69,36 @@ module.exports = {
               ]
             }
           },
-          "sass-loader"
+          {
+            loader: "sass-loader",
+            options: {
+              includePaths: [path.join(__dirname, "src")]
+            }
+          }
         ]
       },
 
       // FONTS/IMAGES
       {
-        test: /\.(woff|woff2|ttf|eot|otf|svg|gif|png|jpg|jpeg)$/,
+        test: /\.ttf|eot|otf|woff|woff2|svg$/,
         use: [
           {
             loader: "url-loader",
             options: {
               limit: 8192,
-              name(file) {
-                if (file.indexOf("fonts") > -1) {
-                  return "fonts/[name].[ext]";
-                } else {
-                  return "images/[name].[ext]";
-                }
-              },
-              fallback: "file-loader",
-              outputPath: "./",
-              publicPath: publicPath
+              fallback: "file-loader"
             }
           }
         ]
+      },
+      {
+        test: /\.(gif|png|jp(e?)g)$/,
+        loader: "file-loader",
+        options: {
+          name: "images/[name].[ext]",
+          outputPath: "./",
+          publicPath: publicPath
+        }
       }
     ]
   },

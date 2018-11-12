@@ -1,0 +1,82 @@
+.ui-slider {
+  padding: 0 10px;
+}
+
+.ui-widget-header {
+  background: #56A4D6;
+}
+
+.ui-widget-content {
+  background: #B5B5B6;
+}
+
+.ui-slider-horizontal {
+  height: 2px;
+  margin-right: 13px;
+  margin-left: 7px;
+  @include media-breakpoint-up(xl) {
+    margin-right: 0;
+  }
+}
+
+.noUi-values {
+  color: $asphalt;
+}
+
+.noUi-base {
+  &:before {
+    content: '';
+    position: absolute;
+    height: 30px;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-top: -15px;
+    cursor: pointer;
+  }
+}
+
+.noUi-target {
+  box-shadow: inset 0 1px 1px 2px #F0F0F0, 0 3px 6px -5px #BBB;
+  border: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.noUi-connect {
+  background: $blue;
+}
+
+.noUi-horizontal {
+  height: 3px;
+}
+
+.noUi-horizontal .noUi-handle,
+.noUi-vertical .noUi-handle {
+  background: #fff;
+  border-radius: 50%;
+  width: 29px;
+  height: 29px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  outline: 0;
+  margin-top: -9px;
+  border: 1px solid #c5c5c5;
+  font-weight: 400;
+  color: #454545;
+  cursor: grab;
+  &:before, &:after {
+    background-color: transparent;
+  }
+  &.noUi-active {
+    cursor: grabbing;
+  }
+}
+
+.form-range-group {
+  .form-control {
+    text-align: center;
+    width: auto;
+    padding: 0 10px;
+    max-width: 70px;
+  }
+}

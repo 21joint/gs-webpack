@@ -1,19 +1,17 @@
 export default (function () {
-  $(window)
-    .on('load', function () {
-      window.loaded = true;
-    });
+  $(window).on("load", function () {
+    window.loaded = true;
+  });
 
   let mainLoader,
     currOffset,
     count = 0,
-    initOffset = parseInt(jQuery('.main-loader svg path')
-      .attr('stroke-dashoffset'));
+    $path = $(".main-loader svg path"),
+    initOffset = parseInt($path.attr("stroke-dashoffset"), 10);
 
   mainLoader = setInterval(function () {
     count++;
-    currOffset = parseInt(jQuery('.main-loader svg path')
-      .attr('stroke-dashoffset'));
+    currOffset = parseInt($path.attr("stroke-dashoffset"), 10);
 
     hideLoader();
 
@@ -21,41 +19,30 @@ export default (function () {
       clearInterval(mainLoader);
     }
 
-    jQuery('.main-loader svg path')
-      .attr('stroke-dashoffset', currOffset + 5);
-    jQuery('.main-loader svg')
-      .attr('transform', 'scale(' + count / 400 + ')');
-  }, 5);
+    $path.attr("stroke-dashoffset", currOffset + 3);
+    $(".main-loader svg").attr("transform", "scale(" + count / 500 + ")");
+  }, 10);
 
-
-  jQuery(document)
-    .on('shown.bs.tab', function (e) {
-      const wrEl = jQuery(jQuery(e.target)
-        .attr('href'))
-        .parent();
-      setTimeout(function () {
-        jQuery('body')
-          .removeClass('content-loading');
-      }, 200);
-    })
-    .on('hidden.bs.tab', function () {
-      jQuery('body')
-        .addClass('content-loading');
-    });
+  $(document)
+  .on("shown.bs.tab", function (e) {
+    const wrEl = $($(e.target).attr("href")).parent();
+    setTimeout(function () {
+      $("body").removeClass("content-loading");
+    }, 200);
+  })
+  .on("hidden.bs.tab", function () {
+    $("body").addClass("content-loading");
+  });
 
   function hideLoader() {
     if (window.loaded && currOffset >= initOffset / 8) {
-      jQuery('.main-loader')
-        .fadeOut(500);
-    }
-    else {
+      $(".main-loader").fadeOut(500);
+    } else {
       setTimeout(hideLoader, 500);
     }
   }
 
   function showLoader() {
-    jQuery('.main-loader')
-      .fadeIn(200);
+    $(".main-loader").fadeIn(200);
   }
-
 })();
