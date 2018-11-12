@@ -9,9 +9,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
-console.log(args);
-
-let publicPath = args.git ? "/" + PKG.name + "/" : "/levon/";
+let publicPath = args.git ? "/" + PKG.name + "/" : "/";
 let dist = args.git ? "docs" : "dist";
 
 module.exports = merge(webpackConfig, {
@@ -32,6 +30,6 @@ module.exports = merge(webpackConfig, {
   },
   plugins: [
     new CleanWebpackPlugin([dist]),
-    new CopyWebpackPlugin([{ from: "src/assets", to: "assets", force: true }])
+    new CopyWebpackPlugin([{ from: "src/assets/**", to: "./", force: true }])
   ]
 });

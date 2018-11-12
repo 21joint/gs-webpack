@@ -30,7 +30,7 @@ const renderHtmlTemplates = () =>
 module.exports = {
   mode: "development",
   entry: {
-    app: "./src/app.js"
+    app: ["@babel/polyfill", "./src/app.js"]
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -85,6 +85,7 @@ module.exports = {
           {
             loader: "url-loader",
             options: {
+              name: "/fonts/[name].[ext]",
               limit: 8192,
               fallback: "file-loader"
             }
@@ -95,9 +96,8 @@ module.exports = {
         test: /\.(gif|png|jp(e?)g)$/,
         loader: "file-loader",
         options: {
-          name: "images/[name].[ext]",
-          outputPath: "./",
-          publicPath: publicPath
+          name: "/images/[name].[ext]",
+          outputPath: "./"
         }
       }
     ]
