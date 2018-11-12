@@ -1,18 +1,18 @@
 <div align="center">
  <p>made by</p>
-        <a href="http://www.21joint.com"><img width="150" height="auto" src="https://rawgit.com/21joint/dnv-header/header_raw/21logo2.svg"></a>
+        <a href="http://www.21joint.com"><img width="64" height="auto" src="https://www.dropbox.com/s/acqdogfdzktpn09/Logo%20Official2.svg?dl=0&raw=1"></a>
 </div>
 
-# Frontend Webpack Boilerplate (1.0.5)
+# webpack-ui  (1.0.5)
 
 
-## Whats Included
+### Whats Included
 
 - Bootstrap v4.1
 - SCSS
 - Webpack latest (4.6)
 
-## Quick start
+### Quick start
 
 Several quick start options are available:
 

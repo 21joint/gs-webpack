@@ -1,16 +1,15 @@
-import _ from 'lodash';
-import LanguageData from '../../languages';
+import _ from "lodash";
+import LanguageData from "../../languages";
 
 const generateLanguages = () => {
-  let html = '';
-  _.each(LanguageData, (language) => {
+  let html = "";
+  _.each(LanguageData, language => {
     html += `<option value="${language.name}">${language.name}</option>`;
   });
   return html;
 };
 
 const createOptions = () => {
-
   let template;
   template = `<button type="button" class="btn btn-sm btn-outline-primary" data-toggle="dropdown" aria-haspopup="true"
         title="Language" aria-expanded="false">
@@ -33,7 +32,7 @@ const createOptions = () => {
       </div>
       <div class="col-auto">
       <button type="button" class="btn p-0 bg-white" data-toggle="modal" data-target="#answerLanguage">
-                  <img class="r-icon--medium" src="${require('../../assets/images/info.svg')}" alt="Awareness">
+                  <img class="r-icon--medium" src="${require("../../assets/images/info.svg")}" alt="Awareness">
                 </button>
 
       </div>
@@ -96,7 +95,4 @@ const createOptions = () => {
   return template;
 };
 
-
-let html = createOptions();
-
-module.exports = html;
+export const html = createOptions();
