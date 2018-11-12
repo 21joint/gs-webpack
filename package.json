@@ -11,7 +11,7 @@
     "dev": "webpack-dev-server --progress --mode development --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack -p --progress --mode production --config webpack.config.build.js",
     "build:git": "cross-env NODE_ENV=production webpack -p --progress --mode production --config webpack.config.build.js --git",
-    "git-push": "git add . && git pull growbeauty master && git commit -m'updates' && git push origin master --git",
+    "git-push": "git pull growbeauty master && git add . && git commit -m'updates' && git push growbeauty master --git",
     "push:latest": "npm run build && git add . && git commit -m'updates' && git push growbeauty master --git"
   },
   "devDependencies": {
