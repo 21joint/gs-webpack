@@ -12,7 +12,7 @@
     "build": "cross-env NODE_ENV=production webpack -p --progress --mode production --config webpack.config.build.js",
     "build:git": "cross-env NODE_ENV=production webpack -p --progress --mode production --config webpack.config.build.js --git",
     "git-push": "npm run build:git && git add . && git pull origin master && git commit -m'updates' && git push origin master",
-    "push:latest": "npm run build:git && git add . && git commit -m'updates' && git push growbeauty master --root"
+    "push:latest": "npm run build:git && git add . && git commit -m'updates' && git push growbeauty master --publicPath /"
   },
   "devDependencies": {
     "@babel/core": "^7.1.5",
