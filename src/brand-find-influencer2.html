@@ -11,23 +11,22 @@
 
 <% const { Influencer } = require('./partials/influencer.card'); const
 influencers = [ { name: 'Betty Boo', age: 27, gscore: 76, photos: [
-require('./assets/images/influencer-1.png'),
-require('./assets/images/influencer-2.png'),
-require('./assets/images/influencer-3.png') ], social: { tumblr: 4222,
+require('../src/assets/images/influencer-1.png'),
+require('../src/assets/images/influencer-2.png'),
+require('../src/assets/images/influencer-3.png') ], social: { tumblr: 4222,
 pinterest: 32122, blog: 12100 } }, { name: 'Lindsey Joe', age: 23, gscore: 15,
-photos: [ require('./assets/images/influencer-1.png'),
-require('./assets/images/influencer-4.png'),
-require('./assets/images/influencer-5.png') ], social: { facebook: 9156,
+photos: [ require('../src/assets/images/influencer-1.png'),
+require('../src/assets/images/influencer-4.png'),
+require('../src/assets/images/influencer-5.png') ], social: { facebook: 9156,
 tumblr: 3200, pinterest: 12098, blog: 1200 } }, { name: 'Monica Belucci', age:
-27, gscore: 49, photos: [ require('./assets/images/influencer-3.png'),
-require('./assets/images/influencer-1.png'),
-require('./assets/images/influencer-4.png') ], social: { snapchat: 9156,
+27, gscore: 49, photos: [ require('../src/assets/images/influencer-3.png'),
+require('../src/assets/images/influencer-1.png'),
+require('../src/assets/images/influencer-4.png') ], social: { snapchat: 9156,
 twitter: 3200, instagram: 12098, podcast: 1200 } }, { name: 'Lina Van', age:
-22, gscore: 7, photos: [ require('./assets/images/influencer-5.png'),
-require('./assets/images/influencer-4.png'),
-require('./assets/images/influencer-3.png') ], social: { facebook: 9156,
-tumblr: 3200, pinterest: 12098, blog: 55000 } } ];
-const filters = [
+22, gscore: 7, photos: [ require('../src/assets/images/influencer-5.png'),
+require('../src/assets/images/influencer-4.png'),
+require('../src/assets/images/influencer-3.png') ], social: { facebook: 9156,
+tumblr: 3200, pinterest: 12098, blog: 55000 } } ]; const filters = [
 require('html-loader?minimize=false!./partials/filters/gscore.html'),
 require('./partials/filters/languages').default,
 require('html-loader?interpolate=true!./partials/filters/gender.html'),
@@ -403,8 +402,7 @@ require('html-loader?interpolate=true!./partials/header/header-fluid2.html')
                                 <option>Likes Per Post</option>
                                 <option
                                 >Likes Per Post % of followers
-                                </option
-                                >
+                                </option>
                                 <option>Comments Per Post</option>
                                 <option>Comments % of followers</option>
                               </select>
