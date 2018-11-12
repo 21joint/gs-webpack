@@ -1,0 +1,35 @@
+.nav-tabs {
+  .nav-link {
+    border: none;
+    font-size: 0.875rem;
+    color: inherit;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0.75rem;
+    margin-left: 1rem;
+    @include hover() {
+      color: #000;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 0;
+      bottom: 0.4375rem;
+      height: 3px;
+      background-color: $blue;
+      transition: 0.27s width ease-in-out;
+      will-change: left, right;
+    }
+    :not(.content-loading) & {
+      &.active {
+        background-color: transparent;
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

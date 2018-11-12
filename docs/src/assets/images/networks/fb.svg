@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>fb</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="fb" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M16,32 C24.837,32 32,24.837 32,16 C32,7.163 24.837,0 16,0 C7.163,0 0,7.163 0,16 C0,24.837 7.163,32 16,32 Z" id="Clip-2" fill="#3B5998"></path>
+        <path d="M17.435,7.466 C14.549,7.466 13.533,8.922 13.533,11.369 L13.533,13.17 L11.734,13.17 L11.734,16.169 L13.533,16.169 L13.533,24.874 L17.135,24.874 L17.135,16.169 L19.538,16.169 L19.855,13.17 L17.135,13.17 L17.138,11.669 C17.138,10.886 17.213,10.467 18.336,10.467 L19.839,10.467 L19.839,7.466 L17.435,7.466 Z" id="Clip-5" fill="#FFFFFF"></path>
+    </g>
+</svg>
